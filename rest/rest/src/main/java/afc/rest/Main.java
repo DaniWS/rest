@@ -92,7 +92,7 @@ public class Main {
         ClassLoader loader = Main.class.getClassLoader();
 
         CLStaticHttpHandler docsHandler = new CLStaticHttpHandler(loader, "swagger-ui/");
-        String log4jConfPath = System.getProperty("user.dir")+File.separator+"properties/log4j.properties";
+        String log4jConfPath = System.getProperty("user.dir")+File.separator+"src/properties/log4j.properties";
         PropertyConfigurator.configure(log4jConfPath);
 
         docsHandler.setFileCacheEnabled(false);
