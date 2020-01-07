@@ -6,19 +6,21 @@ import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 //import org.glassfish.jersey.servlet.ServletContainer;
 import org.glassfish.grizzly.http.server.CLStaticHttpHandler;
-
+import org.apache.log4j.*;
 
 
 import org.glassfish.grizzly.http.server.ServerConfiguration;
-import org.glassfish.grizzly.servlet.ServletRegistration;
-import org.glassfish.grizzly.servlet.WebappContext;
+//import org.glassfish.grizzly.servlet.ServletRegistration;
+//import org.glassfish.grizzly.servlet.WebappContext;
 import org.glassfish.jersey.jackson.JacksonFeature;
-import org.glassfish.jersey.grizzly2.*;
-import org.glassfish.jersey.server.ResourceConfig;
-import org.glassfish.grizzly.servlet.*;
+//import org.glassfish.jersey.grizzly2.*;
+//import org.glassfish.jersey.server.ResourceConfig;
+//import org.glassfish.grizzly.servlet.*;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 
 import io.swagger.jaxrs.config.BeanConfig;
+
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 
@@ -31,6 +33,8 @@ public class Main {
     // Base URI the Grizzly HTTP server will listen on
     public static final String BASE_URI = "http://0.0.0.0:8080/";
     private static final String JERSEY_SERVLET_CONTEXT_PATH = "";
+  
+    
     /**
      * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
      * @return Grizzly HTTP server.
@@ -88,7 +92,8 @@ public class Main {
         ClassLoader loader = Main.class.getClassLoader();
 
         CLStaticHttpHandler docsHandler = new CLStaticHttpHandler(loader, "swagger-ui/");
-        
+        String log4jConfPath = System.getProperty("user.dir")+File.separator+"properties/log4j.properties";
+        PropertyConfigurator.configure(log4jConfPath);
 
         docsHandler.setFileCacheEnabled(false);
 

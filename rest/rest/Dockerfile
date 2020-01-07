@@ -6,6 +6,7 @@ COPY pom.xml /usr/local/service/pom.xml
 COPY src /usr/local/service/src
 WORKDIR /usr/local/service
 EXPOSE 8080
+RUN ln -sf /log/logfile.log
 RUN mvn package
 CMD mvn exec:java
 

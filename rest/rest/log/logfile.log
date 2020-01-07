@@ -50,3 +50,7 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected name at line 
 	... 30 more
 2020-01-07 03:53:13,078 ERROR [grizzly-http-server-2] - afc.rest.Server.getMeasure 146 - Invalid Json Exception
 2020-01-07 03:54:40,814 ERROR [grizzly-http-server-0] - afc.rest.Server.getMeasure 146 - Invalid Json Exception
+2020-01-07 11:41:55,064  INFO [grizzly-http-server-6] - afc.rest.Server.getMeasure 142 - SessionID: 3137906379899871365 IP:127.0.0.1 Successful request on: sensor/measure
+2020-01-07 11:52:20,628  INFO [grizzly-http-server-0] - afc.rest.Server.getMeasure 142 - SessionID: 4824654343388316641 IP:127.0.0.1 Successful request on: sensor/measure
+2020-01-07 12:28:53,140  INFO [grizzly-http-server-0] - afc.rest.Server.getMeasure 142 - SessionID: 1256653229392439043 IP:127.0.0.1 Successful request on: sensor/measure
+2020-01-07 12:29:31,575  INFO [grizzly-http-server-0] - afc.rest.Server.getMeasure 142 - SessionID: 1144169387522277403 IP:127.0.0.1 Successful request on: sensor/measure
