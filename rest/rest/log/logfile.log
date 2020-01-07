@@ -5,3 +5,48 @@
 2020-01-07 02:54:36,524  INFO [grizzly-http-server-0] - afc.rest.Server.getMeasure 142 - SessionID: org.glassfish.grizzly.http.server.Session@3716851e IP:127.0.0.1 Resource: null Successful request on sensor/measure
 2020-01-07 02:55:43,347  INFO [grizzly-http-server-0] - afc.rest.Server.getMeasure 142 - SessionID: org.glassfish.grizzly.http.server.Session@8fb1676 IP:127.0.0.1 Resource: localhost Successful request on sensor/measure
 2020-01-07 02:57:55,031  INFO [grizzly-http-server-0] - afc.rest.Server.getMeasure 142 - SessionID: 7975543015913172101 IP:127.0.0.1 Successful request on sensor/measure
+2020-01-07 03:52:21,163  INFO [grizzly-http-server-0] - afc.rest.Server.getMeasure 142 - SessionID: 1435599762080150783 IP:127.0.0.1 Successful request on: sensor/measure
+2020-01-07 03:52:35,798 ERROR [grizzly-http-server-1] - afc.rest.Server.getMeasure 150 - com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected name at line 16 column 6 path $.observation.result.variance
+com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected name at line 16 column 6 path $.observation.result.variance
+	at com.google.gson.Gson.fromJson(Gson.java:942)
+	at com.google.gson.Gson.fromJson(Gson.java:892)
+	at com.google.gson.Gson.fromJson(Gson.java:841)
+	at com.google.gson.Gson.fromJson(Gson.java:813)
+	at afc.rest.Server.getMeasure(Server.java:139)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:52)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:124)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:167)
+	at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:176)
+	at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:79)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:469)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:391)
+	at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:80)
+	at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:253)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:248)
+	at org.glassfish.jersey.internal.Errors$1.call(Errors.java:244)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:244)
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:265)
+	at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:232)
+	at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:680)
+	at org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer.service(GrizzlyHttpContainer.java:353)
+	at org.glassfish.grizzly.http.server.HttpHandler$1.run(HttpHandler.java:200)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:569)
+	at org.glassfish.grizzly.threadpool.AbstractThreadPool$Worker.run(AbstractThreadPool.java:549)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.google.gson.stream.MalformedJsonException: Expected name at line 16 column 6 path $.observation.result.variance
+	at com.google.gson.stream.JsonReader.syntaxError(JsonReader.java:1568)
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:505)
+	at com.google.gson.stream.JsonReader.hasNext(JsonReader.java:414)
+	at com.google.gson.internal.bind.ObjectTypeAdapter.read(ObjectTypeAdapter.java:69)
+	at com.google.gson.internal.bind.ObjectTypeAdapter.read(ObjectTypeAdapter.java:70)
+	at com.google.gson.internal.bind.ObjectTypeAdapter.read(ObjectTypeAdapter.java:70)
+	at com.google.gson.Gson.fromJson(Gson.java:927)
+	... 30 more
+2020-01-07 03:53:13,078 ERROR [grizzly-http-server-2] - afc.rest.Server.getMeasure 146 - Invalid Json Exception
+2020-01-07 03:54:40,814 ERROR [grizzly-http-server-0] - afc.rest.Server.getMeasure 146 - Invalid Json Exception

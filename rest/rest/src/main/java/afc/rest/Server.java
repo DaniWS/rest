@@ -147,7 +147,7 @@ public class Server implements IServer{
 	          throw new WebApplicationException(invalidJsonException);
 	          }
 		catch(com.google.gson.JsonSyntaxException ex) 
-		{  log.error(ex, ex);
+		{  log.error(ex);
 			throw new WebApplicationException(notaJsonException);
 			}
 	}
