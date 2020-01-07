@@ -1,0 +1,7 @@
+2020-01-07 02:47:55,803  INFO [grizzly-http-server-0] - afc.rest.Server.getMeasureSensor 142 - SessionID: org.glassfish.grizzly.http.server.Session@6123c123 IP:127.0.0.1Successful request on sensor/measure
+2020-01-07 02:52:13,663  INFO [grizzly-http-server-1] - afc.rest.Server.getMeasureSensor 142 - SessionID: org.glassfish.grizzly.http.server.Session@6123c123 IP:127.0.0.1Successful request on sensor/measure
+2020-01-07 02:52:38,813  INFO [grizzly-http-server-0] - afc.rest.Server.getMeasure 142 - SessionID: org.glassfish.grizzly.http.server.Session@3976295d IP:127.0.0.1 Resource:  Successful request on sensor/measure
+2020-01-07 02:53:23,377  INFO [grizzly-http-server-0] - afc.rest.Server.getMeasure 142 - SessionID: org.glassfish.grizzly.http.server.Session@610d3c3f IP:127.0.0.1 Resource: /as11/sensor/measure Successful request on sensor/measure
+2020-01-07 02:54:36,524  INFO [grizzly-http-server-0] - afc.rest.Server.getMeasure 142 - SessionID: org.glassfish.grizzly.http.server.Session@3716851e IP:127.0.0.1 Resource: null Successful request on sensor/measure
+2020-01-07 02:55:43,347  INFO [grizzly-http-server-0] - afc.rest.Server.getMeasure 142 - SessionID: org.glassfish.grizzly.http.server.Session@8fb1676 IP:127.0.0.1 Resource: localhost Successful request on sensor/measure
+2020-01-07 02:57:55,031  INFO [grizzly-http-server-0] - afc.rest.Server.getMeasure 142 - SessionID: 7975543015913172101 IP:127.0.0.1 Successful request on sensor/measure
