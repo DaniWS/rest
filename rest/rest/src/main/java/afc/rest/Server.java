@@ -140,7 +140,7 @@ public class Server implements IServer{
 	          if (validateJson(s,uriInfo)) {
 	        	  
 	         log.info("SessionID: "+request.getSession().getIdInternal()+" IP:"+ getRemoteAddress(request)+" Successful request on: "+uriInfo.getPathParameters().getFirst("param") );
-	        	return Response.status(200).entity("200: \"Successful operation\". nFor more information, please refer to the API documentation: "+ docsUri +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();  
+	        	return Response.status(200).entity("200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ docsUri +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();  
 	          }
 	          
 	          else log.error("Invalid Json Exception");
