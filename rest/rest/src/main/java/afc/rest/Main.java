@@ -38,12 +38,9 @@ public class Main {
     // Base URI the Grizzly HTTP server will listen on
     public static final String BASE_URI = "http://0.0.0.0:8080/";
     private static final String JERSEY_SERVLET_CONTEXT_PATH = "";
- //   public static String regionListSchema; 
-//    String schemaPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
-//    String regionListJSON = schemaPath+File.separator+"regionList.json";
-    final static String a=System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
-    final static String b=a+File.separator+"regionList.json";
-    final static String regionListSchema= new String(Files.readAllBytes(Paths.get(b)));
+      public static String regionListSchema; 
+   
+    
     
     /**
      * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
@@ -103,8 +100,8 @@ public class Main {
 
         CLStaticHttpHandler docsHandler = new CLStaticHttpHandler(loader, "swagger-ui/");
         String log4jConfPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"properties"+File.separator+"log4j.properties";
-        //String schemaPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
-        //String regionListJSON = schemaPath+File.separator+"regionList.json";
+        String schemaPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
+        String regionListJSON = schemaPath+File.separator+"regionList.json";
         
         
         PropertyConfigurator.configure(log4jConfPath);
@@ -114,26 +111,10 @@ public class Main {
         ServerConfiguration cfg = server.getServerConfiguration();
 
         cfg.addHttpHandler(docsHandler, "/docs/");
-       
-         //  regionListSchema= new String(Files.readAllBytes(Paths.get(regionListJSON)));
+      
+         regionListSchema= new String(Files.readAllBytes(Paths.get(regionListJSON)));
      //  System.out.println(regionListSchema);
-       // final List<String> lines = Files.readAllLines(Paths.get(regionListSchema), StandardCharsets.UTF_8);
-         /*   
-                String fileName = "/regionList.json";
-
-                try {
-                    URI uri = this.getClass().getResource(fileName).toURI();
-                    List<String> lines = Files.readAllLines(Paths.get(uri),
-                        Charset.defaultCharset());
-
-                    for (String line : lines) {
-                        System.out.println(line);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-         */
+     
       /*
         WebappContext context = new WebappContext("WebappContext", JERSEY_SERVLET_CONTEXT_PATH);
         ServletRegistration registration = context.addServlet("ServletContainer", ServletContainer.class);
