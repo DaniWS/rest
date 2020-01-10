@@ -7,6 +7,10 @@ import org.glassfish.jersey.server.ResourceConfig;
 //import org.glassfish.jersey.servlet.ServletContainer;
 import org.glassfish.grizzly.http.server.CLStaticHttpHandler;
 import org.apache.log4j.*;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 
 
 import org.glassfish.grizzly.http.server.ServerConfiguration;
@@ -92,7 +96,7 @@ public class Main {
         ClassLoader loader = Main.class.getClassLoader();
 
         CLStaticHttpHandler docsHandler = new CLStaticHttpHandler(loader, "swagger-ui/");
-        String log4jConfPath = System.getProperty("user.dir")+File.separator+"src/properties/log4j.properties";
+        String log4jConfPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"properties"+File.separator+"log4j.properties";
         PropertyConfigurator.configure(log4jConfPath);
 
         docsHandler.setFileCacheEnabled(false);
@@ -100,8 +104,26 @@ public class Main {
         ServerConfiguration cfg = server.getServerConfiguration();
 
         cfg.addHttpHandler(docsHandler, "/docs/");
-        
-/*
+       
+  
+       
+         /*   
+                String fileName = "/regionList.json";
+
+                try {
+                    URI uri = this.getClass().getResource(fileName).toURI();
+                    List<String> lines = Files.readAllLines(Paths.get(uri),
+                        Charset.defaultCharset());
+
+                    for (String line : lines) {
+                        System.out.println(line);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+         */
+      /*
         WebappContext context = new WebappContext("WebappContext", JERSEY_SERVLET_CONTEXT_PATH);
         ServletRegistration registration = context.addServlet("ServletContainer", ServletContainer.class);
         registration.setInitParameter(ServletContainer., 
@@ -112,6 +134,9 @@ public class Main {
         */        
         System.out.println(String.format("Jersey app started with WADL available at "
                 + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
+        
+        
+        
         System.in.read();
         server.stop();
     }

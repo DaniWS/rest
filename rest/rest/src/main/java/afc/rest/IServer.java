@@ -312,8 +312,7 @@ public interface IServer {
 			"    },\r\n" + 
 			"    \"observations\": {\r\n" + 
 			"      \"type\": \"array\",\r\n" + 
-			"      \"items\": [\r\n" + 
-			"        {\r\n" + 
+			"      \"items\":  {\r\n" + 
 			"          \"type\": \"object\",\r\n" + 
 			"          \"properties\": {\r\n" + 
 			"            \"resourceId\": {\r\n" + 
@@ -352,7 +351,6 @@ public interface IServer {
 			"            \"result\"\r\n" + 
 			"          ]\r\n" + 
 			"        }\r\n" + 
-			"      ]\r\n" + 
 			"    }\r\n" + 
 			"  },\r\n" + 
 			"  \"required\": [\r\n" + 
