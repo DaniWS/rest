@@ -172,34 +172,114 @@ public interface IServer {
 			"}\r\n" + 
 			"";
 	String jsonCollarSchemaList="{\r\n" + 
-			"  \"sequenceNumber\": 123,\r\n" + 
-			"  \"collars\": [\r\n" + 
-			"    {\r\n" + 
-			"      \"resourceId\": \"urn:afc:AS06:livestockObservations:SENSO:collar0034\",\r\n" + 
-			"      \"location\": {\r\n" + 
-			"        \"latitude\": 45.45123,\r\n" + 
-			"        \"longitude\": 25.25456,\r\n" + 
-			"        \"altitude\": 2.10789\r\n" + 
+			"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r\n" + 
+			"  \"type\": \"object\",\r\n" + 
+			"  \"properties\": {\r\n" + 
+			"    \"sequenceNumber\": {\r\n" + 
+			"      \"type\": \"integer\"\r\n" + 
+			"    },\r\n" + 
+			"    \"collars\": {\r\n" + 
+			"      \"type\": \"array\",\r\n" + 
+			"         \"items\": [\r\n" + 
+			"           {\r\n" + 
+			"          \"type\": \"object\",\r\n" + 
+			"          \"properties\": {\r\n" + 
+			"            \"resourceId\": {\r\n" + 
+			"            \"type\": \"string\"\r\n" + 
+			"            },\r\n" + 
+			"          \"location\": {\r\n" + 
+			"            \"type\": \"object\",\r\n" + 
+			"            \"properties\": {\r\n" + 
+			"               \"latitude\": {\r\n" + 
+			"                \"type\": \"number\"\r\n" + 
+			"                 },\r\n" + 
+			"               \"longitude\": {\r\n" + 
+			"               \"type\": \"number\"\r\n" + 
+			"               },\r\n" + 
+			"               \"altitude\": {\r\n" + 
+			"               \"type\": \"number\"\r\n" + 
+			"               }\r\n" + 
+			"            },\r\n" + 
+			"          \"required\": [\r\n" + 
+			"            \"latitude\",\r\n" + 
+			"            \"longitude\",\r\n" + 
+			"            \"altitude\"\r\n" + 
+			"          ]\r\n" + 
+			"        },\r\n" + 
+			"        \"resultTime\": {\r\n" + 
+			"          \"type\": \"integer\"\r\n" + 
+			"        },\r\n" + 
+			"        \"resourceAlarm\": {\r\n" + 
+			"          \"type\": \"boolean\"\r\n" + 
+			"        },\r\n" + 
+			"        \"anomalies\": {\r\n" + 
+			"          \"type\": \"object\",\r\n" + 
+			"          \"properties\": {\r\n" + 
+			"            \"locationAnomaly\": {\r\n" + 
+			"              \"type\": \"boolean\"\r\n" + 
+			"            },\r\n" + 
+			"            \"temperatureAnomaly\": {\r\n" + 
+			"              \"type\": \"boolean\"\r\n" + 
+			"            },\r\n" + 
+			"            \"distanceAnomaly\": {\r\n" + 
+			"              \"type\": \"boolean\"\r\n" + 
+			"            },\r\n" + 
+			"            \"activityAnomaly\": {\r\n" + 
+			"              \"type\": \"boolean\"\r\n" + 
+			"            },\r\n" + 
+			"            \"positionAnomaly\": {\r\n" + 
+			"              \"type\": \"boolean\"\r\n" + 
+			"            }\r\n" + 
+			"          },\r\n" + 
+			"          \"required\": [\r\n" + 
+			"            \"locationAnomaly\",\r\n" + 
+			"            \"temperatureAnomaly\",\r\n" + 
+			"            \"distanceAnomaly\",\r\n" + 
+			"            \"activityAnomaly\",\r\n" + 
+			"            \"positionAnomaly\"\r\n" + 
+			"          ]\r\n" + 
+			"        },\r\n" + 
+			"        \"acceleration\": {\r\n" + 
+			"          \"type\": \"object\",\r\n" + 
+			"          \"properties\": {\r\n" + 
+			"            \"accX\": {\r\n" + 
+			"              \"type\": \"integer\"\r\n" + 
+			"            },\r\n" + 
+			"            \"accY\": {\r\n" + 
+			"              \"type\": \"integer\"\r\n" + 
+			"            },\r\n" + 
+			"            \"accZ\": {\r\n" + 
+			"              \"type\": \"integer\"\r\n" + 
+			"            }\r\n" + 
+			"          },\r\n" + 
+			"          \"required\": [\r\n" + 
+			"            \"accX\",\r\n" + 
+			"            \"accY\",\r\n" + 
+			"            \"accZ\"\r\n" + 
+			"          ]\r\n" + 
+			"        },\r\n" + 
+			"        \"temperature\": {\r\n" + 
+			"          \"type\": \"number\"\r\n" + 
+			"        }\r\n" + 
 			"      },\r\n" + 
-			"      \"resultTime\": 1558086914,\r\n" + 
-			"      \"resourceAlarm\": true,\r\n" + 
-			"      \"anomalies\": {\r\n" + 
-			"        \"locationAnomaly\": true,\r\n" + 
-			"        \"temperatureAnomaly\": true,\r\n" + 
-			"        \"distanceAnomaly\": true,\r\n" + 
-			"        \"activityAnomaly\": true,\r\n" + 
-			"        \"positionAnomaly\": true\r\n" + 
-			"      },\r\n" + 
-			"      \"acceleration\": {\r\n" + 
-			"        \"accX\": 0,\r\n" + 
-			"        \"accY\": 0,\r\n" + 
-			"        \"accZ\": 0\r\n" + 
-			"      },\r\n" + 
-			"      \"temperature\": 36.5\r\n" + 
-			"    }\r\n" + 
+			"      \"required\": [\r\n" + 
+			"        \"resourceId\",\r\n" + 
+			"        \"location\",\r\n" + 
+			"        \"resultTime\",\r\n" + 
+			"        \"resourceAlarm\",\r\n" + 
+			"        \"anomalies\",\r\n" + 
+			"        \"acceleration\",\r\n" + 
+			"        \"temperature\"\r\n" + 
+			"        ]\r\n" + 
+			"       }\r\n" + 
+		    "      ]\r\n" + 
+			"   }\r\n" + 
+			"  },\r\n" + 
+			"  \"required\": [\r\n" + 
+			"    \"sequenceNumber\",\r\n" + 
+			"    \"collars\"\r\n" + 
 			"  ]\r\n" + 
-			"}\r\n" + 
-			"";
+			"}";
 	
 	String jsonSensorSchemaList="{\r\n" + 
 			"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r\n" + 

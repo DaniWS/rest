@@ -48,7 +48,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "#/schemas/collar"
+              "$ref": "schema.json#/collar"
             }
           }
         ],
@@ -91,7 +91,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "#/schemas/collarList"
+              "$ref": "schema.json#/collarList"
             }
           }
         ],
@@ -134,7 +134,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "#/schemas/region"
+              "$ref": "schema.json#/region"
             }
           }
         ],
@@ -178,7 +178,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "#/schemas/regionList"
+              "$ref": "schema.json#/regionList"
             }
           }
         ],
@@ -221,7 +221,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "#/schemas/sensor"
+              "$ref": "schema.json#/sensor"
             }
           }
         ],
@@ -264,7 +264,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "#/schemas/sensorList"
+              "$ref": "schema.json#/sensorList"
             }
           }
         ],
@@ -282,9 +282,8 @@
       }
     }
   },
-  "schemas": {
+  "definitions": {
     "regionList": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
       "type": "object",
       "properties": {
         "sequenceNumber": {
@@ -339,7 +338,6 @@
       ]
     },
     "region": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
       "type": "object",
       "properties": {
         "sequenceNumber": {
@@ -391,7 +389,6 @@
       ]
     },
     "sensorList": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
       "type": "object",
       "properties": {
         "resourceId": {
@@ -470,7 +467,6 @@
       ]
     },
     "sensor": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
       "type": "object",
       "properties": {
         "sequenceNumber": {
@@ -542,35 +538,112 @@
       ]
     },
     "collarList": {
-      "sequenceNumber": 123,
-      "collars": [
-        {
-          "resourceId": "urn:afc:AS06:livestockObservations:SENSO:collar0034",
-          "location": {
-            "latitude": 45.45123,
-            "longitude": 25.25456,
-            "altitude": 2.10789
-          },
-          "resultTime": 1558086914,
-          "resourceAlarm": true,
-          "anomalies": {
-            "locationAnomaly": true,
-            "temperatureAnomaly": true,
-            "distanceAnomaly": true,
-            "activityAnomaly": true,
-            "positionAnomaly": true
-          },
-          "acceleration": {
-            "accX": 0,
-            "accY": 0,
-            "accZ": 0
-          },
-          "temperature": 36.5
+      "type": "object",
+      "properties": {
+        "sequenceNumber": {
+          "type": "integer"
+        },
+        "collars": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceId": {
+                "type": "string"
+              },
+              "location": {
+                "type": "object",
+                "properties": {
+                  "latitude": {
+                    "type": "number"
+                  },
+                  "longitude": {
+                    "type": "number"
+                  },
+                  "altitude": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "latitude",
+                  "longitude",
+                  "altitude"
+                ]
+              },
+              "resultTime": {
+                "type": "integer"
+              },
+              "resourceAlarm": {
+                "type": "boolean"
+              },
+              "anomalies": {
+                "type": "object",
+                "properties": {
+                  "locationAnomaly": {
+                    "type": "boolean"
+                  },
+                  "temperatureAnomaly": {
+                    "type": "boolean"
+                  },
+                  "distanceAnomaly": {
+                    "type": "boolean"
+                  },
+                  "activityAnomaly": {
+                    "type": "boolean"
+                  },
+                  "positionAnomaly": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "locationAnomaly",
+                  "temperatureAnomaly",
+                  "distanceAnomaly",
+                  "activityAnomaly",
+                  "positionAnomaly"
+                ]
+              },
+              "acceleration": {
+                "type": "object",
+                "properties": {
+                  "accX": {
+                    "type": "integer"
+                  },
+                  "accY": {
+                    "type": "integer"
+                  },
+                  "accZ": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "accX",
+                  "accY",
+                  "accZ"
+                ]
+              },
+              "temperature": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "resourceId",
+              "location",
+              "resultTime",
+              "resourceAlarm",
+              "anomalies",
+              "acceleration",
+              "temperature"
+            ]
+          }
         }
+      },
+      "required": [
+        "sequenceNumber",
+        "collars"
       ]
     },
     "collar": {
-      "$schema": "http://json-schema.org/draft-04/schema#",
       "type": "object",
       "properties": {
         "sequenceNumber": {
