@@ -40,6 +40,7 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 */
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 
 @Api(value = "REST API")
 @Path("/{parameter: as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11}/")
@@ -135,7 +136,7 @@ public class Server implements IServer{
 	@Path("/{param:sensor/measure|sensor/measureList|region/measure|region/measureList|collar/measure|collar/measureList}/")
 	@POST
 	@Consumes("text/plain")
-	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException, URISyntaxException, IOException {
+	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException, URISyntaxException, IOException, JsonSyntaxException {
 		try{
 	          gson.fromJson(s, Object.class); 
 	          if (validateJson(s,uriInfo)) {
