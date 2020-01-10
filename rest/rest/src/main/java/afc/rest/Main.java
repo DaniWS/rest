@@ -8,6 +8,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.grizzly.http.server.CLStaticHttpHandler;
 import org.apache.log4j.*;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
@@ -37,7 +38,12 @@ public class Main {
     // Base URI the Grizzly HTTP server will listen on
     public static final String BASE_URI = "http://0.0.0.0:8080/";
     private static final String JERSEY_SERVLET_CONTEXT_PATH = "";
-  
+ //   public static String regionListSchema; 
+//    String schemaPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
+//    String regionListJSON = schemaPath+File.separator+"regionList.json";
+    final static String a=System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
+    final static String b=a+File.separator+"regionList.json";
+    final static String regionListSchema= new String(Files.readAllBytes(Paths.get(b)));
     
     /**
      * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
@@ -97,6 +103,10 @@ public class Main {
 
         CLStaticHttpHandler docsHandler = new CLStaticHttpHandler(loader, "swagger-ui/");
         String log4jConfPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"properties"+File.separator+"log4j.properties";
+        //String schemaPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
+        //String regionListJSON = schemaPath+File.separator+"regionList.json";
+        
+        
         PropertyConfigurator.configure(log4jConfPath);
 
         docsHandler.setFileCacheEnabled(false);
@@ -105,8 +115,9 @@ public class Main {
 
         cfg.addHttpHandler(docsHandler, "/docs/");
        
-  
-       
+         //  regionListSchema= new String(Files.readAllBytes(Paths.get(regionListJSON)));
+     //  System.out.println(regionListSchema);
+       // final List<String> lines = Files.readAllLines(Paths.get(regionListSchema), StandardCharsets.UTF_8);
          /*   
                 String fileName = "/regionList.json";
 

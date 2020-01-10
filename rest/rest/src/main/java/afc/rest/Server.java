@@ -1,5 +1,6 @@
 package afc.rest;
 
+
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URI;
@@ -103,7 +104,7 @@ public class Server implements IServer{
 		case regionMeasure:
 		return ValidationUtils.isJsonValid(jsonSchemaRegion, s);
 		case regionMeasureList:
-		return ValidationUtils.isJsonValid(jsonSchemaRegionList, s);
+		return ValidationUtils.isJsonValid(Main.regionListSchema, s);
 		case collarMeasure:
 		return ValidationUtils.isJsonValid(jsonCollarSchema, s);
 		case collarMeasureList:
