@@ -1,0 +1,333 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "REST service API.",
+    "version": "1.0.1",
+    "title": "AFarCloud REST API"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Sensor"
+    },
+    {
+      "name": "Collar"
+    },
+    {
+      "name": "Region"
+    },
+    {
+      "name": "Test your JSON data format"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/{scenario}/collar/measure": {
+      "post": {
+        "tags": [
+          "Collar"
+        ],
+        "operationId": "getMeasureCollar",
+        "consumes": [
+          "text/plain"
+        ],
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "name": "scenario",
+            "in": "path",
+            "description": "AFarCloud scenario (\"as01\" to \"as11\")",
+            "required": true,
+            "type": "string",
+            "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "schema.json#/collar"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "405": {
+            "description": "Invalid input: not AFarCloud-compliant"
+          },
+          "415": {
+            "description": "Invalid input: not a JSON"
+          }
+        }
+      }
+    },
+    "/{scenario}/collar/measureList": {
+      "post": {
+        "tags": [
+          "Collar"
+        ],
+        "operationId": "getMeasureCollarList",
+        "consumes": [
+          "text/plain"
+        ],
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "name": "scenario",
+            "in": "path",
+            "description": "AFarCloud scenario (\"as01\" to \"as11\")",
+            "required": true,
+            "type": "string",
+            "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "http://localhost:8080/docs/schema.json#/collarList"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "405": {
+            "description": "Invalid input: not AFarCloud-compliant"
+          },
+          "415": {
+            "description": "Invalid input: not a JSON"
+          }
+        }
+      }
+    },
+    "/{scenario}/region/measure": {
+      "post": {
+        "tags": [
+          "Region"
+        ],
+        "operationId": "getMeasureRegion",
+        "consumes": [
+          "text/plain"
+        ],
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "name": "scenario",
+            "in": "path",
+            "description": "AFarCloud scenario (\"as01\" to \"as11\")",
+            "required": true,
+            "type": "string",
+            "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "schema.json#/region"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "405": {
+            "description": "Invalid input: not AFarCloud-compliant"
+          },
+          "415": {
+            "description": "Invalid input: not a JSON"
+          }
+        }
+      }
+    },
+    "/{scenario}/region/measureList": {
+      "post": {
+        "tags": [
+          "Region"
+        ],
+        "description": "",
+        "operationId": "getMeasureRegionList",
+        "consumes": [
+          "text/plain"
+        ],
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "name": "scenario",
+            "in": "path",
+            "description": "AFarCloud scenario (\"as01\" to \"as11\")",
+            "required": true,
+            "type": "string",
+            "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "schema.json#/regionList"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "405": {
+            "description": "Invalid input: not AFarCloud-compliant"
+          },
+          "415": {
+            "description": "Invalid input: not a JSON"
+          }
+        }
+      }
+    },
+    "/{scenario}/sensor/measure": {
+      "post": {
+        "tags": [
+          "Sensor"
+        ],
+        "operationId": "getMeasureSensor",
+        "consumes": [
+          "text/plain"
+        ],
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "name": "scenario",
+            "in": "path",
+            "description": "AFarCloud scenario (\"as01\" to \"as11\")",
+            "required": true,
+            "type": "string",
+            "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "schema.json#/sensor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "405": {
+            "description": "Invalid input: not AFarCloud-compliant"
+          },
+          "415": {
+            "description": "Invalid input: not a JSON"
+          }
+        }
+      }
+    },
+    "/{scenario}/sensor/measureList": {
+      "post": {
+        "tags": [
+          "Sensor"
+        ],
+        "operationId": "getMeasureSensorList",
+        "consumes": [
+          "text/plain"
+        ],
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "name": "scenario",
+            "in": "path",
+            "description": "AFarCloud scenario (\"as01\" to \"as11\")",
+            "required": true,
+            "type": "string",
+            "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "schema.json#/sensorList"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "405": {
+            "description": "Invalid input: not AFarCloud-compliant"
+          },
+          "415": {
+            "description": "Invalid input: not a JSON"
+          }
+        }
+      }
+    },
+    "/{scenario}/collar/measure?test": {
+      "post": {
+        "tags": [
+          "Test your JSON data format"
+        ],
+        "description": "Append \"?test\" to any path (e.g. \"as01/collar/measure?test\") if you just want to validate the JSON format.",
+        "operationId": "Test",
+        "consumes": [
+          "text/plain"
+        ],
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "name": "scenario",
+            "in": "path",
+            "description": "AFarCloud scenario (\"as01\" to \"as11\")",
+            "required": true,
+            "type": "string",
+            "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11"
+          },
+         
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "schema.json#/collar"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "405": {
+            "description": "Invalid input: not AFarCloud-compliant"
+          },
+          "415": {
+            "description": "Invalid input: not a JSON"
+          }
+        }
+      }
+    }
+  }
+}

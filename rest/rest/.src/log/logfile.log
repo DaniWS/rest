@@ -1,0 +1,1 @@
+2020-01-07 12:58:27,780  INFO [grizzly-http-server-0] - afc.rest.Server.getMeasure 142 - SessionID: 7442730261466126652 IP:127.0.0.1 Successful request on: sensor/measure

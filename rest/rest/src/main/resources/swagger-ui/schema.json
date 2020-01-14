@@ -1,0 +1,465 @@
+ {
+   "regionList": {
+      "type": "object",
+      "properties": {
+        "sequenceNumber": {
+          "type": "integer"
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceId": {
+                "type": "string"
+              },
+              "resultTime": {
+                "type": "integer"
+              },
+              "locationDimension": {
+                "type": "object",
+                "properties": {
+                  "latitude": {
+                    "type": "number"
+                  },
+                  "longitude": {
+                    "type": "number"
+                  },
+                  "width": {
+                    "type": "number"
+                  },
+                  "length": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "latitude",
+                  "longitude",
+                  "width",
+                  "length"
+                ]
+              }
+            },
+            "required": [
+              "resourceId",
+              "resultTime",
+              "locationDimension"
+            ]
+          }
+        }
+      },
+      "required": [
+        "sequenceNumber",
+        "regions"
+      ]
+    },
+    "region": {
+      "type": "object",
+      "properties": {
+        "sequenceNumber": {
+          "type": "integer"
+        },
+        "region": {
+          "type": "object",
+          "properties": {
+            "resourceId": {
+              "type": "string"
+            },
+            "resultTime": {
+              "type": "integer"
+            },
+            "locationDimension": {
+              "type": "object",
+              "properties": {
+                "latitude": {
+                  "type": "number"
+                },
+                "longitude": {
+                  "type": "number"
+                },
+                "width": {
+                  "type": "number"
+                },
+                "length": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "latitude",
+                "longitude",
+                "width",
+                "length"
+              ]
+            }
+          },
+          "required": [
+            "resourceId",
+            "resultTime",
+            "locationDimension"
+          ]
+        }
+      },
+      "required": [
+        "sequenceNumber",
+        "region"
+      ]
+    },
+    "sensorList": {
+      "type": "object",
+      "properties": {
+        "resourceId": {
+          "type": "string"
+        },
+        "sequenceNumber": {
+          "type": "integer"
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "latitude": {
+              "type": "number"
+            },
+            "longitude": {
+              "type": "number"
+            },
+            "altitude": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "latitude",
+            "longitude",
+            "altitude"
+          ]
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceId": {
+                "type": "string"
+              },
+              "observedProperty": {
+                "type": "string"
+              },
+              "resultTime": {
+                "type": "integer"
+              },
+              "result": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "uom": {
+                    "type": "string"
+                  },
+                  "variance": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "value",
+                  "uom",
+                  "variance"
+                ]
+              }
+            },
+            "required": [
+              "resourceId",
+              "observedProperty",
+              "resultTime",
+              "result"
+            ]
+          }
+        }
+      },
+      "required": [
+        "resourceId",
+        "sequenceNumber",
+        "location",
+        "observations"
+      ]
+    },
+    "sensor": {
+      "type": "object",
+      "properties": {
+        "sequenceNumber": {
+          "type": "integer"
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "latitude": {
+              "type": "number"
+            },
+            "longitude": {
+              "type": "number"
+            },
+            "altitude": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "latitude",
+            "longitude",
+            "altitude"
+          ]
+        },
+        "observation": {
+          "type": "object",
+          "properties": {
+            "resourceId": {
+              "type": "string"
+            },
+            "observedProperty": {
+              "type": "string"
+            },
+            "resultTime": {
+              "type": "integer"
+            },
+            "result": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "number"
+                },
+                "uom": {
+                  "type": "string"
+                },
+                "variance": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "value",
+                "uom",
+                "variance"
+              ]
+            }
+          },
+          "required": [
+            "resourceId",
+            "observedProperty",
+            "resultTime",
+            "result"
+          ]
+        }
+      },
+      "required": [
+        "sequenceNumber",
+        "location",
+        "observation"
+      ]
+    },
+    "collarList": {
+      "type": "object",
+      "properties": {
+        "sequenceNumber": {
+          "type": "integer"
+        },
+        "collars": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceId": {
+                "type": "string"
+              },
+              "location": {
+                "type": "object",
+                "properties": {
+                  "latitude": {
+                    "type": "number"
+                  },
+                  "longitude": {
+                    "type": "number"
+                  },
+                  "altitude": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "latitude",
+                  "longitude",
+                  "altitude"
+                ]
+              },
+              "resultTime": {
+                "type": "integer"
+              },
+              "resourceAlarm": {
+                "type": "boolean"
+              },
+              "anomalies": {
+                "type": "object",
+                "properties": {
+                  "locationAnomaly": {
+                    "type": "boolean"
+                  },
+                  "temperatureAnomaly": {
+                    "type": "boolean"
+                  },
+                  "distanceAnomaly": {
+                    "type": "boolean"
+                  },
+                  "activityAnomaly": {
+                    "type": "boolean"
+                  },
+                  "positionAnomaly": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "locationAnomaly",
+                  "temperatureAnomaly",
+                  "distanceAnomaly",
+                  "activityAnomaly",
+                  "positionAnomaly"
+                ]
+              },
+              "acceleration": {
+                "type": "object",
+                "properties": {
+                  "accX": {
+                    "type": "integer"
+                  },
+                  "accY": {
+                    "type": "integer"
+                  },
+                  "accZ": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "accX",
+                  "accY",
+                  "accZ"
+                ]
+              },
+              "temperature": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "resourceId",
+              "location",
+              "resultTime",
+              "resourceAlarm",
+              "anomalies",
+              "acceleration",
+              "temperature"
+            ]
+          }
+        }
+      },
+      "required": [
+        "sequenceNumber",
+        "collars"
+      ]
+    },
+    "collar": {
+      "type": "object",
+      "properties": {
+        "sequenceNumber": {
+          "type": "integer"
+        },
+        "collar": {
+          "type": "object",
+          "properties": {
+            "resourceId": {
+              "type": "string"
+            },
+            "location": {
+              "type": "object",
+              "properties": {
+                "latitude": {
+                  "type": "number"
+                },
+                "longitude": {
+                  "type": "number"
+                },
+                "altitude": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "latitude",
+                "longitude",
+                "altitude"
+              ]
+            },
+            "resultTime": {
+              "type": "integer"
+            },
+            "resourceAlarm": {
+              "type": "boolean"
+            },
+            "anomalies": {
+              "type": "object",
+              "properties": {
+                "locationAnomaly": {
+                  "type": "boolean"
+                },
+                "temperatureAnomaly": {
+                  "type": "boolean"
+                },
+                "distanceAnomaly": {
+                  "type": "boolean"
+                },
+                "activityAnomaly": {
+                  "type": "boolean"
+                },
+                "positionAnomaly": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "locationAnomaly",
+                "temperatureAnomaly",
+                "distanceAnomaly",
+                "activityAnomaly",
+                "positionAnomaly"
+              ]
+            },
+            "acceleration": {
+              "type": "object",
+              "properties": {
+                "accX": {
+                  "type": "integer"
+                },
+                "accY": {
+                  "type": "integer"
+                },
+                "accZ": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "accX",
+                "accY",
+                "accZ"
+              ]
+            },
+            "temperature": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "resourceId",
+            "location",
+            "resultTime",
+            "resourceAlarm",
+            "anomalies",
+            "acceleration",
+            "temperature"
+          ]
+        }
+      },
+      "required": [
+        "sequenceNumber",
+        "collar"
+      ]
+    }
+    }
