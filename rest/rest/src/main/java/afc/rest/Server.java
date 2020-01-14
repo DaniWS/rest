@@ -140,10 +140,10 @@ public class Server implements IServer{
 	@Path("/{param:sensor/measure|sensor/measureList|region/measure|region/measureList|collar/measure|collar/measureList}/")
 	@POST
 	@Consumes("text/plain")
-	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException, URISyntaxException, IOException, JsonSyntaxException {
+	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws URISyntaxException, IOException, JsonSyntaxException {
 		try{
 	          gson.fromJson(s, Object.class); 
-	          if (validateJson(s,uriInfo)) {
+	         try { if (validateJson(s,uriInfo)) {
 	        	  String text="";
 //	        	  Checks for the "test" query parameter
 	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
@@ -161,6 +161,11 @@ public class Server implements IServer{
 	        	  log.error("Invalid Json Exception");
 	          }
 	          throw new WebApplicationException(invalidJsonException);
+	         }
+	         catch(ProcessingException e){
+	        	 throw new WebApplicationException(invalidJsonException +"\r\n"+ e);
+	        	 
+	         }
 	          }
 		catch(com.google.gson.JsonSyntaxException ex)	{
 			if (!uriInfo.getQueryParameters().containsKey("test")) {

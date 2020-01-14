@@ -1,1 +1,8 @@
-2020-01-14 16:22:55,849 ERROR [grizzly-http-server-3] - Server - Invalid Json Exception
+2020-01-14 16:55:17,575  INFO [grizzly-http-server-10] - Server - Send to enviroment reporter
+2020-01-14 16:55:18,131  INFO [grizzly-http-server-11] - Server - Send to enviroment reporter
+2020-01-14 16:55:18,550  INFO [grizzly-http-server-12] - Server - Send to enviroment reporter
+2020-01-14 16:55:18,956  INFO [grizzly-http-server-13] - Server - Send to enviroment reporter
+2020-01-14 16:55:19,501  INFO [grizzly-http-server-14] - Server - Send to enviroment reporter
+2020-01-14 16:55:20,037  INFO [grizzly-http-server-15] - Server - Send to enviroment reporter
+2020-01-14 16:55:20,521  INFO [grizzly-http-server-0] - Server - Send to enviroment reporter
+2020-01-14 16:55:20,969  INFO [grizzly-http-server-3] - Server - Send to enviroment reporter
