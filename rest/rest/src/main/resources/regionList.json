@@ -31,6 +31,7 @@
                     "type": "number"
                   }
                 },
+				"additionalProperties":false,
                 "required": [
                   "latitude",
                   "longitude",
@@ -39,6 +40,7 @@
                 ]
               }
             },
+			"additionalProperties":false,
             "required": [
               "resourceId",
               "resultTime",
@@ -46,5 +48,10 @@
             ]
           }
         }
-      }
-}
+      },
+	  "additionalProperties":false,
+      "required": [
+        "sequenceNumber",
+        "regions"
+      ]
+    }

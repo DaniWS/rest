@@ -32,6 +32,7 @@
                     "type": "number"
                   }
                 },
+				"additionalProperties":false,
                 "required": [
                   "latitude",
                   "longitude",
@@ -40,6 +41,7 @@
                 ]
               }
             },
+			"additionalProperties":false,
             "required": [
               "resourceId",
               "resultTime",
@@ -48,6 +50,7 @@
           }
         }
       },
+	  "additionalProperties":false,
       "required": [
         "sequenceNumber",
         "regions"
@@ -84,6 +87,7 @@
                   "type": "number"
                 }
               },
+			  "additionalProperties":false,
               "required": [
                 "latitude",
                 "longitude",
@@ -92,6 +96,7 @@
               ]
             }
           },
+		  "additionalProperties":false,
           "required": [
             "resourceId",
             "resultTime",
@@ -99,6 +104,7 @@
           ]
         }
       },
+	  "additionalProperties":false,
       "required": [
         "sequenceNumber",
         "region"
@@ -126,6 +132,7 @@
               "type": "number"
             }
           },
+		  "additionalProperties":false,
           "required": [
             "latitude",
             "longitude",
@@ -159,6 +166,7 @@
                     "type": "integer"
                   }
                 },
+				"additionalProperties":false,
                 "required": [
                   "value",
                   "uom",
@@ -166,6 +174,7 @@
                 ]
               }
             },
+			"additionalProperties":false,
             "required": [
               "resourceId",
               "observedProperty",
@@ -175,6 +184,7 @@
           }
         }
       },
+	  "additionalProperties":false,
       "required": [
         "resourceId",
         "sequenceNumber",
@@ -201,6 +211,7 @@
               "type": "number"
             }
           },
+		  "additionalProperties":false,
           "required": [
             "latitude",
             "longitude",
@@ -232,6 +243,7 @@
                   "type": "integer"
                 }
               },
+			  "additionalProperties":false,
               "required": [
                 "value",
                 "uom",
@@ -239,6 +251,7 @@
               ]
             }
           },
+		  "additionalProperties":false,
           "required": [
             "resourceId",
             "observedProperty",
@@ -247,6 +260,7 @@
           ]
         }
       },
+	  "additionalProperties":false,
       "required": [
         "sequenceNumber",
         "location",
@@ -280,6 +294,7 @@
                     "type": "number"
                   }
                 },
+				"additionalProperties":false,
                 "required": [
                   "latitude",
                   "longitude",
@@ -311,6 +326,7 @@
                     "type": "boolean"
                   }
                 },
+				"additionalProperties":false,
                 "required": [
                   "locationAnomaly",
                   "temperatureAnomaly",
@@ -332,6 +348,7 @@
                     "type": "integer"
                   }
                 },
+				"additionalProperties":false,
                 "required": [
                   "accX",
                   "accY",
@@ -342,6 +359,7 @@
                 "type": "number"
               }
             },
+			"additionalProperties":false,
             "required": [
               "resourceId",
               "location",
@@ -354,6 +372,7 @@
           }
         }
       },
+	  "additionalProperties":false,
       "required": [
         "sequenceNumber",
         "collars"
@@ -384,6 +403,7 @@
                   "type": "number"
                 }
               },
+			  "additionalProperties":false,
               "required": [
                 "latitude",
                 "longitude",
@@ -415,6 +435,7 @@
                   "type": "boolean"
                 }
               },
+			  "additionalProperties":false,
               "required": [
                 "locationAnomaly",
                 "temperatureAnomaly",
@@ -436,6 +457,7 @@
                   "type": "integer"
                 }
               },
+			  "additionalProperties":false,
               "required": [
                 "accX",
                 "accY",
@@ -446,6 +468,7 @@
               "type": "number"
             }
           },
+		  "additionalProperties":false,
           "required": [
             "resourceId",
             "location",
@@ -457,6 +480,7 @@
           ]
         }
       },
+	  "additionalProperties":false,
       "required": [
         "sequenceNumber",
         "collar"
