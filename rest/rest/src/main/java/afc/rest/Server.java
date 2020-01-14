@@ -99,16 +99,20 @@ public class Server implements IServer{
 	private boolean validateJson(String s, UriInfo uriInfo) throws ProcessingException, IOException {
 		switch(uriInfo.getPathParameters().getFirst("param")) {
 		case sensorMeasure:
+		if (!uriInfo.getQueryParameters().containsKey("test")) {
+		log.info("Send to enviroment reporter");
+		}	
 		return ValidationUtils.isJsonValid(jsonSensorSchema, s);
-		case sensorMeasureList:
+		
+		case sensorMeasureList:		
 		return ValidationUtils.isJsonValid(jsonSensorSchemaList, s);	
-		case regionMeasure:
+		case regionMeasure:		
 		return ValidationUtils.isJsonValid(jsonSchemaRegion, s);
-		case regionMeasureList:
+		case regionMeasureList:		
 		return ValidationUtils.isJsonValid(Main.regionListSchema, s);
-		case collarMeasure:
+		case collarMeasure:		
 		return ValidationUtils.isJsonValid(jsonCollarSchema, s);
-		case collarMeasureList:
+		case collarMeasureList:		
 		return ValidationUtils.isJsonValid(jsonCollarSchemaList, s);
 		default:
 		return false;	
@@ -142,7 +146,12 @@ public class Server implements IServer{
 	          if (validateJson(s,uriInfo)) {
 	        	  
 	         log.info("SessionID: "+request.getSession().getIdInternal()+" IP:"+ getRemoteAddress(request)+" Successful request on: "+uriInfo.getPathParameters().getFirst("param") );
-	        	return Response.status(200).entity("200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ docsUri +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();  
+	     	if (!uriInfo.getQueryParameters().containsKey("test")) {
+	    //Here goes the code to send data to the Environment Reporter
+				log.info("Sent to environment reporter");
+				}	
+	        	return Response.status(200).entity("200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ docsUri +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();
+	        	
 	          }
 	          
 	          else log.error("Invalid Json Exception");
