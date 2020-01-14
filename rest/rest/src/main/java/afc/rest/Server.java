@@ -94,8 +94,8 @@ public class Server implements IServer{
         System.out.println("Disconnected"); 
 	}
 	*/
-	// This method checks which resource is being called by using @Context annotation, and selects...
-	// the corresponding schema in order to validate the body of the request.
+//	 This method checks which resource is being called by using @Context annotation, and selects...
+//	 the corresponding schema in order to validate the body of the request.
 	private boolean validateJson(String s, UriInfo uriInfo) throws ProcessingException, IOException {
 		switch(uriInfo.getPathParameters().getFirst("param")) {
 		case sensorMeasure:
@@ -144,22 +144,31 @@ public class Server implements IServer{
 		try{
 	          gson.fromJson(s, Object.class); 
 	          if (validateJson(s,uriInfo)) {
-	        	  
-	         log.info("SessionID: "+request.getSession().getIdInternal()+" IP:"+ getRemoteAddress(request)+" Successful request on: "+uriInfo.getPathParameters().getFirst("param") );
-	     	if (!uriInfo.getQueryParameters().containsKey("test")) {
-	    //Here goes the code to send data to the Environment Reporter
-				log.info("Sent to environment reporter");
-				}	
-	        	return Response.status(200).entity("200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ docsUri +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();
+	        	  String text="";
+//	        	  Checks for the "test" query parameter
+	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
+	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP:"+ getRemoteAddress(request)+" Successful request on: "+uriInfo.getPathParameters().getFirst("param") );
+//	        	  Here goes the code to send the data 
+	        	  }
+	        	  else {
+	        	  text= "Test mode: ";	   
+	        	  }	  
+	        	return Response.status(200).entity(text+"200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ docsUri +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();
 	        	
 	          }
 	          
-	          else log.error("Invalid Json Exception");
+	          else if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
+	        	  log.error("Invalid Json Exception");
+	          }
 	          throw new WebApplicationException(invalidJsonException);
 	          }
-		catch(com.google.gson.JsonSyntaxException ex) 
-		{  log.error(ex);
+		catch(com.google.gson.JsonSyntaxException ex)	{
+			if (!uriInfo.getQueryParameters().containsKey("test")) {
+				log.error(ex);
+			}
 			throw new WebApplicationException(notaJsonException);
 			}
+	    }	
 	}
-}
+		
+	   

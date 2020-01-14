@@ -18,7 +18,7 @@
       "name": "Region"
     },
     {
-      "name": "Test"
+      "name": "Test your JSON data format"
     }
   ],
   "schemes": [
@@ -113,7 +113,6 @@
     },
     "/{scenario}/region/measure": {
       "post": {
-        "description": "If \"?test\" is added to the path, the services only validates the JSON\r\n(e.g. /as10/sensor/measure?test)",
         "tags": [
           "Region"
         ],
@@ -288,7 +287,7 @@
     "/{scenario}/collar/measure?test": {
       "post": {
         "tags": [
-          "Test"
+          "Test your JSON data format"
         ],
         "description": "Append \"?test\" to any path (e.g. \"as01/collar/measure?test\") if you just want to validate the JSON format.",
         "operationId": "Test",
