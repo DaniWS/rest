@@ -1,0 +1,25 @@
+package afc.rest;
+
+import javax.ws.rs.NotFoundException;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.ext.ExceptionMapper;
+import javax.ws.rs.ext.Provider;
+import com.google.gson.JsonSyntaxException;
+
+
+// This class handles the NotFoundExceptions, and returns a response to the client with the API documentation.
+
+@Provider
+public class NotFoundExceptionMapper implements ExceptionMapper<Exception> {
+	
+	public Response toResponse(Exception exception) {
+        if (exception instanceof NotFoundException) {
+        	return Response.status(Response.Status.NOT_FOUND)
+                .entity("The resource doesn't exist. Please refer to the API documentation: "+ Server.docsUri)
+                .build();
+        	}
+        else if (exception instanceof JsonSyntaxException) {
+        	return Response.status(Response.Status.UNSUPPORTED_MEDIA_TYPE).entity(exception).build();
+        }
+        else return Response.status(400).build();
+	}}

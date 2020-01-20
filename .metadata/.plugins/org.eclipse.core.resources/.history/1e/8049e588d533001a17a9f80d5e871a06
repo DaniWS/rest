@@ -1,0 +1,15 @@
+# TRACE < DEBUG < INFO < WARN < ERROR < FATAL
+log4j.rootLogger=DEBUG, toConsole, toFile
+
+#Console
+log4j.appender.toConsole=org.apache.log4j.ConsoleAppender
+log4j.appender.toConsole.layout=org.apache.log4j.PatternLayout
+log4j.appender.toConsole.layout.ConversionPattern=%d{HH:mm:ss} %5p [%t] - %c.%M - %m%n
+
+#RollingFile
+log4j.appender.toFile=org.apache.log4j.RollingFileAppender
+log4j.appender.toFile.MaxFileSize=1KB
+log4j.appender.toFile.MaxBackupIndex=2
+log4j.appender.toFile.File=./src/log/logfile.log
+log4j.appender.toFile.layout=org.apache.log4j.PatternLayout
+log4j.appender.toFile.layout.ConversionPattern=%d %5p [%t] - %c.{1} - %m%n
