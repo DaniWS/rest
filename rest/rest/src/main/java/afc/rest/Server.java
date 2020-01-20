@@ -31,6 +31,7 @@ import javax.ws.rs.core.UriInfo;
 import org.apache.log4j.Logger;
 import org.glassfish.grizzly.http.server.Request;
 
+import com.fasterxml.jackson.core.JsonParseException;
 /*
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -97,13 +98,10 @@ public class Server implements IServer{
 //	 This method checks which resource is being called by using @Context annotation, and selects...
 //	 the corresponding schema in order to validate the body of the request.
 	private boolean validateJson(String s, UriInfo uriInfo) throws ProcessingException, IOException {
+		
 		switch(uriInfo.getPathParameters().getFirst("param")) {
 		case sensorMeasure:
-		if (!uriInfo.getQueryParameters().containsKey("test")) {
-		log.info("Send to enviroment reporter");
-		}	
 		return ValidationUtils.isJsonValid(jsonSensorSchema, s);
-		
 		case sensorMeasureList:		
 		return ValidationUtils.isJsonValid(jsonSensorSchemaList, s);	
 		case regionMeasure:		
@@ -140,14 +138,13 @@ public class Server implements IServer{
 	@Path("/{param:sensor/measure|sensor/measureList|region/measure|region/measureList|collar/measure|collar/measureList}/")
 	@POST
 	@Consumes("text/plain")
-	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws URISyntaxException, IOException, JsonSyntaxException {
-		try{
-	          gson.fromJson(s, Object.class); 
+	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
+		
 	         try { if (validateJson(s,uriInfo)) {
 	        	  String text="";
 //	        	  Checks for the "test" query parameter
 	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
-	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP:"+ getRemoteAddress(request)+" Successful request on: "+uriInfo.getPathParameters().getFirst("param") );
+	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+uriInfo.getPathParameters().getFirst("param") );
 //	        	  Here goes the code to send the data 
 	        	  }
 	        	  else {
@@ -158,22 +155,29 @@ public class Server implements IServer{
 	          }
 	          
 	          else if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
-	        	  log.error("Invalid Json Exception");
+	        	  log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception");
 	          }
 	          throw new WebApplicationException(invalidJsonException);
-	         }
-	         catch(ProcessingException e){
-	        	 throw new WebApplicationException(invalidJsonException +"\r\n"+ e);
-	        	 
-	         }
+	       
 	          }
-		catch(com.google.gson.JsonSyntaxException ex)	{
+	         catch(JsonParseException ex){
+	        	 if (!uriInfo.getQueryParameters().containsKey("test")) {
+	        		 log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception "+ex);
+	        		 }
+	        		
+	         final Response detailedException = Response.status(405).entity(invalidJsonException.getEntity().toString()+"\nError: "+ex).build();
+	         throw new WebApplicationException(detailedException);
+		}
+	}
+}
+
+		/*catch(com.google.gson.JsonSyntaxException ex)	{
 			if (!uriInfo.getQueryParameters().containsKey("test")) {
-				log.error(ex);
+				log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Not a JSON "+ex);
 			}
 			throw new WebApplicationException(notaJsonException);
 			}
 	    }	
 	}
 		
-	   
+	   */

@@ -93,7 +93,20 @@ public class ValidationUtils {
         final JsonNode jsonNode = getJsonNode(jsonText);
         return isJsonValid(schemaNode, jsonNode);
     } // validateJson(Node) ends
- 
+
+/*
+    public static boolean isJsonValid(String schemaText, String jsonText) throws ProcessingException
+    {   System.out.println("AMIN!!");
+    try {  
+        final JsonNode jsonNode = getJsonNode(jsonText);
+        final JsonSchema schemaNode = getSchemaNode(schemaText);
+        System.out.println("Llegué aquí");
+     return isJsonValid(schemaNode, jsonNode);}
+     catch (IOException exc) {System.out.println("Exception"+exc);}
+        return false;
+    } // validateJson(Node) ends
+*/   
+    
     public static boolean isJsonValid(File schemaFile, File jsonFile) throws ProcessingException, IOException
     {   
         final JsonSchema schemaNode = getSchemaNode(schemaFile);
