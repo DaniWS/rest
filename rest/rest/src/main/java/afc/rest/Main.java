@@ -80,17 +80,7 @@ public class Main {
     	return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), resourceConfig);
 
     	}
-   /* 
-    public static HttpServer startServer() {
-        // create a resource config that scans for JAX-RS resources and providers
-        // in afc.rest package
-        final ResourceConfig rc = new ResourceConfig().packages("afc.rest");
-
-        // create and start a new instance of grizzly http server
-        // exposing the Jersey application at BASE_URI
-        return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);
-    }
-*/
+  
     /**
      * Main method.
      * @param args
@@ -120,22 +110,13 @@ public class Main {
          regionListSchema= new String(Files.readAllBytes(Paths.get(regionListJSON)));
      //  System.out.println(regionListSchema);
        
-      /*
-        WebappContext context = new WebappContext("WebappContext", JERSEY_SERVLET_CONTEXT_PATH);
-        ServletRegistration registration = context.addServlet("ServletContainer", ServletContainer.class);
-        registration.setInitParameter(ServletContainer., 
-                ResourceConfig.class.getName());
-        registration.setInitParameter(ClassNamesResourceConfig.PROPERTY_CLASSNAMES, LolCat.class.getName());
-        registration.addMapping("/*");
-        context.deploy(httpServer);
-        */        
         System.out.println(String.format("Jersey app started with WADL available at "
                 + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
         
         
         
         System.in.read();
-        server.stop();
+        server.shutdownNow();
     }
 }
 
