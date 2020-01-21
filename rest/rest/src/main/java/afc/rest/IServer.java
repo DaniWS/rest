@@ -731,10 +731,5 @@ public interface IServer {
 			    +"\"temperature\": 36.5"
 			  +"}"
 			+"}";
-	String sensorMeasure="sensor/measure";
-	String sensorMeasureList="sensor/measureList";
-	String regionMeasure="region/measure";
-	String regionMeasureList="region/measureList";
-	String collarMeasure="collar/measure";
-	String collarMeasureList="collar/measureList";
+
 }

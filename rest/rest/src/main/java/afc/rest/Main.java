@@ -41,7 +41,8 @@ public class Main {
     // Base URI the Grizzly HTTP server will listen on
     public static final String BASE_URI = "http://0.0.0.0:8080/";
     private static final String JERSEY_SERVLET_CONTEXT_PATH = "";
-      public static String regionListSchema; 
+    public static String regionListSchema; 
+
    
     
     
@@ -108,7 +109,7 @@ public class Main {
          		  new URL("http://0.0.0.0:8080/docs/schemaRegionList.json"), 
          		  new File("src/main/resources/regionList.json"));
          regionListSchema= new String(Files.readAllBytes(Paths.get(regionListJSON)));
-     //  System.out.println(regionListSchema);
+     
        
         System.out.println(String.format("Jersey app started with WADL available at "
                 + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
