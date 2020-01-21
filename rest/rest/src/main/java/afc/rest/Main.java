@@ -1,11 +1,13 @@
 package afc.rest;
 
 import org.glassfish.grizzly.http.server.HttpServer;
+
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 //import org.glassfish.jersey.servlet.ServletContainer;
 import org.glassfish.grizzly.http.server.CLStaticHttpHandler;
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.*;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -28,6 +30,7 @@ import io.swagger.jaxrs.config.BeanConfig;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
+import java.net.URL;
 
 
 /**
@@ -111,10 +114,12 @@ public class Main {
         ServerConfiguration cfg = server.getServerConfiguration();
 
         cfg.addHttpHandler(docsHandler, "/docs/");
-      
+        FileUtils.copyURLToFile(
+         		  new URL("http://0.0.0.0:8080/docs/schemaRegionList.json"), 
+         		  new File("src/main/resources/regionList.json"));
          regionListSchema= new String(Files.readAllBytes(Paths.get(regionListJSON)));
      //  System.out.println(regionListSchema);
-     
+       
       /*
         WebappContext context = new WebappContext("WebappContext", JERSEY_SERVLET_CONTEXT_PATH);
         ServletRegistration registration = context.addServlet("ServletContainer", ServletContainer.class);

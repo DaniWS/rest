@@ -48,7 +48,7 @@ import com.google.gson.JsonSyntaxException;
 public class Server implements IServer{
 	
 	private static final Logger log = Logger.getLogger(Server.class);
-	private static final Gson gson = new Gson();
+//	private static final Gson gson = new Gson();
 	protected static final URI docsUri=URI.create(Main.BASE_URI+"docs/");
 	protected final Response invalidJsonException = Response.status(405).entity("405: \"Invalid input: not AFarCloud-compliant\". For more information, please refer to the API documentation: "+ docsUri).header("Access-Control-Allow-Origin", "*").build();
 	protected final Response notaJsonException =  Response.status(415).entity("415: \"Invalid input: not a JSON\". For more information, please refer to the API documentation: "+ docsUri).header("Access-Control-Allow-Origin", "*").build();

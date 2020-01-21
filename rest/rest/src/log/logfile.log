@@ -1,2 +1,0 @@
-2020-01-20 13:13:18,525  INFO [grizzly-http-server-14] - Server - SessionID: 1007562386621254219 IP: 0:0:0:0:0:0:0:1 Successful request on: sensor/measure
-2020-01-20 13:13:25,148 ERROR [grizzly-http-server-15] - Server - SessionID: 659471904991592013 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception
