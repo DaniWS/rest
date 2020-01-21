@@ -1,0 +1,111 @@
+{
+      "type": "object",
+      "properties": {
+        "sequenceNumber": {
+          "type": "integer"
+        },
+        "collars": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceId": {
+                "type": "string"
+              },
+              "location": {
+                "type": "object",
+                "properties": {
+                  "latitude": {
+                    "type": "number"
+                  },
+                  "longitude": {
+                    "type": "number"
+                  },
+                  "altitude": {
+                    "type": "number"
+                  }
+                },
+				"additionalProperties":false,
+                "required": [
+                  "latitude",
+                  "longitude",
+                  "altitude"
+                ]
+              },
+              "resultTime": {
+                "type": "integer"
+              },
+              "resourceAlarm": {
+                "type": "boolean"
+              },
+              "anomalies": {
+                "type": "object",
+                "properties": {
+                  "locationAnomaly": {
+                    "type": "boolean"
+                  },
+                  "temperatureAnomaly": {
+                    "type": "boolean"
+                  },
+                  "distanceAnomaly": {
+                    "type": "boolean"
+                  },
+                  "activityAnomaly": {
+                    "type": "boolean"
+                  },
+                  "positionAnomaly": {
+                    "type": "boolean"
+                  }
+                },
+				"additionalProperties":false,
+                "required": [
+                  "locationAnomaly",
+                  "temperatureAnomaly",
+                  "distanceAnomaly",
+                  "activityAnomaly",
+                  "positionAnomaly"
+                ]
+              },
+              "acceleration": {
+                "type": "object",
+                "properties": {
+                  "accX": {
+                    "type": "integer"
+                  },
+                  "accY": {
+                    "type": "integer"
+                  },
+                  "accZ": {
+                    "type": "integer"
+                  }
+                },
+				"additionalProperties":false,
+                "required": [
+                  "accX",
+                  "accY",
+                  "accZ"
+                ]
+              },
+              "temperature": {
+                "type": "number"
+              }
+            },
+			"additionalProperties":false,
+            "required": [
+              "resourceId",
+              "location",
+              "resultTime",
+              "resourceAlarm",
+              "anomalies",
+              "acceleration",
+              "temperature"
+            ]
+          }
+        }
+      },
+	  "additionalProperties":false,
+      "required": [
+        "sequenceNumber",
+        "collars"
+      ]
+    }

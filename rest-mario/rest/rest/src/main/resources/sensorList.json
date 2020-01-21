@@ -1,0 +1,82 @@
+{
+      "type": "object",
+      "properties": {
+        "resourceId": {
+          "type": "string"
+        },
+        "sequenceNumber": {
+          "type": "integer"
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "latitude": {
+              "type": "number"
+            },
+            "longitude": {
+              "type": "number"
+            },
+            "altitude": {
+              "type": "number"
+            }
+          },
+		  "additionalProperties":false,
+          "required": [
+            "latitude",
+            "longitude",
+            "altitude"
+          ]
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceId": {
+                "type": "string"
+              },
+              "observedProperty": {
+                "type": "string"
+              },
+              "resultTime": {
+                "type": "integer"
+              },
+              "result": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "uom": {
+                    "type": "string"
+                  },
+                  "variance": {
+                    "type": "integer"
+                  }
+                },
+				"additionalProperties":false,
+                "required": [
+                  "value",
+                  "uom",
+                  "variance"
+                ]
+              }
+            },
+			"additionalProperties":false,
+            "required": [
+              "resourceId",
+              "observedProperty",
+              "resultTime",
+              "result"
+            ]
+          }
+        }
+      },
+	  "additionalProperties":false,
+      "required": [
+        "resourceId",
+        "sequenceNumber",
+        "location",
+        "observations"
+      ]
+    }
