@@ -23,4 +23,6 @@
 		<item key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL" value="true"/>
 		<item key="EditorSelectionDialog.STORE_ID_DESCR" value="C:\Program Files (x86)\Notepad++\notepad++.exe"/>
 	</section>
+	<section name="NewWizardAction">
+	</section>
 </section>

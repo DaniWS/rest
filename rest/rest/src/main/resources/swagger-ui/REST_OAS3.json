@@ -1,15 +1,10 @@
 {
-  "openapi": "3.0.1",
+  "openapi": "3.0.0",
   "info": {
-    "title": "AFarCloud REST API",
     "description": "REST service API.",
-    "version": "1.0.1"
+    "version": "1.0.1",
+    "title": "AFarCloud REST API"
   },
-  "servers": [
-    {
-      "url": "http://localhost:8080/"
-    }
-  ],
   "tags": [
     {
       "name": "Sensor"
@@ -18,7 +13,10 @@
       "name": "Collar"
     },
     {
-      "name": "Region"
+      "name": "Region!!!!!!!!!!!!!!"
+    },
+    {
+      "name": "Test your JSON data format"
     }
   ],
   "paths": {
@@ -35,44 +33,25 @@
             "description": "AFarCloud scenario (\"as01\" to \"as11\")",
             "required": true,
             "schema": {
-              "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11",
-              "type": "string"
-            }
-          },
-          {
-            "name": "test",
-            "in": "query",
-            "schema": {
               "type": "string",
-              "nullable": "true"
+              "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11"
             }
           }
         ],
         "requestBody": {
-          "content": {
-            "text/plain": {
-              "schema": {
-                "$ref": "http://localhost:8080/docs/schema.json#/collar"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/getMeasureCollarBody"
         },
         "responses": {
           "200": {
-            "description": "Successful operation",
-            "content": {}
+            "description": "Successful operation"
           },
           "405": {
-            "description": "Invalid input: not AFarCloud-compliant",
-            "content": {}
+            "description": "Invalid input: not AFarCloud-compliant"
           },
           "415": {
-            "description": "Invalid input: not a JSON",
-            "content": {}
+            "description": "Invalid input: not a JSON"
           }
-        },
-        "x-codegen-request-body-name": "body"
+        }
       }
     },
     "/{scenario}/collar/measureList": {
@@ -88,36 +67,25 @@
             "description": "AFarCloud scenario (\"as01\" to \"as11\")",
             "required": true,
             "schema": {
-              "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11",
-              "type": "string"
+              "type": "string",
+              "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11"
             }
           }
         ],
         "requestBody": {
-          "content": {
-            "text/plain": {
-              "schema": {
-                "$ref": "schema.json#/collarList"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/getMeasureCollarBody"
         },
         "responses": {
           "200": {
-            "description": "Successful operation",
-            "content": {}
+            "description": "Successful operation"
           },
           "405": {
-            "description": "Invalid input: not AFarCloud-compliant",
-            "content": {}
+            "description": "Invalid input: not AFarCloud-compliant"
           },
           "415": {
-            "description": "Invalid input: not a JSON",
-            "content": {}
+            "description": "Invalid input: not a JSON"
           }
-        },
-        "x-codegen-request-body-name": "body"
+        }
       }
     },
     "/{scenario}/region/measure": {
@@ -133,36 +101,25 @@
             "description": "AFarCloud scenario (\"as01\" to \"as11\")",
             "required": true,
             "schema": {
-              "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11",
-              "type": "string"
+              "type": "string",
+              "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11"
             }
           }
         ],
         "requestBody": {
-          "content": {
-            "text/plain": {
-              "schema": {
-                "$ref": "schema.json#/region"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/getMeasureCollarBody"
         },
         "responses": {
           "200": {
-            "description": "Successful operation",
-            "content": {}
+            "description": "Successful operation"
           },
           "405": {
-            "description": "Invalid input: not AFarCloud-compliant",
-            "content": {}
+            "description": "Invalid input: not AFarCloud-compliant"
           },
           "415": {
-            "description": "Invalid input: not a JSON",
-            "content": {}
+            "description": "Invalid input: not a JSON"
           }
-        },
-        "x-codegen-request-body-name": "body"
+        }
       }
     },
     "/{scenario}/region/measureList": {
@@ -170,6 +127,7 @@
         "tags": [
           "Region"
         ],
+        "description": "",
         "operationId": "getMeasureRegionList",
         "parameters": [
           {
@@ -178,36 +136,25 @@
             "description": "AFarCloud scenario (\"as01\" to \"as11\")",
             "required": true,
             "schema": {
-              "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11",
-              "type": "string"
+              "type": "string",
+              "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11"
             }
           }
         ],
         "requestBody": {
-          "content": {
-            "text/plain": {
-              "schema": {
-                "$ref": "schema.json#/regionList"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/getMeasureCollarBody"
         },
         "responses": {
           "200": {
-            "description": "Successful operation",
-            "content": {}
+            "description": "Successful operation"
           },
           "405": {
-            "description": "Invalid input: not AFarCloud-compliant",
-            "content": {}
+            "description": "Invalid input: not AFarCloud-compliant"
           },
           "415": {
-            "description": "Invalid input: not a JSON",
-            "content": {}
+            "description": "Invalid input: not a JSON"
           }
-        },
-        "x-codegen-request-body-name": "body"
+        }
       }
     },
     "/{scenario}/sensor/measure": {
@@ -223,36 +170,25 @@
             "description": "AFarCloud scenario (\"as01\" to \"as11\")",
             "required": true,
             "schema": {
-              "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11",
-              "type": "string"
+              "type": "string",
+              "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11"
             }
           }
         ],
         "requestBody": {
-          "content": {
-            "text/plain": {
-              "schema": {
-                "$ref": "schema.json#/sensor"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/getMeasureCollarBody"
         },
         "responses": {
           "200": {
-            "description": "Successful operation",
-            "content": {}
+            "description": "Successful operation"
           },
           "405": {
-            "description": "Invalid input: not AFarCloud-compliant",
-            "content": {}
+            "description": "Invalid input: not AFarCloud-compliant"
           },
           "415": {
-            "description": "Invalid input: not a JSON",
-            "content": {}
+            "description": "Invalid input: not a JSON"
           }
-        },
-        "x-codegen-request-body-name": "body"
+        }
       }
     },
     "/{scenario}/sensor/measureList": {
@@ -268,38 +204,169 @@
             "description": "AFarCloud scenario (\"as01\" to \"as11\")",
             "required": true,
             "schema": {
-              "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11",
-              "type": "string"
+              "type": "string",
+              "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11"
             }
           }
         ],
         "requestBody": {
-          "content": {
-            "text/plain": {
-              "schema": {
-                "$ref": "schema.json#/sensorList"
-              }
-            }
-          },
-          "required": true
+          "$ref": "#/components/requestBodies/getMeasureCollarBody"
         },
         "responses": {
           "200": {
-            "description": "Successful operation",
-            "content": {}
+            "description": "Successful operation"
           },
           "405": {
-            "description": "Invalid input: not AFarCloud-compliant",
-            "content": {}
+            "description": "Invalid input: not AFarCloud-compliant"
           },
           "415": {
-            "description": "Invalid input: not a JSON",
-            "content": {}
+            "description": "Invalid input: not a JSON"
           }
+        }
+      }
+    },
+    "/{scenario}/collar/measuretest": {
+      "post": {
+        "tags": [
+          "Test your JSON data format"
+        ],
+        "description": "Append \"?test\" to any path (e.g. \"as01/collar/measure?test\") if you just want to validate the JSON format.",
+        "operationId": "Test",
+        "parameters": [
+          {
+            "name": "scenario",
+            "in": "path",
+            "description": "AFarCloud scenario (\"as01\" to \"as11\")",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/getMeasureCollarBody"
         },
-        "x-codegen-request-body-name": "body"
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "405": {
+            "description": "Invalid input: not AFarCloud-compliant"
+          },
+          "415": {
+            "description": "Invalid input: not a JSON"
+          }
+        }
       }
     }
   },
-  "components": {}
+  "servers": [
+    {
+      "url": "http://localhost:8080/"
+    }
+  ],
+  "components": {
+    "requestBodies": {
+      "getMeasureCollarBody": {
+        "content": {
+          "text/plain": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sequenceNumber": {
+                  "type": "integer"
+                },
+                "collars": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "resourceId": {
+                        "type": "string"
+                      },
+                      "location": {
+                        "type": "object",
+                        "properties": {
+                          "latitude": {
+                            "type": "number"
+                          },
+                          "longitude": {
+                            "type": "number"
+                          },
+                          "altitude": {
+                            "type": "number"
+                          }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                          "latitude",
+                          "longitude",
+                          "altitude"
+                        ]
+                      },
+                      "resultTime": {
+                        "type": "integer"
+                      },
+                      "resourceAlarm": {
+                        "type": "boolean"
+                      },
+                      "anomalies": {
+                        "type": "object",
+                        "properties": {
+                          "locationAnomaly": {
+                            "type": "boolean"
+                          },
+                          "temperatureAnomaly": {
+                            "type": "boolean"
+                          },
+                          "distanceAnomaly": {
+                            "type": "boolean"
+                          },
+                          "activityAnomaly": {
+                            "type": "boolean"
+                          },
+                          "positionAnomaly": {
+                            "type": "boolean"
+                          }
+                        }
+                      },
+                      "acceleration": {
+                        "type": "object",
+                        "properties": {
+                          "accX": {
+                            "type": "integer"
+                          },
+                          "accY": {
+                            "type": "integer"
+                          },
+                          "accZ": {
+                            "type": "integer"
+                          }
+                        }
+                      },
+                      "temperature": {
+                        "type": "number"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "resourceId",
+                      "location",
+                      "resultTime",
+                      "resourceAlarm",
+                      "anomalies",
+                      "acceleration",
+                      "temperature"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
+          

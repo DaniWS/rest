@@ -57,10 +57,11 @@ public class Server implements IServer{
   	protected final String regionMeasureList="region/measureList";
   	protected final String collarMeasure="collar/measure";
   	protected final String collarMeasureList="collar/measureList";
+  	protected String resourceId;
   	
 	protected final Response invalidJsonException = Response.status(405).entity("405: \"Invalid input: not AFarCloud-compliant\". For more information, please refer to the API documentation: "+ docsUri).header("Access-Control-Allow-Origin", "*").build();
 	protected final Response notaJsonException =  Response.status(415).entity("415: \"Invalid input: not a JSON\". For more information, please refer to the API documentation: "+ docsUri).header("Access-Control-Allow-Origin", "*").build();
-
+    
 	
 	/*
 	@Context ServletContext context;
@@ -149,12 +150,18 @@ public class Server implements IServer{
 	@POST
 	@Consumes("text/plain")
 	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
-		
+
+//              Check for "resourceId"
+		 	
+    		RegularExpression oRegExt = new RegularExpression();
+    		resourceId = oRegExt.extractInformation("\"{\"resourceId\":\"urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012\",\"sequence number\": 123,\"location\": { \"latitude\": 45.45123,\"longitude\": 25.25456, \"altitude\": 2.10789},\");");
+    	   
+    	
 	         try { if (validateJson(s,uriInfo)) {
 	        	  String text="";
 //	        	  Checks for the "test" query parameter
 	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
-	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+uriInfo.getPathParameters().getFirst("param") );
+	        	  log.info("resourceId : "+ resourceId+ "SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+uriInfo.getPathParameters().getFirst("param") );
 //	        	  Here goes the code to send the data 
 	        	  }
 	        	  else {
@@ -165,14 +172,14 @@ public class Server implements IServer{
 	          }
 	          
 	          else if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
-	        	  log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception");
+	        	  log.error("resourceId : "+"SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception");
 	          }
 	          throw new WebApplicationException(invalidJsonException);
 	       
 	          }
 	         catch(JsonParseException ex){
 	        	 if (!uriInfo.getQueryParameters().containsKey("test")) {
-	        		 log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception "+ex);
+	        		 log.error("resourceId : "+"SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception "+ex);
 	        		 }
 	        		
 	         final Response detailedException = Response.status(405).entity(invalidJsonException.getEntity().toString()+"\nError: "+ex).build();
