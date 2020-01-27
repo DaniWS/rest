@@ -1,0 +1,5 @@
+package afc.rest;
+
+public class RegularExpression {
+
+}

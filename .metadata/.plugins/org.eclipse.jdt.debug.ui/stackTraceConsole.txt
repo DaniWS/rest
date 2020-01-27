@@ -1,0 +1,7 @@
+        //Regular Expression Evaluator
+ 
+    		
+    		RegularExpression oRegExt = new RegularExpression();
+    		oRegExt.extractInformation("\"{\"resourceId\":\"urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012\",\"sequence number\": 123,\"location\": { \"latitude\": 45.45123,\"longitude\": 25.25456, \"altitude\": 2.10789},\");");
+    	//Regular Expression	
+    	
