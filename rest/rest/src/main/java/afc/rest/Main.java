@@ -24,6 +24,9 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 //import org.glassfish.jersey.server.ResourceConfig;
 //import org.glassfish.grizzly.servlet.*;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
+import com.github.fge.jsonschema.core.exceptions.ProcessingException;
+import com.github.fge.jsonschema.main.JsonSchema;
+import com.github.fge.jsonschema.main.JsonSchemaFactory;
 
 import io.swagger.jaxrs.config.BeanConfig;
 
@@ -42,6 +45,8 @@ public class Main {
     public static final String BASE_URI = "http://0.0.0.0:8080/";
     private static final String JERSEY_SERVLET_CONTEXT_PATH = "";
     public static String regionListSchema; 
+    public static JsonSchema regionList;
+	static JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
 
    
     
@@ -86,8 +91,9 @@ public class Main {
      * Main method.
      * @param args
      * @throws IOException
+     * @throws ProcessingException 
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ProcessingException {
         final HttpServer server = getServerLookup();
         server.start();
         ClassLoader loader = Main.class.getClassLoader();
@@ -97,7 +103,7 @@ public class Main {
         String schemaPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
         String regionListJSON = schemaPath+File.separator+"regionList.json";
         
-        
+      
         PropertyConfigurator.configure(log4jConfPath);
 
         docsHandler.setFileCacheEnabled(false);
@@ -108,7 +114,8 @@ public class Main {
         FileUtils.copyURLToFile(
          		  new URL("http://0.0.0.0:8080/docs/schemaRegionList.json"), 
          		  new File("src/main/resources/regionList.json"));
-         regionListSchema= new String(Files.readAllBytes(Paths.get(regionListJSON)));
+//         regionListSchema= new String(Files.readAllBytes(Paths.get(regionListJSON)));
+         regionList = factory.getJsonSchema("resource:/regionList.json");
      
        
         System.out.println(String.format("Jersey app started with WADL available at "

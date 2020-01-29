@@ -181,7 +181,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "schema.json#/regionList"
+              "$ref": "http://localhost:8080/docs/schemaRegionList.json"
             }
           }
         ],

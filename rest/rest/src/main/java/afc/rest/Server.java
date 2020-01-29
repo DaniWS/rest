@@ -32,6 +32,7 @@ import org.apache.log4j.Logger;
 import org.glassfish.grizzly.http.server.Request;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonNode;
 /*
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -40,8 +41,11 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 */
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
+import com.github.fge.jsonschema.main.JsonSchema;
+import com.github.fge.jsonschema.main.JsonSchemaFactory;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
+import afc.rest.ValidationUtils;
 
 @Api(value = "REST API")
 @Path("/{parameter: as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11}/")
@@ -61,7 +65,7 @@ public class Server implements IServer{
   	
 	protected final Response invalidJsonException = Response.status(405).entity("405: \"Invalid input: not AFarCloud-compliant\". For more information, please refer to the API documentation: "+ docsUri).header("Access-Control-Allow-Origin", "*").build();
 	protected final Response notaJsonException =  Response.status(415).entity("415: \"Invalid input: not a JSON\". For more information, please refer to the API documentation: "+ docsUri).header("Access-Control-Allow-Origin", "*").build();
-    
+
 	
 	/*
 	@Context ServletContext context;
@@ -112,13 +116,18 @@ public class Server implements IServer{
 		
 		switch(uriInfo.getPathParameters().getFirst("param")) {
 		case sensorMeasure:
+			   
+			
 		return ValidationUtils.isJsonValid(jsonSensorSchema, s);
 		case sensorMeasureList:		
 		return ValidationUtils.isJsonValid(jsonSensorSchemaList, s);	
 		case regionMeasure:		
 		return ValidationUtils.isJsonValid(jsonSchemaRegion, s);
 		case regionMeasureList:		
-		return ValidationUtils.isJsonValid(Main.regionListSchema, s);
+	   
+	   // schema.validate(ValidationUtils.getJsonNode(s));
+	//return ValidationUtils.isJsonValid(Main.regionListSchema, s);
+		return ValidationUtils.isJsonValidSchema(Main.regionList, s);
 		case collarMeasure:		
 		return ValidationUtils.isJsonValid(jsonCollarSchema, s);
 		case collarMeasureList:		
@@ -152,10 +161,10 @@ public class Server implements IServer{
 	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
 
 //              Check for "resourceId"
-		 	
+	/*	 	
     		RegularExpression oRegExt = new RegularExpression();
     		resourceId = oRegExt.extractInformation("\"{\"resourceId\":\"urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012\",\"sequence number\": 123,\"location\": { \"latitude\": 45.45123,\"longitude\": 25.25456, \"altitude\": 2.10789},\");");
-    	   
+   */ 	   
     	
 	         try { if (validateJson(s,uriInfo)) {
 	        	  String text="";
