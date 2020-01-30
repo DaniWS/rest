@@ -1,0 +1,25 @@
+{
+                "type": "object",
+                "properties": {
+                
+                  "lxxxatitude": {
+                    "type": "number"
+                  },
+                  "longitude": {
+                    "type": "number"
+                  },
+                  "width": {
+                    "type": "number"
+                  },
+                  "length": {
+                    "type": "number"
+                  }
+                },
+				"additionalProperties":false,
+                "required": [
+                  "latitude",
+                  "longitude",
+                  "width",
+                  "length"
+                ]
+}

@@ -1,0 +1,38 @@
+{    
+      "type": "object",
+      "properties": {
+        "sequenceNumber": {
+          "type": "integer"
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceId": {
+                "type": "string"
+              },
+              "resultTime": {
+                "type": "integer"
+              },
+              "locationDimension": {
+              "$ref": "locationDimension#.json"
+              }
+            },
+                        
+			"additionalProperties":false,
+            "required": [
+              "resourceId",
+              "resultTime",
+              "locationDimension"
+            ]
+          }
+        }
+      },
+	  "additionalProperties":false,
+      "required": [
+        "sequenceNumber",
+        "regions"
+      ]
+    }
+   

@@ -1,0 +1,64 @@
+{     "definitions":{
+      "locationDimension":{
+                "type": "object",
+                "properties": {
+                  "latitude": {
+                    "type": "number"
+                  },
+                  "longitude": {
+                    "type": "number"
+                  },
+                  "width": {
+                    "type": "number"
+                  },
+                  "length": {
+                    "type": "number"
+                  }
+                },
+				"additionalProperties":false,
+                "required": [
+                  "latitude",
+                  "longitude",
+                  "width",
+                  "length"
+                ]
+                }
+              
+},
+      "type": "object",
+      "properties": {
+        "sequenceNumber": {
+          "type": "integer"
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceId": {
+                "type": "string"
+              },
+              "resultTime": {
+                "type": "integer"
+              },
+              "locationDimension": {
+              "$ref": "#/definitions/locationDimension"
+              }
+            },
+                        
+			"additionalProperties":false,
+            "required": [
+              "resourceId",
+              "resultTime",
+              "locationDimension"
+            ]
+          }
+        }
+      },
+	  "additionalProperties":false,
+      "required": [
+        "sequenceNumber",
+        "regions"
+      ]
+    }
+   
