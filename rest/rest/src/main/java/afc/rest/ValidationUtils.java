@@ -80,19 +80,13 @@ public class ValidationUtils {
         }
     } // validateJson(Node) ends
    
-    //My implementation for AFarCloud (I need this method in order to resolve relative paths in references "$ref" inside the schemas)
-    public static boolean isJsonValidSchema(JsonSchema jsonSchemaNode, String jsonText) throws ProcessingException, IOException
+    // I created this method in order to resolve relative paths in references "$ref" inside the schemas)
+    public static boolean isJsonValid(JsonSchema jsonSchemaNode, String jsonText) throws ProcessingException, IOException
     {       	
     	 final JsonNode jsonNode = getJsonNode(jsonText);
          return isJsonValid(jsonSchemaNode, jsonNode);
     }
-//    //My implementation for AFarCloud (I need this method in order to resolve relative paths in references "$ref" inside the schemas)
-//    public static boolean isJsonValidSchema(String resource, String jsonText) throws ProcessingException, IOException
-//    {    
-//    	 final JsonSchema schemaNode = factory.getJsonSchema(resource);
-//    	 final JsonNode jsonNode = getJsonNode(jsonText);
-//         return isJsonValid(schemaNode, jsonNode);
-//    }
+
     
     public static boolean isJsonValid(JsonSchema jsonSchemaNode, JsonNode jsonNode) throws ProcessingException
     {

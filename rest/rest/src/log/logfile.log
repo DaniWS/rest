@@ -1,6 +1,5 @@
-2020-01-29 15:17:47,869  INFO [grizzly-http-server-10] - Server - resourceId : nullSessionID: 4723343879767003442 IP: 127.0.0.1 Successful request on: region/measureList
-2020-01-29 15:18:32,662 ERROR [grizzly-http-server-11] - Server - resourceId : SessionID: 1642923692237000386 IP: 127.0.0.1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('}' (code 125)): was expecting double-quote to start field name
- at [Source: (StringReader); line: 8, column: 6]
-2020-01-29 15:19:24,415 ERROR [grizzly-http-server-1] - Server - resourceId : SessionID: 6527897956720859302 IP: 127.0.0.1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('}' (code 125)): was expecting double-quote to start field name
- at [Source: (StringReader); line: 8, column: 6]
-2020-01-29 15:19:36,636  INFO [grizzly-http-server-11] - Server - resourceId : nullSessionID: 8835785710967436456 IP: 127.0.0.1 Successful request on: region/measureList
+2020-01-30 10:47:34,537  INFO [grizzly-http-server-2] - Server - resourceId : nullSessionID: 5150909402491195003 IP: 127.0.0.1 Successful request on: region/measureList
+2020-01-30 10:47:35,167  INFO [grizzly-http-server-3] - Server - resourceId : nullSessionID: 5866540576955341131 IP: 127.0.0.1 Successful request on: region/measureList
+2020-01-30 10:47:35,880  INFO [grizzly-http-server-4] - Server - resourceId : nullSessionID: 4127185819697168403 IP: 127.0.0.1 Successful request on: region/measureList
+2020-01-30 10:47:36,715  INFO [grizzly-http-server-5] - Server - resourceId : nullSessionID: 3554397371355799689 IP: 127.0.0.1 Successful request on: region/measureList
+2020-01-30 10:47:49,266  INFO [grizzly-http-server-0] - Server - resourceId : nullSessionID: 8835802914734551874 IP: 127.0.0.1 Successful request on: region/measureList

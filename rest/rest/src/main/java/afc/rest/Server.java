@@ -124,11 +124,8 @@ public class Server implements IServer{
 		case regionMeasure:		
 		return ValidationUtils.isJsonValid(jsonSchemaRegion, s);
 		case regionMeasureList:		
-	   
-	   // schema.validate(ValidationUtils.getJsonNode(s));
-	//return ValidationUtils.isJsonValid(Main.regionListSchema, s);
-		return ValidationUtils.isJsonValidSchema(Main.regionList, s);
-		case collarMeasure:		
+        return ValidationUtils.isJsonValid(Main.regionList, s);
+        case collarMeasure:		
 		return ValidationUtils.isJsonValid(jsonCollarSchema, s);
 		case collarMeasureList:		
 		return ValidationUtils.isJsonValid(jsonCollarSchemaList, s);
