@@ -2,14 +2,18 @@ package afc.rest;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 
-
+import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpContainer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 //import org.glassfish.jersey.servlet.ServletContainer;
 import org.glassfish.grizzly.http.server.CLStaticHttpHandler;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.*;
-
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 
 
 import org.glassfish.grizzly.http.server.ServerConfiguration;
@@ -37,12 +41,11 @@ import java.net.URL;
  *
  */
 public class Main {
-    // Base URI the Grizzly HTTP server will listen on
-    public static final String BASE_URI = "http://0.0.0.0:8080/";
-    public static String regionListSchema; 
-    public static JsonSchema regionList;
+	// Base URI the Grizzly HTTP server will listen on
+	public static final String BASE_URI = "http://0.0.0.0:8080/";
+	public static JsonSchema regionList;
+	public static String regionListSchema; 
 	static JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
-
    
     
     
@@ -95,13 +98,12 @@ public class Main {
 
         CLStaticHttpHandler docsHandler = new CLStaticHttpHandler(loader, "swagger-ui/");
         String log4jConfPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"properties"+File.separator+"log4j.properties";
-
- /* Another way to load the schema
-        String schemaPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
+  
+//        Another way to load the schema to memory (to a String)
+/*       String schemaPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
         String regionListJSON = schemaPath+File.separator+"regionList.json";
-*/
-       
-      
+*/        
+        
         PropertyConfigurator.configure(log4jConfPath);
 
         docsHandler.setFileCacheEnabled(false);
@@ -113,9 +115,7 @@ public class Main {
          		  new URL("http://0.0.0.0:8080/docs/schemaRegionList.json"), 
          		  new File("src/main/resources/regionList.json"));
 //         regionListSchema= new String(Files.readAllBytes(Paths.get(regionListJSON)));
-         regionList = factory.getJsonSchema("resource:/regionList.json");
-    
-     
+     regionList = factory.getJsonSchema("resource:/regionList.json");
        
         System.out.println(String.format("Jersey app started with WADL available at "
                 + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
