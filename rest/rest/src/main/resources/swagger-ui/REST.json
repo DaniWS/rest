@@ -94,7 +94,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "http://localhost:8080/docs/schema.json#/collarList"
+              "$ref": "http://localhost:8080/schemas/CollarSchemaList.json"
             }
           }
         ],
@@ -137,7 +137,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "schema.json#/region"
+              "$ref": "http://localhost:8080/schemas/RegionSchema.json"
             }
           }
         ],
@@ -181,7 +181,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "http://localhost:8080/docs/schemaRegionList.json"
+              "$ref": "http://localhost:8080/schemas/RegionSchemaList.json"
             }
           }
         ],

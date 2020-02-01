@@ -116,19 +116,17 @@ public class Server implements IServer{
 		
 		switch(uriInfo.getPathParameters().getFirst("param")) {
 		case sensorMeasure:
-			   
-			
-		return ValidationUtils.isJsonValid(jsonSensorSchema, s);
+		return ValidationUtils.isJsonValid(Main.jsonSchemas.get("SimpleMeasurementSchema_SLS"), s);
 		case sensorMeasureList:		
 		return ValidationUtils.isJsonValid(jsonSensorSchemaList, s);	
 		case regionMeasure:		
-		return ValidationUtils.isJsonValid(jsonSchemaRegion, s);
+		return ValidationUtils.isJsonValid(Main.jsonSchemas.get("RegionSchema"), s);
 		case regionMeasureList:		
-        return ValidationUtils.isJsonValid(Main.regionList, s);
+        return ValidationUtils.isJsonValid(Main.jsonSchemas.get("RegionSchemaList"), s);
         case collarMeasure:		
-		return ValidationUtils.isJsonValid(jsonCollarSchema, s);
+		return ValidationUtils.isJsonValid(Main.jsonSchemas.get("CollarSchema"), s);
 		case collarMeasureList:		
-		return ValidationUtils.isJsonValid(jsonCollarSchemaList, s);
+		return ValidationUtils.isJsonValid(Main.jsonSchemas.get("CollarSchemaList"), s);
 		default:
 		return false;	
 		}
@@ -188,7 +186,7 @@ public class Server implements IServer{
 	        		 log.error("resourceId : "+"SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception "+ex);
 	        		 }
 	        		
-	         final Response detailedException = Response.status(405).entity(invalidJsonException.getEntity().toString()+"\nError: "+ex).build();
+	         final Response detailedException = Response.status(415).entity(notaJsonException.getEntity().toString()+"\nError: "+ex).build();
 	         throw new WebApplicationException(detailedException);
 		}
 	}

@@ -13,6 +13,9 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -43,11 +46,15 @@ import java.net.URL;
 public class Main {
 	// Base URI the Grizzly HTTP server will listen on
 	public static final String BASE_URI = "http://0.0.0.0:8080/";
-	public static JsonSchema regionList;
-	public static String regionListSchema; 
+//	public static JsonSchema AggregationMthroughGatewaySchema_SLS, CollarSchema, CollarSchemaList, Definitions,RegionSchema,RegionSchemaList,SensorAccumulatedMeasurements_Simplified,SimpleMeasurementSchema_Simplified,SimpleMeasurementSchema_SLS,VariousMfromMultiSensorSchema_SLS,VariousMfromSensorSchema_SLS;
 	static JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
+//	private static final String[] schemas = new String [] {"AggregationMthroughGatewaySchema_SLS","CollarSchema","CollarSchemaList","Definitions","RegionSchema","RegionSchemaList","SensorAccumulatedMeasurements_Simplified","SimpleMeasurementSchema_Simplified","SimpleMeasurementSchema_SLS","VariousMfromMultiSensorSchema_SLS","VariousMfromSensorSchema_SLS"};
+   private static final  ArrayList<String> schemas = new ArrayList<>(Arrays.asList("AggregationMthroughGatewaySchema_SLS","CollarSchema","CollarSchemaList","Definitions","RegionSchema","RegionSchemaList","SensorAccumulatedMeasurements_Simplified","SimpleMeasurementSchema_Simplified","SimpleMeasurementSchema_SLS","VariousMfromMultiSensorSchema_SLS","VariousMfromSensorSchema_SLS"));
+//   private static  ArrayList<JsonSchema> jsonSchemas = new ArrayList<>(List.of(AggregationMthroughGatewaySchema_SLS, CollarSchema, CollarSchemaList, Definitions,RegionSchema,RegionSchemaList,SensorAccumulatedMeasurements_Simplified,SimpleMeasurementSchema_Simplified,SimpleMeasurementSchema_SLS,VariousMfromMultiSensorSchema_SLS,VariousMfromSensorSchema_SLS));
+  protected static HashMap<String, JsonSchema> jsonSchemas= new HashMap<>();
    
-    
+   
+   
     
     /**
      * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
@@ -97,25 +104,32 @@ public class Main {
         ClassLoader loader = Main.class.getClassLoader();
 
         CLStaticHttpHandler docsHandler = new CLStaticHttpHandler(loader, "swagger-ui/");
+        CLStaticHttpHandler schemasHandler = new CLStaticHttpHandler(loader, "schemas/");
         String log4jConfPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"properties"+File.separator+"log4j.properties";
-  
-//        Another way to load the schema to memory (to a String)
-/*       String schemaPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator;
-        String regionListJSON = schemaPath+File.separator+"regionList.json";
-*/        
+
         
         PropertyConfigurator.configure(log4jConfPath);
 
         docsHandler.setFileCacheEnabled(false);
+        schemasHandler.setFileCacheEnabled(true);
 
         ServerConfiguration cfg = server.getServerConfiguration();
 
         cfg.addHttpHandler(docsHandler, "/docs/");
-        FileUtils.copyURLToFile(
-         		  new URL("http://0.0.0.0:8080/docs/schemaRegionList.json"), 
-         		  new File("src/main/resources/regionList.json"));
-//         regionListSchema= new String(Files.readAllBytes(Paths.get(regionListJSON)));
-     regionList = factory.getJsonSchema("resource:/regionList.json");
+        cfg.addHttpHandler(schemasHandler, "/schemas/");
+        
+        for (String s: schemas) {
+        	String filename=s+".json";	
+        	FileUtils.copyURLToFile(        		  
+        			new URL("http://0.0.0.0:8080/schemas/"+filename), 
+        			new File("src/main/resources/localSchemas/"+filename));
+        	jsonSchemas.put(s, factory.getJsonSchema("resource:/localSchemas/"+filename));
+        	System.out.println(jsonSchemas.get(s));
+        	System.out.println(s);
+        	
+
+        };
+        
        
         System.out.println(String.format("Jersey app started with WADL available at "
                 + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
