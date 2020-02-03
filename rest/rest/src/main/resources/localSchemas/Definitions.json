@@ -1,0 +1,40 @@
+{
+    "location":
+    {
+      "$id": "#/definitions/location",
+      "type": "object",
+      "title": "The Location object",
+      "required": [
+        "latitude",
+        "longitude",
+        "altitude"
+      ],
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "title": "Latitude",
+          "default": 0.0,
+          "examples": [
+            45.45123
+          ]
+        },
+        "longitude": {
+          "type": "number",
+          "title": "Longitude",
+          "default": 0.0,
+          "examples": [
+            25.25456
+          ]
+        },
+        "altitude": {
+          "type": "number",
+          "title": "Altitude",
+          "default": 0.0,
+          "examples": [
+            2.10789
+          ]
+        }
+      },
+	  "additionalProperties": false
+    }
+}
