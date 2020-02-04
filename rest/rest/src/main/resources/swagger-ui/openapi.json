@@ -1,0 +1,534 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "AFarCloud Data Query",
+    "description": "This is one of the components of the AFarCloud project. The Data Query will provide a direct connection with the non-relational Data-Base, with a previous validation of the json files received by the different providers. REST service API.",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "name": "Mario - UPM",
+      "email": "mario.sanemeterio.delaparte@alumnos.upm.es"
+    },
+    "version": "1.0.1"
+  },
+  "externalDocs": {
+    "description": "Find out more about AFarCloud",
+    "url": "http://www.afarcloud.eu/"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/",
+      "description": "devServer"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Measures",
+      "description": "Inject into InfluxDB",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://www.influxdata.com/"
+      }
+    }
+  ],
+  "paths": {
+    "/dataQuery": {
+      "post": {
+        "tags": [
+          "Data"
+        ],
+        "summary": "Add a new measure/s to the Data Base",
+        "operationId": "addMeasure",
+        "requestBody": {
+          "description": "Measure json that needs to be validated and stored in the Data Base",
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "$ref": "http://localhost:8080/dataQuery/openapi.yaml#/components/schemas/SimpleMeasure"
+                  },
+                  {
+                    "$ref": "http://localhost:8080/dataQuery/openapi.yaml#/components/schemas/SensorAccumulatedMeasurements"
+                  },
+                  {
+                    "$ref": "http://localhost:8080/dataQuery/openapi.yaml#/components/schemas/AggregationMeasurementsGatewaySchema"
+                  },
+                  {
+                    "$ref": "http://localhost:8080/dataQuery/openapi.yaml#/components/schemas/VariousMfromMulti-sensor"
+                  }
+                ]
+              },
+              "example": {
+                "resourceId": "urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012",
+                "sequence number": 123,
+                "location": {
+                  "latitude": 45.45123,
+                  "longitude": 25.25456,
+                  "altitude": 2.10789
+                },
+                "observedProperty": "air_temperature",
+                "resultTime": 1558086914,
+                "result": {
+                  "value": 3.2,
+                  "uom": "http://qudt.org/vocab/unit/DEG_C"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Operation"
+          },
+          "405": {
+            "description": "Invalid input: not AFarCloud-compliant"
+          },
+          "415": {
+            "description": "Invalid input: not a JSON"
+          },
+          "5XX": {
+            "description": "Unexpected error"
+          }
+        },
+        "security": [
+          {
+            "measurestore_auth": [
+              "write:measures",
+              "read:measures"
+            ]
+          }
+        ],
+        "x-codegen-request-body-name": "body"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "VariousMfromMulti-sensor": {
+        "type": "object",
+        "title": "The Schema for several measurements of the same resource",
+        "required": [
+          "resourceId",
+          "sequenceNumber",
+          "location",
+          "observations"
+        ],
+        "properties": {
+          "resourceId": {
+            "type": "string",
+            "title": "The Resourceid",
+            "default": "",
+            "example": "urn:afc:AS09:service:provider:sensorType:entityName",
+            "pattern": "urn:afc(:[^:]+){5}"
+          },
+          "sequenceNumber": {
+            "type": "integer",
+            "title": "Sequence number",
+            "default": 0
+          },
+          "location": {
+            "type": "object",
+            "title": "The Location object",
+            "required": [
+              "latitude",
+              "longitude",
+              "altitude"
+            ],
+            "properties": {
+              "latitude": {
+                "type": "number",
+                "title": "Latitude",
+                "default": 0
+              },
+              "longitude": {
+                "type": "number",
+                "title": "Longitude",
+                "default": 0
+              },
+              "altitude": {
+                "type": "number",
+                "title": "Altitude",
+                "default": 0
+              }
+            },
+            "additionalProperties": false
+          },
+          "observations": {
+            "type": "array",
+            "title": "Observations array",
+            "items": {
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "observedProperty",
+                "resultTime",
+                "result"
+              ],
+              "properties": {
+                "observedProperty": {
+                  "type": "string",
+                  "title": "The Observed property",
+                  "default": ""
+                },
+                "resultTime": {
+                  "type": "integer",
+                  "title": "Result time",
+                  "default": 0
+                },
+                "result": {
+                  "type": "object",
+                  "title": "The Result Schema",
+                  "required": [
+                    "value",
+                    "uom"
+                  ],
+                  "properties": {
+                    "value": {
+                      "type": "number",
+                      "title": "The Result Value",
+                      "default": 0
+                    },
+                    "uom": {
+                      "type": "string",
+                      "title": "The Unity of Measure",
+                      "default": ""
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "AggregationMeasurementsGatewaySchema": {
+        "type": "object",
+        "title": "The Schema for Aggregation of Measurements through a Gateway",
+        "required": [
+          "deviceId",
+          "sequence number",
+          "location",
+          "observations"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "deviceId": {
+            "type": "string",
+            "title": "The Device id",
+            "default": "",
+            "pattern": "urn:afc(:[^:]+){5}",
+            "example": "urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012"
+          },
+          "sequence number": {
+            "type": "integer",
+            "title": "Sequence number",
+            "default": 0
+          },
+          "location": {
+            "type": "object",
+            "title": "The Location Schema",
+            "required": [
+              "latitude",
+              "longitude",
+              "altitude"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "latitude": {
+                "type": "number",
+                "title": "Latitude",
+                "default": 0
+              },
+              "longitude": {
+                "type": "number",
+                "title": "Longitude",
+                "default": 0
+              },
+              "altitude": {
+                "type": "number",
+                "title": "Altitude",
+                "default": 0
+              }
+            }
+          },
+          "observations": {
+            "type": "array",
+            "title": "The Observations Schema",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "title": "The sensors or resources",
+              "required": [
+                "resourceId",
+                "observedProperty",
+                "resultTime",
+                "result"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "resourceId": {
+                  "type": "string",
+                  "title": "Resourceid",
+                  "default": "",
+                  "pattern": "urn:afc(:[^:]+){5}",
+                  "example": "urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012"
+                },
+                "observedProperty": {
+                  "type": "string",
+                  "title": "Observed property",
+                  "default": ""
+                },
+                "resultTime": {
+                  "type": "integer",
+                  "title": "Result time",
+                  "default": 0
+                },
+                "result": {
+                  "type": "object",
+                  "title": "The Result Schema",
+                  "required": [
+                    "value",
+                    "uom"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "value": {
+                      "type": "number",
+                      "title": "The result value",
+                      "default": 0
+                    },
+                    "uom": {
+                      "type": "string",
+                      "title": "The Uom Schema",
+                      "default": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "SensorAccumulatedMeasurements": {
+        "type": "object",
+        "title": "The Schema for several measurements of the same resource (complete version)",
+        "required": [
+          "resourceId",
+          "location",
+          "sequenceNumber",
+          "observedProperty",
+          "uom",
+          "observations"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "resourceId": {
+            "type": "string",
+            "title": "The Resourceid",
+            "default": "",
+            "pattern": "urn:afc(:[^:]+){5}",
+            "example": "urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012"
+          },
+          "sequenceNumber": {
+            "type": "integer",
+            "title": "Sequence number",
+            "default": 0
+          },
+          "location": {
+            "type": "object",
+            "title": "The Location Schema",
+            "required": [
+              "latitude",
+              "longitude",
+              "altitude"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "latitude": {
+                "type": "number",
+                "title": "Latitude",
+                "default": 0
+              },
+              "longitude": {
+                "type": "number",
+                "title": "Longitude",
+                "default": 0
+              },
+              "altitude": {
+                "type": "number",
+                "title": "Altitude",
+                "default": 0
+              }
+            }
+          },
+          "observedProperty": {
+            "type": "string",
+            "title": "The Observed property",
+            "default": ""
+          },
+          "uom": {
+            "type": "string",
+            "title": "Unity of measure",
+            "default": ""
+          },
+          "observations": {
+            "type": "array",
+            "title": "Observations array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "resultTime",
+                "result"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "resultTime": {
+                  "type": "integer",
+                  "title": "Result time",
+                  "default": 0
+                },
+                "result": {
+                  "type": "object",
+                  "title": "The Result schema",
+                  "required": [
+                    "value"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "value": {
+                      "type": "number",
+                      "title": "The Value of result",
+                      "default": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "SimpleMeasure": {
+        "type": "object",
+        "title": "The Schema for a Simple Measurement",
+        "required": [
+          "resourceId",
+          "sequenceNumber",
+          "location",
+          "observedProperty",
+          "resultTime",
+          "result"
+        ],
+        "properties": {
+          "resourceId": {
+            "type": "string",
+            "title": "The ResourceId",
+            "default": "",
+            "pattern": "urn:afc(:[^:]+){5}"
+          },
+          "sequenceNumber": {
+            "type": "integer",
+            "title": "The Sequence number",
+            "default": 0
+          },
+          "location": {
+            "type": "object",
+            "title": "The Location object",
+            "required": [
+              "latitude",
+              "longitude",
+              "altitude"
+            ],
+            "properties": {
+              "latitude": {
+                "type": "number",
+                "title": "Latitude",
+                "default": 0
+              },
+              "longitude": {
+                "type": "number",
+                "title": "Longitude",
+                "default": 0
+              },
+              "altitude": {
+                "type": "number",
+                "title": "Altitude",
+                "default": 0
+              }
+            },
+            "additionalProperties": false
+          },
+          "observedProperty": {
+            "type": "string",
+            "title": "The Observed Property",
+            "default": ""
+          },
+          "resultTime": {
+            "type": "integer",
+            "title": "The Result time",
+            "default": 0
+          },
+          "result": {
+            "type": "object",
+            "title": "The Result Schema",
+            "required": [
+              "value",
+              "uom"
+            ],
+            "properties": {
+              "value": {
+                "type": "number",
+                "title": "The Result Value",
+                "default": 0
+              },
+              "uom": {
+                "type": "string",
+                "title": "The Unity of Measure",
+                "default": ""
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "type": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "measurestore_auth": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
+            "scopes": {
+              "write:measures": "modify measures in DataBase",
+              "read:pets": "read mesures from DataBase"
+            }
+          }
+        }
+      },
+      "api_key": {
+        "type": "apiKey",
+        "name": "api_key",
+        "in": "header"
+      }
+    }
+  }
+}

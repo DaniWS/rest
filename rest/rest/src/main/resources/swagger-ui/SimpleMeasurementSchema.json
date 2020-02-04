@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Schema for a Simple Measurement",
+  "required": [
+    "resourceId",
+    "location",
+    "observedProperty",
+    "resultTime",
+    "result"
+  ],
+  "properties": {
+    "resourceId": {
+      "$id": "#/properties/resourceId",
+      "type": "string",
+      "title": "The ResourceId",
+      "default": "",
+      "examples": [
+        "urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012"
+      ],
+      "pattern": "urn:afc(:[^:]+){5}"
+    },
+    "sequenceNumber": {
+      "$id": "#/properties/sequenceNumber",
+      "type": "integer",
+      "title": "The Sequence Number",
+      "default": 0,
+      "examples": [
+        123
+      ]
+    },
+        "location": {
+      "$id": "#/definitions/location",
+      "type": "object",
+      "title": "The Location object",
+      "required": [
+        "latitude",
+        "longitude",
+        "altitude"
+      ],
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "title": "Latitude",
+          "default": 0.0,
+          "examples": [
+            45.45123
+          ]
+        },
+        "longitude": {
+          "type": "number",
+          "title": "Longitude",
+          "default": 0.0,
+          "examples": [
+            25.25456
+          ]
+        },
+        "altitude": {
+          "type": "number",
+          "title": "Altitude",
+          "default": 0.0,
+          "examples": [
+            2.10789
+          ]
+        }
+      },
+	  "additionalProperties": false
+    },
+    "observedProperty": {
+      "$id": "#/properties/observedProperty",
+      "type": "string",
+      "title": "The Observed Property",
+      "default": "",
+      "examples": [
+        "air_temperature"
+      ]
+    },
+    "resultTime": {
+      "$id": "#/properties/resultTime",
+      "type": "integer",
+      "title": "The Result time",
+      "default": 0,
+      "examples": [
+        1558086914
+      ]
+    },
+   "result": {
+      "$id": "#/properties/result",
+      "type": "object",
+      "title": "The Result Schema",
+      "$ref": "#/definitions/result"
+    }
+  },
+  "additionalProperties": false, 
+ "definitions": {
+    
+    "result": {
+      "$id": "#/definitions/result",
+      "type": "object",
+      "title": "The Result Schema",
+      "required": [
+        "value",
+        "uom"
+      ],
+      "properties": {
+        "value": {
+          "type": "number",
+          "title": "The Result Value",
+          "default": 0.0,
+          "examples": [
+            3.2
+          ]
+        },
+        "uom": {
+          "type": "string",
+          "title": "The Unity of Measure",
+          "default": "",
+          "examples": [
+            "http://qudt.org/vocab/unit/DEG_C"
+          ]
+        }
+      },
+	  "additionalProperties": false
+    }
+	
+  }  
+}

@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Schema for several measurements from the same resource",
+  "required": [
+    "resourceId",
+    "location",
+	  "observedProperty",
+	  "uom",
+    "observations"
+  ],
+  "properties": {
+    "resourceId": {
+      "$id": "#/properties/resourceId",
+      "type": "string",
+      "title": "The Resourceid",
+      "default": "",
+      "examples": [
+        "urn:afc:AS09:service:provider:sensorType:entityName"
+      ],
+      "pattern": "urn:afc(:[^:]+){5}"
+    },
+    "sequenceNumber": {
+      "$id": "#/properties/sequenceNumber",
+      "type": "integer",
+      "title": "sequenceNumber",
+      "default": 0,
+      "examples": [
+        123
+      ]
+    },
+         "location": {
+      "$id": "#/definitions/location",
+      "type": "object",
+      "title": "The Location object",
+      "required": [
+        "latitude",
+        "longitude",
+        "altitude"
+      ],
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "title": "Latitude",
+          "default": 0.0,
+          "examples": [
+            45.45123
+          ]
+        },
+        "longitude": {
+          "type": "number",
+          "title": "Longitude",
+          "default": 0.0,
+          "examples": [
+            25.25456
+          ]
+        },
+        "altitude": {
+          "type": "number",
+          "title": "Altitude",
+          "default": 0.0,
+          "examples": [
+            2.10789
+          ]
+        }
+      },
+	  "additionalProperties": false
+    },
+	  "uom": {
+      "$id": "#/properties/uom",	
+	    "type": "string",
+	    "title": "The Unity of Measure",
+      "examples": [
+            "http://qudt.org/vocab/unit/DEG_C"
+          ]
+    },	
+    "observedProperty": {
+		"$id": "#/properties/observedProperty",
+		"type": "string",
+		"title": "The Observed property",
+		"default": "",
+		"examples": [
+			"soilTemperature"
+		 ]
+	  },	
+    "observations": {
+      "$id": "#/properties/observations",
+      "type": "array",
+      "minItems": 1,
+      "title": "Observations array",
+      "items": {
+        "$id": "#/properties/observations/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "resultTime",
+          "result"
+        ],
+        "properties":{
+          "resultTime": {
+            "$id": "#/properties/observations/items/properties/resultTime",
+            "type": "integer",
+            "title": "Result time",
+            "default": 0,
+            "examples": [
+              1558081245
+            ]
+          },
+          "result": {
+            "$id": "#/properties/observations/items/properties/result",
+            "type": "object",
+            "title": "The Result schema",
+			      "$ref": "#/definitions/result"            
+          }
+        },
+	    "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  
+  "definitions": {
+    
+    "result": {
+      "$id": "#/definitions/result",
+      "type": "object",
+      "title": "The Result Schema",
+      "required": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "type": "number",
+          "title": "The Result Value",
+          "default": 0.0,
+          "examples": [
+            3.2
+          ]
+        }
+      },
+	  "additionalProperties": false
+    }
+	
+  }
+}
