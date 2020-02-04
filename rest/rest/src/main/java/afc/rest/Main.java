@@ -40,7 +40,7 @@ import java.util.stream.Stream;
  */
 public class Main {
 	// Base URI the Grizzly HTTP server will listen on
-	public static final String BASE_URI = "https://0.0.0.0:8080/";
+	public static final String BASE_URI = "https://127.0.0.1:8080/";
     
    
     
@@ -77,8 +77,8 @@ public class Main {
     	resourceConfig.register(JacksonJsonProvider.class);
     	
     	  SSLContextConfigurator sslConfig = new SSLContextConfigurator();
-          sslConfig.setKeyStoreFile("src/SSL/afc_key");
-          sslConfig.setKeyStorePass("afc_rest_ssl");
+          sslConfig.setKeyStoreFile("src/SSL3/afc_key");
+          sslConfig.setKeyStorePass("afc_ssl");
           
     	 
     	return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), resourceConfig, true, new SSLEngineConfigurator(sslConfig).setClientMode(false).setNeedClientAuth(false));
@@ -111,15 +111,7 @@ public class Main {
 
         cfg.addHttpHandler(docsHandler, "/docs/");
         cfg.addHttpHandler(schemasHandler, "/schemas/");
-        javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(
-        		new javax.net.ssl.HostnameVerifier(){
 
-        		    public boolean verify(String hostname,
-        		            javax.net.ssl.SSLSession sslSession) {
-        		        return hostname.equals("localhost");
-        		    }
-        		});
-       
         SchemaLoader.loadSchemas(BASE_URI+"schemas/");
         
      
