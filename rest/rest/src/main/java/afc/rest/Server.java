@@ -155,9 +155,9 @@ public class Server {
         return "Server is up!";		  
 	        
 	    }
-	@Path("/telemetry/")
+	@Path("/telemetry")
 	@POST
-	@Consumes(MediaType.TEXT_PLAIN)
+	@Consumes(MediaType.APPLICATION_JSON)
 	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
 
 //              Check for "resourceId"
@@ -169,6 +169,7 @@ public class Server {
 	         try { if (validateJson(s,uriInfo)) {
 	        	  String text="";
 //	        	  Checks for the "test" query parameter.
+	        	  System.out.println(uriInfo.getQueryParameters().keySet());
 	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
 	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ name );
 //	        	  Here goes the code to send the data .

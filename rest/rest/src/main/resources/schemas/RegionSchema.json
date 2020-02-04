@@ -9,9 +9,7 @@
 			"type": "integer",
 			"title": "The Sequence Number",
 			"default": 0,
-			"examples": [
-				123
-			]
+			"examples": 9999999
 		},
 		"region": {
 			"$id": "#/properties/region",
