@@ -13,26 +13,23 @@ import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.ServletContext;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+
 import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-import javax.ws.rs.core.UriBuilder;
+
 import javax.ws.rs.core.UriInfo;
 import org.apache.log4j.Logger;
 import org.glassfish.grizzly.http.server.Request;
 
 import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonNode;
 /*
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -41,8 +38,6 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 */
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
-import com.github.fge.jsonschema.main.JsonSchema;
-import com.github.fge.jsonschema.main.JsonSchemaFactory;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import afc.rest.ValidationUtils;
@@ -116,17 +111,17 @@ public class Server implements IServer{
 		
 		switch(uriInfo.getPathParameters().getFirst("param")) {
 		case sensorMeasure:
-		return ValidationUtils.isJsonValid(Main.jsonSchemas.get("SimpleMeasurementSchema_SLS"), s);
+		return ValidationUtils.isJsonValid(SchemaLoader.jsonSchemas.get("SimpleMeasurementSchema_SLS"), s);
 		case sensorMeasureList:		
 		return ValidationUtils.isJsonValid(jsonSensorSchemaList, s);	
 		case regionMeasure:		
-		return ValidationUtils.isJsonValid(Main.jsonSchemas.get("RegionSchema"), s);
+		return ValidationUtils.isJsonValid(SchemaLoader.jsonSchemas.get("RegionSchema"), s);
 		case regionMeasureList:		
-        return ValidationUtils.isJsonValid(Main.jsonSchemas.get("RegionSchemaList"), s);
+        return ValidationUtils.isJsonValid(SchemaLoader.jsonSchemas.get("RegionSchemaList"), s);
         case collarMeasure:		
-		return ValidationUtils.isJsonValid(Main.jsonSchemas.get("CollarSchema"), s);
+		return ValidationUtils.isJsonValid(SchemaLoader.jsonSchemas.get("CollarSchema"), s);
 		case collarMeasureList:		
-		return ValidationUtils.isJsonValid(Main.jsonSchemas.get("CollarSchemaList"), s);
+		return ValidationUtils.isJsonValid(SchemaLoader.jsonSchemas.get("CollarSchemaList"), s);
 		default:
 		return false;	
 		}

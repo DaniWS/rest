@@ -1,0 +1,75 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "http://example.com/root.json",
+	"type": "object",
+	"title": "The Schema for a Simple Region",
+	"properties": {
+		"sequenceNumber": {
+			"$id": "#/properties/sequenceNumber",
+			"type": "integer",
+			"title": "The Sequence Number",
+			"default": 0,
+			"examples": [
+				123
+			]
+		},
+		"region": {
+			"$id": "#/properties/region",
+			"type": "object",
+			"properties": {
+				"resourceId": {
+					"$id": "#/properties/region/properties/resourceId",
+					"type": "string",
+					"title": "The ResourceId",
+					"default": ""
+				},
+				"resultTime": {
+					"$id": "#/properties/region/properties/resultTime",
+					"type": "integer",
+					"title": "The Result time",
+					"default": 0,
+					"examples": [
+						1558086914
+					]
+				},
+				"locationDimension": {
+					"type": "object",
+					"$id": "#/properties/region/properties/locationDimension",
+					"type": "object",
+					"title": "The Location Dimension",
+					"properties": {
+						"latitude": {
+							"type": "number"
+						},
+						"longitude": {
+							"type": "number"
+						},
+						"width": {
+							"type": "number"
+						},
+						"length": {
+							"type": "number"
+						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"latitude",
+						"longitude",
+						"width",
+						"length"
+					]
+				}
+			},
+			"additionalProperties": false,
+			"required": [
+				"resourceId",
+				"resultTime",
+				"locationDimension"
+			]
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"region"
+	]
+}

@@ -1,5 +1,4 @@
-2020-02-01 04:32:34,412  INFO [grizzly-http-server-9] - Server - resourceId : nullSessionID: 3778045839535889639 IP: 127.0.0.1 Successful request on: region/measureList
-2020-02-01 04:32:45,641 ERROR [grizzly-http-server-10] - Server - resourceId : SessionID: 3778045839535889639 IP: 127.0.0.1 Invalid Json Exception
-2020-02-01 04:40:04,526  INFO [grizzly-http-server-5] - Server - resourceId : nullSessionID: 5175114538285560864 IP: 127.0.0.1 Successful request on: sensor/measureList
-2020-02-01 04:40:11,065 ERROR [grizzly-http-server-6] - Server - resourceId : SessionID: 5175114538285560864 IP: 127.0.0.1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected close marker ']': expected '}' (for Object starting at [Source: (StringReader); line: 10, column: 5])
- at [Source: (StringReader); line: 20, column: 4]
+2020-02-03 13:25:41,446 ERROR [grizzly-http-server-4] - Server - resourceId : SessionID: 3148880674910602112 IP: 127.0.0.1 Invalid Json Exception
+2020-02-03 13:25:51,674 ERROR [grizzly-http-server-5] - Server - resourceId : SessionID: 825117685930889316 IP: 127.0.0.1 Invalid Json Exception
+2020-02-03 13:26:11,902  INFO [grizzly-http-server-6] - Server - resourceId : nullSessionID: 4847257928454609163 IP: 127.0.0.1 Successful request on: collar/measure
+2020-02-03 13:26:39,428  INFO [grizzly-http-server-7] - Server - resourceId : nullSessionID: 251107001003373803 IP: 0:0:0:0:0:0:0:1 Successful request on: collar/measure
