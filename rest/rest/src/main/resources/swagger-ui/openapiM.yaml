@@ -1,41 +1,46 @@
 openapi: 3.0.1
 info:
-  title: AFarCloud Data Query
-  description: 'This is one of the components of the AFarCloud project. The Data Query will provide a direct connection with the non-relational Data-Base, with a previous validation of the json files received by the different providers. REST service API.'
+  title: AFarCloud REST API
+  description: REST Service API
   termsOfService: http://swagger.io/terms/
   contact:
-    name: Mario - UPM
-    email: mario.sanemeterio.delaparte@alumnos.upm.es
+    name: Vicente Hernández Díaz
+    email: vicente.hernandez@upm.es
   version: 1.0.1
 externalDocs:
   description: Find out more about AFarCloud
   url: http://www.afarcloud.eu/
 servers:
-- url: http://localhost:8080/
-  description: devServer
+- url: https://localhost:8080/
+  description: Torcos
 tags:
-- name: Measures
-  description: Inject into InfluxDB
+- name: Telemetry
+  description: Entry point for telemetry data
   externalDocs:
-    description: Find out more
-    url: https://www.influxdata.com/
 paths:
-  /inject:
+  /telemetry:
     post:
       tags:
-      - Inject Data
-      summary: Add a new measure/s to the Data Base
-      operationId: addMeasure
+      - Telemetry
+      summary: Post a measurement
+      operationId: getMeasure
       requestBody:
-        description: Measure json that needs to be validated and stored in the Data Base
+        description: The telemetry data in JSON format
         content:
           application/json:
             schema:
               oneOf:
-                - $ref: 'https://localhost:8080/docs/openapiM.yaml#/components/schemas/SimpleMeasure'
-                - $ref: 'https://localhost:8080/docs/openapiM.yaml#/components/schemas/SensorAccumulatedMeasurements' 
-                - $ref: 'https://localhost:8080/docs/openapiM.yaml#/components/schemas/AggregationMeasurementsGatewaySchema'
-                - $ref: 'https://localhost:8080/docs/openapiM.yaml#/components/schemas/VariousMfromMulti-sensor'
+                - $ref: 'https://localhost:8080/schemas/AggregationMthroughGatewaySchema_SLS.json'
+                - $ref: 'https://localhost:8080/schemas/CollarSchema.json'
+                - $ref: 'https://localhost:8080/schemas/CollarSchemaList.json'
+                - $ref: 'https://localhost:8080/schemas/RegionSchema.json'
+                - $ref: 'https://localhost:8080/schemas/RegionSchemaList.json'
+                - $ref: 'https://localhost:8080/schemas/SensorAccumulatedMeasurements_Simplified.json'
+                - $ref: 'https://localhost:8080/schemas/SimpleMeasurementSchema_Simplified.json'
+                - $ref: 'https://localhost:8080/schemas/SimpleMeasurementSchema_SLS.json'
+                - $ref: 'https://localhost:8080/schemas/VariousMfromMultiSensorSchema_SLS.json'
+                - $ref: 'https://localhost:8080/schemas/VariousMfromSensorSchema_SLS.json'
+            
             example:
               {
                 resourceId: 'urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012',

@@ -1,0 +1,4 @@
+2020-02-04 19:35:44,695  INFO [grizzly-http-server-14] - Server - SessionID: 6501173103280159240 IP: 0:0:0:0:0:0:0:1 Successful request on: RegionSchema
+2020-02-04 19:35:51,417 ERROR [grizzly-http-server-13] - Server - SessionID: 6501173103280159240 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception
+2020-02-04 19:35:57,972 ERROR [grizzly-http-server-15] - Server - SessionID: 6501173103280159240 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception
+2020-02-04 19:36:04,862  INFO [grizzly-http-server-1] - Server - SessionID: 6501173103280159240 IP: 0:0:0:0:0:0:0:1 Successful request on: RegionSchema

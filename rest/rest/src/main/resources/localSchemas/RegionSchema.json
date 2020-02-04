@@ -35,7 +35,6 @@
 				"locationDimension": {
 					"type": "object",
 					"$id": "#/properties/region/properties/locationDimension",
-					"type": "object",
 					"title": "The Location Dimension",
 					"properties": {
 						"latitude": {

@@ -42,7 +42,6 @@ import afc.rest.ValidationUtils;
 public class Server {
 	
 	private static final Logger log = Logger.getLogger(Server.class);
-//	private static final Gson gson = new Gson();
 	protected static final URI docsUri=URI.create(Main.BASE_URI+"docs/");
 	
   	protected final String sensorMeasure="sensor/measure";
@@ -108,7 +107,7 @@ public class Server {
 		
 //		Reorder the collection attending to the demand.
 		i++;
-		if(i>=5) 
+		if(i>=100) 
 		{
 			Collections.sort(Schema.schemas);
 			
