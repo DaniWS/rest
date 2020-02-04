@@ -107,8 +107,8 @@ public class Main {
     	resourceConfig.register(JacksonJsonProvider.class);
     	
     	  SSLContextConfigurator sslConfig = new SSLContextConfigurator();
-          sslConfig.setKeyStoreFile("src/SSL3/afc_key");
-          sslConfig.setKeyStorePass("afc_ssl");
+          sslConfig.setKeyStoreFile("src/SSL/afc_key");
+          sslConfig.setKeyStorePass("afc_rest_ssl");
           
     	 
     	return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), resourceConfig, true, new SSLEngineConfigurator(sslConfig).setClientMode(false).setNeedClientAuth(false));
@@ -147,7 +147,7 @@ public class Main {
 
 
         trustEveryone();
-        SchemaLoader.loadSchemas(BASE_URI+"schemas/");
+        Schema.loadSchemas(BASE_URI+"schemas/");
         
      
         

@@ -6,6 +6,8 @@ import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Properties;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -57,6 +59,8 @@ public class Server implements IServer{
   	protected final String collarMeasure="collar/measure";
   	protected final String collarMeasureList="collar/measureList";
   	protected String resourceId;
+  	private static int i = 0;
+  	private static String name;
   	
 	protected final Response invalidJsonException = Response.status(405).entity("405: \"Invalid input: not AFarCloud-compliant\". For more information, please refer to the API documentation: "+ docsUri).header("Access-Control-Allow-Origin", "*").build();
 	protected final Response notaJsonException =  Response.status(415).entity("415: \"Invalid input: not a JSON\". For more information, please refer to the API documentation: "+ docsUri).header("Access-Control-Allow-Origin", "*").build();
@@ -109,23 +113,53 @@ public class Server implements IServer{
 //	 the corresponding schema in order to validate the body of the request.
 	private boolean validateJson(String s, UriInfo uriInfo) throws ProcessingException, IOException {
 		
-		switch(uriInfo.getPathParameters().getFirst("param")) {
-		case sensorMeasure:
-		return ValidationUtils.isJsonValid(SchemaLoader.jsonSchemas.get("SimpleMeasurementSchema_SLS"), s);
-		case sensorMeasureList:		
-		return ValidationUtils.isJsonValid(jsonSensorSchemaList, s);	
-		case regionMeasure:		
-		return ValidationUtils.isJsonValid(SchemaLoader.jsonSchemas.get("RegionSchema"), s);
-		case regionMeasureList:		
-        return ValidationUtils.isJsonValid(SchemaLoader.jsonSchemas.get("RegionSchemaList"), s);
-        case collarMeasure:		
-		return ValidationUtils.isJsonValid(SchemaLoader.jsonSchemas.get("CollarSchema"), s);
-		case collarMeasureList:		
-		return ValidationUtils.isJsonValid(SchemaLoader.jsonSchemas.get("CollarSchemaList"), s);
-		default:
-		return false;	
+		
+		i++;
+		if(i>=100) 
+		{
+			Collections.sort(Schema.schemas);
+			i=0;
+			System.out.println(i + " veces se ha validado!!!!!!!");
+			System.out.println("Array ordenado por uso");
+			for (int i = 0; i < Schema.schemas.size()-1; i++) {
+	            System.out.println((i+1) + ". " + Schema.schemas.get(i).getName() + " - Uso: " + Schema.schemas.get(i).getUso());
+	        }
+			Schema.schemas.forEach((n) -> n.setUso(0));
+			
 		}
-	}
+		
+     	for (Schema i:Schema.schemas) {
+			
+		
+		if (ValidationUtils.isJsonValid(i.getSchema(), s))
+		{
+			
+			i.setUso(i.getUso()+1); 
+			name = i.getName();
+			//System.out.println("region!!!!!!!!!!!!"+ Schema.schemas[0].uso);
+			return true;
+		}	
+		
+		}
+     	return false;
+		}	
+//		switch(uriInfo.getPathParameters().getFirst("param")) {
+//		case sensorMeasure:
+//		return ValidationUtils.isJsonValid(Schema.schemas.get(0).schema, s);
+//		case sensorMeasureList:		
+//		return ValidationUtils.isJsonValid(jsonSensorSchemaList, s);	
+//		case regionMeasure:		
+//		return ValidationUtils.isJsonValid(Schema.jsonSchemas.get("RegionSchema"), s);
+//		case regionMeasureList:		
+//        return ValidationUtils.isJsonValid(Schema.jsonSchemas.get("RegionSchemaList"), s);
+//        case collarMeasure:		
+//		return ValidationUtils.isJsonValid(Schema.jsonSchemas.get("CollarSchema"), s);
+//		case collarMeasureList:		
+//		return ValidationUtils.isJsonValid(Schema.jsonSchemas.get("CollarSchemaList"), s);
+//		default:
+//		return false;	
+//		}
+//	}
 		private String getRemoteAddress(Request request) {
 		String ipAddress = request.getHeader("X-FORWARDED-FOR");  
 		   if (ipAddress == null) {  
@@ -145,7 +179,7 @@ public class Server implements IServer{
         return "Server is up!";		  
 	        
 	    }
-	@Path("/{param:sensor/measure|sensor/measureList|region/measure|region/measureList|collar/measure|collar/measureList}/")
+	@Path("/telemetry/")
 	@POST
 	@Consumes("text/plain")
 	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
@@ -160,7 +194,7 @@ public class Server implements IServer{
 	        	  String text="";
 //	        	  Checks for the "test" query parameter
 	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
-	        	  log.info("resourceId : "+ resourceId+ "SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+uriInfo.getPathParameters().getFirst("param") );
+	        	  log.info("resourceId : "+ resourceId+ "SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ name );
 //	        	  Here goes the code to send the data 
 	        	  }
 	        	  else {
