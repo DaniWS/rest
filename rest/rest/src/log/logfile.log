@@ -1,6 +1,3 @@
-2020-02-04 12:49:00,570  INFO [grizzly-http-server-9] - Server - resourceId : nullSessionID: 1927644224348053583 IP: 0:0:0:0:0:0:0:1 Successful request on: Definitions
-2020-02-04 12:49:11,869  INFO [grizzly-http-server-10] - Server - resourceId : nullSessionID: 1927644224348053583 IP: 0:0:0:0:0:0:0:1 Successful request on: Definitions
-2020-02-04 12:51:50,410 ERROR [grizzly-http-server-10] - Server - resourceId : SessionID: 2209514644092102137 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception
-2020-02-04 12:52:01,385  INFO [grizzly-http-server-11] - Server - resourceId : nullSessionID: 2209514644092102137 IP: 0:0:0:0:0:0:0:1 Successful request on: RegionSchemaList
-2020-02-04 12:52:34,820  INFO [grizzly-http-server-12] - Server - resourceId : nullSessionID: 2209514644092102137 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
-2020-02-04 12:57:27,841  INFO [grizzly-http-server-11] - Server - resourceId : nullSessionID: 2559514208225924124 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
+2020-02-04 13:00:22,036  INFO [grizzly-http-server-13] - Server - resourceId : nullSessionID: 2559514208225924124 IP: 0:0:0:0:0:0:0:1 Successful request on: Definitions
+2020-02-04 13:00:30,201  INFO [grizzly-http-server-14] - Server - resourceId : nullSessionID: 2559514208225924124 IP: 0:0:0:0:0:0:0:1 Successful request on: Definitions
+2020-02-04 13:04:31,954 ERROR [grizzly-http-server-11] - Server - resourceId : SessionID: 650657385824283785 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception

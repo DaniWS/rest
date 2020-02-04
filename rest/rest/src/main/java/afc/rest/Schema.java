@@ -16,7 +16,7 @@ import com.github.fge.jsonschema.main.JsonSchemaFactory;
 
 public class Schema implements Comparable <Schema> {
 	protected static JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
-	protected static ArrayList<String> schemasName = new ArrayList<>(Arrays.asList("Definitions","AggregationMthroughGatewaySchema_SLS","CollarSchema","CollarSchemaList","Definitions","RegionSchema","RegionSchemaList","SensorAccumulatedMeasurements_Simplified","SimpleMeasurementSchema_Simplified","SimpleMeasurementSchema_SLS","VariousMfromMultiSensorSchema_SLS","VariousMfromSensorSchema_SLS"));
+	protected static ArrayList<String> schemasName = new ArrayList<>(Arrays.asList("Definitions","AggregationMthroughGatewaySchema_SLS","CollarSchema","CollarSchemaList","RegionSchema","RegionSchemaList","SensorAccumulatedMeasurements_Simplified","SimpleMeasurementSchema_Simplified","SimpleMeasurementSchema_SLS","VariousMfromMultiSensorSchema_SLS","VariousMfromSensorSchema_SLS"));
 //	protected static HashMap<String, JsonSchema> jsonSchemas= new HashMap<>();
 	protected static ArrayList<Schema> schemas= new ArrayList<>();
 	
@@ -65,15 +65,15 @@ public static void loadSchemas(String schemaURI) throws MalformedURLException, I
        	FileUtils.copyURLToFile(        		  
        			new URL(schemaURI+filename), 
        			new File("src/main/resources/localSchemas/"+filename));
+       	        if (!s.equals("Definitions")) {
        	        schemas.add(new Schema(factory.getJsonSchema("resource:/localSchemas/"+filename),0,s));
-       	        
+       	        }
               	
  
        
         } 
-//	   Removes the "Definition" schema once is stored, to avoid wrong validations
-	   schemas.remove(0);
-        
+
+        System.out.println(schemas.size());
 
        };	
 	
