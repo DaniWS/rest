@@ -1,6 +1,5 @@
-2020-01-30 10:47:34,537  INFO [grizzly-http-server-2] - Server - resourceId : nullSessionID: 5150909402491195003 IP: 127.0.0.1 Successful request on: region/measureList
-2020-01-30 10:47:35,167  INFO [grizzly-http-server-3] - Server - resourceId : nullSessionID: 5866540576955341131 IP: 127.0.0.1 Successful request on: region/measureList
-2020-01-30 10:47:35,880  INFO [grizzly-http-server-4] - Server - resourceId : nullSessionID: 4127185819697168403 IP: 127.0.0.1 Successful request on: region/measureList
-2020-01-30 10:47:36,715  INFO [grizzly-http-server-5] - Server - resourceId : nullSessionID: 3554397371355799689 IP: 127.0.0.1 Successful request on: region/measureList
-2020-01-30 10:47:49,266  INFO [grizzly-http-server-0] - Server - resourceId : nullSessionID: 8835802914734551874 IP: 127.0.0.1 Successful request on: region/measureList
-2020-01-31 10:47:11,721  INFO [grizzly-http-server-11] - Server - resourceId : nullSessionID: 5416532446911003047 IP: 127.0.0.1 Successful request on: region/measureList
+2020-02-01 04:32:34,412  INFO [grizzly-http-server-9] - Server - resourceId : nullSessionID: 3778045839535889639 IP: 127.0.0.1 Successful request on: region/measureList
+2020-02-01 04:32:45,641 ERROR [grizzly-http-server-10] - Server - resourceId : SessionID: 3778045839535889639 IP: 127.0.0.1 Invalid Json Exception
+2020-02-01 04:40:04,526  INFO [grizzly-http-server-5] - Server - resourceId : nullSessionID: 5175114538285560864 IP: 127.0.0.1 Successful request on: sensor/measureList
+2020-02-01 04:40:11,065 ERROR [grizzly-http-server-6] - Server - resourceId : SessionID: 5175114538285560864 IP: 127.0.0.1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected close marker ']': expected '}' (for Object starting at [Source: (StringReader); line: 10, column: 5])
+ at [Source: (StringReader); line: 20, column: 4]
