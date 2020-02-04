@@ -6,7 +6,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 
 import org.apache.commons.io.FileUtils;
 
@@ -17,13 +16,12 @@ import com.github.fge.jsonschema.main.JsonSchemaFactory;
 public class Schema implements Comparable <Schema> {
 	protected static JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
 	protected static ArrayList<String> schemasName = new ArrayList<>(Arrays.asList("Definitions","AggregationMthroughGatewaySchema_SLS","CollarSchema","CollarSchemaList","RegionSchema","RegionSchemaList","SensorAccumulatedMeasurements_Simplified","SimpleMeasurementSchema_Simplified","SimpleMeasurementSchema_SLS","VariousMfromMultiSensorSchema_SLS","VariousMfromSensorSchema_SLS"));
-//	protected static HashMap<String, JsonSchema> jsonSchemas= new HashMap<>();
 	protected static ArrayList<Schema> schemas= new ArrayList<>();
 	
 	 private JsonSchema schema;
      private int uso;
      private String name;
-     // Constructor de la clase Schema
+
      protected Schema(JsonSchema schema, int uso, String name) {
          this.schema = schema;
          this.uso = uso;
@@ -65,6 +63,7 @@ public static void loadSchemas(String schemaURI) throws MalformedURLException, I
        	FileUtils.copyURLToFile(        		  
        			new URL(schemaURI+filename), 
        			new File("src/main/resources/localSchemas/"+filename));
+//       	Avoids loading Definition as a schema to prevent false validations.
        	        if (!s.equals("Definitions")) {
        	        schemas.add(new Schema(factory.getJsonSchema("resource:/localSchemas/"+filename),0,s));
        	        }
@@ -73,7 +72,7 @@ public static void loadSchemas(String schemaURI) throws MalformedURLException, I
        
         } 
 
-        System.out.println(schemas.size());
+
 
        };	
 	

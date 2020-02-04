@@ -51,7 +51,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "schema.json#/collar"
+              "$ref": "https://0.0.0.0:8080/schemas/CollarSchema.json"
             }
           }
         ],
@@ -224,7 +224,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "schema.json#/sensor"
+              "type": "object"
             }
           }
         ],
@@ -267,7 +267,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "schema.json#/sensorList"
+             "type": "object"
             }
           }
         ],
@@ -312,7 +312,7 @@
             "name": "body",
             "required": true,
             "schema": {
-              "$ref": "schema.json#/collar"
+              "$ref": ""https://localhost:8080/schemas/CollarSchema.json"
             }
           }
         ],

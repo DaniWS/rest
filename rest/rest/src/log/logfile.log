@@ -1,3 +1,0 @@
-2020-02-04 13:00:22,036  INFO [grizzly-http-server-13] - Server - resourceId : nullSessionID: 2559514208225924124 IP: 0:0:0:0:0:0:0:1 Successful request on: Definitions
-2020-02-04 13:00:30,201  INFO [grizzly-http-server-14] - Server - resourceId : nullSessionID: 2559514208225924124 IP: 0:0:0:0:0:0:0:1 Successful request on: Definitions
-2020-02-04 13:04:31,954 ERROR [grizzly-http-server-11] - Server - resourceId : SessionID: 650657385824283785 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception

@@ -2,18 +2,12 @@ package afc.rest;
 
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.Arrays;
+
 import java.util.Collections;
-import java.util.Properties;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+
 
 
 import javax.ws.rs.Consumes;
@@ -40,13 +34,12 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 */
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
-import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
+
 import afc.rest.ValidationUtils;
 
 @Api(value = "REST API")
 @Path("/{parameter: as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11}/")
-public class Server implements IServer{
+public class Server {
 	
 	private static final Logger log = Logger.getLogger(Server.class);
 //	private static final Gson gson = new Gson();
@@ -109,15 +102,16 @@ public class Server implements IServer{
         System.out.println("Disconnected"); 
 	}
 	*/
-//	 This method checks which resource is being called by using @Context annotation, and selects...
-//	 the corresponding schema in order to validate the body of the request.
+  
+//     Method to validate Json.
 	private boolean validateJson(String s, UriInfo uriInfo) throws ProcessingException, IOException {
 		
-		
+//		Reorder the collection attending to the demand.
 		i++;
-		if(i>=100) 
+		if(i>=5) 
 		{
 			Collections.sort(Schema.schemas);
+			
 			i=0;
 			System.out.println(i + " veces se ha validado!!!!!!!");
 			System.out.println("Array ordenado por uso");
@@ -130,36 +124,19 @@ public class Server implements IServer{
 		
      	for (Schema i:Schema.schemas) {
 			
-		
+//		Validates against schemas.
 		if (ValidationUtils.isJsonValid(i.getSchema(), s))
 		{
 			
 			i.setUso(i.getUso()+1); 
 			name = i.getName();
-			//System.out.println("region!!!!!!!!!!!!"+ Schema.schemas[0].uso);
-			return true;
+				return true;
 		}	
 		
 		}
      	return false;
 		}	
-//		switch(uriInfo.getPathParameters().getFirst("param")) {
-//		case sensorMeasure:
-//		return ValidationUtils.isJsonValid(Schema.schemas.get(0).schema, s);
-//		case sensorMeasureList:		
-//		return ValidationUtils.isJsonValid(jsonSensorSchemaList, s);	
-//		case regionMeasure:		
-//		return ValidationUtils.isJsonValid(Schema.jsonSchemas.get("RegionSchema"), s);
-//		case regionMeasureList:		
-//        return ValidationUtils.isJsonValid(Schema.jsonSchemas.get("RegionSchemaList"), s);
-//        case collarMeasure:		
-//		return ValidationUtils.isJsonValid(Schema.jsonSchemas.get("CollarSchema"), s);
-//		case collarMeasureList:		
-//		return ValidationUtils.isJsonValid(Schema.jsonSchemas.get("CollarSchemaList"), s);
-//		default:
-//		return false;	
-//		}
-//	}
+//		
 		private String getRemoteAddress(Request request) {
 		String ipAddress = request.getHeader("X-FORWARDED-FOR");  
 		   if (ipAddress == null) {  
@@ -181,7 +158,7 @@ public class Server implements IServer{
 	    }
 	@Path("/telemetry/")
 	@POST
-	@Consumes("text/plain")
+	@Consumes(MediaType.TEXT_PLAIN)
 	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
 
 //              Check for "resourceId"
@@ -192,10 +169,10 @@ public class Server implements IServer{
     	
 	         try { if (validateJson(s,uriInfo)) {
 	        	  String text="";
-//	        	  Checks for the "test" query parameter
+//	        	  Checks for the "test" query parameter.
 	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
-	        	  log.info("resourceId : "+ resourceId+ "SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ name );
-//	        	  Here goes the code to send the data 
+	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ name );
+//	        	  Here goes the code to send the data .
 	        	  }
 	        	  else {
 	        	  text= "Test mode: ";	   
@@ -205,14 +182,14 @@ public class Server implements IServer{
 	          }
 	          
 	          else if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
-	        	  log.error("resourceId : "+"SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception");
+	        	  log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception");
 	          }
 	          throw new WebApplicationException(invalidJsonException);
 	       
 	          }
 	         catch(JsonParseException ex){
 	        	 if (!uriInfo.getQueryParameters().containsKey("test")) {
-	        		 log.error("resourceId : "+"SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception "+ex);
+	        		 log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception "+ex);
 	        		 }
 	        		
 	         final Response detailedException = Response.status(415).entity(notaJsonException.getEntity().toString()+"\nError: "+ex).build();
@@ -221,13 +198,3 @@ public class Server implements IServer{
 	}
 }
 
-		/*catch(com.google.gson.JsonSyntaxException ex)	{
-			if (!uriInfo.getQueryParameters().containsKey("test")) {
-				log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Not a JSON "+ex);
-			}
-			throw new WebApplicationException(notaJsonException);
-			}
-	    }	
-	}
-		
-	   */
