@@ -1,10 +1,12 @@
 package afc.rest;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Collections;
 import io.swagger.annotations.Api;
 
@@ -38,11 +40,11 @@ import com.github.fge.jsonschema.core.exceptions.ProcessingException;
 import afc.rest.ValidationUtils;
 
 @Api(value = "REST API")
-@Path("/telemetry")
+@Path("/")
 public class Server {
 	
 	private static final Logger log = Logger.getLogger(Server.class);
-	protected static final URI docsUri=URI.create(Main.BASE_URI+"docs/");
+	protected static final URI docsUri=URI.create(Main.TORCOS_URI+"docs/");
 	
   	protected final String sensorMeasure="sensor/measure";
   	protected final String sensorMeasureList="sensor/measureList";
@@ -147,14 +149,19 @@ public class Server {
 		
 	
 	  
-    //This is just to rapidly test the server.
+    //Method to access the log remotely.
+
 	@GET
+	@Path("/logs")
 	   @Produces(MediaType.TEXT_PLAIN)
-	    public String testServer(@Context UriInfo uriInfo) throws URISyntaxException{
-        return "Server is up!";		  
+	    public String testServer(@Context UriInfo uriInfo) throws URISyntaxException, IOException{
+	    String response= new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator+"logs"+File.separator+"logfile.log")));
+        return response;		  
 	        
 	    }
+	
 	@POST
+	@Path("/telemetry")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
 
@@ -169,7 +176,8 @@ public class Server {
 //	        	  Checks for the "test" query parameter.
 	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
 	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ name );
-//	        	  Here goes the code to send the data .
+                  
+//	        	  Here goes the code to send the data.
 	        	  }
 	        	  else {
 	        	  text= "Test mode: ";	   
@@ -179,7 +187,7 @@ public class Server {
 	          }
 	          
 	          else if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
-	        	  log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception");
+	        	  log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
 	          }
 	          throw new WebApplicationException(invalidJsonException);
 	       

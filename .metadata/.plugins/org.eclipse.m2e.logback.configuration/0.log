@@ -1934,3 +1934,216 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact io.swagger.co
 2020-02-06 18:07:42,629 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 59 resources
 2020-02-06 18:07:44,096 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-02-06 18:07:44,096 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:09:42,797 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:09:42,799 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2020-02-06 18:09:42,843 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:09:42,843 [Worker-27: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:14:58,292 [Worker-32: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:14:58,300 [Worker-32: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 59 resources
+2020-02-06 18:14:58,310 [Worker-32: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:14:58,310 [Worker-32: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:16:45,441 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:16:45,443 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-06 18:16:45,446 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:16:45,447 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:16:49,262 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:16:49,263 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-06 18:16:49,266 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:16:49,266 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:18:40,213 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:18:40,214 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-06 18:18:40,217 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:18:40,218 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:18:44,825 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:18:44,826 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-06 18:18:44,827 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:18:44,827 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:18:58,392 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:18:58,405 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 59 resources
+2020-02-06 18:18:58,422 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:18:58,422 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:20:47,225 [Worker-29: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:20:47,234 [Worker-29: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 18:20:47,284 [Worker-29: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:20:47,285 [Worker-29: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:21:06,786 [Worker-28: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:21:06,793 [Worker-28: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 18:21:06,831 [Worker-28: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:21:06,832 [Worker-28: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:27:36,596 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:27:36,613 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 18:27:36,830 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:27:36,830 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:29:50,123 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:29:50,125 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-06 18:29:50,127 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:29:50,128 [Worker-34: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:30:25,445 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:30:25,446 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-06 18:30:25,458 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:30:25,458 [Worker-30: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:30:27,048 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:30:27,048 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-06 18:30:27,051 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:30:27,051 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:32:21,011 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:32:21,012 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-06 18:32:21,016 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:32:21,017 [Worker-38: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:35:44,732 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:35:44,733 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-06 18:35:44,749 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:35:44,749 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:38:21,935 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-02-06 18:38:52,166 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:38:52,182 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 63 resources
+2020-02-06 18:38:54,161 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:38:54,161 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:39:01,568 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:39:01,574 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-06 18:39:01,577 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:39:01,578 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:39:24,082 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:39:24,083 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-06 18:39:24,084 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:39:24,084 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:40:05,397 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:40:05,438 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 62 resources
+2020-02-06 18:40:06,576 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:40:06,577 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:40:40,659 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:40:40,680 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-06 18:40:40,686 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:40:40,687 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:40:44,192 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:40:44,192 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-06 18:40:44,194 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:40:44,194 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:40:52,700 [Worker-5: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:40:52,714 [Worker-5: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 62 resources
+2020-02-06 18:40:53,822 [Worker-5: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:40:53,823 [Worker-5: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:41:03,729 [Worker-5: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:41:03,738 [Worker-5: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 62 resources
+2020-02-06 18:41:04,770 [Worker-5: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:41:04,770 [Worker-5: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:44:31,142 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:44:31,143 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2020-02-06 18:44:31,183 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:44:31,184 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:45:53,012 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:45:53,026 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 62 resources
+2020-02-06 18:45:53,040 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:45:53,040 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:47:51,882 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:47:51,883 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-06 18:47:51,886 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:47:51,887 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:47:55,792 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:47:55,793 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-06 18:47:55,795 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:47:55,796 [Worker-25: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:47:56,857 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:47:56,858 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-06 18:47:56,863 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:47:56,863 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:48:04,141 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:48:04,141 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2020-02-06 18:48:04,176 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:48:04,176 [Worker-24: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:51:14,293 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:51:14,301 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 18:51:14,313 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:51:14,313 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 18:56:09,928 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:56:09,929 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-06 18:56:09,931 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 18:56:09,932 [Worker-29: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:14:22,457 [Worker-35: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:14:22,481 [Worker-35: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 19:14:22,931 [Worker-35: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:14:22,959 [Worker-35: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:14:24,903 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:14:24,904 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-06 19:14:24,905 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:14:24,905 [Worker-42: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:14:25,943 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:14:25,944 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-06 19:14:25,946 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:14:25,947 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:15:26,716 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:15:26,724 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 19:15:26,785 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:15:26,786 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:26:57,775 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:26:57,842 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 19:26:58,670 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:26:58,671 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:32:33,024 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:32:33,031 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 19:32:33,041 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:32:33,041 [Worker-37: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:35:24,790 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:35:24,800 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 19:35:24,850 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:35:24,851 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:35:25,954 [Worker-53: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:35:25,955 [Worker-53: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-06 19:35:25,957 [Worker-53: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:35:25,957 [Worker-53: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:36:39,809 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:36:39,819 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 19:36:39,871 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:36:39,872 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:37:07,585 [Worker-49: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:37:07,592 [Worker-49: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 19:37:07,638 [Worker-49: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:37:07,638 [Worker-49: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:39:07,644 [Worker-53: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:39:07,654 [Worker-53: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 19:39:07,741 [Worker-53: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:39:07,741 [Worker-53: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:39:08,909 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:39:08,910 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-06 19:39:08,912 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:39:08,912 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:40:15,414 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:40:15,421 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 19:40:15,472 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:40:15,472 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:42:55,786 [Worker-48: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:42:55,816 [Worker-48: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 19:42:55,908 [Worker-48: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:42:55,908 [Worker-48: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:42:57,122 [Worker-52: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:42:57,123 [Worker-52: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-06 19:42:57,125 [Worker-52: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:42:57,125 [Worker-52: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:44:15,352 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:44:15,359 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 19:44:15,418 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:44:15,419 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:44:16,512 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:44:16,512 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-06 19:44:16,513 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:44:16,514 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:45:23,199 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:45:23,207 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 60 resources
+2020-02-06 19:45:23,257 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:45:23,257 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:47:27,706 [Worker-54: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:47:27,707 [Worker-54: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-06 19:47:27,708 [Worker-54: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:47:27,708 [Worker-54: Launching Main] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:47:28,829 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:47:28,830 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-06 19:47:28,838 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:47:28,838 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:48:02,762 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:48:02,763 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-02-06 19:48:02,764 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:48:02,764 [Worker-54: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-06 19:48:03,844 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:48:03,845 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-02-06 19:48:03,853 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-06 19:48:03,854 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources

@@ -2,3 +2,158 @@
 2020-02-06 10:48:49,048  INFO [grizzly-http-server-7] - Server - SessionID: 87510373157765271 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarListSchema
 2020-02-06 11:13:42,986  INFO [grizzly-http-server-11] - Server - SessionID: 6674287455165913899 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Complete
 2020-02-06 13:24:54,877  INFO [grizzly-http-server-0] - Server - SessionID: 2871391289086427847 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-02-06 18:56:53,451 ERROR [grizzly-http-server-1] - Server - SessionID: 4243494944586194577 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('d' (code 100)): was expecting double-quote to start field name
+ at [Source: (StringReader); line: 7, column: 5]
+2020-02-06 18:56:53,786 ERROR [grizzly-http-server-2] - Server - SessionID: 4243494944586194577 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('d' (code 100)): was expecting double-quote to start field name
+ at [Source: (StringReader); line: 7, column: 5]
+2020-02-06 18:56:54,088 ERROR [grizzly-http-server-3] - Server - SessionID: 4243494944586194577 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('d' (code 100)): was expecting double-quote to start field name
+ at [Source: (StringReader); line: 7, column: 5]
+2020-02-06 18:56:57,686 ERROR [grizzly-http-server-4] - Server - SessionID: 4243494944586194577 IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-06 18:56:58,233 ERROR [grizzly-http-server-5] - Server - SessionID: 4243494944586194577 IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-06 18:56:58,632 ERROR [grizzly-http-server-6] - Server - SessionID: 4243494944586194577 IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-06 18:57:02,673 ERROR [grizzly-http-server-7] - Server - SessionID: 4243494944586194577 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('d' (code 100)): was expecting double-quote to start field name
+ at [Source: (StringReader); line: 2, column: 3]
+2020-02-06 18:57:03,203 ERROR [grizzly-http-server-8] - Server - SessionID: 4243494944586194577 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('d' (code 100)): was expecting double-quote to start field name
+ at [Source: (StringReader); line: 2, column: 3]
+2020-02-06 18:57:03,587 ERROR [grizzly-http-server-9] - Server - SessionID: 4243494944586194577 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('d' (code 100)): was expecting double-quote to start field name
+ at [Source: (StringReader); line: 2, column: 3]
+2020-02-06 18:57:13,574  INFO [grizzly-http-server-10] - Server - SessionID: 4243494944586194577 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
+2020-02-06 18:57:14,195  INFO [grizzly-http-server-11] - Server - SessionID: 4243494944586194577 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
+2020-02-06 18:58:56,317  INFO [grizzly-http-server-8] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
+2020-02-06 18:58:56,958  INFO [grizzly-http-server-9] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
+2020-02-06 18:58:57,301  INFO [grizzly-http-server-10] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
+2020-02-06 18:59:01,079  INFO [grizzly-http-server-11] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
+2020-02-06 18:59:01,748  INFO [grizzly-http-server-12] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
+2020-02-06 18:59:02,236  INFO [grizzly-http-server-13] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
+2020-02-06 19:00:34,502 ERROR [grizzly-http-server-14] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Illegal unquoted character ((CTRL-CHAR, code 13)): has to be escaped using backslash to be included in name
+ at [Source: (StringReader); line: 14, column: 19]
+2020-02-06 19:00:34,895 ERROR [grizzly-http-server-15] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Illegal unquoted character ((CTRL-CHAR, code 13)): has to be escaped using backslash to be included in name
+ at [Source: (StringReader); line: 14, column: 19]
+2020-02-06 19:00:35,231 ERROR [grizzly-http-server-0] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Illegal unquoted character ((CTRL-CHAR, code 13)): has to be escaped using backslash to be included in name
+ at [Source: (StringReader); line: 14, column: 19]
+2020-02-06 19:00:35,575 ERROR [grizzly-http-server-1] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Illegal unquoted character ((CTRL-CHAR, code 13)): has to be escaped using backslash to be included in name
+ at [Source: (StringReader); line: 14, column: 19]
+2020-02-06 19:00:36,223 ERROR [grizzly-http-server-2] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Illegal unquoted character ((CTRL-CHAR, code 13)): has to be escaped using backslash to be included in name
+ at [Source: (StringReader); line: 14, column: 19]
+2020-02-06 19:00:36,628 ERROR [grizzly-http-server-3] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Illegal unquoted character ((CTRL-CHAR, code 13)): has to be escaped using backslash to be included in name
+ at [Source: (StringReader); line: 14, column: 19]
+2020-02-06 19:00:36,993 ERROR [grizzly-http-server-4] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Illegal unquoted character ((CTRL-CHAR, code 13)): has to be escaped using backslash to be included in name
+ at [Source: (StringReader); line: 14, column: 19]
+2020-02-06 19:00:37,388 ERROR [grizzly-http-server-5] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Illegal unquoted character ((CTRL-CHAR, code 13)): has to be escaped using backslash to be included in name
+ at [Source: (StringReader); line: 14, column: 19]
+2020-02-06 19:00:37,744 ERROR [grizzly-http-server-6] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Illegal unquoted character ((CTRL-CHAR, code 13)): has to be escaped using backslash to be included in name
+ at [Source: (StringReader); line: 14, column: 19]
+2020-02-06 19:02:14,566 ERROR [grizzly-http-server-7] - Server - SessionID: 8571690303513358439 IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-06 19:15:34,617 ERROR [grizzly-http-server-11] - Server - SessionID: 7427463386245184078 IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-06 19:15:39,901 ERROR [grizzly-http-server-12] - Server - SessionID: 7427463386245184078 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('s' (code 115)): was expecting double-quote to start field name
+ at [Source: (StringReader); line: 8, column: 6]
+2020-02-06 19:33:44,446 ERROR [grizzly-http-server-13] - Server - SessionID: 2563506848250739922 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('s' (code 115)): was expecting double-quote to start field name
+ at [Source: (StringReader); line: 8, column: 6]
+2020-02-06 19:33:46,566 ERROR [grizzly-http-server-14] - Server - SessionID: 2563506848250739922 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('s' (code 115)): was expecting double-quote to start field name
+ at [Source: (StringReader); line: 8, column: 6]
+2020-02-06 19:37:59,712 ERROR [grizzly-http-server-3] - Server - SessionID: 6723781954895698907 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('s' (code 115)): was expecting double-quote to start field name
+ at [Source: (StringReader); line: 8, column: 6]
+2020-02-06 19:42:03,059 ERROR [grizzly-http-server-0] - Server - SessionID: 3777141487530091111 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: no JSON Text to read from input
+ at [Source: (StringReader); line: 1, column: 1]
+2020-02-06 19:43:15,080 ERROR [grizzly-http-server-13] - Server - SessionID: 8080592727028626975 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: no JSON Text to read from input
+ at [Source: (StringReader); line: 1, column: 1]
+2020-02-06 19:45:56,005 ERROR [grizzly-http-server-11] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: no JSON Text to read from input
+ at [Source: (StringReader); line: 1, column: 1]
+2020-02-06 19:45:56,587 ERROR [grizzly-http-server-12] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: no JSON Text to read from input
+ at [Source: (StringReader); line: 1, column: 1]
+2020-02-06 19:45:57,002 ERROR [grizzly-http-server-13] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: no JSON Text to read from input
+ at [Source: (StringReader); line: 1, column: 1]
+2020-02-06 19:45:57,381 ERROR [grizzly-http-server-14] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: no JSON Text to read from input
+ at [Source: (StringReader); line: 1, column: 1]
+2020-02-06 19:45:57,722 ERROR [grizzly-http-server-15] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: no JSON Text to read from input
+ at [Source: (StringReader); line: 1, column: 1]
+2020-02-06 19:46:02,186 ERROR [grizzly-http-server-0] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('@' (code 64)): expected a valid value (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 2]
+2020-02-06 19:46:02,769 ERROR [grizzly-http-server-1] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('@' (code 64)): expected a valid value (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 2]
+2020-02-06 19:46:05,241 ERROR [grizzly-http-server-2] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('@' (code 64)): expected a valid value (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 2]
+2020-02-06 19:46:21,157 ERROR [grizzly-http-server-9] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('@' (code 64)): expected a valid value (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 2]
+2020-02-06 19:46:21,528 ERROR [grizzly-http-server-10] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('@' (code 64)): expected a valid value (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 2]
+2020-02-06 19:46:25,494 ERROR [grizzly-http-server-11] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:28,066 ERROR [grizzly-http-server-12] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:28,694 ERROR [grizzly-http-server-13] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:29,311 ERROR [grizzly-http-server-14] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:29,747 ERROR [grizzly-http-server-15] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:32,866 ERROR [grizzly-http-server-2] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:34,127 ERROR [grizzly-http-server-3] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:35,052 ERROR [grizzly-http-server-4] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:35,644 ERROR [grizzly-http-server-5] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:36,667 ERROR [grizzly-http-server-6] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:37,282 ERROR [grizzly-http-server-7] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:38,060 ERROR [grizzly-http-server-8] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:38,809 ERROR [grizzly-http-server-9] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:39,362 ERROR [grizzly-http-server-10] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:39,997 ERROR [grizzly-http-server-11] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:40,680 ERROR [grizzly-http-server-12] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:41,311 ERROR [grizzly-http-server-13] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:41,904 ERROR [grizzly-http-server-14] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:42,482 ERROR [grizzly-http-server-15] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:46:43,087 ERROR [grizzly-http-server-0] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:32,500 ERROR [grizzly-http-server-11] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:35,507 ERROR [grizzly-http-server-14] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:36,399 ERROR [grizzly-http-server-15] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:36,999 ERROR [grizzly-http-server-0] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:37,620 ERROR [grizzly-http-server-1] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:38,319 ERROR [grizzly-http-server-2] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:38,996 ERROR [grizzly-http-server-3] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:39,623 ERROR [grizzly-http-server-4] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:40,185 ERROR [grizzly-http-server-5] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:40,737 ERROR [grizzly-http-server-6] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:41,293 ERROR [grizzly-http-server-7] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:41,870 ERROR [grizzly-http-server-8] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:42,455 ERROR [grizzly-http-server-9] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:43,015 ERROR [grizzly-http-server-10] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:43,515 ERROR [grizzly-http-server-11] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:43,991 ERROR [grizzly-http-server-12] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:44,531 ERROR [grizzly-http-server-13] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:45,042 ERROR [grizzly-http-server-14] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:45,554 ERROR [grizzly-http-server-15] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
+2020-02-06 19:47:46,180 ERROR [grizzly-http-server-0] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (StringReader); line: 1, column: 4]
