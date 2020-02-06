@@ -492,5 +492,5 @@ paths:
           description: "Invalid input: not a JSON"
 
 servers:
-  - url: https://localhost:8080/
+  - url: https://138.100.51.114:443/
     description: Torcos      

@@ -1,0 +1,15 @@
+{
+  "regions": [
+    {
+      "resourceId": "ABCDEFGH",
+      "resultTime": 445,
+      "locationDimension": {
+        "latitude": -13.75,
+        "longitude": 781.75,
+        "width": 992.75,
+        "length": 219.75
+      }
+    }
+  ],
+  "sequenceNumber": 235
+}
