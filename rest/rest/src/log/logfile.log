@@ -1,0 +1,4 @@
+2020-02-06 10:48:06,598 ERROR [grizzly-http-server-6] - Server - SessionID: 87510373157765271 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception
+2020-02-06 10:48:49,048  INFO [grizzly-http-server-7] - Server - SessionID: 87510373157765271 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarListSchema
+2020-02-06 11:13:42,986  INFO [grizzly-http-server-11] - Server - SessionID: 6674287455165913899 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Complete
+2020-02-06 13:24:54,877  INFO [grizzly-http-server-0] - Server - SessionID: 2871391289086427847 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified

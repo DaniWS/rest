@@ -38,7 +38,7 @@ import com.github.fge.jsonschema.core.exceptions.ProcessingException;
 import afc.rest.ValidationUtils;
 
 @Api(value = "REST API")
-@Path("/{parameter: as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11}/")
+@Path("/telemetry")
 public class Server {
 	
 	private static final Logger log = Logger.getLogger(Server.class);
@@ -148,14 +148,12 @@ public class Server {
 	
 	  
     //This is just to rapidly test the server.
-	@Path("/{param:sensor/measure|sensor/measureList|region/measure|region/measureList|collar/measure|collar/measureList}/")
-	  @GET
+	@GET
 	   @Produces(MediaType.TEXT_PLAIN)
 	    public String testServer(@Context UriInfo uriInfo) throws URISyntaxException{
         return "Server is up!";		  
 	        
 	    }
-	@Path("/telemetry")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
