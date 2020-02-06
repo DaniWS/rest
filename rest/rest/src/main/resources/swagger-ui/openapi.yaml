@@ -24,16 +24,16 @@ paths:
           application/json:
             schema:
              oneOf:
-                - $ref: 'https://localhost:8080/schemas/CollarListSchema.json'
-                - $ref: 'https://localhost:8080/schemas/CollarSchema.json'
-                - $ref: 'https://localhost:8080/schemas/SensorSchema_Complete.json'
-                - $ref: 'https://localhost:8080/schemas/GatewayListSchema.json'
-                - $ref: 'https://localhost:8080/schemas/MultiSensorListSchema.json'
-                - $ref: 'https://localhost:8080/schemas/RegionListSchema.json'
-                - $ref: 'https://localhost:8080/schemas/RegionSchema.json'
-                - $ref: 'https://localhost:8080/schemas/SensorListSchema_Complete.json'
-                - $ref: 'https://localhost:8080/schemas/SensorListSchema_Simplified.json'
-                - $ref: 'https://localhost:8080/schemas/SensorSchema_Simplified.json'
+                - $ref: 'https://138.100.51.114:443/schemas/CollarListSchema.json'
+                - $ref: 'https://138.100.51.114:443/schemas/CollarSchema.json'
+                - $ref: 'https://138.100.51.114:443/schemas/SensorSchema_Complete.json'
+                - $ref: 'https://138.100.51.114:443/schemas/GatewayListSchema.json'
+                - $ref: 'https://138.100.51.114:443/schemas/MultiSensorListSchema.json'
+                - $ref: 'https://138.100.51.114:443/schemas/RegionListSchema.json'
+                - $ref: 'https://138.100.51.114:443/schemas/RegionSchema.json'
+                - $ref: 'https://138.100.51.114:443/schemas/SensorListSchema_Complete.json'
+                - $ref: 'https://138.100.51.114:443/schemas/SensorListSchema_Simplified.json'
+                - $ref: 'https://138.100.51.114:443/schemas/SensorSchema_Simplified.json'
             examples:
               Collar Measurement: 
                value: {
@@ -262,17 +262,17 @@ paths:
           application/json:
             schema:
              oneOf:
-                - $ref: 'https://localhost:8080/schemas/CollarListSchema.json'
-                - $ref: 'https://localhost:8080/schemas/CollarSchema.json'
-                - $ref: 'https://localhost:8080/schemas/SensorSchema_Complete.json'
-                - $ref: 'https://localhost:8080/schemas/GatewayListSchema.json'
-                - $ref: 'https://localhost:8080/schemas/MultiSensorListSchema.json'
-                - $ref: 'https://localhost:8080/schemas/RegionListSchema.json'
-                - $ref: 'https://localhost:8080/schemas/RegionSchema.json'
-                - $ref: 'https://localhost:8080/schemas/SensorListSchema_Complete.json'
-                - $ref: 'https://localhost:8080/schemas/SensorListSchema_Simplified.json'
-                - $ref: 'https://localhost:8080/schemas/SensorSchema_Simplified.json'
-            example:
+                - $ref: 'https://138.100.51.114:443/schemas/CollarListSchema.json'
+                - $ref: 'https://138.100.51.114:443/schemas/CollarSchema.json'
+                - $ref: 'https://138.100.51.114:443/schemas/SensorSchema_Complete.json'
+                - $ref: 'https://138.100.51.114:443/schemas/GatewayListSchema.json'
+                - $ref: 'https://138.100.51.114:443/schemas/MultiSensorListSchema.json'
+                - $ref: 'https://138.100.51.114:443/schemas/RegionListSchema.json'
+                - $ref: 'https://138.100.51.114:443/schemas/RegionSchema.json'
+                - $ref: 'https://138.100.51.114:443/schemas/SensorListSchema_Complete.json'
+                - $ref: 'https://138.100.51.114:443/schemas/SensorListSchema_Simplified.json'
+                - $ref: 'https://138.100.51.114:443/schemas/SensorSchema_Simplified.json'
+            examples:
                 Collar Measurement: 
                  value: {
                                 
