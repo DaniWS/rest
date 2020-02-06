@@ -167,7 +167,6 @@ public class Server {
 	         try { if (validateJson(s,uriInfo)) {
 	        	  String text="";
 //	        	  Checks for the "test" query parameter.
-	        	  System.out.println(uriInfo.getQueryParameters().keySet());
 	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
 	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ name );
 //	        	  Here goes the code to send the data .
