@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://example.com/root.json",
   "type": "object",
-  "title": "The Schema for Aggregated Measurements of Multiple Sensors",
+  "title": "The Schema for Aggregated Measurements from Multi-Parameter Sensors",
   "required": [
     "resourceId",
     "location",

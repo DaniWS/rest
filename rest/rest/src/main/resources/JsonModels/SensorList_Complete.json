@@ -6,7 +6,7 @@
     "altitude": 914.0
   },
   "observedProperty": "ABCDEFGHIJKLMNOP",
-  "uom": 624,
+  "uom": "AA",
   "observations": [
     {
       "resultTime": 421,

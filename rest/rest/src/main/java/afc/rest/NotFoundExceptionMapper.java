@@ -14,7 +14,7 @@ public class NotFoundExceptionMapper implements ExceptionMapper<NotFoundExceptio
 	
 	public Response toResponse(NotFoundException exception) {
         return Response.status(Response.Status.NOT_FOUND)
-                .entity("The resource doesn't exist. Please refer to the API documentation: "+ Server.docsUri)
+                .entity("The resource doesn't exist. Please refer to the API documentation: "+ Main.TORCOS_URI+"docs/")
                 .build();
     }
 }

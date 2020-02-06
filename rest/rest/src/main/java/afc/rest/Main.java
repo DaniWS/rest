@@ -46,6 +46,7 @@ import javax.net.ssl.X509TrustManager;
 public class Main {
 	// Base URI the Grizzly HTTP server will listen on
 	public static final String BASE_URI = "https://0.0.0.0:8080/";
+	public static final String TORCOS_URI = "https://138.100.51.114:443/";
 	
 	private static void trustEveryone() { 
 	    try { 
