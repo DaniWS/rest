@@ -1,0 +1,135 @@
+openapi: 3.0.0
+info:
+  description: REST service API.
+  version: 1.0.1
+  title: AFarCloud REST API
+  contact:
+    name: Vicente Hernández Díaz
+    email: vicente.hernandez@upm.es 
+externalDocs:
+   description: Find out more about AFarCloud
+   url: http://www.afarcloud.eu/    
+tags:
+  - name: POST Telemetry
+  - name: Test your JSON data format
+paths:
+  "/telemetry":
+    post:
+      tags:
+        - POST Telemetry
+      summary: Post telemetry data  
+      operationId: getMeasure 
+      requestBody:
+        content:
+          application/json:
+            schema:
+             oneOf:
+                - $ref: 'https://localhost:8080/schemas/CollarListSchema.json'
+                - $ref: 'https://localhost:8080/schemas/CollarSchema.json'
+                - $ref: 'https://localhost:8080/schemas/SensorSchema_Complete.json'
+                - $ref: 'https://localhost:8080/schemas/GatewayListSchema.json'
+                - $ref: 'https://localhost:8080/schemas/MultiSensorListSchema.json'
+                - $ref: 'https://localhost:8080/schemas/RegionListSchema.json'
+                - $ref: 'https://localhost:8080/schemas/RegionSchema.json'
+                - $ref: 'https://localhost:8080/schemas/SensorListSchema_Complete.json'
+                - $ref: 'https://localhost:8080/schemas/SensorListSchema_Simplified.json'
+                - $ref: 'https://localhost:8080/schemas/SensorSchema_Simplified.json'
+            examples:
+              CollarMeasure: 
+               value: {
+                resourceId: 'urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012',
+                sequenceNumber: 123,
+                location:
+                {
+                  latitude: 45.45123,
+                  longitude: 25.25456,
+                  altitude: 2.10789
+                },
+                observedProperty: air_temperature,
+                resultTime: 1558086914,
+                result:
+                {
+                  value: 3.2,
+                  uom: 'http://qudt.org/vocab/unit/DEG_C'    
+                }
+              }
+              RegionMeasure: 
+               value: {
+                resourceId: 'urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012',
+                sequenceNumber: 123,
+                location:
+                {
+                  latitude: 45.45123,
+                  longitude: 25.25456,
+                  altitude: 2.10789
+                },
+                observedProperty: air_temperature,
+                resultTime: 1558086914,
+                result:
+                {
+                  value: 3.2,
+                  uom: 'http://qudt.org/vocab/unit/DEG_C'    
+                }
+              }
+             
+              
+        required: true
+      responses:
+        "200":
+          description: "Successful operation"
+        "405":
+          description: "Invalid input: not AFarCloud-compliant"
+        "415":
+          description: "Invalid input: not a JSON"
+  "/telemetry?test":
+    post:
+      tags:
+        - Test your JSON data format
+      summary: Test JSON  
+      operationId: testMeasure
+      requestBody:
+        content:
+          application/json:
+            schema:
+             oneOf:
+                - $ref: 'https://localhost:8080/schemas/CollarListSchema.json'
+                - $ref: 'https://localhost:8080/schemas/CollarSchema.json'
+                - $ref: 'https://localhost:8080/schemas/SensorSchema_Complete.json'
+                - $ref: 'https://localhost:8080/schemas/GatewayListSchema.json'
+                - $ref: 'https://localhost:8080/schemas/MultiSensorListSchema.json'
+                - $ref: 'https://localhost:8080/schemas/RegionListSchema.json'
+                - $ref: 'https://localhost:8080/schemas/RegionSchema.json'
+                - $ref: 'https://localhost:8080/schemas/SensorListSchema_Complete.json'
+                - $ref: 'https://localhost:8080/schemas/SensorListSchema_Simplified.json'
+                - $ref: 'https://localhost:8080/schemas/SensorSchema_Simplified.json'
+            example:
+              {
+                resourceId: 'urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012',
+                sequenceNumber: 123,
+                location:
+                {
+                  latitude: 45.45123,
+                  longitude: 25.25456,
+                  altitude: 2.10789
+                },
+                observedProperty: air_temperature,
+                resultTime: 1558086914,
+                result:
+                {
+                  value: 3.2,
+                  uom: 'http://qudt.org/vocab/unit/DEG_C'    
+                }
+              }
+                
+        required: true
+      responses:
+        "200":
+          description: "Successful operation"
+        "405":
+          description: "Invalid input: not AFarCloud-compliant"
+        "415":
+          description: "Invalid input: not a JSON"
+
+servers:
+  - url: https://localhost:8080/
+    description: Torcos      
