@@ -8,7 +8,7 @@ ejecutar: docker run -p 8080:8080 -it docker_rest
 
 Para ver Log path: docker inspect <containername> | grep log
 
-Entrar en contenedor: docker exec -it "nombre contenedor" /bin/bash
+Entrar en contenedor: docker exec -it "nombre contenedor" /bin/bash (o solo "bash")
 abrir archivo :cat "filename.ext"
 docker login
 docker tag "image name" teddyws/92:"tag"
