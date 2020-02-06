@@ -8,10 +8,13 @@
     <fullyQualifiedTypeName name="javax.ws.rs.WebApplicationException"/>
     <fullyQualifiedTypeName name="java.lang.invoke.ClassSpecializer.Factory"/>
     <fullyQualifiedTypeName name="com.github.fge.jsonschema.main.JsonSchemaFactory"/>
-    <fullyQualifiedTypeName name="com.github.fge.jsonschema.main.JsonSchema"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.JsonNode"/>
     <fullyQualifiedTypeName name="afc.rest.ValidationUtils"/>
     <fullyQualifiedTypeName name="org.glassfish.grizzly.Transport"/>
     <fullyQualifiedTypeName name="org.glassfish.grizzly.threadpool.Threads"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.github.fge.jsonschema.main.JsonSchema"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
 </qualifiedTypeNameHistroy>
