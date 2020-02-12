@@ -493,5 +493,5 @@ paths:
           description: "Invalid input: not a JSON"
 
 servers:
-  - url: https://138.100.51.114/
+  - url: https://torcos.etsist.upm.es/
     description: Torcos      
