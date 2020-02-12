@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="server"/>
+		<item key="selection" value="SERVER"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="torcos"/>
+			<item value="base"/>
+			<item value="servlet"/>
 			<item value="server"/>
 			<item value="toFile"/>
 			<item value="log"/>
@@ -20,11 +23,9 @@
 			<item value="text"/>
 			<item value="8080"/>
 			<item value="definitions"/>
-			<item value="shcema"/>
-			<item value="collarschema"/>
-			<item value="collar"/>
 		</list>
 		<list key="replacehistory">
+			<item value="SERVER"/>
 			<item value="admin"/>
 			<item value="Schema"/>
 		</list>

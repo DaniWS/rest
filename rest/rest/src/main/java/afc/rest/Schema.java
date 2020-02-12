@@ -67,11 +67,8 @@ public static void loadSchemas(String schemaURI) throws MalformedURLException, I
                if (!s.equals("Definitions")) {
                schemas.add(new Schema(factory.getJsonSchema("resource:/localSchemas/"+filename),0,s));
                }
-             
- 
        
         }
-
 
 
        };

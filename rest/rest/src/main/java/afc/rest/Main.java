@@ -46,7 +46,7 @@ import javax.net.ssl.X509TrustManager;
 public class Main {
 	// Base URI the Grizzly HTTP server will listen on
 	public static final String BASE_URI = "https://0.0.0.0:8080/";
-	public static final String TORCOS_URI = "https://138.100.51.114:443/";
+	public static final String SERVER_URI = "https://138.100.51.114:443/";
 	
 	private static void trustEveryone() { 
 	    try { 
@@ -153,7 +153,7 @@ public class Main {
         
        
         System.out.println(String.format("Jersey app started with WADL available at "
-                + "%sapplication.wadl\nHit enter to stop it...", TORCOS_URI));
+                + "%sapplication.wadl\nHit enter to stop it...", SERVER_URI));
         
 
         

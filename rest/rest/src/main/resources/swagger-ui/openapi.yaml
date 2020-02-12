@@ -38,44 +38,45 @@ paths:
               Collar Measurement: 
                value: {
                 
-  "collar": {
-    "resourceId": "ABCDEFGHIJKLMNOPQRSTUVWXYZAB",
-    "location": {
-      "latitude": 445.5,
-      "longitude": 250.5,
-      "altitude": 433.0
-    },
-    "resultTime": 329,
-    "resourceAlarm": false,
-    "anomalies": {
-      "locationAnomaly": false,
-      "temperatureAnomaly": false,
-      "distanceAnomaly": false,
-      "activityAnomaly": true,
-      "positionAnomaly": false
-    },
-    "acceleration": {
-      "accX": 264,
-      "accY": 766,
-      "accZ": 652
-    },
-    "temperature": 15.25
-  },
-  "sequenceNumber": 909
-}
+              "collar": {
+                "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                "location": {
+                  "latitude": 45.45123,
+                  "longitude": 25.25456,
+                  "altitude": 2.10789
+                },
+                "resultTime": 1558086914,
+                "resourceAlarm": false,
+                "anomalies": {
+                  "locationAnomaly": false,
+                  "temperatureAnomaly": false,
+                  "distanceAnomaly": false,
+                  "activityAnomaly": true,
+                  "positionAnomaly": false
+                },
+                "acceleration": {
+                  "accX":0.2331,
+                  "accY": 0.898,
+                  "accZ": 0.998
+                },
+                "temperature": 36.5
+              },
+              "sequenceNumber": 123
+            }
+              
               
               List Of Collar Measurements: 
                value: {
                 
                 "collars": [
                   {
-                    "resourceId": "ABCDEFGH",
+                    "resourceId": "urn:afc:scenario:service:provider:type:entityName",
                     "location": {
-                      "latitude": 799.5,
-                      "longitude": -13.75,
-                      "altitude": 781.75
+                      "latitude": 45.45123,
+                      "longitude": 25.25456,
+                      "altitude": 2.10789
                     },
-                    "resultTime": 992,
+                    "resultTime": 1558086914,
                     "resourceAlarm": true,
                     "anomalies": {
                       "locationAnomaly": false,
@@ -85,14 +86,14 @@ paths:
                       "positionAnomaly": true
                     },
                     "acceleration": {
-                      "accX": -88,
-                      "accY": 867,
-                      "accZ": 984
+                      "accX": 0.2331,
+                      "accY": 0.898,
+                      "accZ": 0.998
                     },
-                    "temperature": 573.5
+                    "temperature": 36.5
                   }
                 ],
-                "sequenceNumber": -24
+                "sequenceNumber": 33
               
               }
              
@@ -100,16 +101,16 @@ paths:
                              value: {
                                
                   "region": {
-                    "resourceId": "ABCDEFGHIJKLMNOPQRSTUVWXYZAB",
-                    "resultTime": 143,
+                    "resourceId": "Weed",
+                    "resultTime": 1558086914,
                     "locationDimension": {
-                      "latitude": 250.5,
-                      "longitude": 433.0,
-                      "width": 329.25,
-                      "length": 490.5
+                      "latitude":  37.392529,
+                      "longitude":  -5.994072,
+                      "width": 2.25,
+                      "length": 1.5
                     }
                   },
-                  "sequenceNumber": 361
+                  "sequenceNumber": 123
                 
               }
               List of Region Measurements: 
@@ -117,13 +118,13 @@ paths:
                                 
                 "regions": [
                   {
-                    "resourceId": "ABCDEFGH",
-                    "resultTime": 445,
+                    "resourceId": "DeadPlant",
+                    "resultTime": 1558086914,
                     "locationDimension": {
-                      "latitude": -13.75,
-                      "longitude": 781.75,
-                      "width": 992.75,
-                      "length": 219.75
+                      "latitude":  37.392529,
+                      "longitude":  -5.994072,
+                      "width":  2.38,
+                      "length":  1.25 
                     }
                   }
                 ],
@@ -133,19 +134,19 @@ paths:
               Aggregated Measurements from Multi-Parameter Sensors: 
                value: {
                                    
-                    "resourceId": "urn:afc:DN*/!:3: :h:B3?",
+                    "resourceId": "urn:afc:scenario:service:provider:type:entityName",
                     "location": {
-                      "latitude": 13.75,
-                      "longitude": 249.5,
-                      "altitude": 914.0
+                      "latitude": 45.45123,
+                      "longitude": 25.25456,
+                      "altitude": 2.10789
                     },
                     "observations": [
                       {
-                        "observedProperty": "ABCDEFGHIJ",
-                        "resultTime": 501,
+                        "observedProperty": "soilTemperature",
+                        "resultTime": 1018081245,
                         "result": {
                           "value": 12.5,
-                          "uom": "ABCDEFGHIJKL"
+                          "uom": "http://qudt.org/vocab/unit/DEG_C"
                         }
                       }
                     ],
@@ -155,90 +156,90 @@ paths:
               Aggregated Measurements Through Gateway: 
                value: {
                                 
-                  "deviceId": "urn:afc:DN*/!:3: :h:B3?",
+                  "deviceId": "urn:afc:AS04:droneMissions:MDH:GW:drone001",
                   "location": {
-                    "latitude": 13.75,
-                    "longitude": 249.5,
-                    "altitude": 914.0
+                    "latitude": 45.45123,
+                    "longitude": 25.25456,
+                    "altitude": 2.10789
                   },
                   "observations": [
                     {
-                      "resourceId": "urn:afc:_:uXP s:I: %o:4",
-                      "observedProperty": "ABCDEFGHIJKLMNOP",
-                      "resultTime": 637,
+                      "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                      "observedProperty": "air temperature",
+                      "resultTime": 1558086914,
                       "result": {
-                        "value": 698.0,
-                        "uom": "ABCDEFGHI"
+                        "value": 3.2,
+                        "uom": "http://qudt.org/vocab/unit/DEG_C"
                       }
                     }
                   ],
-                  "sequenceNumber": 0
+                  "sequenceNumber": 123
                 
               }
               Sensor Measurement (Complete Version): 
                              value: {
                                                  
-                    "resourceId": "urn:afc:DN*/!:3: :h:B3?",
+                    "resourceId": "urn:afc:scenario:service:provider:type:entityName",
                     "location": {
-                      "latitude": 13.75,
-                      "longitude": 249.5,
-                      "altitude": 914.0
+                      "latitude": 45.45123,
+                      "longitude": 25.25456,
+                      "altitude": 21.5
                     },
-                    "observedProperty": "ABCDEFGHIJKLMNOP",
-                    "resultTime": 624,
+                    "observedProperty": "air temperature",
+                    "resultTime": 1558086914,
                     "result": {
-                      "value": 558.0,
-                      "uom": "ABCDEFG"
+                      "value": 27.2,
+                      "uom": "http://qudt.org/vocab/unit/DEG_C"
                     },
-                    "sequenceNumber": 394
+                    "sequenceNumber": 123
                   
               }
               Sensor Measurement (Simplified Version): 
                              value: {
                                       
-                    "resultTime": 149,
+                    "resultTime": 1558086914,
                     "result": {
-                      "value": 143.5
+                      "value": 23.5
                     },
-                    "resourceId": "ABCDEFGHIJKLM",
-                    "sequenceNumber": 922
+                    "resourceId": "airTemperatureSensor0012",
+                    "sequenceNumber": 123
                   
               }
               Sensor List of Measurements (Complete Version): 
                              value: {
                                
-                          "resourceId": "urn:afc:DN*/!:3: :h:B3?",
+                          "resourceId": "urn:afc:scenario:service:provider:type:entityName",
                           "location": {
-                            "latitude": 13.75,
-                            "longitude": 249.5,
-                            "altitude": 914.0
+                            "latitude": 45.45123,
+                            "longitude": 25.25456,
+                            "altitude": 21.5
                           },
-                          "observedProperty": "ABCDEFGHIJKLMNOP",
-                          "uom": "abc",
+                          "observedProperty": "air temperature",
+                          "uom": "http://qudt.org/vocab/unit/DEG_C",
                           "observations": [
                             {
-                              "resultTime": 421,
+                              "resultTime": 1558086914,
                               "result": {
-                                "value": 259.0
+                                "value": 29.5
                               }
                             }
                           ],
-                          "sequenceNumber": 327
+                          "sequenceNumber": 123
                         
                      }
               Sensor List of Measurements (Simplified Version): 
                              value: {
                             
-                          "resourceId": "ABCDEFGHI",
+                          "resourceId": "airTemperatureSensor0012",
                           "observations": [
                             {
-                              "resultTime": 445,
+                              "resultTime": 1558086914,
                               "result": {
-                                "value": -13.75
+                                "value": 23.5
                               }
                             }
                           ],
-                          "sequenceNumber": 781
+                          "sequenceNumber": 123
                         
                      }
                      
@@ -273,215 +274,215 @@ paths:
                 - $ref: '/schemas/SensorListSchema_Simplified.json'
                 - $ref: '/schemas/SensorSchema_Simplified.json'
             examples:
-                Collar Measurement: 
-                 value: {
-                                
-                  "collar": {
-                    "resourceId": "ABCDEFGHIJKLMNOPQRSTUVWXYZAB",
+              Collar Measurement: 
+               value: {
+                
+              "collar": {
+                "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                "location": {
+                  "latitude": 45.45123,
+                  "longitude": 25.25456,
+                  "altitude": 2.10789
+                },
+                "resultTime": 1558086914,
+                "resourceAlarm": false,
+                "anomalies": {
+                  "locationAnomaly": false,
+                  "temperatureAnomaly": false,
+                  "distanceAnomaly": false,
+                  "activityAnomaly": true,
+                  "positionAnomaly": false
+                },
+                "acceleration": {
+                  "accX":0.2331,
+                  "accY": 0.898,
+                  "accZ": 0.998
+                },
+                "temperature": 36.5
+              },
+              "sequenceNumber": 123
+            }
+              
+              
+              List Of Collar Measurements: 
+               value: {
+                
+                "collars": [
+                  {
+                    "resourceId": "urn:afc:scenario:service:provider:type:entityName",
                     "location": {
-                      "latitude": 445.5,
-                      "longitude": 250.5,
-                      "altitude": 433.0
+                      "latitude": 45.45123,
+                      "longitude": 25.25456,
+                      "altitude": 2.10789
                     },
-                    "resultTime": 329,
-                    "resourceAlarm": false,
+                    "resultTime": 1558086914,
+                    "resourceAlarm": true,
                     "anomalies": {
                       "locationAnomaly": false,
-                      "temperatureAnomaly": false,
+                      "temperatureAnomaly": true,
                       "distanceAnomaly": false,
-                      "activityAnomaly": true,
-                      "positionAnomaly": false
+                      "activityAnomaly": false,
+                      "positionAnomaly": true
                     },
                     "acceleration": {
-                      "accX": 264,
-                      "accY": 766,
-                      "accZ": 652
+                      "accX": 0.2331,
+                      "accY": 0.898,
+                      "accZ": 0.998
                     },
-                    "temperature": 15.25
-                  },
-                  "sequenceNumber": 909
-                }
-              
-                List Of Collar Measurements: 
-                    value: {
-                    
-                    "collars": [
-                      {
-                        "resourceId": "ABCDEFGH",
-                        "location": {
-                          "latitude": 799.5,
-                          "longitude": -13.75,
-                          "altitude": 781.75
-                        },
-                        "resultTime": 992,
-                        "resourceAlarm": true,
-                        "anomalies": {
-                          "locationAnomaly": false,
-                          "temperatureAnomaly": true,
-                          "distanceAnomaly": false,
-                          "activityAnomaly": false,
-                          "positionAnomaly": true
-                        },
-                        "acceleration": {
-                          "accX": -88,
-                          "accY": 867,
-                          "accZ": 984
-                        },
-                        "temperature": 573.5
-                      }
-                    ],
-                    "sequenceNumber": -24
-                  
+                    "temperature": 36.5
                   }
+                ],
+                "sequenceNumber": 33
+              
+              }
              
-                Region Measurement: 
+              Region Measurement: 
                              value: {
                                
-                      "region": {
-                        "resourceId": "ABCDEFGHIJKLMNOPQRSTUVWXYZAB",
-                        "resultTime": 143,
-                        "locationDimension": {
-                          "latitude": 250.5,
-                          "longitude": 433.0,
-                          "width": 329.25,
-                          "length": 490.5
-                        }
-                      },
-                      "sequenceNumber": 361
-                    
-                  }
-                List of Region Measurements: 
+                  "region": {
+                    "resourceId": "Weed",
+                    "resultTime": 1558086914,
+                    "locationDimension": {
+                      "latitude":  37.392529,
+                      "longitude":  -5.994072,
+                      "width": 2.25,
+                      "length": 1.5
+                    }
+                  },
+                  "sequenceNumber": 123
+                
+              }
+              List of Region Measurements: 
                              value: {
                                 
-                    "regions": [
-                      {
-                        "resourceId": "ABCDEFGH",
-                        "resultTime": 445,
-                        "locationDimension": {
-                          "latitude": -13.75,
-                          "longitude": 781.75,
-                          "width": 992.75,
-                          "length": 219.75
-                        }
-                      }
-                    ],
-                    "sequenceNumber": 235
-                  
+                "regions": [
+                  {
+                    "resourceId": "DeadPlant",
+                    "resultTime": 1558086914,
+                    "locationDimension": {
+                      "latitude":  37.392529,
+                      "longitude":  -5.994072,
+                      "width":  2.38,
+                      "length":  1.25 
+                    }
                   }
-                Aggregated Measurements from Multi-Parameter Sensors: 
-                 value: {
+                ],
+                "sequenceNumber": 235
+              
+              }
+              Aggregated Measurements from Multi-Parameter Sensors: 
+               value: {
                                    
-                    "resourceId": "urn:afc:DN*/!:3: :h:B3?",
+                    "resourceId": "urn:afc:scenario:service:provider:type:entityName",
                     "location": {
-                      "latitude": 13.75,
-                      "longitude": 249.5,
-                      "altitude": 914.0
+                      "latitude": 45.45123,
+                      "longitude": 25.25456,
+                      "altitude": 2.10789
                     },
                     "observations": [
                       {
-                        "observedProperty": "ABCDEFGHIJ",
-                        "resultTime": 501,
+                        "observedProperty": "soilTemperature",
+                        "resultTime": 1018081245,
                         "result": {
                           "value": 12.5,
-                          "uom": "ABCDEFGHIJKL"
+                          "uom": "http://qudt.org/vocab/unit/DEG_C"
                         }
                       }
                     ],
                     "sequenceNumber": 327
                   
               }
-                Aggregated Measurements Through Gateway: 
-                 value: {
+              Aggregated Measurements Through Gateway: 
+               value: {
                                 
-                  "deviceId": "urn:afc:DN*/!:3: :h:B3?",
+                  "deviceId": "urn:afc:AS04:droneMissions:MDH:GW:drone001",
                   "location": {
-                    "latitude": 13.75,
-                    "longitude": 249.5,
-                    "altitude": 914.0
+                    "latitude": 45.45123,
+                    "longitude": 25.25456,
+                    "altitude": 2.10789
                   },
                   "observations": [
                     {
-                      "resourceId": "urn:afc:_:uXP s:I: %o:4",
-                      "observedProperty": "ABCDEFGHIJKLMNOP",
-                      "resultTime": 637,
+                      "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                      "observedProperty": "air temperature",
+                      "resultTime": 1558086914,
                       "result": {
-                        "value": 698.0,
-                        "uom": "ABCDEFGHI"
+                        "value": 3.2,
+                        "uom": "http://qudt.org/vocab/unit/DEG_C"
                       }
                     }
                   ],
-                  "sequenceNumber": 0
+                  "sequenceNumber": 123
                 
               }
-                Sensor Measurement (Complete Version): 
+              Sensor Measurement (Complete Version): 
                              value: {
                                                  
-                    "resourceId": "urn:afc:DN*/!:3: :h:B3?",
+                    "resourceId": "urn:afc:scenario:service:provider:type:entityName",
                     "location": {
-                      "latitude": 13.75,
-                      "longitude": 249.5,
-                      "altitude": 914.0
+                      "latitude": 45.45123,
+                      "longitude": 25.25456,
+                      "altitude": 21.5
                     },
-                    "observedProperty": "ABCDEFGHIJKLMNOP",
-                    "resultTime": 624,
+                    "observedProperty": "air temperature",
+                    "resultTime": 1558086914,
                     "result": {
-                      "value": 558.0,
-                      "uom": "ABCDEFG"
+                      "value": 27.2,
+                      "uom": "http://qudt.org/vocab/unit/DEG_C"
                     },
-                    "sequenceNumber": 394
+                    "sequenceNumber": 123
                   
               }
-                Sensor Measurement (Simplified Version): 
+              Sensor Measurement (Simplified Version): 
                              value: {
                                       
-                    "resultTime": 149,
+                    "resultTime": 1558086914,
                     "result": {
-                      "value": 143.5
+                      "value": 23.5
                     },
-                    "resourceId": "ABCDEFGHIJKLM",
-                    "sequenceNumber": 922
+                    "resourceId": "airTemperatureSensor0012",
+                    "sequenceNumber": 123
                   
               }
-                Sensor List of Measurements (Complete Version): 
+              Sensor List of Measurements (Complete Version): 
                              value: {
                                
-                          "resourceId": "urn:afc:DN*/!:3: :h:B3?",
+                          "resourceId": "urn:afc:scenario:service:provider:type:entityName",
                           "location": {
-                            "latitude": 13.75,
-                            "longitude": 249.5,
-                            "altitude": 914.0
+                            "latitude": 45.45123,
+                            "longitude": 25.25456,
+                            "altitude": 21.5
                           },
-                          "observedProperty": "ABCDEFGHIJKLMNOP",
-                          "uom": "abc",
+                          "observedProperty": "air temperature",
+                          "uom": "http://qudt.org/vocab/unit/DEG_C",
                           "observations": [
                             {
-                              "resultTime": 421,
+                              "resultTime": 1558086914,
                               "result": {
-                                "value": 259.0
+                                "value": 29.5
                               }
                             }
                           ],
-                          "sequenceNumber": 327
+                          "sequenceNumber": 123
                         
                      }
-                Sensor List of Measurements (Simplified Version): 
+              Sensor List of Measurements (Simplified Version): 
                              value: {
                             
-                          "resourceId": "ABCDEFGHI",
+                          "resourceId": "airTemperatureSensor0012",
                           "observations": [
                             {
-                              "resultTime": 445,
+                              "resultTime": 1558086914,
                               "result": {
-                                "value": -13.75
+                                "value": 23.5
                               }
                             }
                           ],
-                          "sequenceNumber": 781
+                          "sequenceNumber": 123
                         
                      }
                      
               
-                
         required: true
       responses:
         "200":

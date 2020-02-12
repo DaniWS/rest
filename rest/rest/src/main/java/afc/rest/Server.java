@@ -44,7 +44,7 @@ import afc.rest.ValidationUtils;
 public class Server {
 	
 	private static final Logger log = Logger.getLogger(Server.class);
-	protected static final URI docsUri=URI.create(Main.TORCOS_URI+"docs/");
+	protected static final URI docsUri=URI.create(Main.SERVER_URI+"docs/");
 	
   	protected final String sensorMeasure="sensor/measure";
   	protected final String sensorMeasureList="sensor/measureList";

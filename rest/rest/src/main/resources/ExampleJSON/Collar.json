@@ -1,6 +1,6 @@
 {
   "collar": {
-    "resourceId": "ABCDEFGHIJKLMNOPQRSTUVWXYZAB",
+    "resourceId": "urn:afc:AS09:service:provider:sensorType:entityName",
     "location": {
       "latitude": 445.5,
       "longitude": 250.5,
