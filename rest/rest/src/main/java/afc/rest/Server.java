@@ -1,17 +1,15 @@
 package afc.rest;
 
 
+import java.io.File;
 import java.io.IOException;
-import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.Properties;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Collections;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+
 
 
 import javax.ws.rs.Consumes;
@@ -38,17 +36,15 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 */
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
-import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
+
 import afc.rest.ValidationUtils;
 
 @Api(value = "REST API")
-@Path("/{parameter: as01|as02|as03|as04|as05|as06|as07|as08|as09|as10|as11}/")
-public class Server implements IServer{
+@Path("/")
+public class Server {
 	
 	private static final Logger log = Logger.getLogger(Server.class);
-//	private static final Gson gson = new Gson();
-	protected static final URI docsUri=URI.create(Main.BASE_URI+"docs/");
+	protected static final URI docsUri=URI.create(Main.SERVER_URI+"docs/");
 	
   	protected final String sensorMeasure="sensor/measure";
   	protected final String sensorMeasureList="sensor/measureList";
@@ -57,6 +53,8 @@ public class Server implements IServer{
   	protected final String collarMeasure="collar/measure";
   	protected final String collarMeasureList="collar/measureList";
   	protected String resourceId;
+  	private static int i = 0;
+  	private static String name;
   	
 	protected final Response invalidJsonException = Response.status(405).entity("405: \"Invalid input: not AFarCloud-compliant\". For more information, please refer to the API documentation: "+ docsUri).header("Access-Control-Allow-Origin", "*").build();
 	protected final Response notaJsonException =  Response.status(415).entity("415: \"Invalid input: not a JSON\". For more information, please refer to the API documentation: "+ docsUri).header("Access-Control-Allow-Origin", "*").build();
@@ -105,27 +103,41 @@ public class Server implements IServer{
         System.out.println("Disconnected"); 
 	}
 	*/
-//	 This method checks which resource is being called by using @Context annotation, and selects...
-//	 the corresponding schema in order to validate the body of the request.
+  
+//     Method to validate Json.
 	private boolean validateJson(String s, UriInfo uriInfo) throws ProcessingException, IOException {
 		
-		switch(uriInfo.getPathParameters().getFirst("param")) {
-		case sensorMeasure:
-		return ValidationUtils.isJsonValid(SchemaLoader.jsonSchemas.get("SimpleMeasurementSchema_SLS"), s);
-		case sensorMeasureList:		
-		return ValidationUtils.isJsonValid(jsonSensorSchemaList, s);	
-		case regionMeasure:		
-		return ValidationUtils.isJsonValid(SchemaLoader.jsonSchemas.get("RegionSchema"), s);
-		case regionMeasureList:		
-        return ValidationUtils.isJsonValid(SchemaLoader.jsonSchemas.get("RegionSchemaList"), s);
-        case collarMeasure:		
-		return ValidationUtils.isJsonValid(SchemaLoader.jsonSchemas.get("CollarSchema"), s);
-		case collarMeasureList:		
-		return ValidationUtils.isJsonValid(SchemaLoader.jsonSchemas.get("CollarSchemaList"), s);
-		default:
-		return false;	
+//		Reorder the collection attending to the demand.
+		i++;
+		if(i>=100) 
+		{
+			Collections.sort(Schema.schemas);
+			
+			i=0;
+			System.out.println(i + " veces se ha validado!!!!!!!");
+			System.out.println("Array ordenado por uso");
+			for (int i = 0; i < Schema.schemas.size()-1; i++) {
+	            System.out.println((i+1) + ". " + Schema.schemas.get(i).getName() + " - Uso: " + Schema.schemas.get(i).getUso());
+	        }
+			Schema.schemas.forEach((n) -> n.setUso(0));
+			
 		}
-	}
+		
+     	for (Schema i:Schema.schemas) {
+			
+//		Validates against schemas.
+		if (ValidationUtils.isJsonValid(i.getSchema(), s))
+		{
+			
+			i.setUso(i.getUso()+1); 
+			name = i.getName();
+				return true;
+		}	
+		
+		}
+     	return false;
+		}	
+//		
 		private String getRemoteAddress(Request request) {
 		String ipAddress = request.getHeader("X-FORWARDED-FOR");  
 		   if (ipAddress == null) {  
@@ -137,17 +149,20 @@ public class Server implements IServer{
 		
 	
 	  
-    //This is just to rapidly test the server.
-	@Path("/{param:sensor/measure|sensor/measureList|region/measure|region/measureList|collar/measure|collar/measureList}/")
-	  @GET
+    //Method to access the log remotely.
+
+	@GET
+	@Path("/logs")
 	   @Produces(MediaType.TEXT_PLAIN)
-	    public String testServer(@Context UriInfo uriInfo) throws URISyntaxException{
-        return "Server is up!";		  
+	    public String testServer(@Context UriInfo uriInfo) throws URISyntaxException, IOException{
+	    String response= new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator+"logs"+File.separator+"logfile.log")));
+        return response;		  
 	        
 	    }
-	@Path("/{param:sensor/measure|sensor/measureList|region/measure|region/measureList|collar/measure|collar/measureList}/")
+	
 	@POST
-	@Consumes("text/plain")
+	@Path("/telemetry")
+	@Consumes(MediaType.APPLICATION_JSON)
 	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
 
 //              Check for "resourceId"
@@ -158,10 +173,11 @@ public class Server implements IServer{
     	
 	         try { if (validateJson(s,uriInfo)) {
 	        	  String text="";
-//	        	  Checks for the "test" query parameter
+//	        	  Checks for the "test" query parameter.
 	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
-	        	  log.info("resourceId : "+ resourceId+ "SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+uriInfo.getPathParameters().getFirst("param") );
-//	        	  Here goes the code to send the data 
+	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ name );
+                  
+//	        	  Here goes the code to send the data.
 	        	  }
 	        	  else {
 	        	  text= "Test mode: ";	   
@@ -171,14 +187,14 @@ public class Server implements IServer{
 	          }
 	          
 	          else if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
-	        	  log.error("resourceId : "+"SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception");
+	        	  log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
 	          }
 	          throw new WebApplicationException(invalidJsonException);
 	       
 	          }
 	         catch(JsonParseException ex){
 	        	 if (!uriInfo.getQueryParameters().containsKey("test")) {
-	        		 log.error("resourceId : "+"SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception "+ex);
+	        		 log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception "+ex);
 	        		 }
 	        		
 	         final Response detailedException = Response.status(415).entity(notaJsonException.getEntity().toString()+"\nError: "+ex).build();
@@ -187,13 +203,3 @@ public class Server implements IServer{
 	}
 }
 
-		/*catch(com.google.gson.JsonSyntaxException ex)	{
-			if (!uriInfo.getQueryParameters().containsKey("test")) {
-				log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Not a JSON "+ex);
-			}
-			throw new WebApplicationException(notaJsonException);
-			}
-	    }	
-	}
-		
-	   */

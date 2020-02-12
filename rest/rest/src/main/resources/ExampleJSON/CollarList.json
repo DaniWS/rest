@@ -1,0 +1,28 @@
+{
+  "collars": [
+    {
+      "resourceId": "ABCDEFGH",
+      "location": {
+        "latitude": 799.5,
+        "longitude": -13.75,
+        "altitude": 781.75
+      },
+      "resultTime": 992,
+      "resourceAlarm": true,
+      "anomalies": {
+        "locationAnomaly": false,
+        "temperatureAnomaly": true,
+        "distanceAnomaly": false,
+        "activityAnomaly": false,
+        "positionAnomaly": true
+      },
+      "acceleration": {
+        "accX": -88,
+        "accY": 867,
+        "accZ": 984
+      },
+      "temperature": 573.5
+    }
+  ],
+  "sequenceNumber": -24
+}

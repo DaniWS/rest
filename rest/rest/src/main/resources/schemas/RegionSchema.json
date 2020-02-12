@@ -9,9 +9,7 @@
 			"type": "integer",
 			"title": "The Sequence Number",
 			"default": 0,
-			"examples": [
-				123
-			]
+			"examples": 9999999
 		},
 		"region": {
 			"$id": "#/properties/region",
@@ -35,7 +33,6 @@
 				"locationDimension": {
 					"type": "object",
 					"$id": "#/properties/region/properties/locationDimension",
-					"type": "object",
 					"title": "The Location Dimension",
 					"properties": {
 						"latitude": {

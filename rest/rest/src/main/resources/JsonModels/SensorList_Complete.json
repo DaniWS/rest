@@ -1,0 +1,19 @@
+{
+  "resourceId": "urn:afc:DN*/!:3: :h:B3?",
+  "location": {
+    "latitude": 13.75,
+    "longitude": 249.5,
+    "altitude": 914.0
+  },
+  "observedProperty": "ABCDEFGHIJKLMNOP",
+  "uom": "AA",
+  "observations": [
+    {
+      "resultTime": 421,
+      "result": {
+        "value": 259.0
+      }
+    }
+  ],
+  "sequenceNumber": 327
+}

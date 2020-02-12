@@ -10,8 +10,8 @@
 			"title": "The Sequence Number",
 			"default": 0,
 			"examples": [
-				123
-			]
+			123
+			]			 
 		},
 		"collar": {
 			"$id": "#/properties/collar",
@@ -76,13 +76,13 @@
 					"type": "object",
 					"properties": {
 						"accX": {
-							"type": "integer"
+							"type": "number"
 						},
 						"accY": {
-							"type": "integer"
+							"type": "number"
 						},
 						"accZ": {
-							"type": "integer"
+							"type": "number"
 						}
 					},
 					"additionalProperties": false,

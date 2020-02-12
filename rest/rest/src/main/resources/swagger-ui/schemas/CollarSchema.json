@@ -1,0 +1,116 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "http://example.com/root.json",
+	"type": "object",
+	"title": "The Schema for a Collar Measure",
+	"properties": {
+		"sequenceNumber": {
+			"$id": "#/properties/sequenceNumber",
+			"type": "integer",
+			"title": "The Sequence Number",
+			"default": 0,
+			"examples": [
+			123
+			]			 
+		},
+		"collar": {
+			"$id": "#/properties/collar",
+			"type": "object",
+			"properties": {
+				"resourceId": {
+					"$id": "#/properties/collar/properties/resourceId",
+					"type": "string",
+					"title": "The ResourceId",
+					"default": ""
+				},
+				"location": {
+					"$id": "#/properties/collar/properties/location",
+					"type": "object",
+					"title": "The Location Schema",
+					"$ref": "Definitions.json#/location"
+				},
+				"resultTime": {
+					"$id": "#/properties/collar/properties/resultTime",
+					"type": "integer",
+					"title": "The Result time",
+					"default": 0,
+					"examples": [
+						1558086914
+					]
+				},
+				"resourceAlarm": {
+					"$id": "#/properties/collar/properties/resourceAlarm",
+					"type": "boolean"
+				},
+				"anomalies": {
+					"$id": "#/properties/collar/properties/anomalies",
+					"type": "object",
+					"properties": {
+						"locationAnomaly": {
+							"type": "boolean"
+						},
+						"temperatureAnomaly": {
+							"type": "boolean"
+						},
+						"distanceAnomaly": {
+							"type": "boolean"
+						},
+						"activityAnomaly": {
+							"type": "boolean"
+						},
+						"positionAnomaly": {
+							"type": "boolean"
+						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"locationAnomaly",
+						"temperatureAnomaly",
+						"distanceAnomaly",
+						"activityAnomaly",
+						"positionAnomaly"
+					]
+				},
+				"acceleration": {
+					"$id": "#/properties/collar/properties/acceleration",
+					"type": "object",
+					"properties": {
+						"accX": {
+							"type": "number"
+						},
+						"accY": {
+							"type": "number"
+						},
+						"accZ": {
+							"type": "number"
+						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"accX",
+						"accY",
+						"accZ"
+					]
+				},
+				"temperature": {
+					"$id": "#/properties/collar/properties/temperature",
+					"type": "number"
+				}
+			},
+			"additionalProperties": false,
+			"required": [
+				"resourceId",
+				"location",
+				"resultTime",
+				"resourceAlarm",
+				"anomalies",
+				"acceleration",
+				"temperature"
+			]
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"collar"
+	]
+}

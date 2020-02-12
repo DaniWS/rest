@@ -1,7 +1,6 @@
 package afc.rest;
 
 import org.glassfish.grizzly.http.server.HttpServer;
-import org.glassfish.grizzly.http.server.NetworkListener;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 //import org.glassfish.jersey.servlet.ServletContainer;
@@ -28,13 +27,10 @@ import io.swagger.jaxrs.config.BeanConfig;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
 import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
-import java.util.stream.Stream;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
@@ -50,6 +46,7 @@ import javax.net.ssl.X509TrustManager;
 public class Main {
 	// Base URI the Grizzly HTTP server will listen on
 	public static final String BASE_URI = "https://0.0.0.0:8080/";
+	public static final String SERVER_URI = "https://138.100.51.114:443/";
 	
 	private static void trustEveryone() { 
 	    try { 
@@ -107,8 +104,8 @@ public class Main {
     	resourceConfig.register(JacksonJsonProvider.class);
     	
     	  SSLContextConfigurator sslConfig = new SSLContextConfigurator();
-          sslConfig.setKeyStoreFile("src/SSL3/afc_key");
-          sslConfig.setKeyStorePass("afc_ssl");
+          sslConfig.setKeyStoreFile("src/SSL/afc_key");
+          sslConfig.setKeyStorePass("afc_rest_ssl");
           
     	 
     	return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), resourceConfig, true, new SSLEngineConfigurator(sslConfig).setClientMode(false).setNeedClientAuth(false));
@@ -129,31 +126,34 @@ public class Main {
 
         CLStaticHttpHandler docsHandler = new CLStaticHttpHandler(loader, "swagger-ui/");
         CLStaticHttpHandler schemasHandler = new CLStaticHttpHandler(loader, "schemas/");
+        
         String log4jConfPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"properties"+File.separator+"log4j.properties";
 
         
         PropertyConfigurator.configure(log4jConfPath);
 
         docsHandler.setFileCacheEnabled(false);
-        schemasHandler.setFileCacheEnabled(true);
+        schemasHandler.setFileCacheEnabled(false);
+       
 
         ServerConfiguration cfg = server.getServerConfiguration();
 
         cfg.addHttpHandler(docsHandler, "/docs/");
         cfg.addHttpHandler(schemasHandler, "/schemas/");
+        
 
 
 
 
 
         trustEveryone();
-        SchemaLoader.loadSchemas(BASE_URI+"schemas/");
+        Schema.loadSchemas(BASE_URI+"schemas/");
         
      
         
        
         System.out.println(String.format("Jersey app started with WADL available at "
-                + "%sapplication.wadl\nHit enter to stop it...", BASE_URI));
+                + "%sapplication.wadl\nHit enter to stop it...", SERVER_URI));
         
 
         
