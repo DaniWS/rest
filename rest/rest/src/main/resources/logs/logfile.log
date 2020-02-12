@@ -42,3 +42,7 @@
  at [Source: (StringReader); line: 1, column: 4]
 2020-02-06 19:47:46,180 ERROR [grizzly-http-server-0] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
  at [Source: (StringReader); line: 1, column: 4]
+2020-02-12 14:28:58,413  INFO [grizzly-http-server-15] - Server - SessionID: 3009728445967560368 IP: 0:0:0:0:0:0:0:1 Successful request on: RegionSchema
+2020-02-12 14:29:05,866  INFO [grizzly-http-server-0] - Server - SessionID: 3009728445967560368 IP: 0:0:0:0:0:0:0:1 Successful request on: RegionListSchema
+2020-02-12 14:29:18,817  INFO [grizzly-http-server-2] - Server - SessionID: 3009728445967560368 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
+2020-02-12 14:42:08,393  INFO [grizzly-http-server-11] - Server - SessionID: 8729240249059086080 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
