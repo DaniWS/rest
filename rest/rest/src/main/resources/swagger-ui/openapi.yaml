@@ -262,16 +262,16 @@ paths:
           application/json:
             schema:
              oneOf:
-                - $ref: 'https://138.100.51.114:443/schemas/CollarListSchema.json'
-                - $ref: 'https://138.100.51.114:443/schemas/CollarSchema.json'
-                - $ref: 'https://138.100.51.114:443/schemas/SensorSchema_Complete.json'
-                - $ref: 'https://138.100.51.114:443/schemas/GatewayListSchema.json'
-                - $ref: 'https://138.100.51.114:443/schemas/MultiSensorListSchema.json'
-                - $ref: 'https://138.100.51.114:443/schemas/RegionListSchema.json'
-                - $ref: 'https://138.100.51.114:443/schemas/RegionSchema.json'
-                - $ref: 'https://138.100.51.114:443/schemas/SensorListSchema_Complete.json'
-                - $ref: 'https://138.100.51.114:443/schemas/SensorListSchema_Simplified.json'
-                - $ref: 'https://138.100.51.114:443/schemas/SensorSchema_Simplified.json'
+                - $ref: '/schemas/CollarListSchema.json'
+                - $ref: '/schemas/CollarSchema.json'
+                - $ref: '/schemas/SensorSchema_Complete.json'
+                - $ref: '/schemas/GatewayListSchema.json'
+                - $ref: '/schemas/MultiSensorListSchema.json'
+                - $ref: '/schemas/RegionListSchema.json'
+                - $ref: '/schemas/RegionSchema.json'
+                - $ref: '/schemas/SensorListSchema_Complete.json'
+                - $ref: '/schemas/SensorListSchema_Simplified.json'
+                - $ref: '/schemas/SensorSchema_Simplified.json'
             examples:
                 Collar Measurement: 
                  value: {
@@ -492,5 +492,5 @@ paths:
           description: "Invalid input: not a JSON"
 
 servers:
-  - url: https://138.100.51.114:443/
+  - url: https://138.100.51.114/
     description: Torcos      

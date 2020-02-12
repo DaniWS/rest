@@ -1,4 +1,0 @@
-2020-02-06 18:23:46,347  INFO [grizzly-http-server-1] - Server - SessionID: 4784200927646397987 IP: 0:0:0:0:0:0:0:1 Successful request on: MultiSensorListSchema
-2020-02-06 18:28:29,338  INFO [grizzly-http-server-6] - Server - SessionID: 4784200927646397987 IP: 0:0:0:0:0:0:0:1 Successful request on: MultiSensorListSchema
-2020-02-06 18:28:29,697  INFO [grizzly-http-server-7] - Server - SessionID: 4784200927646397987 IP: 0:0:0:0:0:0:0:1 Successful request on: MultiSensorListSchema
-2020-02-06 18:29:11,753 ERROR [grizzly-http-server-9] - Server - SessionID: 4784200927646397987 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception

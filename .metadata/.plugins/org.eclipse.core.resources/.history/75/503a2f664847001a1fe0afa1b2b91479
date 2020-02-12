@@ -1,2 +1,0 @@
-keytool -genkey -alias torcos.etsist.upm.es -keyalg RSA -keystore /home/dani/eclipse-workspace/rest3/SSLnew/afc_key -ext san=ip:127.0.0.1 -storepass afc_rest_ssl -keysize 2048 -validity 600
-
