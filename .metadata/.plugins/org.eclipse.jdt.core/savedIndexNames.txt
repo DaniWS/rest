@@ -61,7 +61,6 @@ INDEX VERSION 1.131+C:\Users\Dani\Documents\GitHub\rest\rest\.metadata\.plugins\
 1916334784.index
 3681787027.index
 741416789.index
-3885050651.index
 3929848548.index
 2476351216.index
 1906979795.index
