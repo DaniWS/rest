@@ -44,7 +44,6 @@ import afc.rest.ValidationUtils;
 public class Server {
 	
 	private static final Logger log = Logger.getLogger(Server.class);
-	protected static final URI docsUri=URI.create(Main.SERVER_URI+"docs/");
 	
   	protected final String sensorMeasure="sensor/measure";
   	protected final String sensorMeasureList="sensor/measureList";
@@ -56,8 +55,8 @@ public class Server {
   	private static int i = 0;
   	private static String name;
   	
-	protected final Response invalidJsonException = Response.status(405).entity("405: \"Invalid input: not AFarCloud-compliant\". For more information, please refer to the API documentation: "+ docsUri).header("Access-Control-Allow-Origin", "*").build();
-	protected final Response notaJsonException =  Response.status(415).entity("415: \"Invalid input: not a JSON\". For more information, please refer to the API documentation: "+ docsUri).header("Access-Control-Allow-Origin", "*").build();
+	protected final Response invalidJsonException = Response.status(405).entity("405: \"Invalid input: not AFarCloud-compliant\". For more information, please refer to the API documentation: "+ Main.DOCS_URI).header("Access-Control-Allow-Origin", "*").build();
+	protected final Response notaJsonException =  Response.status(415).entity("415: \"Invalid input: not a JSON\". For more information, please refer to the API documentation: "+ Main.DOCS_URI).header("Access-Control-Allow-Origin", "*").build();
 
 	
 	/*
@@ -182,7 +181,7 @@ public class Server {
 	        	  else {
 	        	  text= "Test mode: ";	   
 	        	  }	  
-	        	return Response.status(200).entity(text+"200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ docsUri +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();
+	        	return Response.status(200).entity(text+"200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ Main.DOCS_URI +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();
 	        	
 	          }
 	          

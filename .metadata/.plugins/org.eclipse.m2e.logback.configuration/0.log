@@ -2923,3 +2923,62 @@ java.lang.NullPointerException: null
 2020-02-12 17:08:59,213 [Worker-41: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
 2020-02-13 17:09:47,062 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2020-02-14 14:50:51,058 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-02-14 16:55:58,267 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 16:55:58,291 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 71 resources
+2020-02-14 16:55:59,427 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 16:55:59,427 [Worker-35: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-14 17:01:16,237 [Worker-39: Creating jersey-quickstart-grizzly2] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\pom.xml
+2020-02-14 17:01:20,294 [Worker-39: Creating jersey-quickstart-grizzly2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: org.glassfish.jersey.archetype:jersey-quickstart-grizzly2:2.29.1 @ C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\pom.xml.
+2020-02-14 17:01:21,712 [Worker-39: Creating jersey-quickstart-grizzly2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /jersey-quickstart-grizzly2/src/main/java
+2020-02-14 17:01:21,747 [Worker-39: Creating jersey-quickstart-grizzly2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /jersey-quickstart-grizzly2/src/test/java
+2020-02-14 17:01:22,913 [Worker-39: Creating jersey-quickstart-grizzly2] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 6 sec
+2020-02-14 17:01:25,011 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:01:25,012 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\src\main\resources
+2020-02-14 17:01:25,013 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:01:25,014 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\src\test\resources
+2020-02-14 17:02:33,374 [Worker-42: Creating jersey-quickstart-grizzly2] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\mobileRest\pom.xml
+2020-02-14 17:02:33,768 [Worker-42: Creating jersey-quickstart-grizzly2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: afc:mobileRest:0.0.1-SNAPSHOT @ C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\mobileRest\pom.xml.
+2020-02-14 17:02:34,158 [Worker-42: Creating jersey-quickstart-grizzly2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /mobileRest/src/main/java
+2020-02-14 17:02:34,164 [Worker-42: Creating jersey-quickstart-grizzly2] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /mobileRest/src/test/java
+2020-02-14 17:02:34,376 [Worker-42: Creating jersey-quickstart-grizzly2] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 1 sec
+2020-02-14 17:02:35,178 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:02:35,179 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\mobileRest\src\main\resources
+2020-02-14 17:02:35,181 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:02:35,181 [Worker-40: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\mobileRest\src\test\resources
+2020-02-14 17:12:48,352 [Worker-46: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: afc:mobileRest:0.0.1-SNAPSHOT @ C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\mobileRest\pom.xml.
+2020-02-14 17:12:48,887 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:12:48,887 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\mobileRest\src\main\resources
+2020-02-14 17:12:48,889 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:12:48,889 [Worker-46: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\mobileRest\src\test\resources
+2020-02-14 17:12:49,432 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:12:49,432 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\mobileRest\src\main\resources
+2020-02-14 17:12:49,433 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:12:49,433 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\mobileRest\src\test\resources
+2020-02-14 17:12:49,609 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:12:49,629 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 71 resources
+2020-02-14 17:12:49,642 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:12:49,643 [Worker-45: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-14 17:14:33,851 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:14:33,852 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\mobileRest\src\main\resources
+2020-02-14 17:14:33,853 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:14:33,853 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\mobileRest\src\test\resources
+2020-02-14 17:14:33,969 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:14:33,978 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 71 resources
+2020-02-14 17:14:33,991 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:14:33,991 [Worker-49: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-14 17:14:51,857 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:14:51,871 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 71 resources
+2020-02-14 17:14:51,886 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:14:51,887 [Worker-39: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-14 17:18:02,641 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:18:02,654 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 71 resources
+2020-02-14 17:18:02,668 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 17:18:02,669 [Worker-51: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources
+2020-02-14 18:08:49,732 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 18:08:50,438 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\mobileRest\src\main\resources
+2020-02-14 18:08:50,453 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 18:08:50,453 [Worker-61: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\mobileRest\jersey-quickstart-grizzly2\mobileRest\src\test\resources
+2020-02-14 18:09:01,320 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 18:09:02,396 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 71 resources
+2020-02-14 18:09:04,998 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-02-14 18:09:04,999 [Worker-63: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Dani\Documents\GitHub\rest\rest\rest\rest\src\test\resources

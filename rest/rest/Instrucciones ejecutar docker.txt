@@ -11,6 +11,10 @@ Para ver Log path: docker inspect <containername> | grep log
 Entrar en contenedor: docker exec -it "nombre contenedor" /bin/bash (o solo "bash")
 abrir archivo :cat "filename.ext"
 docker login
-docker tag "image name" teddyws92/rest:"tag"
-docker push teddyws92/rest:"tag"
-docker pull teddyws92/rest:"tag"
+docker tag "image name" teddyws/92:"tag"
+docker push teddyws92/dani:"tag"
+docker pull teddyws92/dani:"tag"
+
+*************** Varios contenedores************************
+Crear user-defined network
+darle dirección ip  "-ip" y hostname "-h" a los contenedores.

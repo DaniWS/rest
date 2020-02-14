@@ -47,6 +47,8 @@ public class Main {
 	// Base URI the Grizzly HTTP server will listen on
 	public static final String BASE_URI = "https://0.0.0.0:8080/";
 	public static final String SERVER_URI = "https://138.100.51.114:443/";
+	protected static final URI DOCS_URI=URI.create(SERVER_URI+"docs/");
+
 	
 	private static void trustEveryone() { 
 	    try { 
@@ -152,14 +154,15 @@ public class Main {
      
         
        
-        System.out.println(String.format("Jersey app started with WADL available at "
-                + "%sapplication.wadl\nHit enter to stop it...", SERVER_URI));
+        System.out.println(String.format("REST server started. API documentation available at:"
+                + "%s\n", DOCS_URI));
         
 
-        
-        
+//      Uncomment to be able stop the server from the shell        
+   /*   System.out.println(String.format("Hit enter to stop the server..."));
         System.in.read();
         server.shutdownNow();
+        */
     }
 }
 
