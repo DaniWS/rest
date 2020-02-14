@@ -29,8 +29,6 @@ paths:
                 - $ref: '/schemas/SensorSchema_Complete.json'
                 - $ref: '/schemas/GatewayListSchema.json'
                 - $ref: '/schemas/MultiSensorListSchema.json'
-                - $ref: '/schemas/RegionListSchema.json'
-                - $ref: '/schemas/RegionSchema.json'
                 - $ref: '/schemas/SensorListSchema_Complete.json'
                 - $ref: '/schemas/SensorListSchema_Simplified.json'
                 - $ref: '/schemas/SensorSchema_Simplified.json'
@@ -97,40 +95,7 @@ paths:
               
               }
              
-              Region Measurement: 
-                             value: {
-                               
-                  "region": {
-                    "resourceId": "Weed",
-                    "resultTime": 1558086914,
-                    "locationDimension": {
-                      "latitude":  37.392529,
-                      "longitude":  -5.994072,
-                      "width": 2.25,
-                      "length": 1.5
-                    }
-                  },
-                  "sequenceNumber": 123
-                
-              }
-              List of Region Measurements: 
-                             value: {
-                                
-                "regions": [
-                  {
-                    "resourceId": "DeadPlant",
-                    "resultTime": 1558086914,
-                    "locationDimension": {
-                      "latitude":  37.392529,
-                      "longitude":  -5.994072,
-                      "width":  2.38,
-                      "length":  1.25 
-                    }
-                  }
-                ],
-                "sequenceNumber": 235
-              
-              }
+            
               Aggregated Measurements from Multi-Parameter Sensors: 
                value: {
                                    
