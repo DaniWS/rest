@@ -48,7 +48,7 @@ public class Main {
 	public static final String BASE_URI = "https://0.0.0.0:8080/";
 	public static final String SERVER_URI = "https://138.100.51.114:443/";
 	protected static final URI DOCS_URI=URI.create(SERVER_URI+"docs/");
-
+	
 	
 	private static void trustEveryone() { 
 	    try { 
