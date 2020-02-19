@@ -161,7 +161,7 @@ public class Server {
 	
 	@POST
 	@Path("/telemetry")
-	@Consumes(MediaType.APPLICATION_JSON)
+//	@Consumes(MediaType.APPLICATION_JSON)
 	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
 
 //              Check for "resourceId"
