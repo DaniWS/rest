@@ -4,7 +4,7 @@ info:
   version: 1.0.1
   title: AFarCloud REST API
   contact:
-    name: Vicente Hernández Díaz
+    name: Vicente HernÃ¡ndez DÃ­az
     email: vicente.hernandez@upm.es 
 externalDocs:
    description: Find out more about AFarCloud
@@ -458,5 +458,25 @@ paths:
           description: "Invalid input: not a JSON"
 
 servers:
-  - url: https://torcos.etsist.upm.es/
-    description: Torcos      
+  - url: https://torcos.etsist.upm.es:9201/
+    description: AS01
+  - url: https://torcos.etsist.upm.es:9202/
+    description: AS02
+  - url: https://torcos.etsist.upm.es:9203/
+    description: AS03
+  - url: https://torcos.etsist.upm.es:9204/
+    description: AS04
+  - url: https://torcos.etsist.upm.es:9205/
+    description: AS05
+  - url: https://torcos.etsist.upm.es:9206/
+    description: AS06
+  - url: https://torcos.etsist.upm.es:9207/
+    description: AS07
+  - url: https://torcos.etsist.upm.es:9208/
+    description: AS08
+  - url: https://torcos.etsist.upm.es:9209/
+    description: AS09
+  - url: https://torcos.etsist.upm.es:92010/
+    description: AS10    
+  - url: https://torcos.etsist.upm.es:92011/
+    description: AS11
