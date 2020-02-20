@@ -61,7 +61,7 @@ public class Server {
   	private static int i = 0;
   	private static String name;
   	
-	protected final Response invalidJsonException = Response.status(405).entity("405: \"Invalid input: not AFarCloud-compliant\". For more information, please refer to the API documentation: "+ Main.DOCS_URI).header("Access-Control-Allow-Origin", "*").build();
+	protected final Response invalidJsonException = Response.status(415).entity("415: \"Invalid input: not AFarCloud-compliant\". For more information, please refer to the API documentation: "+ Main.DOCS_URI).header("Access-Control-Allow-Origin", "*").build();
 	protected final Response notaJsonException =  Response.status(415).entity("415: \"Invalid input: not a JSON\". For more information, please refer to the API documentation: "+ Main.DOCS_URI).header("Access-Control-Allow-Origin", "*").build();
 
 	
