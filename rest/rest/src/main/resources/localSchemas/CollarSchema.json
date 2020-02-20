@@ -10,8 +10,8 @@
 			"title": "The Sequence Number",
 			"default": 0,
 			"examples": [
-				123
-			]
+			123
+			]			 
 		},
 		"collar": {
 			"$id": "#/properties/collar",

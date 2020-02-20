@@ -161,3 +161,52 @@
 2020-02-12 14:29:05,866  INFO [grizzly-http-server-0] - Server - SessionID: 3009728445967560368 IP: 0:0:0:0:0:0:0:1 Successful request on: RegionListSchema
 2020-02-12 14:29:18,817  INFO [grizzly-http-server-2] - Server - SessionID: 3009728445967560368 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
 2020-02-12 14:42:08,393  INFO [grizzly-http-server-11] - Server - SessionID: 8729240249059086080 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
+2020-02-19 17:17:06,444  INFO [grizzly-http-server-11] - Server - SessionID: 7452577241005141590 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-19 17:23:52,693  INFO [grizzly-http-server-11] - Server - SessionID: 2295766481456470000 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-19 17:24:19,102  INFO [grizzly-http-server-11] - Server - SessionID: 6444743810454619254 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-19 17:26:14,099  INFO [grizzly-http-server-12] - Server - SessionID: 6444743810454619254 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-19 17:29:41,388  INFO [grizzly-http-server-11] - Server - SessionID: 8097157293956533498 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-19 17:30:28,095 ERROR [grizzly-http-server-12] - Server - SessionID: 8097157293956533498 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Invalid numeric value: Leading zeroes not allowed
+ at [Source: (StringReader); line: 12, column: 22]
+2020-02-19 17:30:43,167  INFO [grizzly-http-server-13] - Server - SessionID: 8097157293956533498 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-19 17:31:46,915  INFO [grizzly-http-server-11] - Server - SessionID: 8983803075197079633 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-19 17:31:48,658  INFO [grizzly-http-server-12] - Server - SessionID: 8983803075197079633 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-20 11:16:14,693  INFO [grizzly-http-server-11] - Server - SessionID: 1202492572125054157 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:16:28,536  INFO [grizzly-http-server-12] - Server - SessionID: 609555256619096864 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-20 11:16:56,142  INFO [grizzly-http-server-13] - Server - SessionID: 609555256619096864 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-20 11:16:57,096  INFO [grizzly-http-server-14] - Server - SessionID: 1202492572125054157 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:17:11,851  INFO [grizzly-http-server-15] - Server - SessionID: 1202492572125054157 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:17:58,031 ERROR [grizzly-http-server-0] - Server - SessionID: 1202492572125054157 IP: 10.0.43.141 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Invalid numeric value: Leading zeroes not allowed
+ at [Source: (StringReader); line: 3, column: 22]
+2020-02-20 11:17:58,035 ERROR [grizzly-http-server-1] - Server - SessionID: 609555256619096864 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Invalid numeric value: Leading zeroes not allowed
+ at [Source: (StringReader); line: 18, column: 22]
+2020-02-20 11:18:21,629  INFO [grizzly-http-server-2] - Server - SessionID: 1202492572125054157 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:18:40,636  INFO [grizzly-http-server-3] - Server - SessionID: 1202492572125054157 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:18:40,815  INFO [grizzly-http-server-4] - Server - SessionID: 609555256619096864 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-20 11:18:41,224  INFO [grizzly-http-server-5] - Server - SessionID: 186177980512222084 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:19:54,155  INFO [grizzly-http-server-6] - Server - SessionID: 1202492572125054157 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:20:12,818  INFO [grizzly-http-server-7] - Server - SessionID: 1202492572125054157 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:20:26,262  INFO [grizzly-http-server-8] - Server - SessionID: 186177980512222084 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:20:26,703  INFO [grizzly-http-server-9] - Server - SessionID: 186177980512222084 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:20:29,220  INFO [grizzly-http-server-10] - Server - SessionID: 186177980512222084 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:20:38,836  INFO [grizzly-http-server-11] - Server - SessionID: 609555256619096864 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-20 11:20:49,941  INFO [grizzly-http-server-12] - Server - SessionID: 1202492572125054157 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:20:55,697  INFO [grizzly-http-server-13] - Server - SessionID: 186177980512222084 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:23:27,793  INFO [grizzly-http-server-11] - Server - SessionID: 8039674942163923025 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-20 11:23:28,031  INFO [grizzly-http-server-12] - Server - SessionID: 7789150904288076780 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:23:28,478  INFO [grizzly-http-server-13] - Server - SessionID: 8039674942163923025 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-20 11:23:29,057  INFO [grizzly-http-server-14] - Server - SessionID: 7789150904288076780 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:23:29,199  INFO [grizzly-http-server-15] - Server - SessionID: 8039674942163923025 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-20 11:23:29,560  INFO [grizzly-http-server-0] - Server - SessionID: 7789150904288076780 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:23:29,673  INFO [grizzly-http-server-1] - Server - SessionID: 8039674942163923025 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-20 11:23:30,051  INFO [grizzly-http-server-2] - Server - SessionID: 7789150904288076780 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:23:30,131  INFO [grizzly-http-server-3] - Server - SessionID: 8039674942163923025 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-20 11:23:30,937  INFO [grizzly-http-server-4] - Server - SessionID: 8039674942163923025 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-20 11:23:31,428  INFO [grizzly-http-server-5] - Server - SessionID: 7789150904288076780 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:23:32,156  INFO [grizzly-http-server-6] - Server - SessionID: 8039674942163923025 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-20 11:23:33,446  INFO [grizzly-http-server-7] - Server - SessionID: 7789150904288076780 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:23:33,507  INFO [grizzly-http-server-8] - Server - SessionID: 8039674942163923025 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-20 11:23:35,035  INFO [grizzly-http-server-9] - Server - SessionID: 8039674942163923025 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-20 11:23:35,251  INFO [grizzly-http-server-10] - Server - SessionID: 7789150904288076780 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
+2020-02-20 11:30:35,562  INFO [grizzly-http-server-11] - Server - SessionID: 4501918870659718570 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-20 11:30:35,562  INFO [grizzly-http-server-12] - Server - SessionID: 2357892352355038545 IP: 10.0.43.141 Successful request on: SensorListSchema_Complete

@@ -1,10 +1,16 @@
 package afc.rest;
 
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Collections;
@@ -177,12 +183,14 @@ public class Server {
 	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ name );
                   
 //	        	  Here goes the code to send the data.
+//	        	  sendTelemetry(s);
+	        	  System.out.println("Salí del método");
 	        	  }
 	        	  else {
 	        	  text= "Test mode: ";	   
 	        	  }	  
-	        	return Response.status(200).entity(text+"200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ Main.DOCS_URI +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();
-	        	
+//	        	return Response.status(200).entity(text+"200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ Main.DOCS_URI +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();
+	        	return sendTelemetry(s, request);
 	          }
 	          
 	          else if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
@@ -199,6 +207,51 @@ public class Server {
 	         final Response detailedException = Response.status(415).entity(notaJsonException.getEntity().toString()+"\nError: "+ex).build();
 	         throw new WebApplicationException(detailedException);
 		}
+	}
+	private Response sendTelemetry(String json, Request request) {
+		 try {
+		    	//Used for connectivity with the REST server
+		        URL uri = new URL("http://10.0.43.139:8080/store/measures");
+		        HttpURLConnection conn = (HttpURLConnection) uri.openConnection();
+		        conn.setDoOutput(true);
+		        conn.setRequestMethod("POST");
+	        	  System.out.println("Antes de content type");
+  
+		        conn.setRequestProperty("Content-Type", "application/json");
+	        	  System.out.println("Desp de content type");
+    
+		        ///////parameter used to encase the transmitted JSON. JSON messages must be delivered here//////
+		        //String input = jsonCollar; String input = jsonRegion; etc
+		        String input = json;
+		        ///////end of JSON message delivery/////////////////////////////////////////////////////////////
+		        
+		        //Used to post the JSON formatted according to AFarCloud data format
+		        OutputStream os = conn.getOutputStream();
+		        os.write(input.getBytes());
+		        os.flush();
+		        if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+		            throw new RuntimeException("Failed : HTTP error code : "
+		                    + conn.getResponseCode());
+		        }
+/*		        BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+		        String output;
+		        
+		        //Server answer
+		        System.out.println("Output from Server .... \n");
+		        while ((output = br.readLine()) != null) {
+		            System.out.println(output);
+		           
+		        }
+*/		        
+		        conn.disconnect();
+		    	return Response.status(200).entity("200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ Main.DOCS_URI +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();
+		       
+		    } catch (MalformedURLException e) {
+		    	return Response.status(500).entity(e.getMessage()).build();  
+		    } catch (IOException e) {
+		    	return Response.status(500).entity(e.getMessage()).build();  
+		    }
+
 	}
 }
 
