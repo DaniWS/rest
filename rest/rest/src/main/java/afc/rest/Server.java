@@ -177,20 +177,21 @@ public class Server {
    */ 	   
     	
 	         try { if (validateJson(s,uriInfo)) {
-	        	  String text="";
+	 //       	  String text="";
 //	        	  Checks for the "test" query parameter.
 	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
 	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ name );
                   
 //	        	  Here goes the code to send the data.
-//	        	  sendTelemetry(s);
-	        	  System.out.println("Salí del método");
-	        	  }
+	        	return sendTelemetry(s, request, name);
+//	        	
+		        	  }
 	        	  else {
-	        	  text= "Test mode: ";	   
+	 //       	  text= "Test mode: ";	   
+ 	        	return Response.status(200).entity("Test Mode: "+"200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ Main.DOCS_URI +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();
+
 	        	  }	  
-//	        	return Response.status(200).entity(text+"200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ Main.DOCS_URI +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();
-	        	return sendTelemetry(s, request);
+	        
 	          }
 	          
 	          else if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
@@ -208,8 +209,9 @@ public class Server {
 	         throw new WebApplicationException(detailedException);
 		}
 	}
-	private Response sendTelemetry(String json, Request request) {
+	private Response sendTelemetry(String json, Request request, String name) {
 		 try {
+			    
 		    	//Used for connectivity with the REST server
 		        URL uri = new URL("http://10.0.43.139:8080/store/measures");
 		        HttpURLConnection conn = (HttpURLConnection) uri.openConnection();
@@ -253,5 +255,21 @@ public class Server {
 		    }
 
 	}
+	private void completeJSON(String name) {
+		for (String s: Schema.schemasName) {
+			if name.equals(s){
+				
+			}
+		}
+/*	 switch (name) {
+	  case "CASE_A":
+//		  Fill CASE_A
+	  case "CASE_B":
+//		  Fill CASE_B
+	  case "CASE_C":
+//		  Fill CASE_C
+	 }
+	 */
+	};
 }
 
