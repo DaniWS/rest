@@ -213,7 +213,7 @@ paths:
       responses:
         "200":
           description: "Successful operation"
-        "405":
+        "415":
           description: "Invalid input: not AFarCloud-compliant"
         "415":
           description: "Invalid input: not a JSON"
