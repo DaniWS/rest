@@ -113,9 +113,10 @@ public class Server {
 //     Method to validate Json.
 
 	  
-	private Pair <Boolean, String> validateJson (String s, UriInfo uriInfo) throws ProcessingException, IOException {
+	private Pair <Boolean, Schema> validateJson (String s, UriInfo uriInfo) throws ProcessingException, IOException {
 	
 //		Reorder the collection attending to the demand.
+
 		i++;
 		if(i>=100) 
 		{
@@ -132,18 +133,22 @@ public class Server {
 		}
 		
      	for (Schema i:SchemaSet.schemas) {
-			
+     		if (i.getName().equals("Definitions")){
+     		continue;
+     		}
 //		Validates against schemas.
 		if (ValidationUtils.isJsonValid(i.getSchema(), s))
 		{
-			
+
 			i.setUso(i.getUso()+1); 
-			String category = i.getName();
-			return new Pair<Boolean, String>(true, category); 
+			
+	//		String category = i.getName();
+			return new Pair<Boolean, Schema>(true, i); 
 		}	
 		
 		}
-     	return new Pair<Boolean, String>(false, ""); 
+
+     	return new Pair<Boolean, Schema>(false, null); 
      	}	
 //		
 		private String getRemoteAddress(Request request) {
@@ -172,22 +177,27 @@ public class Server {
 	@Path("/telemetry")
 //	@Consumes(MediaType.APPLICATION_JSON)
 	public Response getMeasure(String input, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
-               
 //              Check for "resourceId"
 	/*	 	
     		RegularExpression oRegExt = new RegularExpression();
     		resourceId = oRegExt.extractInformation("\"{\"resourceId\":\"urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012\",\"sequence number\": 123,\"location\": { \"latitude\": 45.45123,\"longitude\": 25.25456, \"altitude\": 2.10789},\");");
    */ 	    try {
-    	       Pair   <Boolean, String> response=validateJson(input,uriInfo);
-	           if (response.getFirst()) {
-	        	 String category=response.getSecond();
+    	       Pair   <Boolean, Schema> response=validateJson(input,uriInfo);
+    	       Boolean valid=response.getFirst();
+    	       Schema schema=response.getSecond();
+	           if (valid) {
+	        	 String category=schema.getName();
 //           	  String text="";
 //	        	  Checks for the "test" query parameter.
 	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
 	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ category );
                   
 //	        	  Here goes the code to send the data.
-	        	return sendTelemetry(input, request, category);
+	        	if(schema.getIsSimple()) {
+//	             complete schema method
+	        Setup.completeJson(schema.getMissingFields(), input);
+	        	}  
+//	        	return sendTelemetry(input, request, category);
 //	        	
 		        	  }
 	        	  else {
@@ -259,21 +269,6 @@ public class Server {
 		    }
 
 	}
-	private void completeJSON(String category) {
-		for (String s: SchemaSet.schemasName) {
-			if (category.equals(s)){
-				
-			}
-		}
-/*	 switch (name) {
-	  case "CASE_A":
-//		  Fill CASE_A
-	  case "CASE_B":
-//		  Fill CASE_B
-	  case "CASE_C":
-//		  Fill CASE_C
-	 }
-	 */
-	};
+
 }
 

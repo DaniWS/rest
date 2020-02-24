@@ -210,3 +210,8 @@
 2020-02-20 11:23:35,251  INFO [grizzly-http-server-10] - Server - SessionID: 7789150904288076780 IP: 10.0.43.141 Successful request on: SensorSchema_Complete
 2020-02-20 11:30:35,562  INFO [grizzly-http-server-11] - Server - SessionID: 4501918870659718570 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
 2020-02-20 11:30:35,562  INFO [grizzly-http-server-12] - Server - SessionID: 2357892352355038545 IP: 10.0.43.141 Successful request on: SensorListSchema_Complete
+2020-02-24 16:10:04,569  INFO [grizzly-http-server-11] - Server - SessionID: 1920343605683241909 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Complete
+2020-02-24 16:10:46,338  INFO [grizzly-http-server-12] - Server - SessionID: 1920343605683241909 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-24 16:12:44,413  INFO [grizzly-http-server-11] - Server - SessionID: 3355527269598846439 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-24 16:14:59,628  INFO [grizzly-http-server-11] - Server - SessionID: 7210224730016156740 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-24 16:15:33,578  INFO [grizzly-http-server-11] - Server - SessionID: 8215689220781875797 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified

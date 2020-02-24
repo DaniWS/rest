@@ -79,11 +79,13 @@ public class Main {
 	  JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
 	  for (Schema s: SchemaSet.schemas) {		    
 	        String filename=s.getName()+".json";
+	       
 	        FileUtils.copyURLToFile(          
 	        new URL(schemaURI+filename),
 	        new File("src/main/resources/localSchemas/"+filename));
 //	       Avoids loading Definition as a schema to prevent false validations.
-	               if (!s.getName().equals("Definitions")) {
+	       
+	        if (!s.getName().equals("Definitions")) {
 	               s.setSchema(factory.getJsonSchema("resource:/localSchemas/"+filename));
 //	               SchemaSet.schemas.add(new Schema(factory.getJsonSchema("resource:/localSchemas/"+filename),0,s, null, s));
 	               }
@@ -168,7 +170,9 @@ public class Main {
 
         Setup.loadSchemasInfo(Setup.json2);
         loadSchemas(BASE_URI+"schemas/");
-        System.out.println(SchemaSet.schemas.get(3).getSchema().toString());
+
+        Setup.parseEntireJson(SchemaSet.schemas.get(7).getMissingFields() ,Setup.json);
+     
      
      
         
