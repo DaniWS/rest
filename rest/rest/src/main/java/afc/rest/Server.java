@@ -1,10 +1,16 @@
 package afc.rest;
 
 
+
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Collections;
@@ -26,6 +32,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import org.apache.log4j.Logger;
 import org.glassfish.grizzly.http.server.Request;
+import org.glassfish.grizzly.utils.Pair;
 
 import com.fasterxml.jackson.core.JsonParseException;
 /*
@@ -39,7 +46,8 @@ import com.github.fge.jsonschema.core.exceptions.ProcessingException;
 
 import afc.rest.ValidationUtils;
 
-@Api(value = "REST API")
+
+@Api( "REST API")
 @Path("/")
 public class Server {
 	
@@ -53,9 +61,8 @@ public class Server {
   	protected final String collarMeasureList="collar/measureList";
   	protected String resourceId;
   	private static int i = 0;
-  	private static String name;
   	
-	protected final Response invalidJsonException = Response.status(405).entity("405: \"Invalid input: not AFarCloud-compliant\". For more information, please refer to the API documentation: "+ Main.DOCS_URI).header("Access-Control-Allow-Origin", "*").build();
+	protected final Response invalidJsonException = Response.status(415).entity("415: \"Invalid input: not AFarCloud-compliant\". For more information, please refer to the API documentation: "+ Main.DOCS_URI).header("Access-Control-Allow-Origin", "*").build();
 	protected final Response notaJsonException =  Response.status(415).entity("415: \"Invalid input: not a JSON\". For more information, please refer to the API documentation: "+ Main.DOCS_URI).header("Access-Control-Allow-Origin", "*").build();
 
 	
@@ -104,38 +111,40 @@ public class Server {
 	*/
   
 //     Method to validate Json.
-	private boolean validateJson(String s, UriInfo uriInfo) throws ProcessingException, IOException {
-		
+
+	  
+	private Pair <Boolean, String> validateJson (String s, UriInfo uriInfo) throws ProcessingException, IOException {
+	
 //		Reorder the collection attending to the demand.
 		i++;
 		if(i>=100) 
 		{
-			Collections.sort(Schema.schemas);
+			Collections.sort(SchemaSet.schemas);
 			
 			i=0;
 			System.out.println(i + " veces se ha validado!!!!!!!");
 			System.out.println("Array ordenado por uso");
-			for (int i = 0; i < Schema.schemas.size()-1; i++) {
-	            System.out.println((i+1) + ". " + Schema.schemas.get(i).getName() + " - Uso: " + Schema.schemas.get(i).getUso());
+			for (int i = 0; i < SchemaSet.schemas.size()-1; i++) {
+	            System.out.println((i+1) + ". " + SchemaSet.schemas.get(i).getName() + " - Uso: " + SchemaSet.schemas.get(i).getUso());
 	        }
-			Schema.schemas.forEach((n) -> n.setUso(0));
+			SchemaSet.schemas.forEach((n) -> n.setUso(0));
 			
 		}
 		
-     	for (Schema i:Schema.schemas) {
+     	for (Schema i:SchemaSet.schemas) {
 			
 //		Validates against schemas.
 		if (ValidationUtils.isJsonValid(i.getSchema(), s))
 		{
 			
 			i.setUso(i.getUso()+1); 
-			name = i.getName();
-				return true;
+			String category = i.getName();
+			return new Pair<Boolean, String>(true, category); 
 		}	
 		
 		}
-     	return false;
-		}	
+     	return new Pair<Boolean, String>(false, ""); 
+     	}	
 //		
 		private String getRemoteAddress(Request request) {
 		String ipAddress = request.getHeader("X-FORWARDED-FOR");  
@@ -162,27 +171,31 @@ public class Server {
 	@POST
 	@Path("/telemetry")
 //	@Consumes(MediaType.APPLICATION_JSON)
-	public Response getMeasure(String s, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
-
+	public Response getMeasure(String input, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
+               
 //              Check for "resourceId"
 	/*	 	
     		RegularExpression oRegExt = new RegularExpression();
     		resourceId = oRegExt.extractInformation("\"{\"resourceId\":\"urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012\",\"sequence number\": 123,\"location\": { \"latitude\": 45.45123,\"longitude\": 25.25456, \"altitude\": 2.10789},\");");
-   */ 	   
-    	
-	         try { if (validateJson(s,uriInfo)) {
-	        	  String text="";
+   */ 	    try {
+    	       Pair   <Boolean, String> response=validateJson(input,uriInfo);
+	           if (response.getFirst()) {
+	        	 String category=response.getSecond();
+//           	  String text="";
 //	        	  Checks for the "test" query parameter.
 	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
-	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ name );
+	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ category );
                   
 //	        	  Here goes the code to send the data.
-	        	  }
+	        	return sendTelemetry(input, request, category);
+//	        	
+		        	  }
 	        	  else {
-	        	  text= "Test mode: ";	   
+	 //       	  text= "Test mode: ";	   
+ 	        	return Response.status(200).entity("Test Mode: "+"200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ Main.DOCS_URI +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();
+
 	        	  }	  
-	        	return Response.status(200).entity(text+"200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ Main.DOCS_URI +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();
-	        	
+	        
 	          }
 	          
 	          else if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
@@ -200,5 +213,67 @@ public class Server {
 	         throw new WebApplicationException(detailedException);
 		}
 	}
+	private Response sendTelemetry(String json, Request request, String category) {
+		 try {
+			    
+		    	//Used for connectivity with the REST server
+		        URL uri = new URL("http://10.0.43.139:8080/store/measures");
+		        HttpURLConnection conn = (HttpURLConnection) uri.openConnection();
+		        conn.setDoOutput(true);
+		        conn.setRequestMethod("POST");
+	        	  System.out.println("Antes de content type");
+  
+		        conn.setRequestProperty("Content-Type", "application/json");
+	        	  System.out.println("Desp de content type");
+    
+		        ///////parameter used to encase the transmitted JSON. JSON messages must be delivered here//////
+		        //String input = jsonCollar; String input = jsonRegion; etc
+		        String input = json;
+		        ///////end of JSON message delivery/////////////////////////////////////////////////////////////
+		        
+		        //Used to post the JSON formatted according to AFarCloud data format
+		        OutputStream os = conn.getOutputStream();
+		        os.write(input.getBytes());
+		        os.flush();
+		        if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+		            throw new RuntimeException("Failed : HTTP error code : "
+		                    + conn.getResponseCode());
+		        }
+/*		        BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+		        String output;
+		        
+		        //Server answer
+		        System.out.println("Output from Server .... \n");
+		        while ((output = br.readLine()) != null) {
+		            System.out.println(output);
+		           
+		        }
+*/		        
+		        conn.disconnect();
+		    	return Response.status(200).entity("200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ Main.DOCS_URI +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();
+		       
+		    } catch (MalformedURLException e) {
+		    	return Response.status(500).entity(e.getMessage()).build();  
+		    } catch (IOException e) {
+		    	return Response.status(500).entity(e.getMessage()).build();  
+		    }
+
+	}
+	private void completeJSON(String category) {
+		for (String s: SchemaSet.schemasName) {
+			if (category.equals(s)){
+				
+			}
+		}
+/*	 switch (name) {
+	  case "CASE_A":
+//		  Fill CASE_A
+	  case "CASE_B":
+//		  Fill CASE_B
+	  case "CASE_C":
+//		  Fill CASE_C
+	 }
+	 */
+	};
 }
 

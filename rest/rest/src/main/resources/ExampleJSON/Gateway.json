@@ -1,20 +1,20 @@
 {
-  "deviceId": "urn:afc:DN*/!:3: :h:B3?",
+  "deviceId": "urn:afc:AS04:droneMissions:MDH:GW:drone001",
   "location": {
-    "latitude": 13.75,
-    "longitude": 249.5,
-    "altitude": 914.0
+    "latitude": 45.45123,
+    "longitude": 25.25456,
+    "altitude": 2.10789
   },
   "observations": [
-    {
-      "resourceId": "urn:afc:_:uXP s:I: %o:4",
-      "observedProperty": "ABCDEFGHIJKLMNOP",
-      "resultTime": 637,
+{
+      "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+      "observedProperty": "air temperature",
+      "resultTime": 1558086914,
       "result": {
-        "value": 698.0,
-        "uom": "ABCDEFGHI"
+        "value": 3.2,
+        "uom": "http://qudt.org/vocab/unit/DEG_C"
       }
     }
   ],
-  "sequenceNumber": 0
+  "sequenceNumber": 123
 }

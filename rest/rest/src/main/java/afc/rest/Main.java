@@ -5,7 +5,7 @@ import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 //import org.glassfish.jersey.servlet.ServletContainer;
 import org.glassfish.grizzly.http.server.CLStaticHttpHandler;
-
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.*;
 
 
@@ -20,14 +20,16 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 //import org.glassfish.grizzly.servlet.*;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
-
+import com.github.fge.jsonschema.main.JsonSchemaFactory;
 
 import io.swagger.jaxrs.config.BeanConfig;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.ObjectInputStream.GetField;
+import java.net.MalformedURLException;
 import java.net.URI;
-
+import java.net.URL;
 import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
@@ -48,7 +50,7 @@ public class Main {
 	public static final String BASE_URI = "https://0.0.0.0:8080/";
 	public static final String SERVER_URI = "https://138.100.51.114:443/";
 	protected static final URI DOCS_URI=URI.create(SERVER_URI+"docs/");
-
+	
 	
 	private static void trustEveryone() { 
 	    try { 
@@ -71,7 +73,25 @@ public class Main {
 	            e.printStackTrace(); 
 	    } 
 	} 
-   
+
+	// Method to load the schemas: takes the schemas URI as an argument.
+	public static void loadSchemas(String schemaURI) throws MalformedURLException, IOException, ProcessingException {
+	  JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
+	  for (Schema s: SchemaSet.schemas) {		    
+	        String filename=s.getName()+".json";
+	        FileUtils.copyURLToFile(          
+	        new URL(schemaURI+filename),
+	        new File("src/main/resources/localSchemas/"+filename));
+//	       Avoids loading Definition as a schema to prevent false validations.
+	               if (!s.getName().equals("Definitions")) {
+	               s.setSchema(factory.getJsonSchema("resource:/localSchemas/"+filename));
+//	               SchemaSet.schemas.add(new Schema(factory.getJsonSchema("resource:/localSchemas/"+filename),0,s, null, s));
+	               }
+	       
+	        }
+
+
+	       };
     
     /**
      * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
@@ -144,12 +164,13 @@ public class Main {
         cfg.addHttpHandler(schemasHandler, "/schemas/");
         
 
-
-
-
-
         trustEveryone();
-        Schema.loadSchemas(BASE_URI+"schemas/");
+
+        Setup.loadSchemasInfo(Setup.json2);
+        loadSchemas(BASE_URI+"schemas/");
+        System.out.println(SchemaSet.schemas.get(3).getSchema().toString());
+     
+     
         
      
         
