@@ -3,35 +3,22 @@ package afc.rest;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.StringReader;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import javax.json.Json;
-import javax.ws.rs.core.Response;
-
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
-import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonToken;
 
 
 
@@ -67,10 +54,18 @@ public class Setup {
  
 	
 		}
-	 public static void parseObject(JsonElement token,  Set<Entry<String, JsonElement>> registryJSON) {
+	 public static  Set <Entry<String, JsonElement>> parseObject(JsonElement token,  Set<Entry<String, JsonElement>> registryJSON) {
 		JsonObject jsonObject= token.getAsJsonObject();
 		registryJSON.addAll(jsonObject.entrySet());
-		
+		 for (String key:jsonObject.keySet()) {
+			 JsonElement token2 = jsonObject.get(key);
+			 if(token2.isJsonObject()) {
+				registryJSON= parseObject(token2, registryJSON);
+				
+			  }
+			
+		 }
+		 return registryJSON;
 	 }
 	 public static void parseArray () {}
 	 public static void parseEntireJson(JsonObject missingFields, String json) throws IOException {
@@ -80,7 +75,8 @@ public class Setup {
 		 Set<Entry<String, JsonElement>> registryJSON = null;
 		 try {
 			 JsonElement jsonTree=JsonParser.parseString(json);
-			 if (jsonTree.isJsonObject()) {
+			registryJSON= parseObject(jsonTree, registryJSON);
+			/* if (jsonTree.isJsonObject()) {
 				 JsonObject jsonObject =jsonTree.getAsJsonObject();
 				 
 					 System.out.println("KEY SETS: "+jsonObject.keySet());
@@ -108,8 +104,8 @@ public class Setup {
 						  }
 					 System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!! TODOS LOS FIELDS!!!!!!!!!!!!!!!!!!!!!"+registryJSON.toString());
 					
-				 }
-		 
+				 }*/
+			 System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!! TODOS LOS FIELDS!!!!!!!!!!!!!!!!!!!!!"+registryJSON.toString());
 		 for(String key:missingFields.keySet()) {
 				 
 			 JsonElement token = missingFields.get(key);
