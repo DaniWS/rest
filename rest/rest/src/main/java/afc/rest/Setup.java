@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import javax.json.Json;
@@ -42,7 +43,7 @@ public class Setup {
 	 public static String json3= "[{'name': 'Definitions', 'type':'Collar', 'isSimple':false},{'name': 'CollarListSchema', 'type':'Collar', 'isSimple':true, 'missingFields': {'location':'','result':{'uom':''}, 'resourceUrn':''}}, {'name': 'CollarSchema', 'type':'Sensor', 'isSimple':true},{'name': 'GatewayListSchema', 'type':'Sensor', 'isSimple':true},{'name': 'RegionListSchema', 'type':'Region', 'isSimple':true}, {'name': 'RegionSchema', 'type':'Region', 'isSimple':true},{'name': 'SensorListSchema_Complete', 'type':'Sensor', 'isSimple':true},{'name': 'SensorListSchema_Simplified', 'type':'Sensor', 'isSimple':true,'missingFields': {'location':'','result':{'uom':''}, 'resourceUrn':''} },{'name': 'SensorSchema_Complete', 'type':'Sensor', 'isSimple':true},{'name': 'SensorSchema_Simplified', 'type':'Sensor', 'isSimple':true},{'name': 'MultiSensorListSchema', 'type':'Sensor', 'isSimple':true}  ]";  
 
 	public static void loadSchemasInfo(String input){ 
-
+  
 	     
         try {
         	System.out.println(json3);
@@ -66,8 +67,143 @@ public class Setup {
  
 	
 		}
+	 public static void parseObject(JsonElement token,  Set<Entry<String, JsonElement>> registryJSON) {
+		JsonObject jsonObject= token.getAsJsonObject();
+		registryJSON.addAll(jsonObject.entrySet());
+		
+	 }
+	 public static void parseArray () {}
 	 public static void parseEntireJson(JsonObject missingFields, String json) throws IOException {
-		 JsonReader jsonReader = new JsonReader(new StringReader(json));
+		 Gson gson = new Gson();
+		 
+		  JsonObject missingFieldsCopy = gson.fromJson(missingFields , JsonObject.class);
+		 Set<Entry<String, JsonElement>> registryJSON = null;
+		 try {
+			 JsonElement jsonTree=JsonParser.parseString(json);
+			 if (jsonTree.isJsonObject()) {
+				 JsonObject jsonObject =jsonTree.getAsJsonObject();
+				 
+					 System.out.println("KEY SETS: "+jsonObject.keySet());
+					 registryJSON=jsonObject.entrySet();
+					 for (String key:jsonObject.keySet()) {
+						JsonElement token=jsonObject.get(key); 
+					  if(token.isJsonObject()) {
+						JsonObject jsonObject2=token.getAsJsonObject();
+						 System.out.println("KEY SETS: "+jsonObject2.keySet());
+						 registryJSON.addAll(jsonObject2.entrySet());
+						 for (String key2:jsonObject2.keySet()) {
+								JsonElement token2=jsonObject.get(key2); 
+								if (token2.isJsonObject()) {
+							    JsonObject jsonObject3=token2.getAsJsonObject();	
+							    registryJSON.addAll(jsonObject3.entrySet());
+
+								};
+						 
+
+						 }
+						  }
+					  
+						
+
+						  }
+					 System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!! TODOS LOS FIELDS!!!!!!!!!!!!!!!!!!!!!"+registryJSON.toString());
+					
+				 }
+		 
+		 for(String key:missingFields.keySet()) {
+				 
+			 JsonElement token = missingFields.get(key);
+			 if (token.isJsonObject()) {
+				 JsonObject	missingFields2 = token.getAsJsonObject();
+				 JsonObject	missingFields2Copy = gson.fromJson(missingFields2 , JsonObject.class);
+				
+			
+
+
+				 for(String key2:missingFields2.keySet()) {
+					 Iterator<Entry<String, JsonElement>> i =registryJSON.iterator();
+					 while(i.hasNext()) {
+						 Entry<String, JsonElement> pair2 = i.next();
+						  if (key2.equals(pair2.getKey())) {
+                          					 
+						 missingFields2Copy.remove(key2);
+						 missingFields2Copy.add(pair2.getKey(),pair2.getValue());
+						 break;
+						 
+					 }
+				 }	 
+					 
+				 }	
+				 missingFieldsCopy.remove(key);
+				 missingFieldsCopy.add(key, missingFields2Copy);
+				 
+				 }
+				 Iterator<Entry<String, JsonElement>> i =registryJSON.iterator();
+				 while(i.hasNext()) {
+					 Entry<String, JsonElement> pair = i.next();
+					  if (key.equals(pair.getKey())) {
+				 
+					 missingFieldsCopy.remove(key);
+					 missingFieldsCopy.add(pair.getKey(),pair.getValue());
+					 break;
+				 }
+			 }	 
+				 
+			
+			
+			 }
+		 System.out.println("MISSING FIELDS CUMPLIMENTED: "+ missingFieldsCopy.toString());
+		 }
+		 
+		 catch(JsonParseException e) {e.printStackTrace();
+		 }
+		 
+	 }
+		 
+		/* 
+	try {
+		
+		JsonElement jsonTree = JsonParser.parseString(json);
+		if (jsonTree.isJsonObject()) {
+		 JsonObject jsonObject =jsonTree.getAsJsonObject();
+		
+		 while (!jsonObject.keySet().isEmpty()) {
+			 System.out.println("KEY SETS: "+jsonObject.keySet());
+			 for (String key:jsonObject.keySet()) {
+			while (!missingFields.keySet().isEmpty()) {
+				System.out.println("KEY SETS DE MISSING: "+missingFields.keySet());
+			 for(String keyB:missingFields.keySet()) {
+				 
+				 JsonElement token = missingFields.get(keyB);
+				 if (token.isJsonObject()) {
+				JsonObject	missingFields2 = token.getAsJsonObject();
+				 
+			 
+				 for(String keyB2:missingFields2.keySet()) {
+					 if (key.equals(keyB2)) {
+						 missingFields2.remove(key);
+						 missingFields2.add(key, jsonObject.get(key));
+					 }
+				 }	 
+					 
+				 }	 
+			 if (key.equals(keyB)) {
+				 missingFields.remove(key);
+				 missingFields.add(key, jsonObject.get(key));
+			 }
+			
+			 }
+			 }
+			 }
+			 }
+		 }
+		
+		
+	}
+	
+	catch(JsonParseException e) {e.printStackTrace();}
+	 }
+	/* JsonReader jsonReader = new JsonReader(new StringReader(json));
 	        jsonReader.setLenient(true);
 
 	        try {
@@ -127,7 +263,7 @@ public class Setup {
 	    					System.out.println(missingFields.entrySet().toString());
 	                    }
 	                
-	                    	/*
+	                    	
 	                    for (Entry<String, JsonElement> entry : missingFields.entrySet()) {
 	    					System.out.println("Entry Set: "+entry.getKey().toString());
 	    					if (name.equals(entry.getKey().toString())) {
@@ -152,14 +288,14 @@ public class Setup {
 	    		                     
 	    		                }
 	    		                
-	    					}*/
-/*	    					 Iterator iterator=missingFields.entrySet().iterator();
+	    					}
+    					 Iterator iterator=missingFields.entrySet().iterator();
 	    					 while (iterator.hasNext()) {
 	    				
 	    							 System.out.println("Token KEY >>>> " + name);
 	    				}
 	                   
-*/	                   
+                   
 	            
 	 
 	                } else if (JsonToken.STRING.equals(nextToken)) {
@@ -205,7 +341,7 @@ public class Setup {
 			     finally   {    jsonReader.close();
 			     }
 
-        }
+        }*/
 	 public static void /*HashMap<String, String>*/ completeJson(JsonObject missingFields, String json ) {
 		  HashMap<String, String> missingValues = new HashMap<String, String>();
 		  try {
