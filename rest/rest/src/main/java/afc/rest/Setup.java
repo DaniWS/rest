@@ -8,12 +8,15 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
@@ -28,7 +31,7 @@ public class Setup {
 	 public static String json="{'resourceId':'sensor002','resourceType':'air_sensor','resourceUrn':'urn:afc:AS05:environmentalObservations:ROTECH:sensor002','latitude':44.224593,'longitude':11.941962,'altitude':0.0,'observations':[{'observedProperty':'air_temperature','uom':'http://qudt.org/vocab/unit/DEG_C','accuracy':0.1,'propertyId':94,'min_value':-20.0,'max_value':70.0},{'observedProperty':'air_humidity','uom':'http://qudt.org/vocab/unit/PERCENT','accuracy':1.0,'propertyId':95,'min_value':0.0,'max_value':100.0}],'supportedProtocol':'MQTT','hardwareVersion':'1.0','softwareVersion':'1.0','firmwareVersion':'1.0'}";
 	 public static String json2= "[{\"name\": \"Definitions\", \"type\":\"Collar\", \"isSimple\":false},{\"name\": \"CollarListSchema\", \"type\":\"Sensor\", \"isSimple\":true, \"missingFields\": {\"location\":\"\",\"result\":{\"uom\":\"\"}}}, {\"name\": \"CollarSchema\", \"type\":\"Sensor\", \"isSimple\":true},{\"name\": \"GatewayListSchema\", \"type\":\"Sensor\", \"isSimple\":true},{\"name\": \"RegionListSchema\", \"type\":\"Sensor\", \"isSimple\":true}, {\"name\": \"RegionSchema\", \"type\":\"Sensor\", \"isSimple\":true},{\"name\": \"SensorListSchema_Complete\", \"type\":\"Sensor\", \"isSimple\":true},{\"name\": \"SensorListSchema_Simplified\", \"type\":\"Sensor\", \"isSimple\":true} ]";  
 	 public static String json3= "[{'name': 'Definitions', 'type':'Collar', 'isSimple':false},{'name': 'CollarListSchema', 'type':'Collar', 'isSimple':true, 'missingFields': {'location':'','result':{'uom':''}, 'resourceUrn':''}}, {'name': 'CollarSchema', 'type':'Sensor', 'isSimple':true},{'name': 'GatewayListSchema', 'type':'Sensor', 'isSimple':true},{'name': 'RegionListSchema', 'type':'Region', 'isSimple':true}, {'name': 'RegionSchema', 'type':'Region', 'isSimple':true},{'name': 'SensorListSchema_Complete', 'type':'Sensor', 'isSimple':true},{'name': 'SensorListSchema_Simplified', 'type':'Sensor', 'isSimple':true,'missingFields': {'location':'','result':{'uom':''}, 'resourceUrn':''} },{'name': 'SensorSchema_Complete', 'type':'Sensor', 'isSimple':true},{'name': 'SensorSchema_Simplified', 'type':'Sensor', 'isSimple':true},{'name': 'MultiSensorListSchema', 'type':'Sensor', 'isSimple':true}  ]";  
-
+     
 	public static void loadSchemasInfo(String input){ 
   
 	     
@@ -54,61 +57,71 @@ public class Setup {
  
 	
 		}
-	 public static  Set <Entry<String, JsonElement>> parseObject(JsonElement token,  Set<Entry<String, JsonElement>> registryJSON) {
-		JsonObject jsonObject= token.getAsJsonObject();
-		registryJSON.addAll(jsonObject.entrySet());
-		 for (String key:jsonObject.keySet()) {
-			 JsonElement token2 = jsonObject.get(key);
-			 if(token2.isJsonObject()) {
-				registryJSON= parseObject(token2, registryJSON);
+	 public static  Set <Entry<String, JsonElement>> parseObject(JsonElement token,  Set<Entry<String, JsonElement>> registryJSON, int counter) {
+		 if (token.isJsonObject()) {
+		 JsonObject jsonObject= token.getAsJsonObject();
+		switch (counter) {
+			case 0: 
+				System.out.println(jsonObject.entrySet());
+    			registryJSON.addAll(jsonObject.entrySet());
+    	
+
+
+				counter++;
+				break;
 				
-			  }
+			default:
+				System.out.println(jsonObject.entrySet());
+	
+			     registryJSON.addAll (jsonObject.entrySet());	
+				
+				
+			}
+		
+		
+	
+		if (!jsonObject.keySet().isEmpty()) {
+		 for (String key:jsonObject.keySet()) {
+			 JsonElement localToken = jsonObject.get(key);
+			 registryJSON=parseObject(localToken, registryJSON, counter);
+			
+		 }
+		}
+		 }
+		 else if (token.isJsonArray()) {
+			 JsonArray jsonArray =token.getAsJsonArray();
+			 
+			 for (JsonElement localToken: jsonArray) {
+			
+			 System.out.println(localToken);
+			 registryJSON=parseObject(localToken, registryJSON, counter);
+			 }
+//			 while(jsonArray.get(i).)
+//			 for (JsonElement token2:jsonArray.get(i))
+			 
 			
 		 }
 		 return registryJSON;
 	 }
-	 public static void parseArray () {}
+	
 	 public static void parseEntireJson(JsonObject missingFields, String json) throws IOException {
 		 Gson gson = new Gson();
-		 
+
 		  JsonObject missingFieldsCopy = gson.fromJson(missingFields , JsonObject.class);
-		 Set<Entry<String, JsonElement>> registryJSON = null;
+		 Set<Entry<String, JsonElement>> registryJSON = new HashSet<Entry<String, JsonElement>>();
 		 try {
 			 JsonElement jsonTree=JsonParser.parseString(json);
-			registryJSON= parseObject(jsonTree, registryJSON);
-			/* if (jsonTree.isJsonObject()) {
-				 JsonObject jsonObject =jsonTree.getAsJsonObject();
-				 
-					 System.out.println("KEY SETS: "+jsonObject.keySet());
-					 registryJSON=jsonObject.entrySet();
-					 for (String key:jsonObject.keySet()) {
-						JsonElement token=jsonObject.get(key); 
-					  if(token.isJsonObject()) {
-						JsonObject jsonObject2=token.getAsJsonObject();
-						 System.out.println("KEY SETS: "+jsonObject2.keySet());
-						 registryJSON.addAll(jsonObject2.entrySet());
-						 for (String key2:jsonObject2.keySet()) {
-								JsonElement token2=jsonObject.get(key2); 
-								if (token2.isJsonObject()) {
-							    JsonObject jsonObject3=token2.getAsJsonObject();	
-							    registryJSON.addAll(jsonObject3.entrySet());
-
-								};
-						 
-
-						 }
-						  }
-					  
-						
-
-						  }
-					 System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!! TODOS LOS FIELDS!!!!!!!!!!!!!!!!!!!!!"+registryJSON.toString());
-					
-				 }*/
+			 
+			registryJSON= parseObject(jsonTree, registryJSON, 0);
+		
 			 System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!! TODOS LOS FIELDS!!!!!!!!!!!!!!!!!!!!!"+registryJSON.toString());
+			 
+             missingFieldsCopy=fillValues(registryJSON,missingFields,missingFieldsCopy, gson);
+			 /*				 
+							 
 		 for(String key:missingFields.keySet()) {
-				 
-			 JsonElement token = missingFields.get(key);
+			 
+		 JsonElement token = missingFields.get(key);
 			 if (token.isJsonObject()) {
 				 JsonObject	missingFields2 = token.getAsJsonObject();
 				 JsonObject	missingFields2Copy = gson.fromJson(missingFields2 , JsonObject.class);
@@ -145,17 +158,45 @@ public class Setup {
 				 }
 			 }	 
 				 
-			
-			
+	
 			 }
-		 System.out.println("MISSING FIELDS CUMPLIMENTED: "+ missingFieldsCopy.toString());
+*/		 System.out.println("MISSING FIELDS CUMPLIMENTED: "+ missingFieldsCopy.toString());
 		 }
 		 
 		 catch(JsonParseException e) {e.printStackTrace();
 		 }
 		 
 	 }
-		 
+		public static JsonObject fillValues(Set <Entry<String, JsonElement>> registryJSON, JsonObject missingFields, JsonObject missingFieldsCopy, Gson gson) {
+			 for(String key:missingFields.keySet()) {
+				 
+				 JsonElement token = missingFields.get(key);
+				
+					 if (token.isJsonObject()) {
+						 JsonObject	localMissingFields = token.getAsJsonObject();
+						 JsonObject	localMissingFieldsCopy = gson.fromJson(localMissingFields , JsonObject.class);
+						missingFieldsCopy.remove(key);
+						missingFieldsCopy.add(key, fillValues(registryJSON, localMissingFields, localMissingFieldsCopy, gson)); 
+						
+					    }
+					 else {
+					 Iterator<Entry<String, JsonElement>> i =registryJSON.iterator();
+					 while(i.hasNext()) {
+						 Entry<String, JsonElement> entry = i.next();
+						  if (key.equals(entry.getKey())) {
+                          					 
+						 
+						 missingFieldsCopy.add(key,entry.getValue());
+// Breaks the operation because the match for the corresponding key has been found. There's no need to continue iterating
+						break;	
+						  }
+					 }
+						  
+				 }	 
+				 
+			}
+			return missingFieldsCopy;
+		}
 		/* 
 	try {
 		
