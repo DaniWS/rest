@@ -1,0 +1,20 @@
+construir imagen docker:$ docker image build -t "nombre" .
+ejecutar local:$ docker run --name "container_name" -p 8080:8080 -it -v /home/dani/restlogs/logs:/usr/local/service/src/log/ -v /etc/timezone:/etc/timezone "nombre imagen"
+
+ejecutar en Torcos:$ docker run --name "container_name" -p 138.100.51.114:443:8080 -it -v /home/dani/restlogs/logs:/usr/local/service/src/log/ -v /etc/timezone:/etc/timezone "nombre imagen"
+exportar:$ docker save -o "path/to/file.tar" "nombre" 
+importar imagen docker:$ docker load -i docker_rest.tar
+ejecutar: docker run -p 8080:8080 -it docker_rest
+
+Para ver Log path: docker inspect <containername> | grep log
+
+Entrar en contenedor: docker exec -it "nombre contenedor" /bin/bash (o solo "bash")
+abrir archivo :cat "filename.ext"
+docker login
+docker tag "image name" teddyws/92:"tag"
+docker push teddyws92/dani:"tag"
+docker pull teddyws92/dani:"tag"
+
+*************** Varios contenedores************************
+Crear user-defined network
+darle dirección ip  "-ip" y hostname "-h" a los contenedores.

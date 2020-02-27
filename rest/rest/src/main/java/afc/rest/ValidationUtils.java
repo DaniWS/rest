@@ -17,7 +17,6 @@ public class ValidationUtils {
     
     public static final String JSON_V4_SCHEMA_IDENTIFIER = "http://json-schema.org/draft-04/schema#";
     public static final String JSON_SCHEMA_IDENTIFIER_ELEMENT = "$schema";
-    
     public static JsonNode getJsonNode(String jsonText) 
     throws IOException
     {
@@ -80,6 +79,14 @@ public class ValidationUtils {
             }
         }
     } // validateJson(Node) ends
+   
+    // I created this method in order to resolve relative paths in references "$ref" inside the schemas)
+    public static boolean isJsonValid(JsonSchema jsonSchemaNode, String jsonText) throws ProcessingException, IOException
+    {       	
+    	 final JsonNode jsonNode = getJsonNode(jsonText);
+         return isJsonValid(jsonSchemaNode, jsonNode);
+    }
+
     
     public static boolean isJsonValid(JsonSchema jsonSchemaNode, JsonNode jsonNode) throws ProcessingException
     {

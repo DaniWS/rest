@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<di:SashWindowsMngr xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.eclipse.org/papyrus/0.7.0/sashdi">
+  <sashModel currentSelection="//@sashModel/@windows.0/@children.0" restoreActivePage="true">
+    <windows>
+      <children xsi:type="di:TabFolder" currentSelection="//@sashModel/@windows.0/@children.0/@children.11">
+        <children>
+          <emfPageIdentifier href="papyrus.welcome:dynamic#/"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="platform:/resource/SoS/SoS.notation#_n4rRADkWEeq9QJJQLLZM_A"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="platform:/resource/SoS/SoS.notation#_iWgxkD1LEeqC3MJr-A7mSQ"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="platform:/resource/SoS/SoS.notation#_r2bEkD0qEeqC3MJr-A7mSQ"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="platform:/resource/SoS/SoS.notation#_GMgwQD1nEeqC3MJr-A7mSQ"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="platform:/resource/SoS/SoS.notation#_zJwYMD0-EeqC3MJr-A7mSQ"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="platform:/resource/SoS/SoS.notation#_DMWsID3OEeqC3MJr-A7mSQ"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="platform:/resource/SoS/SoS.notation#_pMPXcEImEeqCZ6kkQrGOPA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="platform:/resource/SoS/SoS.notation#_7WSb4EK8EeqCZ6kkQrGOPA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="platform:/resource/SoS/SoS.notation#_njqdkELKEeqCZ6kkQrGOPA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="platform:/resource/SoS/SoS.notation#_35rQcELPEeqCZ6kkQrGOPA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="platform:/resource/SoS/SoS.notation#_ddzPgEOIEeqCZ6kkQrGOPA"/>
+        </children>
+      </children>
+    </windows>
+  </sashModel>
+</di:SashWindowsMngr>

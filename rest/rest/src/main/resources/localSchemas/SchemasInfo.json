@@ -1,0 +1,12 @@
+[
+{'name': 'Definitions', 'type':'Collar', 'isSimple':false},
+{'name': 'CollarListSchema', 'type':'Collar', 'isSimple':true, 'missingFields': {'location':'','result':{'uom':''}, 'resourceUrn':''}},
+{'name': 'CollarSchema', 'type':'Sensor', 'isSimple':true},
+{'name': 'GatewayListSchema', 'type':'Sensor', 'isSimple':true},
+{'name': 'RegionListSchema', 'type':'Region', 'isSimple':true},
+{'name': 'RegionSchema', 'type':'Region', 'isSimple':true},
+{'name': 'SensorListSchema_Complete', 'type':'Sensor', 'isSimple':true},
+{'name': 'SensorListSchema_Simplified', 'type':'Sensor', 'isSimple':true,'missingFields': {'location':{'longitude':'','latitude':'','altitude':2},'result':{'uom':''}, 'resourceUrn':''} },
+{'name': 'SensorSchema_Complete', 'type':'Sensor', 'isSimple':true},{'name': 'SensorSchema_Simplified', 'type':'Sensor', 'isSimple':true},
+{'name': 'MultiSensorListSchema', 'type':'Sensor', 'isSimple':true}
+]

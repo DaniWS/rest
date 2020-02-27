@@ -1,4 +1,4 @@
-package afc.rest;
+/*package afc.rest;
 
 
 import java.util.HashMap;
@@ -53,7 +53,7 @@ public class RegularExpression {
 			
 		
 	
-	
+	*/
   
 
 	/**
