@@ -200,7 +200,7 @@ public class Setup {
 		        BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 		        String output = br.lines().collect(Collectors.joining());
 		       JsonObject missingObject=parseEntireJson(missingFields,output);
-		       JsonObject completedJson=completeFields(missingFields,inputJson);
+		       JsonObject completedJson=completeFields(missingObject,inputJson,gson);
 		     
 		
 
@@ -235,17 +235,19 @@ e.printStackTrace();	    }
 		return inputJson;
 
 	 }
-	 public static JsonObject completeFields(JsonObject missingObject, JsonObject inputJson) {
+	 public static JsonObject completeFields(JsonObject missingObject, JsonObject inputJson, Gson gson) {
 	        System.out.println(inputJson.toString()+"!!2!!2!!!!!22!!2!2!2!!!!!!!!!!!!!!!!!");		
 	        System.out.println(inputJson.keySet().toString()+" keys");		
-
+	        JsonObject	inputCopy = gson.fromJson(inputJson , JsonObject.class);
 		 for (String missingKey:missingObject.keySet()) {
 		       for (String key:inputJson.keySet()) {
 		    	   		   if (missingKey.equals(key)){
 		    			   if (inputJson.get(key).isJsonObject()&&missingObject.get(key).isJsonObject()){
-		    				   JsonObject localInputObject = inputJson.get(key).getAsJsonObject();
+		    				   JsonObject localInput = inputJson.get(key).getAsJsonObject();
 		    				   JsonObject localMissinObject = inputJson.get(key).getAsJsonObject();
-		    				   inputJson=completeFields(localInputObject, localMissinObject);
+		    				   JsonObject localInputCopy=completeFields(localMissinObject,localInput,gson);
+		    				   inputCopy.remove(key);
+		    				   inputCopy.add(key, localInputCopy);
 		    				   break;
 		    			   }
 		    			   
@@ -253,11 +255,14 @@ e.printStackTrace();	    }
 		    			   
 		    		  }
 		    	   		   else {
-		    		 inputJson.add(missingKey, missingObject.get(missingKey));
+		    	   	 
+		    		 inputCopy.add(missingKey, missingObject.get(missingKey));
 		    	   		   }
 		    	   }
 		       }
 	       System.out.println(inputJson);
-	       return inputJson;
+	       System.out.println(inputCopy);
+
+	       return inputCopy;
 	 };
 }

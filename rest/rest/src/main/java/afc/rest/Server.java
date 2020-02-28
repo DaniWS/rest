@@ -43,6 +43,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 */
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
+import com.google.gson.Gson;
 
 import afc.rest.ValidationUtils;
 
@@ -194,12 +195,11 @@ public class Server {
                   
 //	        	  Here goes the code to send the data.
 	        	if(schema.getIsSimple()) {
-//	             complete schema method
-	        System.out.println(input.toString()+"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");		
+//	             complete schema method	
 	        Setup.completeJson(schema.getMissingFields(), input);
 	        	}  
 //	        	return sendTelemetry(input, request, category);
-//	        	
+             	return Response.status(200).entity(request.getSession().getIdInternal().toString()).build();
 		        	  }
 	        	  else {
 	 //       	  text= "Test mode: ";	   
