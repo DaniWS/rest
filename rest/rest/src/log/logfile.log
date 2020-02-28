@@ -228,3 +228,141 @@
 2020-02-28 01:27:02,018  INFO [grizzly-http-server-12] - Server - SessionID: 4704714378228809652 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
 2020-02-28 01:27:43,547  INFO [grizzly-http-server-12] - Server - SessionID: 6026617452199557527 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
 2020-02-28 01:28:36,143  INFO [grizzly-http-server-13] - Server - SessionID: 7911027768128505293 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 11:57:43,500  INFO [grizzly-http-server-4] - Server - SessionID: 5837788049376807758 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 12:04:27,786  INFO [grizzly-http-server-12] - Server - SessionID: 3811894308369561889 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 12:05:57,776  INFO [grizzly-http-server-12] - Server - SessionID: 6139294380863135060 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 12:06:59,531  INFO [grizzly-http-server-12] - Server - SessionID: 360346167855793693 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 12:07:23,475  INFO [grizzly-http-server-12] - Server - SessionID: 71402439554099604 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 12:14:08,866  INFO [grizzly-http-server-12] - Server - SessionID: 6350852839656837945 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 12:16:04,237  INFO [grizzly-http-server-12] - Server - SessionID: 6019089180900290218 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 12:17:11,479 ERROR [grizzly-http-server-13] - Server - SessionID: 6019089180900290218 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: input has trailing data after first JSON Text
+ at [Source: (StringReader); line: 2, column: 16]
+2020-02-28 13:39:50,666 ERROR [grizzly-http-server-12] - Server - SessionID: 7409925538527209827 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: input has trailing data after first JSON Text
+ at [Source: (StringReader); line: 2, column: 16]
+2020-02-28 13:41:20,173 ERROR [grizzly-http-server-13] - Server - SessionID: 7409925538527209827 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: input has trailing data after first JSON Text
+ at [Source: (StringReader); line: 2, column: 16]
+2020-02-28 13:41:36,168  INFO [grizzly-http-server-14] - Server - SessionID: 7409925538527209827 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:41:41,365 ERROR [grizzly-http-server-15] - Server - SessionID: 7409925538527209827 IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 13:42:51,266 ERROR [grizzly-http-server-0] - Server - SessionID: 7409925538527209827 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: input has trailing data after first JSON Text
+ at [Source: (StringReader); line: 2, column: 16]
+2020-02-28 13:47:01,558 ERROR [grizzly-http-server-12] - Server - SessionID: 5214023350332200765 IP: 0:0:0:0:0:0:0:1 Not a Json Exception com.fasterxml.jackson.core.JsonParseException: input has trailing data after first JSON Text
+ at [Source: (StringReader); line: 2, column: 16]
+2020-02-28 13:47:03,518 ERROR [grizzly-http-server-13] - Server - SessionID: 5214023350332200765 IP: 0:0:0:0:0:0:0:1 Not a Json Exception com.fasterxml.jackson.core.JsonParseException: input has trailing data after first JSON Text
+ at [Source: (StringReader); line: 2, column: 16]
+2020-02-28 13:47:04,378 ERROR [grizzly-http-server-14] - Server - SessionID: 5214023350332200765 IP: 0:0:0:0:0:0:0:1 Not a Json Exception com.fasterxml.jackson.core.JsonParseException: input has trailing data after first JSON Text
+ at [Source: (StringReader); line: 2, column: 16]
+2020-02-28 13:47:05,595 ERROR [grizzly-http-server-15] - Server - SessionID: 5214023350332200765 IP: 0:0:0:0:0:0:0:1 Not a Json Exception com.fasterxml.jackson.core.JsonParseException: input has trailing data after first JSON Text
+ at [Source: (StringReader); line: 2, column: 16]
+2020-02-28 13:47:34,815  INFO [grizzly-http-server-0] - Server - SessionID: 5214023350332200765 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:47:54,937  INFO [grizzly-http-server-1] - Server - SessionID: 5214023350332200765 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:48:05,466  INFO [grizzly-http-server-2] - Server - SessionID: 5214023350332200765 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:50:21,308  INFO [grizzly-http-server-3] - Server - SessionID: 5214023350332200765 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:50:24,184  INFO [grizzly-http-server-4] - Server - SessionID: 5214023350332200765 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:54:57,193  INFO [grizzly-http-server-12] - Server - SessionID: 4894737582808629590 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:56:40,981  INFO [grizzly-http-server-12] - Server - SessionID: 2708354088020613091 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:56:58,618  INFO [grizzly-http-server-13] - Server - SessionID: 2708354088020613091 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:57:06,169  INFO [grizzly-http-server-14] - Server - SessionID: 2708354088020613091 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:57:16,729  INFO [grizzly-http-server-15] - Server - SessionID: 2708354088020613091 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:57:24,829  INFO [grizzly-http-server-0] - Server - SessionID: 2708354088020613091 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:57:28,654  INFO [grizzly-http-server-1] - Server - SessionID: 2708354088020613091 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:57:30,978  INFO [grizzly-http-server-2] - Server - SessionID: 2708354088020613091 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:57:32,659  INFO [grizzly-http-server-3] - Server - SessionID: 2708354088020613091 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:57:39,548  INFO [grizzly-http-server-4] - Server - SessionID: 2708354088020613091 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:57:55,718  INFO [grizzly-http-server-5] - Server - SessionID: 2708354088020613091 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 13:58:48,580  INFO [grizzly-http-server-6] - Server - SessionID: 2708354088020613091 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:02:00,024  INFO [grizzly-http-server-12] - Server - SessionID: 2606945631741999642 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:02:29,709  INFO [grizzly-http-server-13] - Server - SessionID: 2606945631741999642 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:02:43,981  INFO [grizzly-http-server-14] - Server - SessionID: 2606945631741999642 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:02:48,743 ERROR [grizzly-http-server-15] - Server - SessionID: 2606945631741999642 IP: 0:0:0:0:0:0:0:1 Not a Json Exception com.fasterxml.jackson.core.JsonParseException: input has trailing data after first JSON Text
+ at [Source: (StringReader); line: 2, column: 16]
+2020-02-28 14:03:03,950 ERROR [grizzly-http-server-0] - Server - SessionID: 2606945631741999642dt:1582894983950created:1582894920022 IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:03:13,070 ERROR [grizzly-http-server-1] - Server - SessionID: 2606945631741999642dt:1582894993070created:1582894920022 IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:03:15,519 ERROR [grizzly-http-server-2] - Server - SessionID: 2606945631741999642dt:1582894995518created:1582894920022 IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:12:13,677 ERROR [grizzly-http-server-3] - Server - SessionID: 2606945631741999642dt:1582895533676created:1582894920022 IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:12:16,913 ERROR [grizzly-http-server-4] - Server - SessionID: 2606945631741999642dt:1582895536913created:1582894920022 IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:12:17,868 ERROR [grizzly-http-server-5] - Server - SessionID: 2606945631741999642dt:1582895537868created:1582894920022 IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:12:18,824 ERROR [grizzly-http-server-6] - Server - SessionID: 2606945631741999642dt:1582895538824created:1582894920022 IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:12:20,032 ERROR [grizzly-http-server-7] - Server - SessionID: 2606945631741999642dt:1582895540032created:1582894920022 IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:12:21,375 ERROR [grizzly-http-server-8] - Server - SessionID: 2606945631741999642dt:1582895541375created:1582894920022 IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:24:05,374 ERROR [grizzly-http-server-12] - Server - SessionID: 65713208664059178741582896245371IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:24:06,714 ERROR [grizzly-http-server-13] - Server - SessionID: 65713208664059178741582896246714IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:24:07,918 ERROR [grizzly-http-server-14] - Server - SessionID: 65713208664059178741582896247918IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:24:14,499  INFO [grizzly-http-server-15] - Server - SessionID: 6571320866405917874 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:24:19,251  INFO [grizzly-http-server-0] - Server - SessionID: 6571320866405917874 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:24:21,119  INFO [grizzly-http-server-1] - Server - SessionID: 6571320866405917874 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:24:22,640  INFO [grizzly-http-server-2] - Server - SessionID: 6571320866405917874 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:24:25,258  INFO [grizzly-http-server-3] - Server - SessionID: 6571320866405917874 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:24:28,092  INFO [grizzly-http-server-4] - Server - SessionID: 6571320866405917874 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:24:30,749  INFO [grizzly-http-server-5] - Server - SessionID: 6571320866405917874 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:24:33,607  INFO [grizzly-http-server-6] - Server - SessionID: 6571320866405917874 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:24:36,287  INFO [grizzly-http-server-7] - Server - SessionID: 6571320866405917874 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:24:38,672  INFO [grizzly-http-server-8] - Server - SessionID: 6571320866405917874 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:24:40,505  INFO [grizzly-http-server-9] - Server - SessionID: 6571320866405917874 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:24:42,477  INFO [grizzly-http-server-10] - Server - SessionID: 6571320866405917874 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:24:44,840  INFO [grizzly-http-server-11] - Server - SessionID: 6571320866405917874 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:24:47,781  INFO [grizzly-http-server-12] - Server - SessionID: 6571320866405917874 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:25:02,497  INFO [grizzly-http-server-13] - Server - SessionID: 6571320866405917874 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:36:56,088  INFO [grizzly-http-server-12] - Server - SessionID: 3898480786711744976 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:37:34,787  INFO [grizzly-http-server-13] - Server - SessionID: 3898480786711744976 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:37:41,987 ERROR [grizzly-http-server-14] - Server - SessionID: 3898480786711744976 IP: 0:0:0:0:0:0:0:1 Not a Json Exception com.fasterxml.jackson.core.JsonParseException: input has trailing data after first JSON Text
+ at [Source: (StringReader); line: 2, column: 16]
+2020-02-28 14:37:53,463 ERROR [grizzly-http-server-15] - Server - SessionID: 38984807867117449761582897073463IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:40:40,013  INFO [grizzly-http-server-0] - Server - SessionID: 3898480786711744976 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:40:44,134 ERROR [grizzly-http-server-1] - Server - SessionID: 38984807867117449761582897244134IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:41:36,702 ERROR [grizzly-http-server-12] - Server - SessionID: 66615321442419081981582897296699IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:41:40,010 ERROR [grizzly-http-server-13] - Server - SessionID: 66615321442419081981582897300010IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:41:41,058 ERROR [grizzly-http-server-14] - Server - SessionID: 66615321442419081981582897301058IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:41:41,802 ERROR [grizzly-http-server-15] - Server - SessionID: 66615321442419081981582897301802IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:44:36,957 ERROR [grizzly-http-server-12] - Server - SessionID: 9204774153309442261582897476954  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:44:38,756 ERROR [grizzly-http-server-13] - Server - SessionID: 9204774153309442261582897478756  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:53:41,040 ERROR [grizzly-http-server-12] - Server - SessionID: 46394296682233067361582898021037  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:53:42,823 ERROR [grizzly-http-server-13] - Server - SessionID: 46394296682233067361582898022823  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:53:44,115 ERROR [grizzly-http-server-14] - Server - SessionID: 46394296682233067361582898024115  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:53:45,065 ERROR [grizzly-http-server-15] - Server - SessionID: 46394296682233067361582898025065  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:57:17,105 ERROR [grizzly-http-server-12] - Server - SessionID: 90234250838209598661582898237102  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:58:52,103  INFO [grizzly-http-server-12] - Server - SessionID: 5083464135570271981 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 14:58:58,551 ERROR [grizzly-http-server-13] - Server - SessionID: 50834641355702719811582898338551  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 14:59:04,809 ERROR [grizzly-http-server-14] - Server - SessionID: 50834641355702719811582898344809  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 15:01:20,231 ERROR [grizzly-http-server-12] - Server - SessionID: 73763661220697740781582898480228  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 15:03:27,998 ERROR [grizzly-http-server-12] - Server - SessionID: 51543102506983100241582898607995  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 15:03:34,826 ERROR [grizzly-http-server-13] - Server - SessionID: 5154310250698310024 IP: 0:0:0:0:0:0:0:1 Not a Json Exception com.fasterxml.jackson.core.JsonParseException: input has trailing data after first JSON Text
+ at [Source: (StringReader); line: 2, column: 17]
+2020-02-28 15:03:40,436 ERROR [grizzly-http-server-14] - Server - SessionID: 51543102506983100241582898620436  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-02-28 15:03:44,983  INFO [grizzly-http-server-15] - Server - SessionID: 5154310250698310024 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:06:23,802  INFO [grizzly-http-server-13] - Server - SessionID: 5822357019857570406 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:06:32,013  INFO [grizzly-http-server-14] - Server - SessionID: 5822357019857570406 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:07:48,167  INFO [grizzly-http-server-12] - Server - SessionID: 4669660161335418849 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:08:25,794  INFO [grizzly-http-server-12] - Server - SessionID: 2405211774321761012 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:09:31,683  INFO [grizzly-http-server-12] - Server - SessionID: 3313912903668252374 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:10:24,505  INFO [grizzly-http-server-12] - Server - SessionID: 6802698427170843561 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:10:49,624  INFO [grizzly-http-server-13] - Server - SessionID: 8670877363736520920 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:23:14,245  INFO [grizzly-http-server-12] - Server - SessionID: 7093401852760945337 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:25:21,973  INFO [grizzly-http-server-12] - Server - SessionID: 2775436581849222557 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:26:02,006  INFO [grizzly-http-server-12] - Server - SessionID: 4361107402689827715 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:26:24,206  INFO [grizzly-http-server-12] - Server - SessionID: 3287522073038235515 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:27:33,358  INFO [grizzly-http-server-12] - Server - SessionID: 33323574647701811 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:35:15,398  INFO [grizzly-http-server-12] - Server - SessionID: 6353942539726340018 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:39:08,972  INFO [grizzly-http-server-12] - Server - SessionID: 7148789299731730760 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:39:22,516  INFO [grizzly-http-server-13] - Server - SessionID: 7148789299731730760 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 15:40:54,005  INFO [grizzly-http-server-12] - Server - SessionID: 3900794538266316077 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:12:16,630  INFO [grizzly-http-server-12] - Server - SessionID: 6988707599122533793 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:13:56,950  INFO [grizzly-http-server-12] - Server - SessionID: 4986735899137406203 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:14:01,671  INFO [grizzly-http-server-13] - Server - SessionID: 4986735899137406203 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:14:20,932  INFO [grizzly-http-server-12] - Server - SessionID: 3698334167942153029 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:15:25,819  INFO [grizzly-http-server-13] - Server - SessionID: 5305778119694149843 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:16:11,505  INFO [grizzly-http-server-14] - Server - SessionID: 5305778119694149843 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:16:30,621  INFO [grizzly-http-server-12] - Server - SessionID: 4802799761139793640 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:17:46,170  INFO [grizzly-http-server-13] - Server - SessionID: 7115092007520582058 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:22:45,267  INFO [grizzly-http-server-12] - Server - SessionID: 5451669338662340906 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:32:30,596  INFO [grizzly-http-server-12] - Server - SessionID: 3996902749778606714 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:33:15,178  INFO [grizzly-http-server-12] - Server - SessionID: 4641570099940614859 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:33:18,757  INFO [grizzly-http-server-13] - Server - SessionID: 4641570099940614859 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:33:22,820  INFO [grizzly-http-server-14] - Server - SessionID: 4641570099940614859 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:42:46,064  INFO [grizzly-http-server-12] - Server - SessionID: 8297539657948949472 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:42:51,374  INFO [grizzly-http-server-13] - Server - SessionID: 8297539657948949472 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:42:55,323  INFO [grizzly-http-server-14] - Server - SessionID: 8297539657948949472 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:43:03,814  INFO [grizzly-http-server-15] - Server - SessionID: 8297539657948949472 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 16:43:14,360 ERROR [grizzly-http-server-0] - Server - SessionID: 8297539657948949472 IP: 0:0:0:0:0:0:0:1 Not a Json Exception com.fasterxml.jackson.core.JsonParseException: Unexpected character ('a' (code 97)): was expecting comma to separate Object entries
+ at [Source: (StringReader); line: 7, column: 20]
+2020-02-28 17:17:56,114  INFO [grizzly-http-server-12] - Server - SessionID: 2362725065148291469 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 17:18:03,123  INFO [grizzly-http-server-13] - Server - SessionID: 2362725065148291469 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified

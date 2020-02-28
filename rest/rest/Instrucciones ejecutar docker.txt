@@ -18,3 +18,4 @@ docker pull teddyws92/dani:"tag"
 *************** Varios contenedores************************
 Crear user-defined network
 darle dirección ip  "-ip" y hostname "-h" a los contenedores.
+

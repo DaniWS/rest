@@ -63,8 +63,8 @@ public class Server {
   	protected String resourceId;
   	private static int i = 0;
   	
-	protected final Response invalidJsonException = Response.status(415).entity("415: \"Invalid input: not AFarCloud-compliant\". For more information, please refer to the API documentation: "+ Main.DOCS_URI).header("Access-Control-Allow-Origin", "*").build();
-	protected final Response notaJsonException =  Response.status(415).entity("415: \"Invalid input: not a JSON\". For more information, please refer to the API documentation: "+ Main.DOCS_URI).header("Access-Control-Allow-Origin", "*").build();
+	protected final Response invalidJsonException = Response.status(415).build();
+	protected final Response notaJsonException =  Response.status(400).build();
 
 	
 	/*
@@ -167,7 +167,7 @@ public class Server {
 
 	@GET
 	@Path("/logs")
-	   @Produces(MediaType.TEXT_PLAIN)
+	   @Produces({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
 	    public String testServer(@Context UriInfo uriInfo) throws URISyntaxException, IOException{
 	    String response= new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator+"logs"+File.separator+"logfile.log")));
         return response;		  
@@ -177,6 +177,7 @@ public class Server {
 	@POST
 	@Path("/telemetry")
 //	@Consumes(MediaType.APPLICATION_JSON)
+	 @Produces({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
 	public Response getMeasure(String input, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
 //              Check for "resourceId"
 	/*	 	
@@ -196,10 +197,10 @@ public class Server {
 //	        	  Here goes the code to send the data.
 	        	if(schema.getIsSimple()) {
 //	             complete schema method	
-	        Setup.completeJson(schema.getMissingFields(), input);
+	        CompleteJson.getCompleteJson(schema.getMissingFields(), input);
 	        	}  
 //	        	return sendTelemetry(input, request, category);
-             	return Response.status(200).entity(request.getSession().getIdInternal().toString()).build();
+             	return Response.status(200).entity("{\nrequestId: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+"\n}").build();
 		        	  }
 	        	  else {
 	 //       	  text= "Test mode: ";	   
@@ -209,67 +210,35 @@ public class Server {
 	        
 	          }
 	          
-	          else if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
-	        	  log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
+	          else {
+	        	  if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
+	          
+	        	  log.error("SessionID: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
+	        		                    
+	        	  }
+	        	  throw new WebApplicationException(invalidJsonException);
 	          }
-	          throw new WebApplicationException(invalidJsonException);
-	       
 	          }
-	         catch(JsonParseException ex){
-	        	 if (!uriInfo.getQueryParameters().containsKey("test")) {
-	        		 log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Invalid Json Exception "+ex);
-	        		 }
-	        		
-	         final Response detailedException = Response.status(415).entity(notaJsonException.getEntity().toString()+"\nError: "+ex).build();
-	         throw new WebApplicationException(detailedException);
-		}
-	}
-	private Response sendTelemetry(String json, Request request, String category) {
-		 try {
-			    
-		    	//Used for connectivity with the REST server
-		        URL uri = new URL("http://10.0.43.139:8080/store/measures");
-		        HttpURLConnection conn = (HttpURLConnection) uri.openConnection();
-		        conn.setDoOutput(true);
-		        conn.setRequestMethod("POST");
-	        	  System.out.println("Antes de content type");
+   catch(JsonParseException ex){
+  	 if (!uriInfo.getQueryParameters().containsKey("test")) {
+  		 log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
+  	  		
+  	 }
+  	throw new WebApplicationException(notaJsonException);
+   
   
-		        conn.setRequestProperty("Content-Type", "application/json");
-	        	  System.out.println("Desp de content type");
-    
-		        ///////parameter used to encase the transmitted JSON. JSON messages must be delivered here//////
-		        //String input = jsonCollar; String input = jsonRegion; etc
-		        String input = json;
-		        ///////end of JSON message delivery/////////////////////////////////////////////////////////////
-		        
-		        //Used to post the JSON formatted according to AFarCloud data format
-		        OutputStream os = conn.getOutputStream();
-		        os.write(input.getBytes());
-		        os.flush();
-		        if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-		            throw new RuntimeException("Failed : HTTP error code : "
-		                    + conn.getResponseCode());
-		        }
-/*		        BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
-		        String output;
-		        
-		        //Server answer
-		        System.out.println("Output from Server .... \n");
-		        while ((output = br.readLine()) != null) {
-		            System.out.println(output);
-		           
-		        }
-*/		        
-		        conn.disconnect();
-		    	return Response.status(200).entity("200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ Main.DOCS_URI +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();
-		       
-		    } catch (MalformedURLException e) {
-		    	return Response.status(500).entity(e.getMessage()).build();  
-		    } catch (IOException e) {
-		    	return Response.status(500).entity(e.getMessage()).build();  
-		    }
+}
+	  catch (RuntimeException e) {
+		  String responseBody=null;
+		  if(e.getMessage().equals("500")) {
+			  responseBody="ERROR: The specified resourceId might not be registered in the Asset Registry";
+			 		  }
+		  return Response.status(500).entity(responseBody).build();
+	  }
+  
 
 	}
+
 
 }
 

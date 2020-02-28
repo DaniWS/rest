@@ -4,7 +4,7 @@ info:
   version: 1.0.1
   title: AFarCloud REST API
   contact:
-    name: Vicente HernÃ¡ndez DÃ­az
+    name: Vicente HernÃƒÂ¡ndez DÃƒÂ­az
     email: vicente.hernandez@upm.es 
 externalDocs:
    description: Find out more about AFarCloud
@@ -215,8 +215,10 @@ paths:
           description: "Successful operation"
         "415":
           description: "Invalid input: not AFarCloud-compliant"
-        "415":
+        "400":
           description: "Invalid input: not a JSON"
+        "500":
+          description: "Internal Server Error: Might be caused by an incorrect or unregistered \"resourceId\""     
   "/telemetry?test":
     post:
       tags:
