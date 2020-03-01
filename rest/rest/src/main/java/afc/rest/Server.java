@@ -192,20 +192,12 @@ public class Server {
 	        	 String category=schema.getName();
 	        	 JsonObject completeJson=null;
 		        	if(schema.getIsSimple()) {
-			            Cache<String, JsonObject> cache = Cache.getCache(Setup.timeToLive, Setup.cacheTimer, Setup.maxItems);
-		        		String resourceId=CompleteJson.getResourceId(input);
-//		        		ESTO SEGURO QUE HAY QUE CAMBIARLO PARA NO LLAMAR AL METODO VARIAS VECES
-		        		  if (!cache.get(resourceId).equals(null)) {
-		        			  completeJson=cache.get(resourceId);
-				           }
-		        		  else {
-//					             Method for completing the schema
-			        		  completeJson = CompleteJson.getCompleteJson(schema.getMissingFields(), input, Setup.AR_URL);
-                               cache.put(resourceId, completeJson);
+//		        		Method that completes the JSON, first looking for a match in cache and, if not found, obtaining it from the Assets Registry.
+			        	 completeJson = CompleteJson.getCompleteJson(schema.getMissingFields(), input, Setup.AR_URL);
 		        		  }
 
 
-			        	}  
+			        	 
 		      
 //           	  String text="";
 //	        	  Checks for the "test" query parameter.
@@ -244,6 +236,7 @@ public class Server {
   
 }
 	  catch (RuntimeException e) {
+		  e.printStackTrace();
 		  String responseBody=null;
 		  if(e.getMessage().equals("500")) {
 			  responseBody="ERROR: The specified resourceId might not be registered in the Asset Registry";

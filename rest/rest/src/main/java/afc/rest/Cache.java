@@ -15,7 +15,8 @@ public class Cache<K, T> {
     private long timeToLive;
     private LRUMap<K, CacheObject> cacheMap;
     
-    private static Cache cache;
+    @SuppressWarnings("rawtypes")
+	private static Cache cache;
     protected class CacheObject {
         public long lastAccessed = System.currentTimeMillis();
         public T value;
@@ -36,18 +37,18 @@ public class Cache<K, T> {
     	 }
    
  
-    private Cache(long crunchifyTimeToLive, final long crunchifyTimerInterval, int maxItems) {
-        this.timeToLive = crunchifyTimeToLive * 1000;
+    private Cache(long timeToLive, final long timerInterval, int maxItems) {
+        this.timeToLive = timeToLive * 1000;
  
         cacheMap = new LRUMap<K, CacheObject>(maxItems);
  
-        if (timeToLive > 0 && crunchifyTimerInterval > 0) {
+        if (timeToLive > 0 && timerInterval > 0) {
  
             Thread t = new Thread(new Runnable() {
                 public void run() {
                     while (true) {
                         try {
-                            Thread.sleep(crunchifyTimerInterval * 1000);
+                            Thread.sleep(timerInterval * 1000);
                         } catch (InterruptedException ex) {
                         }
                         cleanup();
@@ -70,7 +71,6 @@ public class Cache<K, T> {
     public T get(K key) {
         synchronized (cacheMap) {
             CacheObject c = cacheMap.get(key);
- System.out.println("ENTRE A GET EN CACHE");
             if (c == null)
                 return null;
             else {

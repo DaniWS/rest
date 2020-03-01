@@ -133,12 +133,21 @@ public class CompleteJson {
 		}
 // A method to complete the simplified JSON obtaining the missing information from the Assets Registry URI
 	 public static JsonObject getCompleteJson(JsonObject missingFields, String input, String AR_URL) throws RuntimeException, IOException {
-
+		
 		  Gson gson = new Gson();
+		  @SuppressWarnings("unchecked")
+		Cache<String, JsonObject> cache = Cache.getCache(Setup.timeToLive, Setup.cacheTimer, Setup.maxItems);
 		  String resourceId = getResourceId(input);
+		  JsonObject completeJson=cache.get(resourceId);
+		  if (completeJson!=null) {
+			  log.debug("Complete JSON for this resource obtained from cache");
+			  return completeJson;
+              
+		  }
+		  log.debug("Complete JSON for this resource not in cache");
 		  JsonObject inputJson = gson.fromJson(input, JsonObject.class);
 		  try {
-		  URL uri = new URL("https://rest.afarcloud.smartarch.cz/storage/rest/registry/getSensor/"+resourceId);
+		  URL uri = new URL(AR_URL+resourceId);
 	        HttpURLConnection conn = (HttpURLConnection) uri.openConnection();
 	        conn.setDoOutput(true);
 	        conn.setRequestMethod("GET");
@@ -155,7 +164,7 @@ public class CompleteJson {
 		        BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 		        String output = br.lines().collect(Collectors.joining());
 		       JsonObject missingObject=parseEntireJson(missingFields,output);
-		       JsonObject completeJson=completeFields(missingObject,inputJson,gson);
+		       completeJson=completeFields(missingObject,inputJson,gson);
 		     
 			   			
 
@@ -167,6 +176,8 @@ public class CompleteJson {
 	           
 	        }	        
 	        conn.disconnect();
+//	    Store object in cache
+	    cache.put(resourceId,completeJson);    
 		return completeJson;
 		}
 		  
