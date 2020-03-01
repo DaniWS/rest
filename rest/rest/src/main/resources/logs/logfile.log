@@ -10,3 +10,4 @@
 2020-02-28 23:05:35,518  INFO [grizzly-http-server-3] - Server - SessionID: 2152140153552386860 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
 2020-02-28 23:07:58,904  INFO [grizzly-http-server-12] - Server - SessionID: 4275056159532318266 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
 2020-03-01 01:50:20,923  INFO [grizzly-http-server-13] - Server - SessionID: 1138826740782283691 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
+2020-03-01 11:00:29,060  INFO [grizzly-http-server-12] - Server - SessionID: 5698136737619345660 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified

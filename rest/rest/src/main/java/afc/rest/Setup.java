@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,53 +41,62 @@ import com.google.gson.reflect.TypeToken;
 
 
 public class Setup {
-     
-     public static final String schemasInfo = "SchemasInfo";
-     public static final String localSchemasPath = "src/main/resources/localSchemas/";
-     
-	public static void loadSchemasInfo(String schemaURI) throws MalformedURLException, IOException{ 
-      
-        try {
-        	  Gson gson = new Gson();
-        	  FileUtils.copyURLToFile(          
-        		        new URL(schemaURI+schemasInfo+".json"),
-        		        new File(localSchemasPath+schemasInfo+".json"));
-        	  BufferedReader bufferedReader = new BufferedReader(new FileReader(localSchemasPath+schemasInfo+".json"));
-
-              JsonArray json = gson.fromJson(bufferedReader, JsonArray.class);
-                 
-			    java.lang.reflect.Type listOfSchemaObject = new TypeToken<ArrayList<Schema>>() {}.getType();
-			    SchemaSet.schemas = gson.fromJson(json, listOfSchemaObject);
-		
-		
-
-				
-	}
-        catch(JsonParseException e) {
-        	e.printStackTrace();
-        }
- 
+	//	 Name of the JSON file that contains the information of the schemas
+	public static final String schemasInfo = "SchemasInfo";
+	public static final String localSchemasPath = "src/main/resources/localSchemas/";
+	//   Assets Registry URL
+	public static String AR_URL = "https://rest.afarcloud.smartarch.cz/storage/rest/registry/getSensor/";
+	//   Environment Reporter URL
+	public static String ER_URL = "http://10.0.43.139:8080/store/measures";
+  
+	//	CACHE parameters
+    public static final long timeToLive = 15;
+    public static final long cacheTimer = 15;
+    public static final int maxItems = 5;
 	
+	public static void loadSchemasInfo(String schemaURI) throws MalformedURLException, IOException{ 
+
+		try {
+			Gson gson = new Gson();
+			FileUtils.copyURLToFile(          
+					new URL(schemaURI+schemasInfo+".json"),
+					new File(localSchemasPath+schemasInfo+".json"));
+			BufferedReader bufferedReader = new BufferedReader(new FileReader(localSchemasPath+schemasInfo+".json"));
+
+			JsonArray json = gson.fromJson(bufferedReader, JsonArray.class);
+
+			java.lang.reflect.Type listOfSchemaObject = new TypeToken<ArrayList<Schema>>() {}.getType();
+			SchemaSet.schemas = gson.fromJson(json, listOfSchemaObject);
+
+
+
+
 		}
+		catch(JsonParseException e) {
+			e.printStackTrace();
+		}
+
+
+	}
 	// Method to load the schemas: takes the schemas URI as an argument.
 	public static void loadSchemas(String schemaURI) throws MalformedURLException, IOException, ProcessingException {
-	  JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
-	  for (Schema s: SchemaSet.schemas) {		    
-	        String filename=s.getName()+".json";
-	       
-	        FileUtils.copyURLToFile(          
-	        new URL(schemaURI+filename),
-	        new File(localSchemasPath+filename));
-//	       Avoids loading Definition as a schema to prevent false validations.
-	       
-	        if (!s.getName().equals("Definitions")) {
-	               s.setSchema(factory.getJsonSchema("resource:/localSchemas/"+filename));
-//	               SchemaSet.schemas.add(new Schema(factory.getJsonSchema("resource:/localSchemas/"+filename),0,s, null, s));
-	               }
-	       
-	        }
+		JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
+		for (Schema s: SchemaSet.schemas) {		    
+			String filename=s.getName()+".json";
+
+			FileUtils.copyURLToFile(          
+					new URL(schemaURI+filename),
+					new File(localSchemasPath+filename));
+			//	       Avoids loading Definition as a schema to prevent false validations.
+
+			if (!s.getName().equals("Definitions")) {
+				s.setSchema(factory.getJsonSchema("resource:/localSchemas/"+filename));
+				//	               SchemaSet.schemas.add(new Schema(factory.getJsonSchema("resource:/localSchemas/"+filename),0,s, null, s));
+			}
+
+		}
 
 
-	       };
-	 
+	};
+
 }

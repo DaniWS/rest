@@ -61,7 +61,7 @@ public class Server {
   	protected final String regionMeasureList="region/measureList";
   	protected final String collarMeasure="collar/measure";
   	protected final String collarMeasureList="collar/measureList";
-  	protected String resourceId;
+//  	protected String resourceId;
   	private static int i = 0;
   	
 	protected final Response invalidJsonException = Response.status(415).build();
@@ -190,11 +190,23 @@ public class Server {
     	       Schema schema=response.getSecond();
 	           if (valid) {
 	        	 String category=schema.getName();
-	        	 String completeJson=null;
+	        	 JsonObject completeJson=null;
 		        	if(schema.getIsSimple()) {
-//			             complete schema method	
-			           completeJson = CompleteJson.getCompleteJson(schema.getMissingFields(), input).toString();
+			            Cache<String, JsonObject> cache = Cache.getCache(Setup.timeToLive, Setup.cacheTimer, Setup.maxItems);
+		        		String resourceId=CompleteJson.getResourceId(input);
+//		        		ESTO SEGURO QUE HAY QUE CAMBIARLO PARA NO LLAMAR AL METODO VARIAS VECES
+		        		  if (!cache.get(resourceId).equals(null)) {
+		        			  completeJson=cache.get(resourceId);
+				           }
+		        		  else {
+//					             Method for completing the schema
+			        		  completeJson = CompleteJson.getCompleteJson(schema.getMissingFields(), input, Setup.AR_URL);
+                               cache.put(resourceId, completeJson);
+		        		  }
+
+
 			        	}  
+		      
 //           	  String text="";
 //	        	  Checks for the "test" query parameter.
 	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
@@ -207,7 +219,7 @@ public class Server {
 		        	  }
 	        	  else {
 	 //       	  text= "Test mode: ";	   
- 	        	return Response.status(200).entity(completeJson).build();
+ 	        	return Response.status(200).entity(completeJson.toString()).build();
 
 	        	  }	  
 	        
