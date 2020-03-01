@@ -1,2 +1,12 @@
 2020-02-28 17:17:56,114  INFO [grizzly-http-server-12] - Server - SessionID: 2362725065148291469 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
 2020-02-28 17:18:03,123  INFO [grizzly-http-server-13] - Server - SessionID: 2362725065148291469 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-02-28 23:02:43,026 ERROR [grizzly-http-server-13] - Server - SessionID: 2152140153552386860 IP: 127.0.0.1 Not a Json Exception com.fasterxml.jackson.core.JsonParseException: no JSON Text to read from input
+ at [Source: (StringReader); line: 1, column: 1]
+2020-02-28 23:04:49,543 ERROR [grizzly-http-server-14] - Server - SessionID: 2152140153552386860 IP: 127.0.0.1 Not a Json Exception com.fasterxml.jackson.core.JsonParseException: no JSON Text to read from input
+ at [Source: (StringReader); line: 1, column: 1]
+2020-02-28 23:05:14,229  INFO [grizzly-http-server-0] - Server - SessionID: 2152140153552386860 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
+2020-02-28 23:05:22,646  INFO [grizzly-http-server-1] - Server - SessionID: 2152140153552386860 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
+2020-02-28 23:05:28,351  INFO [grizzly-http-server-2] - Server - SessionID: 2152140153552386860 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
+2020-02-28 23:05:35,518  INFO [grizzly-http-server-3] - Server - SessionID: 2152140153552386860 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
+2020-02-28 23:07:58,904  INFO [grizzly-http-server-12] - Server - SessionID: 4275056159532318266 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
+2020-03-01 01:50:20,923  INFO [grizzly-http-server-13] - Server - SessionID: 1138826740782283691 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified

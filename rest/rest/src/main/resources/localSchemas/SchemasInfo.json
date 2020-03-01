@@ -6,7 +6,7 @@
 {'name': 'RegionListSchema', 'type':'Region', 'isSimple':true},
 {'name': 'RegionSchema', 'type':'Region', 'isSimple':true},
 {'name': 'SensorListSchema_Complete', 'type':'Sensor', 'isSimple':true},
-{'name': 'SensorListSchema_Simplified', 'type':'Sensor', 'isSimple':true,'missingFields': {'location':{'longitude':'','latitude':'','altitude':2},'result':{'uom':''}, 'resourceUrn':''} },
+{'name': 'SensorListSchema_Simplified', 'type':'Sensor', 'isSimple':true,'missingFields': { 'resourceUrn':'','location':{'longitude':'','latitude':'','altitude':2},'result':{'uom':''}} },
 {'name': 'SensorSchema_Complete', 'type':'Sensor', 'isSimple':true},{'name': 'SensorSchema_Simplified', 'type':'Sensor', 'isSimple':true},
 {'name': 'MultiSensorListSchema', 'type':'Sensor', 'isSimple':true}
 ]

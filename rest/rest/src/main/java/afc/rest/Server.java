@@ -44,6 +44,7 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 */
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import afc.rest.ValidationUtils;
 
@@ -189,22 +190,24 @@ public class Server {
     	       Schema schema=response.getSecond();
 	           if (valid) {
 	        	 String category=schema.getName();
+	        	 String completeJson=null;
+		        	if(schema.getIsSimple()) {
+//			             complete schema method	
+			           completeJson = CompleteJson.getCompleteJson(schema.getMissingFields(), input).toString();
+			        	}  
 //           	  String text="";
 //	        	  Checks for the "test" query parameter.
 	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
 	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ category );
                   
 //	        	  Here goes the code to send the data.
-	        	if(schema.getIsSimple()) {
-//	             complete schema method	
-	        CompleteJson.getCompleteJson(schema.getMissingFields(), input);
-	        	}  
+
 //	        	return sendTelemetry(input, request, category);
              	return Response.status(200).entity("{\nrequestId: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+"\n}").build();
 		        	  }
 	        	  else {
 	 //       	  text= "Test mode: ";	   
- 	        	return Response.status(200).entity("Test Mode: "+"200: \"Successful operation\". \nFor more information, please refer to the API documentation: "+ Main.DOCS_URI +"\nRequest ID: "+request.getSession().getIdInternal()).header("Access-Control-Allow-Origin", "*").build();
+ 	        	return Response.status(200).entity(completeJson).build();
 
 	        	  }	  
 	        
