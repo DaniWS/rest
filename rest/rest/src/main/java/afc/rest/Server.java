@@ -41,7 +41,7 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
-*/
+ */
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -52,25 +52,25 @@ import afc.rest.ValidationUtils;
 @Api( "REST API")
 @Path("/")
 public class Server {
-	
+
 	private static final Logger log = Logger.getLogger(Server.class);
-	
-  	protected final String sensorMeasure="sensor/measure";
-  	protected final String sensorMeasureList="sensor/measureList";
-  	protected final String regionMeasure="region/measure";
-  	protected final String regionMeasureList="region/measureList";
-  	protected final String collarMeasure="collar/measure";
-  	protected final String collarMeasureList="collar/measureList";
-//  	protected String resourceId;
-  	private static int i = 0;
-  	
+
+	protected final String sensorMeasure="sensor/measure";
+	protected final String sensorMeasureList="sensor/measureList";
+	protected final String regionMeasure="region/measure";
+	protected final String regionMeasureList="region/measureList";
+	protected final String collarMeasure="collar/measure";
+	protected final String collarMeasureList="collar/measureList";
+	//  	protected String resourceId;
+	private static int i = 0;
+
 	protected final Response invalidJsonException = Response.status(415).build();
 	protected final Response notaJsonException =  Response.status(400).build();
 
-	
+
 	/*
 	@Context ServletContext context;
-	
+
 	public void createPublisherMQTT(String s)throws MqttException
 	{
   	  /////////////////////////////////////////////////////////
@@ -110,140 +110,141 @@ public class Server {
 
         System.out.println("Disconnected"); 
 	}
-	*/
-  
-//     Method to validate Json.
+	 */
 
-	  
+	//     Method to validate Json.
+
+
 	private Pair <Boolean, Schema> validateJson (String s, UriInfo uriInfo) throws ProcessingException, IOException {
-	
-//		Reorder the collection attending to the demand.
+
+		//		Reorder the collection attending to the demand.
 
 		i++;
 		if(i>=100) 
 		{
 			Collections.sort(SchemaSet.schemas);
-			
+
 			i=0;
 			System.out.println(i + " veces se ha validado!!!!!!!");
 			System.out.println("Array ordenado por uso");
 			for (int i = 0; i < SchemaSet.schemas.size()-1; i++) {
-	            System.out.println((i+1) + ". " + SchemaSet.schemas.get(i).getName() + " - Uso: " + SchemaSet.schemas.get(i).getUso());
-	        }
+				System.out.println((i+1) + ". " + SchemaSet.schemas.get(i).getName() + " - Uso: " + SchemaSet.schemas.get(i).getUso());
+			}
 			SchemaSet.schemas.forEach((n) -> n.setUso(0));
-			
-		}
-		
-     	for (Schema i:SchemaSet.schemas) {
-     		if (i.getName().equals("Definitions")){
-     		continue;
-     		}
-//		Validates against schemas.
-		if (ValidationUtils.isJsonValid(i.getSchema(), s))
-		{
 
-			i.setUso(i.getUso()+1); 
-			
-	//		String category = i.getName();
-			return new Pair<Boolean, Schema>(true, i); 
-		}	
-		
 		}
 
-     	return new Pair<Boolean, Schema>(false, null); 
-     	}	
-//		
-		private String getRemoteAddress(Request request) {
+		for (Schema i:SchemaSet.schemas) {
+			if (i.getName().equals("Definitions")){
+				continue;
+			}
+			//		Validates against schemas.
+			if (ValidationUtils.isJsonValid(i.getSchema(), s))
+			{
+
+				i.setUso(i.getUso()+1); 
+
+				//		String category = i.getName();
+				return new Pair<Boolean, Schema>(true, i); 
+			}	
+
+		}
+
+		return new Pair<Boolean, Schema>(false, null); 
+	}	
+	//		
+	private String getRemoteAddress(Request request) {
 		String ipAddress = request.getHeader("X-FORWARDED-FOR");  
-		   if (ipAddress == null) {  
-		       ipAddress = request.getRemoteAddr();  
-		   } 
-		   return ipAddress;
-		}
-		
-		
-	
-	  
-    //Method to access the log remotely.
+		if (ipAddress == null) {  
+			ipAddress = request.getRemoteAddr();  
+		} 
+		return ipAddress;
+	}
+
+
+
+
+	//Method to access the log remotely.
 
 	@GET
 	@Path("/logs")
-	   @Produces({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
-	    public String testServer(@Context UriInfo uriInfo) throws URISyntaxException, IOException{
-	    String response= new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator+"logs"+File.separator+"logfile.log")));
-        return response;		  
-	        
-	    }
-	
+	@Produces({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
+	public String testServer(@Context UriInfo uriInfo) throws URISyntaxException, IOException{
+		String response= new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator+"logs"+File.separator+"logfile.log")));
+		return response;		  
+
+	}
+
 	@POST
 	@Path("/telemetry")
-//	@Consumes(MediaType.APPLICATION_JSON)
-	 @Produces({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
+	//	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
 	public Response getMeasure(String input, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
-//              Check for "resourceId"
-	/*	 	
+		//              Check for "resourceId"
+		/*	 	
     		RegularExpression oRegExt = new RegularExpression();
     		resourceId = oRegExt.extractInformation("\"{\"resourceId\":\"urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012\",\"sequence number\": 123,\"location\": { \"latitude\": 45.45123,\"longitude\": 25.25456, \"altitude\": 2.10789},\");");
-   */ 	    try {
-    	       Pair   <Boolean, Schema> response=validateJson(input,uriInfo);
-    	       Boolean valid=response.getFirst();
-    	       Schema schema=response.getSecond();
-	           if (valid) {
-	        	 String category=schema.getName();
-	        	 JsonObject completeJson=null;
-		        	if(schema.getIsSimple()) {
-//		        		Method that completes the JSON, first looking for a match in cache and, if not found, obtaining it from the Assets Registry.
-			        	 completeJson = CompleteJson.getCompleteJson(schema.getMissingFields(), input, Setup.AR_URL);
-		        		  }
+		 */ 	    try {
+			 Pair   <Boolean, Schema> response=validateJson(input,uriInfo);
+			 Boolean valid=response.getFirst();
+			 Schema schema=response.getSecond();
+			 if (valid) {
+				 String category=schema.getName();
+				 JsonObject completeJson=null;
+				 if(schema.getIsSimple()) {
+					 //		        		Method that completes the JSON, first looking for a match in cache and, if not found, obtaining it from the Assets Registry.
+					 completeJson = CompleteJson.getCompleteJson(schema.getMissingFields(), input, Setup.AR_URL);
+				 }
 
 
-			        	 
-		      
-//           	  String text="";
-//	        	  Checks for the "test" query parameter.
-	        	  if (!uriInfo.getQueryParameters().containsKey("test")) {
-	        	  log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ category );
-                  
-//	        	  Here goes the code to send the data.
 
-//	        	return sendTelemetry(input, request, category);
-             	return Response.status(200).entity("{\nrequestId: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+"\n}").build();
-		        	  }
-	        	  else {
-	 //       	  text= "Test mode: ";	   
- 	        	return Response.status(200).entity(completeJson.toString()).build();
 
-	        	  }	  
-	        
-	          }
-	          
-	          else {
-	        	  if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
-	          
-	        	  log.error("SessionID: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
-	        		                    
-	        	  }
-	        	  throw new WebApplicationException(invalidJsonException);
-	          }
-	          }
-   catch(JsonParseException ex){
-  	 if (!uriInfo.getQueryParameters().containsKey("test")) {
-  		 log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
-  	  		
-  	 }
-  	throw new WebApplicationException(notaJsonException);
-   
-  
-}
-	  catch (RuntimeException e) {
-		  e.printStackTrace();
-		  String responseBody=null;
-		  if(e.getMessage().equals("500")) {
-			  responseBody="ERROR: The specified resourceId might not be registered in the Asset Registry";
-			 		  }
-		  return Response.status(500).entity(responseBody).build();
-	  }
-  
+				 //           	  String text="";
+				 //	        	  Checks for the "test" query parameter.
+				 if (!uriInfo.getQueryParameters().containsKey("test")) {
+					 log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ category );
+
+					 //	        	  Here goes the code to send the data.
+
+					 return CompleteJson.sendTelemetry(input, request, category, Setup.ER_URI);
+				 }
+				 else {
+					 //       	  text= "Test mode: ";	   
+					 return Response.status(200).entity(completeJson.toString()).build();
+
+				 }	  
+
+			 }
+
+			 else {
+				 if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
+
+					 log.error("SessionID: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
+
+				 }
+				 throw new WebApplicationException(invalidJsonException);
+			 }
+		 }
+		 catch(JsonParseException ex){
+			 if (!uriInfo.getQueryParameters().containsKey("test")) {
+				 log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
+
+			 }
+			 throw new WebApplicationException(notaJsonException);
+
+
+		 }
+		 catch (RuntimeException e) {
+			  	
+						 
+			 return Response.status(500).entity(e.getMessage()).build();
+		 }
+		 catch (MalformedURLException e) {
+			  	
+			 
+			 return Response.status(500).entity(e.getMessage()).build();
+		 }
+
 
 	}
 

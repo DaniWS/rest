@@ -47,12 +47,12 @@ public class Setup {
 	//   Assets Registry URL
 	public static String AR_URL = "https://rest.afarcloud.smartarch.cz/storage/rest/registry/getSensor/";
 	//   Environment Reporter URL
-	public static String ER_URL = "http://10.0.43.139:8080/store/measures";
+	public static String ER_URI = "http://torcos.etsist.upm.es:9213/store/measures";
   
 	//	CACHE parameters
-    public static final long timeToLive = 15;
-    public static final long cacheTimer = 15;
-    public static final int maxItems = 5;
+    public static final long timeToLive = 30;
+    public static final long cacheTimer = 30;
+    public static final int maxItems = 100;
 	
 	public static void loadSchemasInfo(String schemaURI) throws MalformedURLException, IOException{ 
 

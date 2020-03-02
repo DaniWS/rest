@@ -1,12 +1,13 @@
 [
 {'name': 'Definitions', 'type':'Collar', 'isSimple':false},
-{'name': 'CollarListSchema', 'type':'Collar', 'isSimple':true, 'missingFields': {'location':'','result':{'uom':''}, 'resourceUrn':''}},
-{'name': 'CollarSchema', 'type':'Sensor', 'isSimple':true},
-{'name': 'GatewayListSchema', 'type':'Sensor', 'isSimple':true},
-{'name': 'RegionListSchema', 'type':'Region', 'isSimple':true},
-{'name': 'RegionSchema', 'type':'Region', 'isSimple':true},
-{'name': 'SensorListSchema_Complete', 'type':'Sensor', 'isSimple':true},
-{'name': 'SensorListSchema_Simplified', 'type':'Sensor', 'isSimple':true,'missingFields': { 'resourceUrn':'','location':{'longitude':'','latitude':'','altitude':2},'result':{'uom':''}} },
-{'name': 'SensorSchema_Complete', 'type':'Sensor', 'isSimple':true},{'name': 'SensorSchema_Simplified', 'type':'Sensor', 'isSimple':true},
-{'name': 'MultiSensorListSchema', 'type':'Sensor', 'isSimple':true}
+{'name': 'CollarListSchema', 'type':'Collar', 'isSimple':false},
+{'name': 'CollarSchema', 'type':'Collar', 'isSimple':false},
+{'name': 'GatewayListSchema', 'type':'Sensor', 'isSimple':false},
+{'name': 'RegionListSchema', 'type':'Region', 'isSimple':false},
+{'name': 'RegionSchema', 'type':'Region', 'isSimple':false},
+{'name': 'SensorListSchema_Complete', 'type':'Sensor', 'isSimple':false},
+{'name': 'SensorListSchema_Simplified', 'type':'Sensor', 'isSimple':true,'missingFields':{'location':{'longitude':'','latitude':'','altitude':''},'uom':'','observedProperty':''}  },
+{'name': 'SensorSchema_Complete', 'type':'Sensor', 'isSimple':false},
+{'name': 'MultiSensorListSchema', 'type':'Sensor', 'isSimple':false},
+{'name': 'SensorSchema_Simplified', 'type':'Sensor', 'isSimple':true, 'missingFields':{ 'resourceUrn':'','location':{'longitude':'','latitude':'','altitude':''},'result':{'uom':''}} }
 ]
