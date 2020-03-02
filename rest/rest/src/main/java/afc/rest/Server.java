@@ -168,7 +168,7 @@ public class Server {
 
 	@GET
 	@Path("/logs")
-	@Produces({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
+	@Produces({MediaType.TEXT_PLAIN})
 	public String testServer(@Context UriInfo uriInfo) throws URISyntaxException, IOException{
 		String response= new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator+"logs"+File.separator+"logfile.log")));
 		return response;		  

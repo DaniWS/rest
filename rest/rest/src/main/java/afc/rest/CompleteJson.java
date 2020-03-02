@@ -8,8 +8,10 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
+import java.util.AbstractMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
@@ -84,7 +86,9 @@ public class CompleteJson {
 		Set<Entry<String, JsonElement>> registryJSON = new HashSet<Entry<String, JsonElement>>();
 		try {
 			JsonElement jsonTree=JsonParser.parseString(completeJson);
-
+			
+			//		We need to MANUALLY add the resourceUrn field, since it will substitute the resourceId value
+             missingFields.add("resourceUrn", null);       
 			registryJSON= parseObject(jsonTree, registryJSON, 0);
 
 
@@ -102,6 +106,7 @@ public class CompleteJson {
 	//	 A method that parses the JSON recursively filling the missing values of the \"missing values\" template, iterating recursively through every object,
 	//	 and every object inside an object, and so on...
 	public static JsonObject fillValues(Set <Entry<String, JsonElement>> registryJSON, JsonObject missingFields, JsonObject missingFieldsCopy, Gson gson) {
+		
 		for(String key:missingFields.keySet()) {
 
 			JsonElement token = missingFields.get(key);
@@ -111,7 +116,7 @@ public class CompleteJson {
 				JsonObject	localMissingFieldsCopy = gson.fromJson(localMissingFields , JsonObject.class);
 				missingFieldsCopy.remove(key);
 				missingFieldsCopy.add(key, fillValues(registryJSON, localMissingFields, localMissingFieldsCopy, gson)); 
-
+                  
 			}
 			else {
 				Iterator<Entry<String, JsonElement>> i =registryJSON.iterator();
@@ -121,6 +126,7 @@ public class CompleteJson {
 
 
 						missingFieldsCopy.add(key,entry.getValue());
+					
 						//Breaks the operation because the match for the corresponding key has been found. There's no need to continue iterating
 						break;	
 					}
@@ -164,7 +170,8 @@ public class CompleteJson {
 			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 			String output = br.lines().collect(Collectors.joining());
 			JsonObject missingObject=parseEntireJson(missingFields,output);
-			completeJson=completeFields(missingObject,inputJson,gson);
+			completeJson = completeFields(missingObject,inputJson,gson);
+            completeJson = substituteResourceId(completeJson);
 
 
 
@@ -178,6 +185,7 @@ public class CompleteJson {
 			conn.disconnect();
 			//	    Store object in cache
 			cache.put(resourceId,completeJson);    
+			System.out.println("!!!!!!"+completeJson);
 			return completeJson;
 		}
 
@@ -221,6 +229,7 @@ public class CompleteJson {
 				}
 			}
 		}
+		
 		System.out.println(inputCopy+"\n\n");
 		return inputCopy;
 	};
@@ -284,4 +293,17 @@ public class CompleteJson {
 		}
 		return resourceId;
 	}
+//	A method for MANUALLY substituting the resourceId with the resourceUrn value.
+	public static JsonObject substituteResourceId (JsonObject completedJson) {
+		    JsonElement resourceUrn = completedJson.get("resourceUrn");
+		if (resourceUrn==null) {
+           log.debug("The substitution of the 'resourceId' for the 'resourceUrn' wasn't performed");
+		}
+		else {
+			completedJson.remove("resourceId");
+			completedJson.add("resourceId",resourceUrn);
+			completedJson.remove("resourceUrn");
+			}
+		return completedJson;
+		}
 }

@@ -9,5 +9,5 @@
 {'name': 'SensorListSchema_Simplified', 'type':'Sensor', 'isSimple':true,'missingFields':{'location':{'longitude':'','latitude':'','altitude':''},'uom':'','observedProperty':''}  },
 {'name': 'SensorSchema_Complete', 'type':'Sensor', 'isSimple':false},
 {'name': 'MultiSensorListSchema', 'type':'Sensor', 'isSimple':false},
-{'name': 'SensorSchema_Simplified', 'type':'Sensor', 'isSimple':true, 'missingFields':{ 'resourceUrn':'','location':{'longitude':'','latitude':'','altitude':''},'result':{'uom':''}} }
+{'name': 'SensorSchema_Simplified', 'type':'Sensor', 'isSimple':true, 'missingFields':{ 'location':{'longitude':'','latitude':'','altitude':''},'result':{'uom':''},'observedProperty':'' } }
 ]
