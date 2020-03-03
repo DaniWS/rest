@@ -217,8 +217,12 @@ public class Server {
 				 }
 				 else {
 					 //       	  text= "Test mode: ";	   
+					 if (completeJson!=null) {
 					 return Response.status(200).entity(completeJson.toString()).build();
-
+					 }
+					 else {
+						 return Response.status(200).build();
+					 }
 				 }	  
 
 			 }
