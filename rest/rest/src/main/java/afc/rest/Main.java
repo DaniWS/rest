@@ -145,7 +145,7 @@ public class Main {
 
         cfg.addHttpHandler(docsHandler, "/docs/");
         cfg.addHttpHandler(schemasHandler, "/schemas/");
-        
+        Setup.loadProperties(System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"properties"+File.separator+Setup.configFileName);
 
         trustEveryone();
 

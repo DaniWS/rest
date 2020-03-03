@@ -196,17 +196,24 @@ public class Server {
 					 completeJson = CompleteJson.getCompleteJson(schema.getMissingFields(), input, Setup.AR_URL);
 				 }
 
-
+         
 
 
 				 //           	  String text="";
 				 //	        	  Checks for the "test" query parameter.
 				 if (!uriInfo.getQueryParameters().containsKey("test")) {
+					 String URN="measures"; // PROVISIONAL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
 					 log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ category );
 
 					 //	        	  Here goes the code to send the data.
-
-					 return CompleteJson.sendTelemetry(input, request, category, Setup.ER_URI);
+					 //               PROVISIONAL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    
+	 		
+	 				 String type = schema.getType().toString();
+					 if(type.equals("Collar")) {
+						 URN="collar";						 						 
+					 }
+					 System.out.println(Setup.ER_URI+URN);
+					 return CompleteJson.sendTelemetry(input, request, category, Setup.ER_URI+URN);
 				 }
 				 else {
 					 //       	  text= "Test mode: ";	   
