@@ -593,3 +593,188 @@ java.lang.RuntimeException: Failed : HTTP error code : 405
 2020-03-03 16:33:55,579  INFO [grizzly-http-server-13] - Server - SessionID: 2142409660085308928 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
 2020-03-03 16:33:55,590 ERROR [grizzly-http-server-13] - Server - Could not connect to Environment Reporter: Failed : HTTP error code : 405
 2020-03-03 16:39:28,409  INFO [grizzly-http-server-14] - Server - SessionID: 2142409660085308928 IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
+2020-03-04 11:28:23,881 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-04 11:28:24,959  INFO [grizzly-http-server-12] - Server - SessionID: 4793692326582771896 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 11:28:24,975 ERROR [grizzly-http-server-12] - Server - Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-03-04 11:28:34,621 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 11:28:34,632  INFO [grizzly-http-server-13] - Server - SessionID: 4793692326582771896 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 11:28:34,642 ERROR [grizzly-http-server-13] - Server - Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-03-04 11:28:35,694 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 11:28:35,696  INFO [grizzly-http-server-14] - Server - SessionID: 4793692326582771896 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 11:28:35,711 ERROR [grizzly-http-server-14] - Server - Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-03-04 11:28:36,486 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 11:28:36,487  INFO [grizzly-http-server-15] - Server - SessionID: 4793692326582771896 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 11:28:36,500 ERROR [grizzly-http-server-15] - Server - Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-03-04 11:28:43,666 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 11:29:14,360 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 11:29:19,040 DEBUG [grizzly-http-server-2] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 11:29:20,402 DEBUG [grizzly-http-server-3] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 11:29:26,906 DEBUG [grizzly-http-server-4] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 11:29:26,906  INFO [grizzly-http-server-4] - Server - SessionID: 4793692326582771896 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 11:29:26,917 ERROR [grizzly-http-server-4] - Server - Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-03-04 11:29:38,187 DEBUG [grizzly-http-server-5] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 11:30:05,639  INFO [grizzly-http-server-7] - Server - SessionID: 4793692326582771896 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Complete
+2020-03-04 11:30:10,124 DEBUG [grizzly-http-server-8] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 11:30:10,125  INFO [grizzly-http-server-8] - Server - SessionID: 4793692326582771896 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 11:30:10,135 ERROR [grizzly-http-server-8] - Server - Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-03-04 11:30:24,576 DEBUG [grizzly-http-server-9] - Server - Complete JSON for this resource not in cache
+2020-03-04 11:30:25,582  INFO [grizzly-http-server-9] - Server - SessionID: 4793692326582771896 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorListSchema_Simplified
+2020-03-04 11:30:25,597 ERROR [grizzly-http-server-9] - Server - Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-03-04 11:30:31,494  INFO [grizzly-http-server-10] - Server - SessionID: 4793692326582771896 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Complete
+2020-03-04 11:31:36,724 ERROR [grizzly-http-server-13] - Server - SessionID: 4793692326582771896 IP: 0:0:0:0:0:0:0:1 Not a Json Exception com.fasterxml.jackson.core.JsonParseException: input has trailing data after first JSON Text
+ at [Source: (StringReader); line: 9, column: 2]
+2020-03-04 11:31:49,874 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-04 11:31:50,854  INFO [grizzly-http-server-14] - Server - SessionID: 4793692326582771896 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 11:31:50,866 ERROR [grizzly-http-server-14] - Server - Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-03-04 11:31:55,918 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 11:32:06,444  INFO [grizzly-http-server-0] - Server - SessionID: 4793692326582771896 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Complete
+2020-03-04 11:35:16,562 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource not in cache
+2020-03-04 11:35:17,614  INFO [grizzly-http-server-1] - Server - SessionID: 4793692326582771896 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 11:35:17,625 ERROR [grizzly-http-server-1] - Server - Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-03-04 11:38:14,717 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-04 11:38:16,547  INFO [grizzly-http-server-12] - Server - SessionID: 7287342258411206973 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:04:18,132 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-04 12:04:19,177  INFO [grizzly-http-server-12] - Server - SessionID: 2827223853676742922 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:04:20,484 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:04:20,485  INFO [grizzly-http-server-13] - Server - SessionID: 2827223853676742922 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:04:26,483 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:04:26,484  INFO [grizzly-http-server-14] - Server - SessionID: 2827223853676742922 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:04:27,429 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:04:27,431  INFO [grizzly-http-server-15] - Server - SessionID: 2827223853676742922 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:04:31,726 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:04:32,643 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:04:33,375 DEBUG [grizzly-http-server-2] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:04:37,522 DEBUG [grizzly-http-server-3] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:04:38,719 DEBUG [grizzly-http-server-4] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:04:39,619 DEBUG [grizzly-http-server-5] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:04:40,428 DEBUG [grizzly-http-server-6] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:04:41,206 DEBUG [grizzly-http-server-7] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:04:46,100 DEBUG [grizzly-http-server-8] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:04:47,005 DEBUG [grizzly-http-server-9] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:09:39,634 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-04 12:09:44,649 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:09:44,669  INFO [grizzly-http-server-13] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:09:45,371 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:09:45,371  INFO [grizzly-http-server-14] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:09:46,038 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:09:46,038  INFO [grizzly-http-server-15] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:09:46,574 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:09:46,575  INFO [grizzly-http-server-0] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:10:12,723 DEBUG [grizzly-http-server-3] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:10:12,723  INFO [grizzly-http-server-3] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:10:13,178 DEBUG [grizzly-http-server-4] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:10:13,179  INFO [grizzly-http-server-4] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:10:13,608 DEBUG [grizzly-http-server-5] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:10:13,609  INFO [grizzly-http-server-5] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:10:14,022 DEBUG [grizzly-http-server-6] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:10:14,022  INFO [grizzly-http-server-6] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:10:19,124 DEBUG [grizzly-http-server-9] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:10:19,124  INFO [grizzly-http-server-9] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:10:19,543 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:10:19,545  INFO [grizzly-http-server-10] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:10:19,988 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:10:19,990  INFO [grizzly-http-server-11] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:10:26,880 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-04 12:10:27,887  INFO [grizzly-http-server-12] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:10:28,780 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:10:28,782  INFO [grizzly-http-server-13] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:10:29,451 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:10:29,452  INFO [grizzly-http-server-14] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:10:30,079 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:10:30,080  INFO [grizzly-http-server-15] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:10:30,629 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:10:30,629  INFO [grizzly-http-server-0] - Server - SessionID: 473161265013708647 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:20:06,824 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-04 12:20:10,310  INFO [grizzly-http-server-12] - Server - SessionID: 8531592568763125329 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:20:18,649 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:20:18,651  INFO [grizzly-http-server-13] - Server - SessionID: 8531592568763125329 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:20:25,139 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-04 12:20:26,123  INFO [grizzly-http-server-14] - Server - SessionID: 8531592568763125329 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:20:30,879 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:20:30,881  INFO [grizzly-http-server-15] - Server - SessionID: 8531592568763125329 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:20:31,705 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:20:31,705  INFO [grizzly-http-server-0] - Server - SessionID: 8531592568763125329 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:20:32,483 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:20:32,484  INFO [grizzly-http-server-1] - Server - SessionID: 8531592568763125329 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:20:33,124 DEBUG [grizzly-http-server-2] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:20:33,125  INFO [grizzly-http-server-2] - Server - SessionID: 8531592568763125329 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:20:33,591 DEBUG [grizzly-http-server-3] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:20:33,592  INFO [grizzly-http-server-3] - Server - SessionID: 8531592568763125329 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:20:34,298 DEBUG [grizzly-http-server-4] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:20:34,300  INFO [grizzly-http-server-4] - Server - SessionID: 8531592568763125329 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:20:39,313 DEBUG [grizzly-http-server-5] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:20:39,314  INFO [grizzly-http-server-5] - Server - SessionID: 8531592568763125329 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:20:40,552 DEBUG [grizzly-http-server-6] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:20:40,554  INFO [grizzly-http-server-6] - Server - SessionID: 8531592568763125329 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:20:41,511 DEBUG [grizzly-http-server-7] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:20:41,511  INFO [grizzly-http-server-7] - Server - SessionID: 8531592568763125329 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:21:16,555 DEBUG [grizzly-http-server-8] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:21:16,555  INFO [grizzly-http-server-8] - Server - SessionID: 8531592568763125329 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:21:18,650 DEBUG [grizzly-http-server-9] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:21:18,651  INFO [grizzly-http-server-9] - Server - SessionID: 8531592568763125329 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:21:25,886 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:21:34,490 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:21:41,432 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:21:54,326 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-04 12:22:02,373 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource not in cache
+2020-03-04 12:22:03,394 ERROR [grizzly-http-server-0] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-04 12:22:10,699 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:22:14,382 DEBUG [grizzly-http-server-2] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:35:56,575 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-04 12:36:57,488 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-04 12:36:59,515 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:37:00,436 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:38:15,639 DEBUG [grizzly-http-server-3] - Server - Complete JSON for this resource not in cache
+2020-03-04 12:38:21,662 DEBUG [grizzly-http-server-2] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:38:21,676  INFO [grizzly-http-server-2] - Server - SessionID: 9832132039962372 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:38:21,742 ERROR [grizzly-http-server-2] - Server - Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-03-04 12:38:29,181 DEBUG [grizzly-http-server-4] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:38:29,182  INFO [grizzly-http-server-4] - Server - SessionID: 9832132039962372 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:40:33,738 DEBUG [grizzly-http-server-7] - Server - Complete JSON for this resource not in cache
+2020-03-04 12:40:34,699  INFO [grizzly-http-server-7] - Server - SessionID: 9832132039962372 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:41:58,017 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-04 12:41:58,953  INFO [grizzly-http-server-10] - Server - SessionID: 9832132039962372 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:42:09,779 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:43:09,515 ERROR [grizzly-http-server-14] - Server - SessionID: 98321320399623721583322189514  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-04 12:44:37,792 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource not in cache
+2020-03-04 12:44:56,385 ERROR [grizzly-http-server-5] - Server - SessionID: 98321320399623721583322296385  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-04 12:46:12,205 ERROR [grizzly-http-server-6] - Server - SessionID: 98321320399623721583322372205  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-04 12:46:14,216 ERROR [grizzly-http-server-8] - Server - SessionID: 98321320399623721583322374216  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-04 12:48:31,183 DEBUG [grizzly-http-server-9] - Server - Complete JSON for this resource not in cache
+2020-03-04 12:48:32,179  INFO [grizzly-http-server-9] - Server - SessionID: 9832132039962372 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 12:48:37,127 DEBUG [grizzly-http-server-7] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:48:42,458 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 12:48:42,461  INFO [grizzly-http-server-10] - Server - SessionID: 9832132039962372 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 13:04:06,155 ERROR [grizzly-http-server-11] - Server - SessionID: 98321320399623721583323446154  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-04 13:08:01,208 ERROR [grizzly-http-server-12] - Server - SessionID: 51596417348362888971583323680976  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-04 13:09:02,923 ERROR [grizzly-http-server-10] - Server - SessionID: 29875493332458444921583323742692  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-04 13:19:24,355 ERROR [grizzly-http-server-12] - Server - SessionID: 21156636098828862111583324364353  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-04 13:19:26,307 ERROR [grizzly-http-server-13] - Server - SessionID: 21156636098828862111583324366307  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-04 13:20:17,461 ERROR [grizzly-http-server-12] - Server - SessionID: 45553924043079633791583324417457  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-04 13:20:20,942 ERROR [grizzly-http-server-13] - Server - SessionID: 45553924043079633791583324420942  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-04 13:20:26,927 ERROR [grizzly-http-server-14] - Server - SessionID: 4555392404307963379 IP: 0:0:0:0:0:0:0:1 Not a Json Exception com.fasterxml.jackson.core.JsonParseException: input has trailing data after first JSON Text
+ at [Source: (StringReader); line: 2, column: 54]
+2020-03-04 13:20:32,333 ERROR [grizzly-http-server-15] - Server - SessionID: 45553924043079633791583324432333  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-04 13:20:50,238 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource not in cache
+2020-03-04 13:20:51,442  INFO [grizzly-http-server-0] - Server - SessionID: 4555392404307963379 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 13:24:09,731 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-04 13:24:10,681  INFO [grizzly-http-server-12] - Server - SessionID: 4093125375414010402 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 13:24:14,308 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 13:24:14,309  INFO [grizzly-http-server-13] - Server - SessionID: 4093125375414010402 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 13:24:23,409 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 13:24:23,410  INFO [grizzly-http-server-14] - Server - SessionID: 4093125375414010402 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 13:24:25,035 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 13:24:25,036  INFO [grizzly-http-server-15] - Server - SessionID: 4093125375414010402 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 13:24:28,218 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 13:24:28,219  INFO [grizzly-http-server-0] - Server - SessionID: 4093125375414010402 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 13:24:32,463 ERROR [grizzly-http-server-1] - Server - SessionID: 40931253754140104021583324672463  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-04 13:24:39,374 ERROR [grizzly-http-server-2] - Server - SessionID: 4093125375414010402 IP: 0:0:0:0:0:0:0:1 Not a Json Exception com.fasterxml.jackson.core.JsonParseException: input has trailing data after first JSON Text
+ at [Source: (StringReader); line: 2, column: 16]
+2020-03-04 13:24:48,578 DEBUG [grizzly-http-server-4] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 13:26:34,841 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-04 13:26:48,384 ERROR [grizzly-http-server-15] - Server - SessionID: 4149435842042123000 IP: 0:0:0:0:0:0:0:1 Not a Json Exception com.fasterxml.jackson.core.JsonParseException: input has trailing data after first JSON Text
+ at [Source: (StringReader); line: 2, column: 18]
+2020-03-04 13:26:53,517 ERROR [grizzly-http-server-0] - Server - SessionID: 41494358420421230001583324813517  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-04 13:26:57,351 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource obtained from cache
+2020-03-04 13:26:57,351  INFO [grizzly-http-server-1] - Server - SessionID: 4149435842042123000 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-04 13:27:02,900 DEBUG [grizzly-http-server-2] - Server - Complete JSON for this resource obtained from cache

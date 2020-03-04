@@ -16,6 +16,7 @@ import java.util.Set;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 
 import org.apache.log4j.Logger;
@@ -77,15 +78,15 @@ public class CompleteJson {
 		return registryJSON;
 	}
 
-	//	A method that parses the entire complete version of the received simplified JSON, and iterates over all objects recursively filling the missing values  
+	//	A method that parses the entire registration JSON of the received simplified JSON, and iterates over all objects recursively filling the missing values  
 
-	public static JsonObject parseEntireJson(JsonObject missingFields, String completeJson) throws IOException {
+	public static JsonObject parseEntireJson(JsonObject missingFields, String registrationJson) throws IOException {
 		Gson gson = new Gson();
 
 		JsonObject missingFieldsCopy = gson.fromJson(missingFields , JsonObject.class);
 		Set<Entry<String, JsonElement>> registryJSON = new HashSet<Entry<String, JsonElement>>();
 		try {
-			JsonElement jsonTree=JsonParser.parseString(completeJson);
+			JsonElement jsonTree=JsonParser.parseString(registrationJson);
 			
 			//		We need to MANUALLY add the resourceUrn field, since it will substitute the resourceId value
              missingFields.add("resourceUrn", null);       
@@ -138,20 +139,25 @@ public class CompleteJson {
 		return missingFieldsCopy;
 	}
 	// A method to complete the simplified JSON obtaining the missing information from the Assets Registry URI
-	public static JsonObject getCompleteJson(JsonObject missingFields, String input, String AR_URL) throws RuntimeException, IOException {
+	public static JsonObject getCompleteJson(JsonObject missingFields, String input, String AR_URL) throws IOException {
 
 		Gson gson = new Gson();
 		@SuppressWarnings("unchecked")
 		Cache<String, JsonObject> cache = Cache.getCache(Setup.timeToLive, Setup.cacheTimer, Setup.maxItems);
 		String resourceId = getResourceId(input);
-		JsonObject completeJson=cache.get(resourceId);
-		if (completeJson!=null) {
+		JsonObject inputJson = gson.fromJson(input, JsonObject.class);
+		JsonObject missingObject=cache.get(resourceId);
+		JsonObject completeJson = null;
+		if (missingObject!=null) {
+			completeJson = completeFields(missingObject, inputJson, gson );
+			completeJson = substituteResourceId(completeJson);
 			log.debug("Complete JSON for this resource obtained from cache");
 			return completeJson;
+			
 
 		}
 		log.debug("Complete JSON for this resource not in cache");
-		JsonObject inputJson = gson.fromJson(input, JsonObject.class);
+		
 		try {
 			URL uri = new URL(AR_URL+resourceId);
 			HttpURLConnection conn = (HttpURLConnection) uri.openConnection();
@@ -169,7 +175,7 @@ public class CompleteJson {
 			}
 			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 			String output = br.lines().collect(Collectors.joining());
-			JsonObject missingObject=parseEntireJson(missingFields,output);
+			missingObject=parseEntireJson(missingFields,output);
 			completeJson = completeFields(missingObject,inputJson,gson);
             completeJson = substituteResourceId(completeJson);
 
@@ -179,13 +185,11 @@ public class CompleteJson {
 
 			//Server answer
 			while ((output = br.readLine()) != null) {
-				System.out.println(output);
 
 			}	        
 			conn.disconnect();
 			//	    Store object in cache
-			cache.put(resourceId,completeJson);    
-			System.out.println("!!!!!!"+completeJson);
+			cache.put(resourceId,missingObject);    
 			return completeJson;
 		}
 
@@ -198,7 +202,7 @@ public class CompleteJson {
 		catch (RuntimeException e) {
 			e.printStackTrace();
 			log.error("Could not obtain resource from the Assets Registry: "+e.getMessage());
-			throw new RuntimeException("ERROR: The specified resourceId might not be registered in the Asset Registry");
+			throw new WebApplicationException(Server.AR_RuntimeException);
 		}
 
 	}
@@ -230,7 +234,6 @@ public class CompleteJson {
 			}
 		}
 		
-		System.out.println(inputCopy+"\n\n");
 		return inputCopy;
 	};
 	public static Response sendTelemetry(String json, Request request, String category, String ER_URI) {

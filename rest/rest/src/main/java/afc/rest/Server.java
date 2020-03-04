@@ -64,10 +64,12 @@ public class Server {
 	//  	protected String resourceId;
 	private static int i = 0;
 
-	protected final Response invalidJsonException = Response.status(415).build();
-	protected final Response notaJsonException =  Response.status(400).build();
-
-
+	protected static final Response invalidJsonException = Response.status(415).build();
+	protected static final Response notaJsonException =  Response.status(400).build();
+	protected static final Response AR_RuntimeException = Response.status(500).entity("ERROR: The specified resourceId might not be registered in the Asset Registry").build();
+    //  Detailed exceptions for TEST mode
+	protected static final Response detInvJsonExc = Response.status(415).build();
+	protected static final Response detNotJsonExc =  Response.status(400).build();
 	/*
 	@Context ServletContext context;
 
@@ -179,13 +181,13 @@ public class Server {
 	@Path("/telemetry")
 	//	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
-	public Response getMeasure(String input, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
+	public Response getMeasure(String telemetry, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
 		//              Check for "resourceId"
 		/*	 	
     		RegularExpression oRegExt = new RegularExpression();
     		resourceId = oRegExt.extractInformation("\"{\"resourceId\":\"urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012\",\"sequence number\": 123,\"location\": { \"latitude\": 45.45123,\"longitude\": 25.25456, \"altitude\": 2.10789},\");");
 		 */ 	    try {
-			 Pair   <Boolean, Schema> response=validateJson(input,uriInfo);
+			 Pair   <Boolean, Schema> response=validateJson(telemetry,uriInfo);
 			 Boolean valid=response.getFirst();
 			 Schema schema=response.getSecond();
 			 if (valid) {
@@ -193,8 +195,11 @@ public class Server {
 				 JsonObject completeJson=null;
 				 if(schema.getIsSimple()) {
 					 //		        		Method that completes the JSON, first looking for a match in cache and, if not found, obtaining it from the Assets Registry.
-					 completeJson = CompleteJson.getCompleteJson(schema.getMissingFields(), input, Setup.AR_URL);
-				 }
+					 completeJson = CompleteJson.getCompleteJson(schema.getMissingFields(), telemetry, Setup.AR_URL);
+					 telemetry= completeJson.toString();
+					 System.out.println(telemetry);
+					 }
+				 
 
          
 
@@ -213,12 +218,12 @@ public class Server {
 						 URN="collar";						 						 
 					 }
 					 System.out.println(Setup.ER_URI+URN);
-					 return CompleteJson.sendTelemetry(input, request, category, Setup.ER_URI+URN);
+					 return CompleteJson.sendTelemetry(telemetry, request, category, Setup.ER_URI+URN);
 				 }
 				 else {
 					 //       	  text= "Test mode: ";	   
 					 if (completeJson!=null) {
-					 return Response.status(200).entity(completeJson.toString()).build();
+					 return Response.status(200).entity(telemetry).build();
 					 }
 					 else {
 						 return Response.status(200).build();
@@ -231,25 +236,28 @@ public class Server {
 				 if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
 
 					 log.error("SessionID: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
-
+					 throw new WebApplicationException(invalidJsonException);
 				 }
-				 throw new WebApplicationException(invalidJsonException);
+				 Response detailedException= Response.status(415).entity("ERROR: Not AFarCloudCompliant").build();
+				 throw new WebApplicationException(detailedException);
 			 }
 		 }
 		 catch(JsonParseException ex){
 			 if (!uriInfo.getQueryParameters().containsKey("test")) {
 				 log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
-
+				 throw new WebApplicationException(notaJsonException);
 			 }
-			 throw new WebApplicationException(notaJsonException);
+			Response detailedException= Response.status(400).entity(ex.getMessage()).build();
+			 throw new WebApplicationException(detailedException);
 
 
 		 }
-		 catch (RuntimeException e) {
+/*		 catch (RuntimeException e) {
 			  	
 						 
 			 return Response.status(500).entity(e.getMessage()).build();
 		 }
+*/		 
 		 catch (MalformedURLException e) {
 			  	
 			 
