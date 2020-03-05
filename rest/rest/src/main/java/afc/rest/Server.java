@@ -43,7 +43,6 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
  */
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import afc.rest.ValidationUtils;
@@ -208,7 +207,7 @@ public class Server {
 				 //	        	  Checks for the "test" query parameter.
 				 if (!uriInfo.getQueryParameters().containsKey("test")) {
 					 String URN="measures"; // PROVISIONAL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-					 log.info("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ category );
+					 log.info("SessionID: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ category );
 
 					 //	        	  Here goes the code to send the data.
 					 //               PROVISIONAL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    

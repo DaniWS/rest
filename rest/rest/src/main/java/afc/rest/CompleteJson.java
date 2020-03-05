@@ -101,6 +101,7 @@ public class CompleteJson {
 
 		catch(JsonParseException e) {e.printStackTrace();
 		}
+		System.out.println("REGISTRY_JSON: "+registryJSON);
 		return missingFieldsCopy;
 
 	}

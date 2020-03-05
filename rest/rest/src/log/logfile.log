@@ -788,3 +788,71 @@ java.lang.RuntimeException: Failed : HTTP error code : 405
 2020-03-04 16:19:16,360 ERROR [grizzly-http-server-15] - Server - Could not obtain resource from the Assets Registry: 400
 2020-03-04 16:19:16,697 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource not in cache
 2020-03-04 16:19:16,937 ERROR [grizzly-http-server-0] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:36:38,322 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:36:38,690 ERROR [grizzly-http-server-14] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:36:52,999 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:36:53,204 ERROR [grizzly-http-server-15] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:37:06,311 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:37:06,510 ERROR [grizzly-http-server-0] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:37:14,343 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:37:14,541 ERROR [grizzly-http-server-1] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:37:22,122 DEBUG [grizzly-http-server-2] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:37:22,322 ERROR [grizzly-http-server-2] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:37:29,413 DEBUG [grizzly-http-server-3] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:37:29,608 ERROR [grizzly-http-server-3] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:39:22,403 DEBUG [grizzly-http-server-4] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:39:22,600 ERROR [grizzly-http-server-4] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:40:13,656 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:40:13,866 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:41:18,445 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:41:18,651 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:41:20,185 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:41:20,392 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:41:22,265 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:41:22,462 ERROR [grizzly-http-server-14] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:41:24,263 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:41:24,461 ERROR [grizzly-http-server-15] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:42:14,536 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:42:14,742 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:42:25,342 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:42:25,557 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:45:41,347 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:45:41,548 ERROR [grizzly-http-server-14] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:45:42,941 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:45:43,146 ERROR [grizzly-http-server-15] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:45:54,306 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:45:54,512 ERROR [grizzly-http-server-0] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:46:48,034 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:46:48,239 ERROR [grizzly-http-server-1] - Server - Could not obtain resource from the Assets Registry: 400
+2020-03-05 12:51:53,374 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:51:55,108 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 404
+2020-03-05 12:54:13,423 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-05 12:54:23,904 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-05 12:54:23,941  INFO [grizzly-http-server-13] - Server - SessionID: 8982835099198059499 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-05 12:54:44,423 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-05 12:54:44,435  INFO [grizzly-http-server-0] - Server - SessionID: 8982835099198059499 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-05 13:44:36,487 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-05 13:44:37,704  INFO [grizzly-http-server-12] - Server - SessionID: 73016014237443350781583412277703 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-05 13:44:58,715 ERROR [grizzly-http-server-12] - Server - Could not connect to Environment Reporter: Connection timed out: connect
+2020-03-05 13:45:01,700 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-05 13:45:01,701  INFO [grizzly-http-server-13] - Server - SessionID: 25487534659747080921583412301701 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-05 13:45:15,225 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-05 13:45:18,207 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource obtained from cache
+2020-03-05 13:45:22,715 ERROR [grizzly-http-server-13] - Server - Could not connect to Environment Reporter: Connection timed out: connect
+2020-03-05 13:57:31,334 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-05 13:57:32,410  INFO [grizzly-http-server-12] - Server - SessionID: 44552103544932681441583413052407 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-05 13:57:53,415 ERROR [grizzly-http-server-12] - Server - Could not connect to Environment Reporter: Connection timed out: connect
+2020-03-05 13:58:11,778 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-05 13:58:11,780  INFO [grizzly-http-server-13] - Server - SessionID: 44552103544932681441583413091780 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-05 13:59:44,521 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-05 13:59:49,130 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-05 14:04:20,290 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-05 14:04:44,357 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-05 14:04:53,431 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource obtained from cache
+2020-03-05 14:07:55,352 DEBUG [grizzly-http-server-2] - Server - Complete JSON for this resource not in cache
+2020-03-05 14:08:47,511 DEBUG [grizzly-http-server-3] - Server - Complete JSON for this resource not in cache
+2020-03-05 14:09:41,556 DEBUG [grizzly-http-server-4] - Server - Complete JSON for this resource obtained from cache
+2020-03-05 14:17:01,662 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-05 14:20:31,101 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-05 14:27:03,101 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-05 17:28:06,388 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
