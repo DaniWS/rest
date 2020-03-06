@@ -481,7 +481,7 @@ servers:
     description: AS08
   - url: https://torcos.etsist.upm.es:9209/
     description: AS09
-  - url: https://torcos.etsist.upm.es:92010/
+  - url: https://torcos.etsist.upm.es:9210/
     description: AS10    
-  - url: https://torcos.etsist.upm.es:92011/
+  - url: https://torcos.etsist.upm.es:9211/
     description: AS11

@@ -39,3 +39,9 @@
 2020-03-06 11:23:46,248 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
 2020-03-06 11:38:23,575 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
 2020-03-06 11:38:30,186 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-06 12:12:15,282  INFO [grizzly-http-server-11] - Server - SessionID: 61853393568222069371583493135277 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Complete
+2020-03-06 12:12:15,328 ERROR [grizzly-http-server-11] - Server - Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-03-06 12:12:27,206  INFO [grizzly-http-server-12] - Server - SessionID: 61853393568222069371583493147206 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Complete
+2020-03-06 12:14:05,442  INFO [grizzly-http-server-12] - Server - SessionID: 89369537909367856691583493245442 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Complete
+2020-03-06 12:14:05,460 ERROR [grizzly-http-server-12] - Server - Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-03-06 12:14:14,740  INFO [grizzly-http-server-13] - Server - SessionID: 59424339849314846351583493254740 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Complete

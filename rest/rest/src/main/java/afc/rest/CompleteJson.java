@@ -282,7 +282,7 @@ public class CompleteJson {
 			 */		        
 			conn.disconnect();
 			Session session=request.getSession();
-			return Response.status(200).entity("{\nrequestId: "+session.getIdInternal()+session.getTimestamp()+"\n}").build();
+			return Response.status(200).entity("{\n\"requestId\": "+session.getIdInternal()+session.getTimestamp()+"\n}").build();
 
 		} catch (MalformedURLException e) {
 			log.error("Could not connect to Environment Reporter: "+e.getMessage());
