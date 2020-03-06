@@ -89,12 +89,22 @@ public class CompleteJson {
 			JsonElement jsonTree=JsonParser.parseString(registrationJson);
 			
 			//		We need to MANUALLY add the resourceUrn field, since it will substitute the resourceId value
-             missingFields.add("resourceUrn", null);       
+			missingFields.add("resourceUrn", null);       
 			registryJSON= parseObject(jsonTree, registryJSON, 0);
-
-
+			// ONLY VALID FOR SIMPLE MEASUREMENT AND MEASUREMENT LIST
+/*		System.out.println("ENTRY SET: "+registryJSON.toString());
+			if(registryJSON) {System.out.println(true);};
+			if(observations!=null&&observations.isJsonArray()) {
+				JsonArray obs = observations.getAsJsonArray();
+				if(obs.size() !=1 ) {
+					log.error("The resource is not a single-parameter sensor");
+					throw new WebApplicationException("This resource is not a single-parameter sensor", 500);
+				}
+				
+			}
+*/
 			missingFieldsCopy=fillValues(registryJSON,missingFields,missingFieldsCopy, gson);
-
+		
 			System.out.println("MISSING FIELDS CUMPLIMENTED: "+ missingFieldsCopy.toString());
 
 		}
@@ -108,7 +118,7 @@ public class CompleteJson {
 	//	 A method that parses the JSON recursively filling the missing values of the \"missing values\" template, iterating recursively through every object,
 	//	 and every object inside an object, and so on...
 	public static JsonObject fillValues(Set <Entry<String, JsonElement>> registryJSON, JsonObject missingFields, JsonObject missingFieldsCopy, Gson gson) {
-		
+
 		for(String key:missingFields.keySet()) {
 
 			JsonElement token = missingFields.get(key);

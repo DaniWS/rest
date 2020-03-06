@@ -107,7 +107,7 @@ paths:
                     },
                     "observations": [
                       {
-                        "observedProperty": "soilTemperature",
+                        "observedProperty": "soil_temperature",
                         "resultTime": 1018081245,
                         "result": {
                           "value": 12.5,
@@ -130,7 +130,7 @@ paths:
                   "observations": [
                     {
                       "resourceId": "urn:afc:scenario:service:provider:type:entityName",
-                      "observedProperty": "air temperature",
+                      "observedProperty": "air_temperature",
                       "resultTime": 1558086914,
                       "result": {
                         "value": 3.2,
@@ -150,7 +150,7 @@ paths:
                       "longitude": 25.25456,
                       "altitude": 21.5
                     },
-                    "observedProperty": "air temperature",
+                    "observedProperty": "air_temperature",
                     "resultTime": 1558086914,
                     "result": {
                       "value": 27.2,
@@ -179,7 +179,7 @@ paths:
                             "longitude": 25.25456,
                             "altitude": 21.5
                           },
-                          "observedProperty": "air temperature",
+                          "observedProperty": "air_temperature",
                           "uom": "http://qudt.org/vocab/unit/DEG_C",
                           "observations": [
                             {
@@ -348,7 +348,7 @@ paths:
                     },
                     "observations": [
                       {
-                        "observedProperty": "soilTemperature",
+                        "observedProperty": "soil_temperature",
                         "resultTime": 1018081245,
                         "result": {
                           "value": 12.5,
@@ -371,7 +371,7 @@ paths:
                   "observations": [
                     {
                       "resourceId": "urn:afc:scenario:service:provider:type:entityName",
-                      "observedProperty": "air temperature",
+                      "observedProperty": "air_temperature",
                       "resultTime": 1558086914,
                       "result": {
                         "value": 3.2,
@@ -391,7 +391,7 @@ paths:
                       "longitude": 25.25456,
                       "altitude": 21.5
                     },
-                    "observedProperty": "air temperature",
+                    "observedProperty": "air_temperature",
                     "resultTime": 1558086914,
                     "result": {
                       "value": 27.2,
@@ -420,7 +420,7 @@ paths:
                             "longitude": 25.25456,
                             "altitude": 21.5
                           },
-                          "observedProperty": "air temperature",
+                          "observedProperty": "air_temperature",
                           "uom": "http://qudt.org/vocab/unit/DEG_C",
                           "observations": [
                             {
@@ -454,10 +454,13 @@ paths:
       responses:
         "200":
           description: "Successful operation"
-        "405":
-          description: "Invalid input: not AFarCloud-compliant"
         "415":
+          description: "Invalid input: not AFarCloud-compliant"
+        "400":
           description: "Invalid input: not a JSON"
+        "500":
+          description: "Internal Server Error: Might be caused by an incorrect or unregistered \"resourceId\"" 
+          
 
 servers:
   - url: https://torcos.etsist.upm.es:9201/
