@@ -129,7 +129,9 @@ public class Main {
         server.start();
         ClassLoader loader = Main.class.getClassLoader();
 
-        CLStaticHttpHandler docsHandler = new CLStaticHttpHandler(loader, "swagger-ui/");
+//      **** Uncomment 'docsHanler' lines to enable Swagger API at BASE_URI+"/docs/" ****
+        
+//        CLStaticHttpHandler docsHandler = new CLStaticHttpHandler(loader, "swagger-ui/");
         CLStaticHttpHandler schemasHandler = new CLStaticHttpHandler(loader, "schemas/");
         
         String log4jConfPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"properties"+File.separator+"log4j.properties";
@@ -137,14 +139,15 @@ public class Main {
         
         PropertyConfigurator.configure(log4jConfPath);
 
-        docsHandler.setFileCacheEnabled(false);
+//        docsHandler.setFileCacheEnabled(false);
         schemasHandler.setFileCacheEnabled(false);
        
 
         ServerConfiguration cfg = server.getServerConfiguration();
 
-        cfg.addHttpHandler(docsHandler, "/docs/");
+//        cfg.addHttpHandler(docsHandler, "/docs/");
         cfg.addHttpHandler(schemasHandler, "/schemas/");
+        
         Setup.loadProperties(System.getProperty("user.dir")+File.separator+"src"+File.separator+"properties"+File.separator+Setup.configFileName);
 
         trustEveryone();

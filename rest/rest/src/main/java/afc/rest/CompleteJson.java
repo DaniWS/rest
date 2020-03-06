@@ -37,13 +37,23 @@ public class CompleteJson {
 
 	//	A method that parses a JSON object finding the missing values, and returns a HashSet of all the "key-value" in the root, 
 	//	and the "key-value" pairs inside all objects and arrays, and so on... recursively 
-	public static  Set <Entry<String, JsonElement>> parseObject(JsonElement token,  Set<Entry<String, JsonElement>> registryJSON, int counter) {
+	public static  Set <Entry<String, JsonElement>> parseObject(JsonElement token,  Set<Entry<String, JsonElement>> registryJSON, int counter)  {
 		if (token.isJsonObject()) {
 			JsonObject jsonObject= token.getAsJsonObject();
 			switch (counter) {
 			case 0: 
-				registryJSON.addAll(jsonObject.entrySet());
-
+				registryJSON.addAll(jsonObject.entrySet()); //Add all the root elements to the Entry Set 'registryJson'
+//				Check if there is more than one observed property
+				JsonElement observations = jsonObject.get("observations");
+				if (observations!=null&&observations.isJsonArray()) {
+					JsonArray obsArray = observations.getAsJsonArray();
+				 if	(obsArray.size()!=1) {
+					 log.error("The specified resource is not a single-parameter sensor");
+				 	throw new WebApplicationException("The specified resource is not a single-parameter sensor", 500);
+				 }
+			
+				
+				}
 
 
 				counter++;
@@ -69,6 +79,7 @@ public class CompleteJson {
 		else if (token.isJsonArray()) {
 			JsonArray jsonArray =token.getAsJsonArray();
 
+			
 			for (JsonElement localToken: jsonArray) {
 
 				registryJSON=parseObject(localToken, registryJSON, counter);
@@ -91,18 +102,7 @@ public class CompleteJson {
 			//		We need to MANUALLY add the resourceUrn field, since it will substitute the resourceId value
 			missingFields.add("resourceUrn", null);       
 			registryJSON= parseObject(jsonTree, registryJSON, 0);
-			// ONLY VALID FOR SIMPLE MEASUREMENT AND MEASUREMENT LIST
-/*		System.out.println("ENTRY SET: "+registryJSON.toString());
-			if(registryJSON) {System.out.println(true);};
-			if(observations!=null&&observations.isJsonArray()) {
-				JsonArray obs = observations.getAsJsonArray();
-				if(obs.size() !=1 ) {
-					log.error("The resource is not a single-parameter sensor");
-					throw new WebApplicationException("This resource is not a single-parameter sensor", 500);
-				}
-				
-			}
-*/
+
 			missingFieldsCopy=fillValues(registryJSON,missingFields,missingFieldsCopy, gson);
 		
 			System.out.println("MISSING FIELDS CUMPLIMENTED: "+ missingFieldsCopy.toString());
@@ -203,8 +203,11 @@ public class CompleteJson {
 			cache.put(resourceId,missingObject);    
 			return completeJson;
 		}
-
-
+//     This catch is implemented because otherwise WebApplicationExceptions are treated as RuntimeExceptions,
+//		and processed as such.
+		catch (WebApplicationException e) {
+			throw new WebApplicationException(Response.status(500).entity(e.getMessage()).build());
+		}
 		catch (MalformedURLException e) {
 			log.error("Could not connect to Assets Registry: "+e.getMessage());
 			e.printStackTrace();
