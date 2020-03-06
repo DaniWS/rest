@@ -926,3 +926,4 @@ java.lang.RuntimeException: Failed : HTTP error code : 405
 2020-03-06 13:55:06,892  INFO [grizzly-http-server-14] - Server - SessionID: 34006010465354809751583499306892 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
 2020-03-06 13:55:40,892 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
 2020-03-06 13:55:40,893  INFO [grizzly-http-server-0] - Server - SessionID: 34006010465354809751583499340893 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Simplified
+2020-03-06 17:11:47,980  INFO [grizzly-http-server-12] - Server - SessionID: 31489807130069543481583511107978 IP: 0:0:0:0:0:0:0:1 Successful request on: SensorSchema_Complete

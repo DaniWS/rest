@@ -284,6 +284,7 @@ public class CompleteJson {
 			        }
 			 */		        
 			conn.disconnect();
+			
 			Session session=request.getSession();
 			return Response.status(200).entity("{\n\"requestId\": "+session.getIdInternal()+session.getTimestamp()+"\n}").build();
 

@@ -19,3 +19,10 @@ docker pull teddyws92/dani:"tag"
 Crear user-defined network
 darle dirección ip  "-ip" y hostname "-h" a los contenedores.
 
+************** Se puede instalar las cosas desde un archivo "requirements.txt" (por ejemplo)***********************
+Haciendo:
+RUN pip install -r requirements.txt
+
+Donde requirements.txt es:
+flask
+redis
