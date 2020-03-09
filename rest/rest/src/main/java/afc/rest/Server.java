@@ -32,6 +32,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import org.apache.log4j.Logger;
 import org.glassfish.grizzly.http.server.Request;
+import org.glassfish.grizzly.http.server.Session;
 import org.glassfish.grizzly.utils.Pair;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -63,12 +64,12 @@ public class Server {
 	//  	protected String resourceId;
 	private static int i = 0;
 
-	protected static final Response invalidJsonException = Response.status(415).build();
-	protected static final Response notaJsonException =  Response.status(400).build();
-	protected static final Response AR_RuntimeException = Response.status(500).entity("ERROR: The specified resourceId might not be registered in the Asset Registry").build();
+	protected static final Response invalidJsonException = Response.status(415).header("Access-Control-Allow-Origin", "*").build();
+	protected static final Response notaJsonException =  Response.status(400).header("Access-Control-Allow-Origin", "*").build();
+	protected static final Response AR_RuntimeException = Response.status(500).header("Access-Control-Allow-Origin", "*").entity("ERROR: The specified resourceId might not be registered in the Asset Registry").build();
     //  Detailed exceptions for TEST mode
-	protected static final Response detInvJsonExc = Response.status(415).build();
-	protected static final Response detNotJsonExc =  Response.status(400).build();
+	protected static final Response detInvJsonExc = Response.status(415).header("Access-Control-Allow-Origin", "*").build();
+	protected static final Response detNotJsonExc =  Response.status(400).header("Access-Control-Allow-Origin", "*").build();
 	/*
 	@Context ServletContext context;
 
@@ -193,8 +194,20 @@ public class Server {
 				 String category=schema.getName();
 				 JsonObject completeJson=null;
 				 if(schema.getIsSimple()) {
-					 //		        		Method that completes the JSON, first looking for a match in cache and, if not found, obtaining it from the Assets Registry.
-					 completeJson = CompleteJson.getCompleteJson(schema.getMissingFields(), telemetry, Setup.AR_URL);
+					 switch (category) {
+					 case "SensorListSchema_Simplified":
+					 case "SensorSchema_Simplified":
+						 //		        		Method that completes the JSON, first looking for a match in cache and, if not found, obtaining it from the Assets Registry.
+						completeJson = SingleParamSensor.getCompleteJson(schema.getMissingFields() , telemetry, Setup.AR_URL);
+						break;
+					 case "MultiSensorListSchema_Simplified":
+						completeJson = MultiParamSensor.getCompleteJson(schema.getMissingFields() , telemetry, Setup.AR_URL);
+						break;
+					 default:
+						 log.error("Type of simplified JSON not supported");
+                         throw new WebApplicationException("ERROR: This type of simplified JSON is not supported", 500);
+					 }
+					 
 					 telemetry= completeJson.toString();
 					 System.out.println(telemetry);
 					 }
@@ -217,15 +230,15 @@ public class Server {
 						 URN="collar";						 						 
 					 }
 					 System.out.println(Setup.ER_URI+URN);
-					 return CompleteJson.sendTelemetry(telemetry, request, category, Setup.ER_URI+URN);
+					 return sendTelemetry(telemetry, request, category, Setup.ER_URI+URN);
 				 }
 				 else {
 					 //       	  text= "Test mode: ";	   
 					 if (completeJson!=null) {
-					 return Response.status(200).entity(telemetry).build();
+					 return Response.status(200).entity(telemetry).header("Access-Control-Allow-Origin", "*").build();
 					 }
 					 else {
-						 return Response.status(200).build();
+						 return Response.status(200).header("Access-Control-Allow-Origin", "*").build();
 					 }
 				 }	  
 
@@ -265,7 +278,58 @@ public class Server {
 
 
 	}
+	public static Response sendTelemetry(String json, Request request, String category, String ER_URI) {
+		try {
 
+			//				    Environment Reporter URL
+			URL uri = new URL(ER_URI);
+			HttpURLConnection conn = (HttpURLConnection) uri.openConnection();
+			conn.setDoOutput(true);
+			conn.setRequestMethod("POST");
+
+			conn.setRequestProperty("Content-Type", "application/json");
+
+
+			String input = json;
+
+
+			OutputStream os = conn.getOutputStream();
+			os.write(input.getBytes());
+			os.flush();
+			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+				throw new RuntimeException("Failed : HTTP error code : "
+						+ conn.getResponseCode());
+			}
+			//			        Code block for reading the output from the server
+			/*		        BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+			        String output;
+
+			        //Server answer
+			        System.out.println("Output from Server .... \n");
+			        while ((output = br.readLine()) != null) {
+			            System.out.println(output);
+
+			        }
+			 */		        
+			conn.disconnect();
+			
+			Session session=request.getSession();
+			return Response.status(200).entity("{\n\"requestId\": "+session.getIdInternal()+session.getTimestamp()+"\n}").header("Access-Control-Allow-Origin", "*").build();
+
+		} catch (MalformedURLException e) {
+			log.error("Could not connect to Environment Reporter: "+e.getMessage());
+			return Response.status(500).entity("Environment Reporter "+e.getMessage()).header("Access-Control-Allow-Origin", "*").build();  
+		} catch (IOException e) {
+			log.error("Could not connect to Environment Reporter: "+e.getMessage());
+			return Response.status(500).entity("Environment Reporter "+e.getMessage()).header("Access-Control-Allow-Origin", "*").build();  
+		}
+		catch (RuntimeException e) {
+			//		This exception can be caused by a non registered "resourceId" in the Assets Registry
+			log.error("Could not connect to Environment Reporter: "+e.getMessage());
+			return Response.status(500).entity("Environment Reporter "+e.getMessage()).header("Access-Control-Allow-Origin", "*").build();  
+		}
+
+	}
 
 }
 

@@ -31,9 +31,10 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
 // The class that implements the necessary methods for automatically completing simplified JSONs
-public class CompleteJson {
-
+public class SimplifiedJson {
+	
 	private static final Logger log = Logger.getLogger(Server.class);
+
 
 	//	A method that parses a JSON object finding the missing values, and returns a HashSet of all the "key-value" in the root, 
 	//	and the "key-value" pairs inside all objects and arrays, and so on... recursively 
@@ -250,58 +251,7 @@ public class CompleteJson {
 		
 		return inputCopy;
 	};
-	public static Response sendTelemetry(String json, Request request, String category, String ER_URI) {
-		try {
-
-			//				    Environment Reporter URL
-			URL uri = new URL(ER_URI);
-			HttpURLConnection conn = (HttpURLConnection) uri.openConnection();
-			conn.setDoOutput(true);
-			conn.setRequestMethod("POST");
-
-			conn.setRequestProperty("Content-Type", "application/json");
-
-
-			String input = json;
-
-
-			OutputStream os = conn.getOutputStream();
-			os.write(input.getBytes());
-			os.flush();
-			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
-				throw new RuntimeException("Failed : HTTP error code : "
-						+ conn.getResponseCode());
-			}
-			//			        Code block for reading the output from the server
-			/*		        BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
-			        String output;
-
-			        //Server answer
-			        System.out.println("Output from Server .... \n");
-			        while ((output = br.readLine()) != null) {
-			            System.out.println(output);
-
-			        }
-			 */		        
-			conn.disconnect();
-			
-			Session session=request.getSession();
-			return Response.status(200).entity("{\n\"requestId\": "+session.getIdInternal()+session.getTimestamp()+"\n}").build();
-
-		} catch (MalformedURLException e) {
-			log.error("Could not connect to Environment Reporter: "+e.getMessage());
-			return Response.status(500).entity("Environment Reporter "+e.getMessage()).build();  
-		} catch (IOException e) {
-			log.error("Could not connect to Environment Reporter: "+e.getMessage());
-			return Response.status(500).entity("Environment Reporter "+e.getMessage()).build();  
-		}
-		catch (RuntimeException e) {
-			//		This exception can be caused by a non registered "resourceId" in the Assets Registry
-			log.error("Could not connect to Environment Reporter: "+e.getMessage());
-			return Response.status(500).entity("Environment Reporter "+e.getMessage()).build();  
-		}
-
-	}
+	
 	public static String getResourceId (String json) {
 		Gson gson = new Gson();
 		JsonObject inputJson = gson.fromJson(json, JsonObject.class);
