@@ -64,12 +64,12 @@ public class Server {
 	//  	protected String resourceId;
 	private static int i = 0;
 
-	protected static final Response invalidJsonException = Response.status(415).header("Access-Control-Allow-Origin", "*").build();
-	protected static final Response notaJsonException =  Response.status(400).header("Access-Control-Allow-Origin", "*").build();
-	protected static final Response AR_RuntimeException = Response.status(500).header("Access-Control-Allow-Origin", "*").entity("ERROR: The specified resourceId might not be registered in the Asset Registry").build();
+	protected static final Response invalidJsonException = Response.status(415).build();
+	protected static final Response notaJsonException =  Response.status(400).build();
+	protected static final Response AR_RuntimeException = Response.status(500).entity("ERROR: The specified resourceId might not be registered in the Asset Registry").build();
     //  Detailed exceptions for TEST mode
-	protected static final Response detInvJsonExc = Response.status(415).header("Access-Control-Allow-Origin", "*").build();
-	protected static final Response detNotJsonExc =  Response.status(400).header("Access-Control-Allow-Origin", "*").build();
+	protected static final Response detInvJsonExc = Response.status(415).build();
+	protected static final Response detNotJsonExc =  Response.status(400).build();
 	/*
 	@Context ServletContext context;
 
@@ -235,10 +235,10 @@ public class Server {
 				 else {
 					 //       	  text= "Test mode: ";	   
 					 if (completeJson!=null) {
-					 return Response.status(200).entity(telemetry).header("Access-Control-Allow-Origin", "*").build();
+					 return Response.status(200).entity(telemetry).build();
 					 }
 					 else {
-						 return Response.status(200).header("Access-Control-Allow-Origin", "*").build();
+						 return Response.status(200).build();
 					 }
 				 }	  
 
@@ -314,19 +314,19 @@ public class Server {
 			conn.disconnect();
 			
 			Session session=request.getSession();
-			return Response.status(200).entity("{\n\"requestId\": "+session.getIdInternal()+session.getTimestamp()+"\n}").header("Access-Control-Allow-Origin", "*").build();
+			return Response.status(200).entity("{\n\"requestId\": "+session.getIdInternal()+session.getTimestamp()+"\n}").build();
 
 		} catch (MalformedURLException e) {
 			log.error("Could not connect to Environment Reporter: "+e.getMessage());
-			return Response.status(500).entity("Environment Reporter "+e.getMessage()).header("Access-Control-Allow-Origin", "*").build();  
+			return Response.status(500).entity("Environment Reporter "+e.getMessage()).build();  
 		} catch (IOException e) {
 			log.error("Could not connect to Environment Reporter: "+e.getMessage());
-			return Response.status(500).entity("Environment Reporter "+e.getMessage()).header("Access-Control-Allow-Origin", "*").build();  
+			return Response.status(500).entity("Environment Reporter "+e.getMessage()).build();  
 		}
 		catch (RuntimeException e) {
 			//		This exception can be caused by a non registered "resourceId" in the Assets Registry
 			log.error("Could not connect to Environment Reporter: "+e.getMessage());
-			return Response.status(500).entity("Environment Reporter "+e.getMessage()).header("Access-Control-Allow-Origin", "*").build();  
+			return Response.status(500).entity("Environment Reporter "+e.getMessage()).build();  
 		}
 
 	}

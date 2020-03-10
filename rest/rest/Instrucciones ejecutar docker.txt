@@ -27,3 +27,4 @@ Donde requirements.txt es:
 flask
 redis
 ************** Se puede cambiar el código en caliente mapeando creando un volumen sobre la carpeta del código!!!!! ******************
+docker run .... /bin/bash   (Abre consola)

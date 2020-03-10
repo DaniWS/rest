@@ -4,7 +4,7 @@ info:
   version: 1.0.1
   title: AFarCloud REST API
   contact:
-    name: Vicente HernÃƒÂ¡ndez DÃƒÂ­az
+    name: Vicente Hernandez Diaz
     email: vicente.hernandez@upm.es 
 externalDocs:
    description: Find out more about AFarCloud
@@ -485,4 +485,8 @@ servers:
     description: AS10    
   - url: https://torcos.etsist.upm.es:9211/
     description: AS11
+  - url: https://localhost:8080/
+    description: TEST
+  - url: https://localhost:8081/
+    description: TEST2
 

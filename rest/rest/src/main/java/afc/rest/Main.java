@@ -108,6 +108,8 @@ public class Main {
 
     	resourceConfig.register(JacksonJsonProvider.class);
     	
+    	resourceConfig.register(new CorsFilter());
+    	
     	  SSLContextConfigurator sslConfig = new SSLContextConfigurator();
           sslConfig.setKeyStoreFile("src/SSL/afc_key");
           sslConfig.setKeyStorePass("afc_rest_ssl");

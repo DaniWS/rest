@@ -6,7 +6,7 @@ import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
 
-// This class handles the NotFoundExceptions, and returns a response to the client with the API documentation.
+// This class handles the WebApplicationExceptions, in order to append the required header for CORS.
 
 @Provider
 public class NotFoundExceptionMapper implements ExceptionMapper<NotFoundException> {
