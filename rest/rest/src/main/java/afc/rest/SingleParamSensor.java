@@ -37,7 +37,6 @@ public class SingleParamSensor extends SimplifiedJson {
 			JsonObject jsonObject= token.getAsJsonObject();
 			switch (counter) {
 			case 0: 
-				registryJSON.addAll(jsonObject.entrySet()); //Add all the root elements to the Entry Set 'registryJson'
 //				Check if there is more than one observed property
 				JsonElement observations = jsonObject.get("observations");
 				if (observations!=null&&observations.isJsonArray()) {
@@ -52,10 +51,10 @@ public class SingleParamSensor extends SimplifiedJson {
 
 
 				counter++;
-				break;
+				
 
 			default:
-
+// Fill the EntrySet with all the entries of the object.
 				registryJSON.addAll (jsonObject.entrySet());	
 
 

@@ -1464,3 +1464,94 @@ java.lang.RuntimeException: Failed : HTTP error code : 405
 2020-03-10 16:07:30,834 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
 2020-03-10 16:07:41,557 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource obtained from cache
 2020-03-10 16:07:54,291 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-11 14:07:25,913 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-11 14:07:27,632 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,634 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,634 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,634 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,635 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,635 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,635 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,635 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,635 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,635 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,635 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,635 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,635 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,635 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,635 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,636 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,636 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,636 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,636 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,636 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:27,636 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:07:47,103 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-11 14:07:54,919 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-11 14:10:37,761 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-11 14:10:38,936 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,938 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,938 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,938 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,938 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,938 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,938 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,938 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,939 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,939 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,939 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,939 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,939 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,939 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,939 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,940 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,940 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,940 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,940 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,940 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:10:38,940 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:15,544 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-11 14:14:16,579 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,580 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,580 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,581 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,581 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,581 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,581 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,581 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,581 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,581 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,581 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,582 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,582 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,582 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,582 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,582 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,583 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,583 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,583 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,583 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:16,584 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:14:25,944 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-11 14:20:46,156 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-11 14:20:47,421 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,424 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,424 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,425 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,425 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,425 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,425 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,426 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,426 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,426 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,426 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,427 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,427 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,427 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,427 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,427 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,428 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,428 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,428 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,428 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
+2020-03-11 14:20:47,428 DEBUG [grizzly-http-server-12] - Server - Entered SingleParamMethod
