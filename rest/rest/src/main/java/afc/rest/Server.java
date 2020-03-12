@@ -197,8 +197,11 @@ public class Server {
 					 switch (category) {
 					 case "SensorListSchema_Simplified":
 					 case "SensorSchema_Simplified":
+//						 CAMBIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARRRRR
 						 //		        		Method that completes the JSON, first looking for a match in cache and, if not found, obtaining it from the Assets Registry.
-						completeJson = SingleParamSensor.getCompleteJson(schema.getMissingFields() , telemetry, Setup.AR_URL);
+							completeJson = MultiParamSensor.getCompleteJson(schema.getMissingFields() , telemetry, Setup.AR_URL);
+
+//						 completeJson = SingleParamSensor.getCompleteJson(schema.getMissingFields() , telemetry, Setup.AR_URL);
 						break;
 					 case "MultiSensorListSchema_Simplified":
 						completeJson = MultiParamSensor.getCompleteJson(schema.getMissingFields() , telemetry, Setup.AR_URL);

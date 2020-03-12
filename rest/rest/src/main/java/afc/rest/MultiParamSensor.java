@@ -37,7 +37,7 @@ public class MultiParamSensor extends SimplifiedJson {
 			JsonObject jsonObject= token.getAsJsonObject();
 			switch (counter) {
 			case 0: 
-				registryJSON.addAll(jsonObject.entrySet()); //Add all the root elements to the Entry Set 'registryJson'
+			
 //				Check if there is more than one observed property
 				JsonElement observations = jsonObject.get("observations");
 				if (observations!=null&&observations.isJsonArray()) {
@@ -52,10 +52,11 @@ public class MultiParamSensor extends SimplifiedJson {
 
 
 				counter++;
-				break;
+				
 
 			default:
-
+				// Fill the EntrySet with all the entries of the object.
+                System.out.println(counter+": "+jsonObject.entrySet());
 				registryJSON.addAll (jsonObject.entrySet());	
 
 
@@ -91,12 +92,12 @@ public class MultiParamSensor extends SimplifiedJson {
 		JsonObject missingFieldsCopy = gson.fromJson(missingFields , JsonObject.class);
 		Set<Entry<String, JsonElement>> registryJSON = new HashSet<Entry<String, JsonElement>>();
 		try {
-			JsonElement jsonTree=JsonParser.parseString(registrationJson);
+			JsonElement jsonTree=JsonParser.parseString(registrationJson); 
 			
 			//		We need to MANUALLY add the resourceUrn field, since it will substitute the resourceId value
 			missingFields.add("resourceUrn", null);       
 			registryJSON= parseObject(jsonTree, registryJSON, 0);
-
+			System.out.println("REGISTRY_JSON: "+registryJSON);
 			missingFieldsCopy=fillValues(registryJSON,missingFields,missingFieldsCopy, gson);
 		
 			System.out.println("MISSING FIELDS CUMPLIMENTED: "+ missingFieldsCopy.toString());
@@ -105,7 +106,6 @@ public class MultiParamSensor extends SimplifiedJson {
 
 		catch(JsonParseException e) {e.printStackTrace();
 		}
-		System.out.println("REGISTRY_JSON: "+registryJSON);
 		return missingFieldsCopy;
 
 	}
