@@ -6,8 +6,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
@@ -17,6 +19,7 @@ import javax.ws.rs.core.Response;
 
 import org.apache.log4j.Logger;
 
+import com.github.fge.jsonschema.keyword.validator.draftv4.OneOfValidator;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -31,13 +34,26 @@ public class MultiParamSensor extends SimplifiedJson {
 	
     
 	//	A method that parses a JSON object finding the missing values, and returns a HashSet of all the "key-value" in the root, 
-	public static  Set <Entry<String, JsonElement>> parseObject(JsonElement token,  Set<Entry<String, JsonElement>> registryJSON, int counter)  {
+	public static  HashMap <String, JsonElement> parseObject(JsonElement token, HashMap<String, JsonElement> registryJSON, int counter)  {
 		log.debug("Entered MultiParamMethod");
 		if (token.isJsonObject()) {
 			JsonObject jsonObject= token.getAsJsonObject();
-			switch (counter) {
-			case 0: 
-			
+               switch (counter) {
+               case 0: // Is the root object.
+            	   
+           		if(jsonObject.has("longitude")&&jsonObject.has("latitude") /*(...)
+           			  (...)*/ &&jsonObject.has("altitude")&&jsonObject.has("resourceUrn")) {
+           						registryJSON.put("longitude", jsonObject.get("longitude"));
+           						registryJSON.put("latitude",  jsonObject.get("latitude"));
+           						registryJSON.put("altitude", jsonObject.get("altitude"));
+           						registryJSON.put("resourceUrn", jsonObject.get("resourceUrn"));
+
+           					}
+           		else {
+           			log.error("Assets Registry: Missing fields required");
+           		    throw new WebApplicationException("ERROR: Assets Registry: Missing fields required", 500);	
+           		}
+           		
 //				Check if there is more than one observed property
 				JsonElement observations = jsonObject.get("observations");
 				if (observations!=null&&observations.isJsonArray()) {
@@ -46,42 +62,31 @@ public class MultiParamSensor extends SimplifiedJson {
 					 log.error("The specified resource is not a multi-parameter sensor");
 				 	throw new WebApplicationException("The specified resource is not a multi-parameter sensor", 500);
 				 }
-			
+                    counter++;
+					for (JsonElement localToken: obsArray) {
+
+						registryJSON=parseObject(localToken, registryJSON, counter);
 				
 				}
-
-
-				counter++;
-				
-
-			default:
-				// Fill the EntrySet with all the entries of the object.
-                System.out.println(counter+": "+jsonObject.entrySet());
-				registryJSON.addAll (jsonObject.entrySet());	
-
-
-			}
-
-
-
-			if (!jsonObject.keySet().isEmpty()) {
-				for (String key:jsonObject.keySet()) {
-					JsonElement localToken = jsonObject.get(key);
-					registryJSON=parseObject(localToken, registryJSON, counter);
-
-				}
-			}
-		}
-		else if (token.isJsonArray()) {
-			JsonArray jsonArray =token.getAsJsonArray();
-
+			}    
 			
-			for (JsonElement localToken: jsonArray) {
+					
+				else {
+					log.error("Assets Registry: 'observations' must be a not-null array");
+					throw new WebApplicationException("ERROR: Assets Registry: 'observations' must be a not-null array", 500);
+					}
+		         	      
+                 break;
+                 default: //Not the root object.
+                   if (jsonObject.has("observedProperty")&&jsonObject.has("uom")) {
+                	   registryJSON.put(jsonObject.get("observedProperty").getAsString(), jsonObject.get("uom"));
+                	   return registryJSON;
+                   }
+                    
 
-				registryJSON=parseObject(localToken, registryJSON, counter);
-			}
-
-		}
+               }
+               
+		    }
 		return registryJSON;
 	}
 	//	A method that parses the entire registration JSON of the received simplified JSON, and iterates over all objects recursively filling the missing values  
@@ -89,60 +94,50 @@ public class MultiParamSensor extends SimplifiedJson {
 	public static JsonObject parseEntireJson(JsonObject missingFields, String registrationJson) throws IOException {
 		Gson gson = new Gson();
 
-		JsonObject missingFieldsCopy = gson.fromJson(missingFields , JsonObject.class);
-		Set<Entry<String, JsonElement>> registryJSON = new HashSet<Entry<String, JsonElement>>();
+		
+		   HashMap<String, JsonElement> registryJSON = new HashMap<String, JsonElement>();
 		try {
 			JsonElement jsonTree=JsonParser.parseString(registrationJson); 
 			
 			//		We need to MANUALLY add the resourceUrn field, since it will substitute the resourceId value
 			missingFields.add("resourceUrn", null);       
 			registryJSON= parseObject(jsonTree, registryJSON, 0);
+//			CREAR EL MISSING FIELDS YO!!!!!!!!!!!
 			System.out.println("REGISTRY_JSON: "+registryJSON);
-			missingFieldsCopy=fillValues(registryJSON,missingFields,missingFieldsCopy, gson);
+			missingFields=buildMissingJson(registryJSON, gson);
 		
-			System.out.println("MISSING FIELDS CUMPLIMENTED: "+ missingFieldsCopy.toString());
+			System.out.println("MISSING FIELDS CUMPLIMENTED: "+ missingFields.toString());
 
 		}
 
 		catch(JsonParseException e) {e.printStackTrace();
 		}
-		return missingFieldsCopy;
+		return missingFields;
 
 	}
 	//	 A method that parses the JSON recursively filling the missing values of the \"missing values\" template, iterating recursively through every object,
 	//	 and every object inside an object, and so on...
-	public static JsonObject fillValues(Set <Entry<String, JsonElement>> registryJSON, JsonObject missingFields, JsonObject missingFieldsCopy, Gson gson) {
-
-		for(String key:missingFields.keySet()) {
-
-			JsonElement token = missingFields.get(key);
-
-			if (token.isJsonObject()) {
-				JsonObject	localMissingFields = token.getAsJsonObject();
-				JsonObject	localMissingFieldsCopy = gson.fromJson(localMissingFields , JsonObject.class);
-				missingFieldsCopy.remove(key);
-				missingFieldsCopy.add(key, fillValues(registryJSON, localMissingFields, localMissingFieldsCopy, gson)); 
-                  
-			}
-			else {
-				Iterator<Entry<String, JsonElement>> i =registryJSON.iterator();
-				while(i.hasNext()) {
-					Entry<String, JsonElement> entry = i.next();
-					if (key.equals(entry.getKey())) {
-
-
-						missingFieldsCopy.add(key,entry.getValue());
-					
-						//Breaks the operation because the match for the corresponding key has been found. There's no need to continue iterating
-						break;	
-					}
+	public static JsonObject buildMissingJson(HashMap<String, JsonElement> registryJSON, Gson gson) {
+//		Check that the Map contains all required keys  
+		  JsonObject missingFields= new JsonObject();
+		  JsonArray observations= new JsonArray();
+		    Iterator<Map.Entry<String, JsonElement>> i =registryJSON.entrySet().iterator();
+			while(i.hasNext()) {
+				Entry<String, JsonElement> entry = i.next();
+				String key = entry.getKey();
+				if(key.matches("longitude||latitude||altitude||resourceUrn")) {
+				missingFields.add(key, entry.getValue());
 				}
-
-			}	 
-
-		}
-		return missingFieldsCopy;
-	}
+				else {
+					JsonObject obsProp = new JsonObject();
+					obsProp.add(entry.getKey(), entry.getValue());
+					observations.add(obsProp);
+				}
+			}
+			missingFields.add("observations", observations);
+			return missingFields;
+			}
+	
 	// A method to complete the simplified JSON obtaining the missing information from the Assets Registry URI
 	public static JsonObject getCompleteJson(JsonObject missingFields, String input, String AR_URL) throws IOException {
 

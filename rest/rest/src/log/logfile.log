@@ -1774,3 +1774,24 @@ java.lang.RuntimeException: Failed : HTTP error code : 405
 2020-03-12 16:52:46,557 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
 2020-03-12 16:52:46,557 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
 2020-03-12 16:52:46,557 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-13 01:22:45,683 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-13 01:31:06,271 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-13 01:31:07,553 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-13 01:31:07,557 ERROR [grizzly-http-server-12] - Server - The specified resource is not a multi-parameter sensor
+2020-03-13 01:31:28,125 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-13 01:31:29,252 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-13 01:31:29,252 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-13 01:31:29,254 ERROR [grizzly-http-server-13] - Server - Asets Registry: 'observations' must be a not-null array
+2020-03-13 01:36:01,424 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-13 01:36:02,491 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-13 01:36:39,978 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-13 01:37:20,612 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-13 01:37:21,652 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-13 01:37:21,652 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-13 01:37:21,652 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-13 01:37:21,652 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-13 03:41:12,262 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-13 03:41:13,787 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-13 03:41:13,787 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-13 03:41:13,787 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-13 03:41:13,787 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
