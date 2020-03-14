@@ -100,7 +100,6 @@ public class MultiParamSensor extends SimplifiedJson {
 			JsonElement jsonTree=JsonParser.parseString(registrationJson); 
 			
 			//		We need to MANUALLY add the resourceUrn field, since it will substitute the resourceId value
-			missingFields.add("resourceUrn", null);       
 			registryJSON= parseObject(jsonTree, registryJSON, 0);
 //			CREAR EL MISSING FIELDS YO!!!!!!!!!!!
 			System.out.println("REGISTRY_JSON: "+registryJSON);
@@ -120,26 +119,33 @@ public class MultiParamSensor extends SimplifiedJson {
 	public static JsonObject buildMissingJson(HashMap<String, JsonElement> registryJSON, Gson gson) {
 //		Check that the Map contains all required keys  
 		  JsonObject missingFields= new JsonObject();
+			JsonObject location = new JsonObject();	
 		  JsonArray observations= new JsonArray();
 		    Iterator<Map.Entry<String, JsonElement>> i =registryJSON.entrySet().iterator();
 			while(i.hasNext()) {
 				Entry<String, JsonElement> entry = i.next();
 				String key = entry.getKey();
-				if(key.matches("longitude||latitude||altitude||resourceUrn")) {
-				missingFields.add(key, entry.getValue());
+				if(key.matches("longitude||latitude||altitude")) {
+				location.add(key, entry.getValue());
 				}
+				else if(key.matches("resourceUrn")) {
+					missingFields.add(key, entry.getValue());
+					}
+				
 				else {
 					JsonObject obsProp = new JsonObject();
-					obsProp.add(entry.getKey(), entry.getValue());
+					obsProp.addProperty("observedProperty", entry.getKey());
+					obsProp.add("uom", entry.getValue());
 					observations.add(obsProp);
 				}
 			}
 			missingFields.add("observations", observations);
+			missingFields.add("location", location);
 			return missingFields;
 			}
 	
 	// A method to complete the simplified JSON obtaining the missing information from the Assets Registry URI
-	public static JsonObject getCompleteJson(JsonObject missingFields, String input, String AR_URL) throws IOException {
+	public static JsonObject getCompleteJson(String input, String AR_URL) throws IOException {
 
 		Gson gson = new Gson();
 		@SuppressWarnings("unchecked")
@@ -150,7 +156,6 @@ public class MultiParamSensor extends SimplifiedJson {
 		JsonObject completeJson = null;
 		if (missingObject!=null) {
 			completeJson = completeFields(missingObject, inputJson, gson );
-			completeJson = substituteResourceId(completeJson);
 			log.debug("Complete JSON for this resource obtained from cache");
 			return completeJson;
 			
@@ -175,9 +180,9 @@ public class MultiParamSensor extends SimplifiedJson {
 			}
 			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 			String output = br.lines().collect(Collectors.joining());
-			missingObject=parseEntireJson(missingFields,output);
+			JsonObject missingFields = new JsonObject();       
+			missingObject=parseEntireJson(missingFields, output);
 			completeJson = completeFields(missingObject,inputJson,gson);
-            completeJson = substituteResourceId(completeJson);
 
 
 
@@ -212,34 +217,27 @@ public class MultiParamSensor extends SimplifiedJson {
 	//	 A method that parses the simplified JSON filling the missing values from the \"missing values"\ template, iterating recursively through every object,
 	//	 and every object inside an object, and so on...
 	public static JsonObject completeFields(JsonObject missingObject, JsonObject inputJson, Gson gson) {
-
-		JsonObject	inputCopy = gson.fromJson(inputJson , JsonObject.class);
-		for (String missingKey:missingObject.keySet()) {
-			for (String key:inputJson.keySet()) {
-				if (missingKey.equals(key)){
-					if (inputJson.get(key).isJsonObject()&&missingObject.get(key).isJsonObject()){
-						JsonObject localInput = inputJson.get(key).getAsJsonObject();
-						JsonObject localMissingObject = missingObject.get(key).getAsJsonObject();
-						JsonObject localInputCopy=completeFields(localMissingObject,localInput,gson);
-						inputCopy.remove(key);
-						inputCopy.add(key, localInputCopy);
-						break;
-					}
-
-
-
-				}
-				else {
-					if (inputCopy.get(missingKey)==null) {                    
-						inputCopy.add(missingKey, missingObject.get(missingKey));
-					}
-				}
+		inputJson.add("location", missingObject.get("location"));
+		inputJson.add("resourceId", missingObject.get("resourceUrn"));
+		Iterator<JsonElement> j = inputJson.get("observations").getAsJsonArray().iterator();
+		while(j.hasNext()){		
+			JsonObject obsToFill = j.next().getAsJsonObject();
+			Iterator<JsonElement> i = missingObject.get("observations").getAsJsonArray().iterator();
+			while (i.hasNext()) {
+				JsonObject obsMissing = i.next().getAsJsonObject();
+                JsonElement obsPropToFill = obsToFill.get("observedProperty");
+                JsonElement obsPropMissing = obsMissing.get("observedProperty");
+                 if (obsPropToFill.equals(obsPropMissing)){
+                	 obsToFill.get("result").getAsJsonObject().add("uom",obsMissing.get("uom"));
+                	 break;
+                 }
+                
 			}
+		}	
+                    
+				return inputJson;
 		}
 		
-		return inputCopy;
-	};
-	
 	public static String getResourceId (String json) {
 		Gson gson = new Gson();
 		JsonObject inputJson = gson.fromJson(json, JsonObject.class);
@@ -250,17 +248,5 @@ public class MultiParamSensor extends SimplifiedJson {
 		return resourceId;
 	}
 //	A method for MANUALLY substituting the resourceId with the resourceUrn value.
-	public static JsonObject substituteResourceId (JsonObject completedJson) {
-		    JsonElement resourceUrn = completedJson.get("resourceUrn");
-		if (resourceUrn==null) {
-           log.debug("The substitution of the 'resourceId' for the 'resourceUrn' wasn't performed");
-		}
-		else {
-			completedJson.remove("resourceId");
-			completedJson.add("resourceId",resourceUrn);
-			completedJson.remove("resourceUrn");
-			}
-		return completedJson;
-		}
-
+	
 }

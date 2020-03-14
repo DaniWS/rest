@@ -29,3 +29,60 @@
 2020-03-13 03:41:13,787 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
 2020-03-13 03:41:13,787 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
 2020-03-13 03:41:13,787 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-13 16:28:11,214 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-13 16:28:14,965 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-13 16:28:14,965 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-13 16:28:14,965 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-13 16:28:14,966 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-14 02:59:33,863 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-14 02:59:36,044 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-14 02:59:36,045 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-14 02:59:36,045 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-14 02:59:36,045 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-14 02:59:36,052 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: null
+2020-03-14 03:01:01,888 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-14 03:01:03,018 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-14 03:01:03,019 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-14 03:01:03,019 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-14 03:01:03,019 DEBUG [grizzly-http-server-12] - Server - Entered MultiParamMethod
+2020-03-14 03:51:55,158 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-14 03:51:59,884 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: null
+2020-03-14 03:52:12,101 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-14 03:52:13,150 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: null
+2020-03-14 03:53:11,701 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-14 03:53:12,749 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: null
+2020-03-14 03:54:02,553 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-14 03:54:03,775 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: null
+2020-03-14 03:55:31,812 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-14 04:01:45,306 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-14 04:01:46,391 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:01:46,392 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:01:46,392 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:01:46,392 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:01:46,397 DEBUG [grizzly-http-server-13] - Server - The substitution of the 'resourceId' for the 'resourceUrn' wasn't performed
+2020-03-14 04:01:47,665 DEBUG [grizzly-http-server-14] - Server - The substitution of the 'resourceId' for the 'resourceUrn' wasn't performed
+2020-03-14 04:01:47,665 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-14 04:05:09,139 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-14 04:05:10,370 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:05:10,371 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:05:10,371 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:05:10,371 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:06:55,688 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-14 04:06:56,863 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:06:56,864 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:06:56,864 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:06:56,864 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:06:56,868 DEBUG [grizzly-http-server-13] - Server - The substitution of the 'resourceId' for the 'resourceUrn' wasn't performed
+2020-03-14 04:09:32,128 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-14 04:09:33,944 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:09:33,944 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:09:33,944 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:09:33,944 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:09:55,379 DEBUG [grizzly-http-server-14] - Server - The substitution of the 'resourceId' for the 'resourceUrn' wasn't performed
+2020-03-14 04:09:55,379 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-14 04:11:06,228 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-14 04:11:07,333 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:11:07,334 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:11:07,334 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:11:07,334 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-14 04:11:31,116 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
