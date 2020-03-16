@@ -35,7 +35,6 @@ public class SimplifiedSensor extends CompleteJson{
 		@Override
 	//	 A method that parses the simplified JSON filling the missing values from the "missing values" object.
 	public JsonObject completeFields(JsonObject missingObject, JsonObject inputJson) {
-		log.debug("Entered Simplified Sensor Class");
 
 		
 					    for(String key: missingObject.keySet()) {

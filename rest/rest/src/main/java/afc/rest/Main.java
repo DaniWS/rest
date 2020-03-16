@@ -157,7 +157,6 @@ public class Main {
         Setup.loadSchemasInfo(BASE_URI+"schemas/");
         Setup.loadSchemas(BASE_URI+"schemas/");
 
-//        Setup.parseEntireJson(SchemaSet.schemas.get(7).getMissingFields() ,Setup.json);
      
      
      

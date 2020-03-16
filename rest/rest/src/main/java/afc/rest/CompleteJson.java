@@ -33,7 +33,6 @@ public class CompleteJson {
     
 	//	A method that parses a JSON object finding the missing values, and returns a HashMap containing the missing fields.
 	public  HashMap <String, JsonElement> parseObject(JsonElement token,  HashMap <String, JsonElement> registryJSON, int counter)  {
-		log.debug("Entered Parent Class");
 		if (token.isJsonObject()) {
 			JsonObject jsonObject= token.getAsJsonObject();
 			switch (counter) {

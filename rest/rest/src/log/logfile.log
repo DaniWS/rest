@@ -2074,3 +2074,62 @@ java.lang.RuntimeException: Failed : HTTP error code : 405
 2020-03-16 03:00:32,770 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorListSchema_Simplified
 2020-03-16 03:00:32,773 DEBUG [grizzly-http-server-14] - Server - Entered Simplified Sensor List Class
 2020-03-16 03:00:32,774 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-16 02:53:58,310 DEBUG [grizzly-http-server-13] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 02:53:58,347 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:53:59,677 DEBUG [grizzly-http-server-13] - Server - Entered Multi Sensor Class
+2020-03-16 02:57:08,077 DEBUG [grizzly-http-server-14] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 02:57:08,079 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:57:09,310 DEBUG [grizzly-http-server-14] - Server - Entered Multi Sensor Class
+2020-03-16 15:32:10,592 DEBUG [grizzly-http-server-11] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 15:32:10,616 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-16 15:32:11,781 DEBUG [grizzly-http-server-11] - Server - Entered Multi Sensor Class
+2020-03-16 15:32:11,781 ERROR [grizzly-http-server-11] - Server - Assets Registry: 'observedProperty' not found
+2020-03-16 15:32:46,481 DEBUG [grizzly-http-server-14] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 15:32:46,483 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-16 15:32:47,506 ERROR [grizzly-http-server-14] - Server - The specified resource is not a multi-parameter sensor
+2020-03-16 15:33:04,538 DEBUG [grizzly-http-server-15] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 15:33:04,539 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-16 15:33:05,544 ERROR [grizzly-http-server-15] - Server - The specified resource is not a multi-parameter sensor
+2020-03-16 15:33:10,930 DEBUG [grizzly-http-server-1] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 15:33:10,930 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource not in cache
+2020-03-16 15:33:12,013 DEBUG [grizzly-http-server-1] - Server - Entered Multi Sensor Class
+2020-03-16 15:33:12,013 ERROR [grizzly-http-server-1] - Server - Assets Registry: 'observedProperty' not found
+2020-03-16 15:36:19,088 DEBUG [grizzly-http-server-13] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 15:36:19,171 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 15:36:20,204 DEBUG [grizzly-http-server-13] - Server - Entered Multi Sensor Class
+2020-03-16 15:41:45,324 DEBUG [grizzly-http-server-13] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 15:41:45,339 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 15:41:46,400 DEBUG [grizzly-http-server-13] - Server - Entered Multi Sensor Class
+2020-03-16 15:42:36,034 DEBUG [grizzly-http-server-14] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 15:42:36,036 DEBUG [grizzly-http-server-14] - Server - Entered Multi Sensor Class
+2020-03-16 15:42:36,037 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-16 15:42:52,659 DEBUG [grizzly-http-server-15] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 15:42:52,660 DEBUG [grizzly-http-server-15] - Server - Entered Multi Sensor Class
+2020-03-16 15:42:52,660 ERROR [grizzly-http-server-15] - Server - Assets Registry: 'observedProperty' not found
+2020-03-16 15:43:39,776 DEBUG [grizzly-http-server-3] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 15:43:39,791 DEBUG [grizzly-http-server-3] - Server - Complete JSON for this resource not in cache
+2020-03-16 15:43:40,841 DEBUG [grizzly-http-server-3] - Server - Entered Multi Sensor Class
+2020-03-16 15:43:40,842 ERROR [grizzly-http-server-3] - Server - Assets Registry: 'observedProperty' not found
+2020-03-16 15:43:42,628 DEBUG [grizzly-http-server-14] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 15:43:42,630 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-16 15:43:43,510 DEBUG [grizzly-http-server-14] - Server - Entered Multi Sensor Class
+2020-03-16 15:43:43,510 ERROR [grizzly-http-server-14] - Server - Assets Registry: 'observedProperty' not found
+2020-03-16 15:43:44,192 DEBUG [grizzly-http-server-15] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 15:43:44,193 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-16 15:43:45,098 DEBUG [grizzly-http-server-15] - Server - Entered Multi Sensor Class
+2020-03-16 15:43:45,098 ERROR [grizzly-http-server-15] - Server - Assets Registry: 'observedProperty' not found
+2020-03-16 15:43:48,758 DEBUG [grizzly-http-server-0] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 15:43:48,759 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource not in cache
+2020-03-16 15:43:49,639 DEBUG [grizzly-http-server-0] - Server - Entered Multi Sensor Class
+2020-03-16 15:43:54,722 DEBUG [grizzly-http-server-1] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 15:43:54,723 DEBUG [grizzly-http-server-1] - Server - Entered Multi Sensor Class
+2020-03-16 15:43:54,723 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource obtained from cache
+2020-03-16 15:45:04,706 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 15:45:04,723 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 15:45:05,762 ERROR [grizzly-http-server-13] - Server - The specified resource is not a single-parameter sensor
+2020-03-16 15:45:12,418 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 15:45:12,421 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-16 15:46:30,994 DEBUG [grizzly-http-server-15] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 15:46:30,995 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-16 15:55:22,899 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 15:55:22,926 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache

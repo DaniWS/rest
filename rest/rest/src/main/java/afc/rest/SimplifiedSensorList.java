@@ -37,7 +37,6 @@ public class SimplifiedSensorList extends CompleteJson  {
 
 @Override
 	public JsonObject completeFields(JsonObject missingObject, JsonObject inputJson) {
-		log.debug("Entered Simplified Sensor List Class");
 
 		
 					    for(String key: missingObject.keySet()) {

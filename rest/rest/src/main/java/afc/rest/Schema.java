@@ -16,7 +16,6 @@ private JsonSchema schema;
      private String name;
      private Boolean isSimple;
      private String type;
-     private JsonObject missingFields;
 
      protected Schema(int uso,String name, Boolean isSimple, String type) {
          this.uso = uso;
@@ -73,12 +72,7 @@ public String getType() {
 public void setType(String type) {
 	this.type = type;
 }
-public JsonObject getMissingFields() {
-	return missingFields;
-}
-public void setMissingFields(JsonObject missingFields) {
-	this.missingFields = missingFields;
-}
+
  
 
 
