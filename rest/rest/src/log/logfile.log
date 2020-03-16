@@ -1852,3 +1852,225 @@ java.lang.RuntimeException: Failed : HTTP error code : 405
 2020-03-14 04:11:07,334 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
 2020-03-14 04:11:07,334 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
 2020-03-14 04:11:31,116 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-16 00:35:06,316 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 00:35:08,064 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-16 00:36:27,335 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 00:36:28,495 DEBUG [grizzly-http-server-13] - Server - Entered SingleParamMethod
+2020-03-16 00:36:28,496 ERROR [grizzly-http-server-13] - Server - The specified resource is not a single-parameter sensor
+2020-03-16 00:39:45,703 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 00:39:45,771 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 00:39:56,402 DEBUG [grizzly-http-server-13] - Server - Entered SingleParamMethod
+2020-03-16 00:40:29,446 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 00:40:29,456 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 00:40:30,601 DEBUG [grizzly-http-server-13] - Server - Entered SingleParamMethod
+2020-03-16 00:40:30,601 ERROR [grizzly-http-server-13] - Server - The specified resource is not a single-parameter sensor
+2020-03-16 00:40:58,055 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 00:40:58,130 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-16 00:41:05,450 DEBUG [grizzly-http-server-14] - Server - Entered SingleParamMethod
+2020-03-16 00:41:35,376 DEBUG [grizzly-http-server-15] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 00:41:35,377 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-16 00:41:47,483 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 00:41:47,498 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 00:41:48,684 DEBUG [grizzly-http-server-13] - Server - Entered SingleParamMethod
+2020-03-16 00:41:48,685 DEBUG [grizzly-http-server-13] - Server - Entered SingleParamMethod
+2020-03-16 00:45:13,425 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 00:45:13,433 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 00:45:14,502 DEBUG [grizzly-http-server-13] - Server - Entered SingleParamMethod
+2020-03-16 00:45:14,502 DEBUG [grizzly-http-server-13] - Server - Entered SingleParamMethod
+2020-03-16 00:47:40,740 DEBUG [grizzly-http-server-3] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 00:47:40,821 DEBUG [grizzly-http-server-3] - Server - Complete JSON for this resource not in cache
+2020-03-16 00:47:44,025 DEBUG [grizzly-http-server-3] - Server - Entered SingleParamMethod
+2020-03-16 00:47:46,344 DEBUG [grizzly-http-server-3] - Server - Entered SingleParamMethod
+2020-03-16 00:49:26,737 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 00:49:26,746 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 00:49:28,059 DEBUG [grizzly-http-server-13] - Server - Entered SingleParamMethod
+2020-03-16 00:49:28,059 DEBUG [grizzly-http-server-13] - Server - Entered SingleParamMethod
+2020-03-16 00:50:26,584 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 00:50:26,597 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-16 00:50:28,664 DEBUG [grizzly-http-server-14] - Server - Entered SingleParamMethod
+2020-03-16 00:50:28,664 DEBUG [grizzly-http-server-14] - Server - Entered SingleParamMethod
+2020-03-16 00:57:05,259 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 00:57:05,268 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 00:57:06,392 DEBUG [grizzly-http-server-13] - Server - Entered SingleParamMethod
+2020-03-16 00:57:06,392 DEBUG [grizzly-http-server-13] - Server - Entered SingleParamMethod
+2020-03-16 00:57:13,144 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 00:57:13,145 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-16 00:57:21,141 DEBUG [grizzly-http-server-15] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 00:57:21,142 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-16 00:57:22,374 DEBUG [grizzly-http-server-15] - Server - Entered SingleParamMethod
+2020-03-16 00:57:22,374 ERROR [grizzly-http-server-15] - Server - The specified resource is not a single-parameter sensor
+2020-03-16 00:57:26,912 DEBUG [grizzly-http-server-0] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 00:57:26,913 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-16 02:26:04,183 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 02:26:04,196 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:26:05,981 DEBUG [grizzly-http-server-13] - Server - Entered SingleParamMethod
+2020-03-16 02:26:05,981 DEBUG [grizzly-http-server-13] - Server - Entered SingleParamMethod
+2020-03-16 02:26:07,926 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 02:26:07,927 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-16 02:28:56,499 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 02:28:56,509 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:28:57,710 DEBUG [grizzly-http-server-13] - Server - Entered SingleParamMethod
+2020-03-16 02:28:57,710 DEBUG [grizzly-http-server-13] - Server - Entered SingleParamMethod
+2020-03-16 02:30:56,876 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 02:30:56,887 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:30:58,330 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:30:58,330 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:32:14,853 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 02:32:14,865 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:32:16,051 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:32:16,052 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:32:16,056 DEBUG [grizzly-http-server-13] - Server - Entered Simplified Sensor Class
+2020-03-16 02:32:57,725 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 02:32:57,734 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:32:58,858 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:32:58,858 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:32:58,863 DEBUG [grizzly-http-server-13] - Server - Entered Simplified Sensor Class
+2020-03-16 02:33:01,009 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 02:33:01,010 DEBUG [grizzly-http-server-14] - Server - Entered Simplified Sensor Class
+2020-03-16 02:33:01,011 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-16 02:33:01,881 DEBUG [grizzly-http-server-15] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 02:33:01,882 DEBUG [grizzly-http-server-15] - Server - Entered Simplified Sensor Class
+2020-03-16 02:33:01,882 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource obtained from cache
+2020-03-16 02:33:03,460 DEBUG [grizzly-http-server-0] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 02:33:03,461 DEBUG [grizzly-http-server-0] - Server - Entered Simplified Sensor Class
+2020-03-16 02:33:03,461 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-16 02:33:58,936 DEBUG [grizzly-http-server-1] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 02:33:58,937 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:34:00,090 DEBUG [grizzly-http-server-1] - Server - Entered Multi Sensor Class
+2020-03-16 02:34:00,091 DEBUG [grizzly-http-server-1] - Server - Entered Parent Class
+2020-03-16 02:34:00,091 ERROR [grizzly-http-server-1] - Server - The specified resource is not a single-parameter sensor
+2020-03-16 02:34:07,737 DEBUG [grizzly-http-server-2] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 02:34:07,738 DEBUG [grizzly-http-server-2] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:34:08,789 DEBUG [grizzly-http-server-2] - Server - Entered Multi Sensor Class
+2020-03-16 02:34:08,790 DEBUG [grizzly-http-server-2] - Server - Entered Parent Class
+2020-03-16 02:34:08,790 DEBUG [grizzly-http-server-2] - Server - Entered Parent Class
+2020-03-16 02:34:08,791 DEBUG [grizzly-http-server-2] - Server - Entered Multi Sensor Class
+2020-03-16 02:34:08,792 DEBUG [grizzly-http-server-2] - Server - Entered Multi Sensor Class
+2020-03-16 02:36:40,683 DEBUG [grizzly-http-server-13] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 02:36:40,704 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:36:41,886 DEBUG [grizzly-http-server-13] - Server - Entered Multi Sensor Class
+2020-03-16 02:36:41,889 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:36:41,890 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:36:41,894 DEBUG [grizzly-http-server-13] - Server - Entered Multi Sensor Class
+2020-03-16 02:36:41,895 DEBUG [grizzly-http-server-13] - Server - Entered Multi Sensor Class
+2020-03-16 02:37:00,866 DEBUG [grizzly-http-server-13] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 02:37:00,890 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:37:01,954 DEBUG [grizzly-http-server-13] - Server - Entered Multi Sensor Class
+2020-03-16 02:37:01,958 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:37:01,959 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:37:01,961 DEBUG [grizzly-http-server-13] - Server - Entered Multi Sensor Class
+2020-03-16 02:37:01,961 DEBUG [grizzly-http-server-13] - Server - Entered Multi Sensor Class
+2020-03-16 02:37:38,177 DEBUG [grizzly-http-server-13] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 02:37:58,150 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:38:10,172 DEBUG [grizzly-http-server-13] - Server - Entered Multi Sensor Class
+2020-03-16 02:38:10,260 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:38:10,263 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:38:10,316 DEBUG [grizzly-http-server-13] - Server - Entered Multi Sensor Class
+2020-03-16 02:44:45,227 DEBUG [grizzly-http-server-13] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 02:44:45,239 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:44:46,644 DEBUG [grizzly-http-server-13] - Server - Entered Multi Sensor Class
+2020-03-16 02:44:46,648 DEBUG [grizzly-http-server-13] - Server - Entered MultiParamMethod
+2020-03-16 02:44:46,648 ERROR [grizzly-http-server-13] - Server - The specified resource is not a multi-parameter sensor
+2020-03-16 02:44:53,616 DEBUG [grizzly-http-server-14] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 02:44:53,617 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:44:54,833 DEBUG [grizzly-http-server-14] - Server - Entered Multi Sensor Class
+2020-03-16 02:44:54,834 DEBUG [grizzly-http-server-14] - Server - Entered MultiParamMethod
+2020-03-16 02:44:54,835 DEBUG [grizzly-http-server-14] - Server - Entered MultiParamMethod
+2020-03-16 02:44:54,835 DEBUG [grizzly-http-server-14] - Server - Entered MultiParamMethod
+2020-03-16 02:44:54,835 DEBUG [grizzly-http-server-14] - Server - Entered MultiParamMethod
+2020-03-16 02:44:54,840 DEBUG [grizzly-http-server-14] - Server - Entered Multi Sensor Class
+2020-03-16 02:44:54,841 DEBUG [grizzly-http-server-14] - Server - Entered Multi Sensor Class
+2020-03-16 02:45:44,346 DEBUG [grizzly-http-server-15] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 02:45:44,347 DEBUG [grizzly-http-server-15] - Server - Entered Simplified Sensor List Class
+2020-03-16 02:46:18,014 DEBUG [grizzly-http-server-0] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 02:46:18,015 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:46:19,156 DEBUG [grizzly-http-server-0] - Server - Entered Parent Class
+2020-03-16 02:46:19,157 ERROR [grizzly-http-server-0] - Server - The specified resource is not a single-parameter sensor
+2020-03-16 02:47:04,550 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 02:47:04,557 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:47:05,725 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:47:05,725 ERROR [grizzly-http-server-13] - Server - The specified resource is not a single-parameter sensor
+2020-03-16 02:47:09,129 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 02:47:09,130 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:47:10,618 DEBUG [grizzly-http-server-14] - Server - Entered Parent Class
+2020-03-16 02:47:10,618 ERROR [grizzly-http-server-14] - Server - The specified resource is not a single-parameter sensor
+2020-03-16 02:47:23,911 DEBUG [grizzly-http-server-15] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 02:47:23,912 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:47:25,159 DEBUG [grizzly-http-server-15] - Server - Entered Multi Sensor Class
+2020-03-16 02:47:25,160 DEBUG [grizzly-http-server-15] - Server - Entered MultiParamMethod
+2020-03-16 02:47:25,160 DEBUG [grizzly-http-server-15] - Server - Entered MultiParamMethod
+2020-03-16 02:47:25,160 DEBUG [grizzly-http-server-15] - Server - Entered MultiParamMethod
+2020-03-16 02:47:25,160 DEBUG [grizzly-http-server-15] - Server - Entered MultiParamMethod
+2020-03-16 02:47:25,163 DEBUG [grizzly-http-server-15] - Server - Entered Multi Sensor Class
+2020-03-16 02:47:25,164 DEBUG [grizzly-http-server-15] - Server - Entered Multi Sensor Class
+2020-03-16 02:47:37,230 DEBUG [grizzly-http-server-0] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-16 02:47:37,231 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:47:38,471 DEBUG [grizzly-http-server-0] - Server - Entered Multi Sensor Class
+2020-03-16 02:47:38,472 DEBUG [grizzly-http-server-0] - Server - Entered MultiParamMethod
+2020-03-16 02:47:38,472 ERROR [grizzly-http-server-0] - Server - The specified resource is not a multi-parameter sensor
+2020-03-16 02:48:19,487 DEBUG [grizzly-http-server-2] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-16 02:48:19,487 DEBUG [grizzly-http-server-2] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:48:20,678 DEBUG [grizzly-http-server-2] - Server - Entered Parent Class
+2020-03-16 02:48:20,679 DEBUG [grizzly-http-server-2] - Server - Entered Parent Class
+2020-03-16 02:48:20,680 DEBUG [grizzly-http-server-2] - Server - Entered Simplified Sensor Class
+2020-03-16 02:50:15,949 DEBUG [grizzly-http-server-4] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 02:50:15,950 DEBUG [grizzly-http-server-4] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:50:17,602 DEBUG [grizzly-http-server-4] - Server - Entered Parent Class
+2020-03-16 02:50:17,603 DEBUG [grizzly-http-server-4] - Server - Entered Parent Class
+2020-03-16 02:50:17,604 DEBUG [grizzly-http-server-4] - Server - Entered Simplified Sensor List Class
+2020-03-16 02:50:17,608 ERROR [grizzly-http-server-4] - Server - Could not obtain resource from the Assets Registry: null
+2020-03-16 02:50:51,638 DEBUG [grizzly-http-server-5] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 02:50:51,639 DEBUG [grizzly-http-server-5] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:50:52,828 DEBUG [grizzly-http-server-5] - Server - Entered Parent Class
+2020-03-16 02:50:52,828 DEBUG [grizzly-http-server-5] - Server - Entered Parent Class
+2020-03-16 02:50:52,829 DEBUG [grizzly-http-server-5] - Server - Entered Simplified Sensor List Class
+2020-03-16 02:50:52,830 ERROR [grizzly-http-server-5] - Server - Could not obtain resource from the Assets Registry: null
+2020-03-16 02:51:04,788 DEBUG [grizzly-http-server-6] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 02:51:04,788 DEBUG [grizzly-http-server-6] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:51:06,145 DEBUG [grizzly-http-server-6] - Server - Entered Parent Class
+2020-03-16 02:51:06,145 DEBUG [grizzly-http-server-6] - Server - Entered Parent Class
+2020-03-16 02:51:06,146 DEBUG [grizzly-http-server-6] - Server - Entered Simplified Sensor List Class
+2020-03-16 02:51:06,147 ERROR [grizzly-http-server-6] - Server - Could not obtain resource from the Assets Registry: null
+2020-03-16 02:52:06,176 DEBUG [grizzly-http-server-7] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 02:52:06,176 DEBUG [grizzly-http-server-7] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:52:07,396 DEBUG [grizzly-http-server-7] - Server - Entered Parent Class
+2020-03-16 02:52:07,397 DEBUG [grizzly-http-server-7] - Server - Entered Parent Class
+2020-03-16 02:52:07,397 DEBUG [grizzly-http-server-7] - Server - Entered Simplified Sensor List Class
+2020-03-16 02:52:07,398 ERROR [grizzly-http-server-7] - Server - Could not obtain resource from the Assets Registry: null
+2020-03-16 02:52:27,879 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 02:52:27,887 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:52:29,097 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:52:29,097 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:52:29,101 DEBUG [grizzly-http-server-13] - Server - Entered Simplified Sensor List Class
+2020-03-16 02:52:29,104 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: null
+2020-03-16 02:52:33,331 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 02:52:33,332 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:52:34,297 DEBUG [grizzly-http-server-14] - Server - Entered Parent Class
+2020-03-16 02:52:34,298 DEBUG [grizzly-http-server-14] - Server - Entered Parent Class
+2020-03-16 02:52:34,299 DEBUG [grizzly-http-server-14] - Server - Entered Simplified Sensor List Class
+2020-03-16 02:52:34,300 ERROR [grizzly-http-server-14] - Server - Could not obtain resource from the Assets Registry: null
+2020-03-16 02:52:36,724 DEBUG [grizzly-http-server-15] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 02:52:36,725 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:52:37,692 DEBUG [grizzly-http-server-15] - Server - Entered Parent Class
+2020-03-16 02:52:37,693 DEBUG [grizzly-http-server-15] - Server - Entered Parent Class
+2020-03-16 02:52:37,693 DEBUG [grizzly-http-server-15] - Server - Entered Simplified Sensor List Class
+2020-03-16 02:52:37,695 ERROR [grizzly-http-server-15] - Server - Could not obtain resource from the Assets Registry: null
+2020-03-16 02:53:08,786 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 02:53:08,796 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:53:09,967 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:53:09,968 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 02:53:09,971 DEBUG [grizzly-http-server-13] - Server - Entered Simplified Sensor List Class
+2020-03-16 02:53:09,973 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: null
+2020-03-16 02:53:56,800 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 02:54:19,537 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-16 02:54:35,370 DEBUG [grizzly-http-server-14] - Server - Entered Parent Class
+2020-03-16 02:54:52,784 DEBUG [grizzly-http-server-14] - Server - Entered Parent Class
+2020-03-16 02:56:06,337 DEBUG [grizzly-http-server-14] - Server - Entered Simplified Sensor List Class
+2020-03-16 03:00:14,264 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 03:00:14,272 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-16 03:00:16,857 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 03:00:16,858 DEBUG [grizzly-http-server-13] - Server - Entered Parent Class
+2020-03-16 03:00:16,861 DEBUG [grizzly-http-server-13] - Server - Entered Simplified Sensor List Class
+2020-03-16 03:00:32,770 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorListSchema_Simplified
+2020-03-16 03:00:32,773 DEBUG [grizzly-http-server-14] - Server - Entered Simplified Sensor List Class
+2020-03-16 03:00:32,774 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache

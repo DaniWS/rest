@@ -145,7 +145,7 @@ public class Server {
 			{
 
 				i.setUso(i.getUso()+1); 
-
+                log.debug("Succesful request on: "+i.getName());
 				//		String category = i.getName();
 				return new Pair<Boolean, Schema>(true, i); 
 			}	
@@ -194,21 +194,22 @@ public class Server {
 				 String category=schema.getName();
 				 JsonObject completeJson=null;
 				 if(schema.getIsSimple()) {
-					 switch (category) {
-					 case "SensorListSchema_Simplified":
-					 case "SensorSchema_Simplified":
-						 //		        		Method that completes the JSON, first looking for a match in cache and, if not found, obtaining it from the Assets Registry.
-							completeJson = SingleParamSensor.getCompleteJson(schema.getMissingFields() , telemetry, Setup.AR_URL);
+                     completeJson=CompleteJson.getCompleteJson(telemetry, Setup.AR_URL, category);
 
-//						 completeJson = SingleParamSensor.getCompleteJson(schema.getMissingFields() , telemetry, Setup.AR_URL);
-						break;
-					 case "MultiSensorListSchema_Simplified":
-						completeJson = MultiParamSensor.getCompleteJson(telemetry, Setup.AR_URL);
-						break;
-					 default:
-						 log.error("Type of simplified JSON not supported");
-                         throw new WebApplicationException("ERROR: This type of simplified JSON is not supported", 500);
-					 }
+//					 switch (category) {
+//					 //	 Complete the JSON, first looking for a match in cache and, if not found, obtaining it from the Assets Registry.
+//					 case "SensorSchema_Simplified":
+//							completeJson = SimplifiedSensor.getCompleteJson(telemetry, Setup.AR_URL);
+//							break;
+//					 case "SensorListSchema_Simplified":
+//							completeJson = SimplifiedSensorList.getCompleteJson(telemetry, Setup.AR_URL);
+//						break;
+//					 case "MultiSensorListSchema_Simplified":
+//						completeJson = SimplifiedMultiSensor.getCompleteJson(telemetry, Setup.AR_URL);
+//						break;
+//					 default:
+//						
+					 
 					 
 					 telemetry= completeJson.toString();
 					 System.out.println(telemetry);
