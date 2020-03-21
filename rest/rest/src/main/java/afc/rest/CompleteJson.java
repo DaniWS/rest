@@ -239,6 +239,5 @@ public class CompleteJson {
 		}
 		return resourceId;
 	}
-//	A method for MANUALLY substituting the resourceId with the resourceUrn value.
 	
 }

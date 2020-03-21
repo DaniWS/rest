@@ -113,33 +113,54 @@ public class Server {
         System.out.println("Disconnected"); 
 	}
 	 */
+	
+	//     Method to validate JSON alarm.
 
-	//     Method to validate Json.
+	private boolean validateJsonA (String s, UriInfo uriInfo) throws ProcessingException, IOException {
+		for (Schema i:SchemaSet.alarmSchemas) {
+	/*		if (i.getName().equals("Definitions")){
+				continue;
+			}
+			*/
+			//		Validates against schemas.
+			if (ValidationUtils.isJsonValid(i.getSchema(), s))
+			{
+                log.debug("Alarm recieved");
+				//		String category = i.getName();
+				return true; 
+			}	
 
+		}
+		return false;
+	}
+	
+	//     Method to validate telemetry JSON.
 
-	private Pair <Boolean, Schema> validateJson (String s, UriInfo uriInfo) throws ProcessingException, IOException {
+	private Pair <Boolean, Schema> validateJsonT (String s, UriInfo uriInfo) throws ProcessingException, IOException {
 
 		//		Reorder the collection attending to the demand.
 
 		i++;
 		if(i>=100) 
 		{
-			Collections.sort(SchemaSet.schemas);
+			Collections.sort(SchemaSet.telemetrySchemas);
 
 			i=0;
 			System.out.println(i + " veces se ha validado!!!!!!!");
 			System.out.println("Array ordenado por uso");
-			for (int i = 0; i < SchemaSet.schemas.size()-1; i++) {
+			for (int i = 0; i < SchemaSet.telemetrySchemas.size()-1; i++) {
 				System.out.println((i+1) + ". " + SchemaSet.schemas.get(i).getName() + " - Uso: " + SchemaSet.schemas.get(i).getUso());
 			}
 			SchemaSet.schemas.forEach((n) -> n.setUso(0));
 
 		}
 
-		for (Schema i:SchemaSet.schemas) {
-			if (i.getName().equals("Definitions")){
+		for (Schema i:SchemaSet.telemetrySchemas) {
+			System.out.println(i.getName());
+	/*		if (i.getName().equals("Definitions")){
 				continue;
 			}
+			*/
 			//		Validates against schemas.
 			if (ValidationUtils.isJsonValid(i.getSchema(), s))
 			{
@@ -177,6 +198,74 @@ public class Server {
 
 	}
 
+
+	@POST
+	@Path("/alarm")
+	//	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
+	public Response getAlarm(String alarm, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
+		//              Check for "resourceId"
+		/*	 	
+    		RegularExpression oRegExt = new RegularExpression();
+    		resourceId = oRegExt.extractInformation("\"{\"resourceId\":\"urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012\",\"sequence number\": 123,\"location\": { \"latitude\": 45.45123,\"longitude\": 25.25456, \"altitude\": 2.10789},\");");
+		 */ 	    try {
+			 Boolean valid=validateJsonA(alarm,uriInfo);
+				 if (valid) {
+				 
+
+         
+
+
+				 //           	  String text="";
+				 //	        	  Checks for the "test" query parameter.
+				 if (!uriInfo.getQueryParameters().containsKey("test")) {
+					 
+					 log.info("SessionID: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+" IP: "+ getRemoteAddress(request)+" Successful request from: "+CompleteJson.getResourceId(alarm) );
+
+					 //	        	  Here goes the code to send the data.
+	 		
+				 }
+				 
+					 //       	  text= "Test mode: ";	   
+					 return Response.status(200).build();
+					
+				 	  
+
+			 }
+
+			 else {
+				 if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
+
+					 log.error("Resource ID: "+CompleteJson.getResourceId(alarm)+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
+					 throw new WebApplicationException(invalidJsonException);
+				 }
+				 Response detailedException= Response.status(415).entity("ERROR: Not AFarCloudCompliant").build();
+				 throw new WebApplicationException(detailedException);
+			 }
+		 }
+		 catch(JsonParseException ex){
+			 if (!uriInfo.getQueryParameters().containsKey("test")) {
+				 log.error("Resource ID: "+CompleteJson.getResourceId(alarm)+" IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
+				 throw new WebApplicationException(notaJsonException);
+			 }
+			Response detailedException= Response.status(400).entity(ex.getMessage()).build();
+			 throw new WebApplicationException(detailedException);
+
+
+		 }
+/*		 catch (RuntimeException e) {
+			  	
+						 
+			 return Response.status(500).entity(e.getMessage()).build();
+		 }
+*/		 
+		 catch (MalformedURLException e) {
+			  	
+			 
+			 return Response.status(500).entity(e.getMessage()).build();
+		 }
+
+	}
 	@POST
 	@Path("/telemetry")
 	//	@Consumes(MediaType.APPLICATION_JSON)
@@ -187,7 +276,7 @@ public class Server {
     		RegularExpression oRegExt = new RegularExpression();
     		resourceId = oRegExt.extractInformation("\"{\"resourceId\":\"urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012\",\"sequence number\": 123,\"location\": { \"latitude\": 45.45123,\"longitude\": 25.25456, \"altitude\": 2.10789},\");");
 		 */ 	    try {
-			 Pair   <Boolean, Schema> response=validateJson(telemetry,uriInfo);
+			 Pair   <Boolean, Schema> response=validateJsonT(telemetry,uriInfo);
 			 Boolean valid=response.getFirst();
 			 Schema schema=response.getSecond();
 			 if (valid) {
@@ -222,8 +311,9 @@ public class Server {
 				 //           	  String text="";
 				 //	        	  Checks for the "test" query parameter.
 				 if (!uriInfo.getQueryParameters().containsKey("test")) {
+					 
 					 String URN="measures"; // PROVISIONAL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-					 log.info("SessionID: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+" IP: "+ getRemoteAddress(request)+" Successful request on: "+ category );
+					 log.info("SessionID: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+" IP: "+ getRemoteAddress(request)+" Successful request from: "+CompleteJson.getResourceId(telemetry) );
 
 					 //	        	  Here goes the code to send the data.
 					 //               PROVISIONAL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    

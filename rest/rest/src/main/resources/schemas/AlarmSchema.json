@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The Schema for an sensor or actuator alarma",
+    "required": [
+        "alarmCode",
+        "message",
+        "resourceId"
+    ],
+    "properties": {
+        "alarmCode": {
+            "$id": "#/properties/alarmCode",
+            "type": "string",
+            "title": "A valid code classifying an alarm",
+            "default": "",
+            "examples": [
+                "GREENHOUSE_IRRIGATION_FLOW"
+            ]
+        },
+        "message": {
+            "$id": "#/properties/message",
+            "type": "string",
+            "title": "A free text describing the alarm",
+            "default": "",
+            "examples": [
+                "Irrigation valve is open but no water flow detected"
+            ]
+        },
+        "resourceId": {
+            "$id": "#/properties/resourceId",
+            "type": "string",
+            "title": "The id of the resource that detected the alarm",
+            "default": "",
+            "examples": [
+                "este_irrigation_valve_0"
+            ]
+        }
+    },
+    "additionalProperties":false
+}

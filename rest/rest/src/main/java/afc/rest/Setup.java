@@ -111,7 +111,9 @@ public class Setup {
 	// Method to load the schemas: takes the schemas URI as an argument.
 	public static void loadSchemas(String schemaURI) throws MalformedURLException, IOException, ProcessingException {
 		JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
-		for (Schema s: SchemaSet.schemas) {		    
+		for (Schema s: SchemaSet.schemas) {		 
+			
+
 			String filename=s.getName()+".json";
 
 			FileUtils.copyURLToFile(          
@@ -119,8 +121,14 @@ public class Setup {
 					new File(localSchemasPath+filename));
 			//	       Avoids loading Definition as a schema to prevent false validations.
 
-			if (!s.getName().equals("Definitions")) {
-				s.setSchema(factory.getJsonSchema("resource:/localSchemas/"+filename));
+			if (s.getType().equals("Alarm")) {
+				s.setSchema(factory.getJsonSchema(schemaURI+filename));
+				SchemaSet.alarmSchemas.add(s);
+
+			}
+			else if (!s.getType().equals("Definitions")) {
+				s.setSchema(factory.getJsonSchema(schemaURI+filename));
+				SchemaSet.telemetrySchemas.add(s);
 				//	               SchemaSet.schemas.add(new Schema(factory.getJsonSchema("resource:/localSchemas/"+filename),0,s, null, s));
 			}
 
