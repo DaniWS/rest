@@ -26,10 +26,9 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
-public class SimplifiedSensorList extends CompleteJson  {
+public class SimplifiedSensorList extends SimplifiedJson  {
 	
 	
-	private static final Logger log = Logger.getLogger(Server.class);
     
 
 

@@ -27,9 +27,9 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
-public class SimplifiedMultiSensor extends CompleteJson{
+public class SimplifiedMultiSensor extends SimplifiedJson{
 
-	private static final Logger log = Logger.getLogger(Server.class);
+	private static final Logger log = Logger.getLogger(SimplifiedMultiSensor.class);
 	
 	@Override
 	public  HashMap <String, JsonElement> parseObject(JsonElement token, HashMap<String, JsonElement> registryJSON, int counter)  {
@@ -87,9 +87,8 @@ public class SimplifiedMultiSensor extends CompleteJson{
 		return registryJSON;
 	}
     @Override
-	public JsonObject parseEntireJson(String registrationJson) throws IOException {
+	public JsonObject parseRegistryJson(String registrationJson) throws IOException {
 
-		Gson gson = new Gson();
 		JsonObject missingFields= new JsonObject();
 		
 		   HashMap<String, JsonElement> registryJSON = new HashMap<String, JsonElement>();
@@ -98,19 +97,22 @@ public class SimplifiedMultiSensor extends CompleteJson{
 			
 			registryJSON= parseObject(jsonTree, registryJSON, 0);
 			System.out.println("REGISTRY_JSON: "+registryJSON);
-			missingFields=buildMissingJson(registryJSON, gson);
+			missingFields=buildMissingJson(registryJSON);
 		
 			System.out.println("MISSING FIELDS CUMPLIMENTED: "+ missingFields.toString());
 
 		}
 
-		catch(JsonParseException e) {e.printStackTrace();
+		catch(JsonParseException e) {
+			e.printStackTrace();
+			log.error("Could not obtain resource from the Assets Registry: "+e.getMessage());
+			throw new WebApplicationException(Server.AR_ParserException);
 		}
 		return missingFields;
 
 	}@Override
 	//	 A method that parses the JSON recursively filling the missing values of the "missing values" object.
-	public JsonObject buildMissingJson(HashMap<String, JsonElement> registryJSON, Gson gson) {
+	public JsonObject buildMissingJson(HashMap<String, JsonElement> registryJSON) {
 
 //		Check that the Map contains all required keys  
 		  JsonObject missingFields= new JsonObject();

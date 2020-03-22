@@ -2145,3 +2145,389 @@ java.lang.RuntimeException: Failed : HTTP error code : 405
 2020-03-21 04:33:24,075 DEBUG [grizzly-http-server-1] - Server - Alarm recieved
 2020-03-21 04:34:59,554 DEBUG [grizzly-http-server-3] - Server - Alarm recieved
 2020-03-21 04:34:59,566  INFO [grizzly-http-server-3] - Server - SessionID: 65332665800451023041584761699561 IP: 0:0:0:0:0:0:0:1 Successful request freom: este_irrigation_valve_0
+2020-03-21 17:43:52,330 DEBUG [grizzly-http-server-11] - Server - Alarm recieved
+2020-03-21 17:44:26,357 DEBUG [grizzly-http-server-12] - Server - Alarm recieved
+2020-03-21 17:44:26,384  INFO [grizzly-http-server-12] - Server - SessionID: 51115778560722490931584809066368 IP: 0:0:0:0:0:0:0:1 Successful request from: este_irrigation_valve_0
+2020-03-21 18:26:49,531 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:26:50,838 ERROR [grizzly-http-server-10] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-21 18:26:58,293 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:26:59,364 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-21 18:27:08,396 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:27:09,466 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-21 18:27:39,618 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:27:40,638 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-21 18:28:53,954 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:29:21,288 ERROR [grizzly-http-server-10] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-21 18:29:38,399 ERROR [grizzly-http-server-0] - Server - Resource ID: este_irrigation_valve_0  IP: 127.0.0.1 Not AFarCloud Compliant
+2020-03-21 18:29:40,893 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:29:41,961 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-21 18:29:45,748 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:29:46,789 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-21 18:29:51,700 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:29:52,697 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-21 18:30:10,410 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:30:11,455 ERROR [grizzly-http-server-10] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-21 18:30:19,559 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:30:20,630 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-21 18:31:27,744 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:31:28,761 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: Not a JSON Object: "urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001"
+2020-03-21 18:31:36,524 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:31:37,557 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: Not a JSON Object: "urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001"
+2020-03-21 18:34:07,767 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:34:08,828 ERROR [grizzly-http-server-10] - Server - Could not obtain resource from the Assets Registry: JsonObject
+2020-03-21 18:35:09,357 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:35:15,773 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:38:31,051 ERROR [grizzly-http-server-0] - Server - Resource ID: UPM_Fake_0001  IP: 127.0.0.1 Not AFarCloud Compliant
+2020-03-21 18:38:32,932 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:38:34,007 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: JsonObject
+2020-03-21 18:42:50,837 ERROR [grizzly-http-server-1] - Server - Resource ID: UPM_Fake_0001  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-21 18:42:52,204 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:42:53,761 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: JsonObject
+2020-03-21 18:44:16,971 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:46:25,296 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:47:56,746 ERROR [grizzly-http-server-0] - Server - Resource ID: UPM_Fake_0001  IP: 127.0.0.1 Not AFarCloud Compliant
+2020-03-21 18:47:57,894 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:47:58,971  INFO [grizzly-http-server-11] - Server - SessionID: 11182128700240729791584812878968 IP: 127.0.0.1 Successful request from: UPM_Fake_0001
+2020-03-21 18:50:01,573 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:51:08,562  INFO [grizzly-http-server-10] - Server - SessionID: 53390924602934730401584813068341 IP: 0:0:0:0:0:0:0:1 Successful request from: UPM_Fake_0001 on: Alarm
+2020-03-21 18:53:51,960 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-21 18:53:53,035 ERROR [grizzly-http-server-10] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 05:58:41,400 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 05:58:42,545  INFO [grizzly-http-server-10] - Server - SessionID: 35943301676322630381584853122542 IP: 0:0:0:0:0:0:0:1 Successful request from: UPM_Fake_0001 on: Alarm
+2020-03-22 05:58:51,524 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 05:58:51,526  INFO [grizzly-http-server-11] - Server - SessionID: 35943301676322630381584853131525 IP: 0:0:0:0:0:0:0:1 Successful request from: UPM_Fake_0001 on: Alarm
+2020-03-22 05:58:53,067 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 05:58:53,069  INFO [grizzly-http-server-12] - Server - SessionID: 35943301676322630381584853133068 IP: 0:0:0:0:0:0:0:1 Successful request from: UPM_Fake_0001 on: Alarm
+2020-03-22 05:58:54,638 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 05:58:54,640  INFO [grizzly-http-server-13] - Server - SessionID: 35943301676322630381584853134639 IP: 0:0:0:0:0:0:0:1 Successful request from: UPM_Fake_0001 on: Alarm
+2020-03-22 05:58:55,241 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 05:58:55,241  INFO [grizzly-http-server-14] - Server - SessionID: 35943301676322630381584853135241 IP: 0:0:0:0:0:0:0:1 Successful request from: UPM_Fake_0001 on: Alarm
+2020-03-22 05:58:55,937 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 05:58:55,938  INFO [grizzly-http-server-15] - Server - SessionID: 35943301676322630381584853135938 IP: 0:0:0:0:0:0:0:1 Successful request from: UPM_Fake_0001 on: Alarm
+2020-03-22 05:58:56,916 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 05:58:56,916  INFO [grizzly-http-server-0] - Server - SessionID: 35943301676322630381584853136916 IP: 0:0:0:0:0:0:0:1 Successful request from: UPM_Fake_0001 on: Alarm
+2020-03-22 05:58:57,481 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 05:58:57,482  INFO [grizzly-http-server-1] - Server - SessionID: 35943301676322630381584853137482 IP: 0:0:0:0:0:0:0:1 Successful request from: UPM_Fake_0001 on: Alarm
+2020-03-22 06:01:39,770 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:01:40,835  INFO [grizzly-http-server-10] - Server - SessionID: 10606555538198296201584853300833 IP: 0:0:0:0:0:0:0:1 Successful request from: UPM_Fake_0001 on: Alarm
+2020-03-22 06:01:49,734 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:01:49,737  INFO [grizzly-http-server-11] - Server - SessionID: 10606555538198296201584853309736 IP: 0:0:0:0:0:0:0:1 Successful request from: UPM_Fake_0001 on: Alarm
+2020-03-22 06:02:54,278 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:04:14,712  INFO [grizzly-http-server-10] - Server - SessionID: 16368335260613413511584853454498 IP: 0:0:0:0:0:0:0:1 Successful request from: UPM_Fake_0001 on: Alarm
+2020-03-22 06:07:40,160 ERROR [grizzly-http-server-1] - Server - Resource ID: UPM_Fake_0001  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-22 06:07:42,838 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:07:43,911  INFO [grizzly-http-server-11] - Server - SessionID: 32442148270674629591584853663909 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:07:49,720 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:07:49,721  INFO [grizzly-http-server-12] - Server - SessionID: 32442148270674629591584853669720 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:07:50,881 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:07:50,881  INFO [grizzly-http-server-13] - Server - SessionID: 32442148270674629591584853670881 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:13:46,687 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:13:47,817  INFO [grizzly-http-server-14] - Server - SessionID: 32442148270674629591584854027817 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:13:48,613 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:13:48,614  INFO [grizzly-http-server-15] - Server - SessionID: 32442148270674629591584854028613 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:13:49,226 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:13:49,227  INFO [grizzly-http-server-0] - Server - SessionID: 32442148270674629591584854029227 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:13:49,768 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:13:49,769  INFO [grizzly-http-server-1] - Server - SessionID: 32442148270674629591584854029768 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:13:50,251 DEBUG [grizzly-http-server-2] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:13:50,251  INFO [grizzly-http-server-2] - Server - SessionID: 32442148270674629591584854030251 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:13:50,953 DEBUG [grizzly-http-server-3] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:13:50,954  INFO [grizzly-http-server-3] - Server - SessionID: 32442148270674629591584854030953 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:13:51,346 DEBUG [grizzly-http-server-4] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:13:51,347  INFO [grizzly-http-server-4] - Server - SessionID: 32442148270674629591584854031347 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:14:44,627 DEBUG [grizzly-http-server-5] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:14:46,459 DEBUG [grizzly-http-server-6] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:14:47,059 DEBUG [grizzly-http-server-7] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:14:47,460 DEBUG [grizzly-http-server-8] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:14:47,811 DEBUG [grizzly-http-server-9] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:14:52,236 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:14:52,236  INFO [grizzly-http-server-10] - Server - SessionID: 32442148270674629591584854092236 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:14:52,828 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:14:52,829  INFO [grizzly-http-server-11] - Server - SessionID: 32442148270674629591584854092828 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:14:54,392 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:14:54,393  INFO [grizzly-http-server-12] - Server - SessionID: 32442148270674629591584854094393 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:17:15,465 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:17:16,539  INFO [grizzly-http-server-10] - Server - SessionID: 25679877552781612751584854236536 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:17:57,447 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:17:58,530  INFO [grizzly-http-server-10] - Server - SessionID: 10856620213048532361584854278527 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:17:59,857 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:17:59,859  INFO [grizzly-http-server-11] - Server - SessionID: 10856620213048532361584854279858 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:18:32,279 ERROR [grizzly-http-server-0] - Server - Resource ID: UPM_Fake_0001  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-22 06:18:34,287 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:18:35,387  INFO [grizzly-http-server-11] - Server - SessionID: 89671523617131115971584854315384 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:18:37,264 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:18:37,264  INFO [grizzly-http-server-12] - Server - SessionID: 89671523617131115971584854317264 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:18:38,093 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:18:38,094  INFO [grizzly-http-server-13] - Server - SessionID: 89671523617131115971584854318094 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:19:02,871 ERROR [grizzly-http-server-1] - Server - Resource ID: UPM_Fake_0001  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-22 06:19:03,831 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:19:04,902  INFO [grizzly-http-server-11] - Server - SessionID: 11457042010852257431584854344900 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 06:19:10,451 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:20:06,915 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:20:12,789 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:20:34,186 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:20:41,021 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:20:41,037  INFO [grizzly-http-server-14] - Server - SessionID: 63968127417021561561584854441035 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 06:22:16,551 ERROR [grizzly-http-server-0] - Server - Resource ID: UPM_Fake_0002  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-22 06:22:18,370 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:22:19,427  INFO [grizzly-http-server-11] - Server - SessionID: 68947344648972741081584854539424 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 06:22:22,885 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:22:23,905 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:22:24,652 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:22:25,683 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:23:39,267 ERROR [grizzly-http-server-0] - Server - Resource ID: UPM_Fake_00022  IP: 127.0.0.1 Not AFarCloud Compliant
+2020-03-22 06:23:41,147 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:23:42,203 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:23:52,958 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:23:54,025 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:24:24,285 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:24:25,289 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:24:46,823 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:24:47,900 ERROR [grizzly-http-server-10] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:24:53,000 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:24:54,048 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:25:52,916 ERROR [grizzly-http-server-0] - Server - Resource ID: UPM_Fake_00022  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-22 06:26:10,170 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:27:33,691 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:29:30,495 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:30:04,750 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:31:58,311 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:31:59,367 ERROR [grizzly-http-server-10] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:32:00,333 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:32:01,341 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:32:02,232 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:32:03,257 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:32:03,870 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:32:04,903 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:35:26,955 ERROR [grizzly-http-server-1] - Server - Resource ID: UPM_Fake_00022  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-22 06:35:27,999 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:35:29,032 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:35:29,750 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:35:30,807 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:35:31,439 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:35:32,474 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:35:33,000 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:35:34,033 ERROR [grizzly-http-server-14] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:35:34,627 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:35:35,633 ERROR [grizzly-http-server-15] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:35:43,009 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:35:44,023 ERROR [grizzly-http-server-0] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:39:39,442 ERROR [grizzly-http-server-1] - Server - Resource ID: UPM_Fake_00022  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-22 06:39:40,605 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:39:41,716 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:39:42,417 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:39:43,416 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:41:08,132 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:41:26,705 ERROR [grizzly-http-server-10] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:43:07,279 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:43:16,654 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:45:07,184 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:45:11,704 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:52:15,262 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:52:16,364  INFO [grizzly-http-server-12] - Server - SessionID: 88881044735304609861584856336359 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 06:52:19,134 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:52:19,137  INFO [grizzly-http-server-10] - Server - SessionID: 88881044735304609861584856339137 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 06:52:25,426 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:52:26,459 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:52:28,199 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:52:29,237 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:52:32,203 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:52:33,251 ERROR [grizzly-http-server-14] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:52:36,592 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:52:37,596 ERROR [grizzly-http-server-15] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:52:43,484 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:52:43,485  INFO [grizzly-http-server-0] - Server - SessionID: 88881044735304609861584856363485 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 06:52:47,281 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:52:48,288 ERROR [grizzly-http-server-1] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:52:54,986 DEBUG [grizzly-http-server-2] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:52:54,987  INFO [grizzly-http-server-2] - Server - SessionID: 88881044735304609861584856374986 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 06:52:56,653 DEBUG [grizzly-http-server-3] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:52:56,655  INFO [grizzly-http-server-3] - Server - SessionID: 88881044735304609861584856376654 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 06:53:00,954 DEBUG [grizzly-http-server-4] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:53:01,999 ERROR [grizzly-http-server-4] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:53:04,341 DEBUG [grizzly-http-server-5] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:53:05,386 ERROR [grizzly-http-server-5] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:53:10,508 DEBUG [grizzly-http-server-6] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:53:11,542 ERROR [grizzly-http-server-6] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:53:12,379 DEBUG [grizzly-http-server-7] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:53:13,392 ERROR [grizzly-http-server-7] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:53:14,147 DEBUG [grizzly-http-server-8] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:53:15,219 ERROR [grizzly-http-server-8] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:53:15,629 DEBUG [grizzly-http-server-9] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:53:16,653 ERROR [grizzly-http-server-9] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:53:16,966 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:53:17,969 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:53:18,280 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:53:19,352 ERROR [grizzly-http-server-10] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:58:17,053 ERROR [grizzly-http-server-1] - Server - Resource ID: UPM_Fake_0002  IP: 127.0.0.1 Not AFarCloud Compliant
+2020-03-22 06:58:18,945 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:58:20,054  INFO [grizzly-http-server-11] - Server - SessionID: 79351198474979763991584856700051 IP: 127.0.0.1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 06:58:23,349 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:58:23,350  INFO [grizzly-http-server-12] - Server - SessionID: 79351198474979763991584856703350 IP: 127.0.0.1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 06:58:24,236 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:58:24,236  INFO [grizzly-http-server-13] - Server - SessionID: 79351198474979763991584856704236 IP: 127.0.0.1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 06:58:25,053 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:58:25,053  INFO [grizzly-http-server-14] - Server - SessionID: 79351198474979763991584856705053 IP: 127.0.0.1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 06:58:38,664 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:58:38,665  INFO [grizzly-http-server-15] - Server - SessionID: 60424215545310990361584856718664 IP: 127.0.0.1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 06:58:43,747 DEBUG [grizzly-http-server-0] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:58:43,749  INFO [grizzly-http-server-0] - Server - SessionID: 91816082538709485391584856723748 IP: 127.0.0.1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 06:58:49,131 DEBUG [grizzly-http-server-1] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:58:49,132  INFO [grizzly-http-server-1] - Server - SessionID: 88629041734338751951584856729132 IP: 127.0.0.1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 06:58:50,063 DEBUG [grizzly-http-server-2] - Server - Complete JSON for this resource obtained from cache
+2020-03-22 06:58:50,064  INFO [grizzly-http-server-2] - Server - SessionID: 88629041734338751951584856730064 IP: 127.0.0.1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 06:59:05,138 DEBUG [grizzly-http-server-3] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:59:06,241 ERROR [grizzly-http-server-3] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 06:59:07,111 DEBUG [grizzly-http-server-4] - Server - Complete JSON for this resource not in cache
+2020-03-22 06:59:08,186 ERROR [grizzly-http-server-4] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:00:43,264 ERROR [grizzly-http-server-0] - Server - Resource ID: UPM_Fake_a0002  IP: 127.0.0.1 Not AFarCloud Compliant
+2020-03-22 07:00:44,913 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:00:46,059 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:00:46,840 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:00:47,861 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:00:48,973 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:00:50,007 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:00:55,517 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:00:56,524 ERROR [grizzly-http-server-14] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:02:47,968 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:02:49,040 ERROR [grizzly-http-server-10] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:02:51,160 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:02:52,227 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:02:53,479 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:02:54,488 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:04:20,443 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:04:21,476 ERROR [grizzly-http-server-10] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:04:22,572 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:04:23,622 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:05:32,586 ERROR [grizzly-http-server-1] - Server - Resource ID: UPM_Fake_a0002  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-22 07:05:34,027 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:05:35,121 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:05:35,945 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:05:36,980 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:07:27,761 ERROR [grizzly-http-server-0] - Server - Resource ID: UPM_Fake_a0002  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-03-22 07:07:29,152 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:07:30,229 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:07:31,100 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:07:32,162 ERROR [grizzly-http-server-12] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:07:32,995 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:07:34,049 ERROR [grizzly-http-server-13] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:07:34,764 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:07:35,784 ERROR [grizzly-http-server-14] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:07:36,444 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:07:37,468 ERROR [grizzly-http-server-15] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:09:31,006 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:09:32,093 ERROR [grizzly-http-server-10] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:09:34,397 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:09:35,436 ERROR [grizzly-http-server-11] - Server - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:18:54,094 DEBUG [grizzly-http-server-10] - Server - Succesful request on: MultiSensorListSchema_Simplified
+2020-03-22 07:18:54,117 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:18:55,325 DEBUG [grizzly-http-server-10] - Server - Entered Multi Sensor Class
+2020-03-22 07:20:26,129 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:20:26,131 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:20:34,101 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:20:34,101 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:20:35,102 ERROR [grizzly-http-server-14] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:21:29,922 DEBUG [grizzly-http-server-15] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:21:29,922 DEBUG [grizzly-http-server-15] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:21:30,949 ERROR [grizzly-http-server-15] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:22:10,923 DEBUG [grizzly-http-server-11] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:22:10,938 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:22:13,289 DEBUG [grizzly-http-server-12] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:22:13,291 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:22:51,577 DEBUG [grizzly-http-server-11] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:22:51,591 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:22:52,672 ERROR [grizzly-http-server-11] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:22:54,292 DEBUG [grizzly-http-server-12] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:22:54,294 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:22:55,176 ERROR [grizzly-http-server-12] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:23:07,974 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:23:07,975 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:23:09,002 ERROR [grizzly-http-server-13] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:23:47,181 DEBUG [grizzly-http-server-10] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:23:47,196 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:23:48,240 ERROR [grizzly-http-server-10] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:23:49,799 DEBUG [grizzly-http-server-11] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:23:49,800 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:23:50,724 ERROR [grizzly-http-server-11] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:23:51,376 DEBUG [grizzly-http-server-12] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:23:51,377 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:23:52,266 ERROR [grizzly-http-server-12] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:23:52,855 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:23:52,856 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:23:53,733 ERROR [grizzly-http-server-13] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:24:59,361 DEBUG [grizzly-http-server-10] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:24:59,378 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:25:00,467 ERROR [grizzly-http-server-10] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:25:01,648 DEBUG [grizzly-http-server-11] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:25:01,649 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:25:02,531 ERROR [grizzly-http-server-11] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:25:03,058 DEBUG [grizzly-http-server-12] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:25:03,058 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:25:03,975 ERROR [grizzly-http-server-12] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:25:04,297 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:25:04,297 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:25:05,201 ERROR [grizzly-http-server-13] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:25:05,690 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:25:05,690 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:25:06,568 ERROR [grizzly-http-server-14] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:25:39,066 DEBUG [grizzly-http-server-10] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:25:39,083 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:25:40,124 ERROR [grizzly-http-server-10] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:25:40,882 DEBUG [grizzly-http-server-11] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:25:40,886 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:25:41,759 ERROR [grizzly-http-server-11] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:25:42,454 DEBUG [grizzly-http-server-12] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:25:42,455 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:25:43,331 ERROR [grizzly-http-server-12] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:25:43,987 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:25:43,987 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:25:44,901 ERROR [grizzly-http-server-13] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:26:15,504 DEBUG [grizzly-http-server-10] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:26:15,523 DEBUG [grizzly-http-server-10] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:26:16,601 ERROR [grizzly-http-server-10] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:26:17,800 DEBUG [grizzly-http-server-11] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:26:17,802 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:26:18,699 ERROR [grizzly-http-server-11] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:26:20,561 DEBUG [grizzly-http-server-12] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:26:20,562 DEBUG [grizzly-http-server-12] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:26:21,450 ERROR [grizzly-http-server-12] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:26:27,880 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:26:27,880 DEBUG [grizzly-http-server-13] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:26:28,902 ERROR [grizzly-http-server-13] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:26:29,677 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:26:29,678 DEBUG [grizzly-http-server-14] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:26:30,587 ERROR [grizzly-http-server-14] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:29:09,121 DEBUG [grizzly-http-server-11] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:29:09,139 DEBUG [grizzly-http-server-11] - Server - Complete JSON for this resource not in cache
+2020-03-22 07:29:10,204 ERROR [grizzly-http-server-11] - Server - The specified resource is not a single-parameter sensor
+2020-03-22 07:33:34,445 DEBUG [grizzly-http-server-11] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:33:34,471 DEBUG [grizzly-http-server-11] - SimplifiedJson - Complete JSON for this resource not in cache
+2020-03-22 07:33:35,548 ERROR [grizzly-http-server-11] - SimplifiedJson - The specified resource is not a single-parameter sensor
+2020-03-22 07:35:36,736 DEBUG [grizzly-http-server-12] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:35:36,737 DEBUG [grizzly-http-server-12] - SimplifiedJson - Complete JSON for this resource not in cache
+2020-03-22 07:35:37,895 ERROR [grizzly-http-server-12] - SimplifiedJson - The specified resource is not a single-parameter sensor
+2020-03-22 07:35:38,580 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:35:38,580 DEBUG [grizzly-http-server-13] - SimplifiedJson - Complete JSON for this resource not in cache
+2020-03-22 07:35:39,443 ERROR [grizzly-http-server-13] - SimplifiedJson - The specified resource is not a single-parameter sensor
+2020-03-22 07:35:39,751 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:35:39,752 DEBUG [grizzly-http-server-14] - SimplifiedJson - Complete JSON for this resource not in cache
+2020-03-22 07:35:40,617 ERROR [grizzly-http-server-14] - SimplifiedJson - The specified resource is not a single-parameter sensor
+2020-03-22 07:35:45,058 DEBUG [grizzly-http-server-15] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:35:45,058 DEBUG [grizzly-http-server-15] - SimplifiedJson - Complete JSON for this resource not in cache
+2020-03-22 07:35:51,213 DEBUG [grizzly-http-server-1] - Server - Succesful request on: SensorSchema_Simplified
+2020-03-22 07:35:51,214 DEBUG [grizzly-http-server-1] - SimplifiedJson - Complete JSON for this resource obtained from cache
+2020-03-22 07:35:51,243  INFO [grizzly-http-server-1] - Server - SessionID: 72191645395311005851584858951240 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: SensorSchema_Simplified
+2020-03-22 07:35:51,342 ERROR [grizzly-http-server-1] - Server - Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-03-22 07:35:53,967 DEBUG [grizzly-http-server-0] - SimplifiedJson - Complete JSON for this resource not in cache
+2020-03-22 07:35:54,994 ERROR [grizzly-http-server-0] - SimplifiedJson - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:35:55,798 DEBUG [grizzly-http-server-2] - SimplifiedJson - Complete JSON for this resource not in cache
+2020-03-22 07:35:56,837 ERROR [grizzly-http-server-2] - SimplifiedJson - Could not obtain resource from the Assets Registry: 500
+2020-03-22 07:36:00,064 DEBUG [grizzly-http-server-3] - SimplifiedJson - Complete JSON for this resource obtained from cache
+2020-03-22 07:36:00,065  INFO [grizzly-http-server-3] - Server - SessionID: 72191645395311005851584858960065 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 07:36:00,853 DEBUG [grizzly-http-server-4] - SimplifiedJson - Complete JSON for this resource obtained from cache
+2020-03-22 07:36:00,854  INFO [grizzly-http-server-4] - Server - SessionID: 72191645395311005851584858960853 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 07:36:04,983 DEBUG [grizzly-http-server-5] - SimplifiedJson - Complete JSON for this resource not in cache
+2020-03-22 07:36:06,055  INFO [grizzly-http-server-5] - Server - SessionID: 72191645395311005851584858966055 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0001 on: Alarm
+2020-03-22 07:36:09,766 DEBUG [grizzly-http-server-6] - SimplifiedJson - Complete JSON for this resource obtained from cache
+2020-03-22 07:36:09,768  INFO [grizzly-http-server-6] - Server - SessionID: 72191645395311005851584858969768 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
+2020-03-22 07:36:36,369 DEBUG [grizzly-http-server-10] - SimplifiedJson - Complete JSON for this resource not in cache

@@ -26,10 +26,10 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
-public class CompleteJson {
+public class SimplifiedJson {
 	
 	
-	private static final Logger log = Logger.getLogger(Server.class);
+	private static final Logger log = Logger.getLogger(SimplifiedJson.class);
     
 	//	A method that parses a JSON object finding the missing values, and returns a HashMap containing the missing fields.
 	public  HashMap <String, JsonElement> parseObject(JsonElement token,  HashMap <String, JsonElement> registryJSON, int counter)  {
@@ -91,8 +91,7 @@ public class CompleteJson {
 		
 	//	A method that parses the entire registration JSON of the received simplified JSON, and iterates over all objects recursively filling the missing values  
 
-	public JsonObject parseEntireJson(String registrationJson) throws IOException {
-		Gson gson = new Gson();
+	public JsonObject parseRegistryJson(String registrationJson) throws IOException {
 		JsonObject missingFields = new JsonObject();
 
 		HashMap<String, JsonElement> registryJSON = new HashMap<String, JsonElement>();
@@ -102,7 +101,7 @@ public class CompleteJson {
 			//		We need to MANUALLY add the resourceUrn field, since it will substitute the resourceId value
 			registryJSON= this.parseObject(jsonTree, registryJSON, 0);
        
-		    missingFields=this.buildMissingJson(registryJSON, gson);
+		    missingFields=this.buildMissingJson(registryJSON);
 		
 			System.out.println("MISSING FIELDS CUMPLIMENTED: "+ missingFields.toString());
 
@@ -110,13 +109,12 @@ public class CompleteJson {
 
 		catch(JsonParseException e) {e.printStackTrace();
 		}
-		System.out.println("REGISTRY_JSON: "+registryJSON);
 		return missingFields;
 
 	}
 	//	 A method that parses the JSON recursively filling the missing values of the \"missing values\" object
 
-	public JsonObject buildMissingJson(HashMap<String, JsonElement> registryJSON, Gson gson) {
+	public JsonObject buildMissingJson(HashMap<String, JsonElement> registryJSON) {
 //		Check that the Map contains all required keys  
 		  JsonObject missingFields= new JsonObject();
 			JsonObject location = new JsonObject();	
@@ -137,7 +135,7 @@ public class CompleteJson {
 	
 	// A method to complete the simplified JSON obtaining the missing information from the Assets Registry URI
 	public static JsonObject getCompleteJson(String input, String AR_URL, String category) throws IOException {
-        CompleteJson simpleJson;
+        SimplifiedJson simpleJson;
 		switch(category) {
        case "SensorListSchema_Simplified":
     	 simpleJson = new SimplifiedSensorList();
@@ -147,6 +145,9 @@ public class CompleteJson {
     	 break; 
        case "SensorSchema_Simplified":
       	 simpleJson = new SimplifiedSensor();
+      	 break;
+       case "Alarm":
+    	 simpleJson = new Alarm();  
       	 break;
        default:
     	   log.error("Type of simplified JSON not supported");
@@ -185,7 +186,7 @@ public class CompleteJson {
 			}
 			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 			String output = br.lines().collect(Collectors.joining());
-			missingObject=simpleJson.parseEntireJson(output);
+			missingObject=simpleJson.parseRegistryJson(output);
 			completeJson = simpleJson.completeFields(missingObject,inputJson);
 
 
@@ -208,13 +209,14 @@ public class CompleteJson {
 		}
 		catch (MalformedURLException e) {
 			log.error("Could not connect to Assets Registry: "+e.getMessage());
-			e.printStackTrace();
 			throw new MalformedURLException("MalformedURL");
 		}
 		catch (RuntimeException e) {
-			e.printStackTrace();
 			log.error("Could not obtain resource from the Assets Registry: "+e.getMessage());
-			throw new WebApplicationException(Server.AR_RuntimeException);
+			throw new WebApplicationException(Response.status(500).entity("ERROR: The specified resourceId might not be registered in the Assets Registry").build());
+
+            
+//			throw new WebApplicationException(Server.AR_RuntimeException);
 		}
 
 	}

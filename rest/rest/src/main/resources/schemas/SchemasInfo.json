@@ -11,5 +11,5 @@
 {'name': 'MultiSensorListSchema_Simplified', 'type':'Sensor', 'isSimple':true},
 {'name': 'MultiSensorListSchema', 'type':'Sensor', 'isSimple':false},
 {'name': 'SensorSchema_Simplified', 'type':'Sensor', 'isSimple':true},
-{'name': 'AlarmSchema', 'type':'Alarm', 'isSimple':false}
+{'name': 'AlarmSchema', 'type':'Alarm', 'isSimple':true}
 ]

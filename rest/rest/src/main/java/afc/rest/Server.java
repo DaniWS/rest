@@ -66,7 +66,9 @@ public class Server {
 
 	protected static final Response invalidJsonException = Response.status(415).build();
 	protected static final Response notaJsonException =  Response.status(400).build();
-	protected static final Response AR_RuntimeException = Response.status(500).entity("ERROR: The specified resourceId might not be registered in the Asset Registry").build();
+	protected static final Response AR_RuntimeException = Response.status(500).entity("ERROR: The specified resourceId might not be registered in the Assets Registry").build();
+	protected static final Response AR_ParserException = Response.status(500).entity("ERROR: Could not obtain complete version from the Assets Registry").build();
+
     //  Detailed exceptions for TEST mode
 	protected static final Response detInvJsonExc = Response.status(415).build();
 	protected static final Response detNotJsonExc =  Response.status(400).build();
@@ -125,7 +127,6 @@ public class Server {
 			//		Validates against schemas.
 			if (ValidationUtils.isJsonValid(i.getSchema(), s))
 			{
-                log.debug("Alarm recieved");
 				//		String category = i.getName();
 				return true; 
 			}	
@@ -204,30 +205,25 @@ public class Server {
 	//	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
 	public Response getAlarm(String alarm, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
-		//              Check for "resourceId"
-		/*	 	
-    		RegularExpression oRegExt = new RegularExpression();
-    		resourceId = oRegExt.extractInformation("\"{\"resourceId\":\"urn:afc:AS04:environmentalObservations:TST:airSensor:airTemperatureSensor0012\",\"sequence number\": 123,\"location\": { \"latitude\": 45.45123,\"longitude\": 25.25456, \"altitude\": 2.10789},\");");
-		 */ 	    try {
+	
+		try {
 			 Boolean valid=validateJsonA(alarm,uriInfo);
 				 if (valid) {
-				 
-
-         
-
-
-				 //           	  String text="";
-				 //	        	  Checks for the "test" query parameter.
+					 String category = "Alarm";
+                     alarm=SimplifiedJson.getCompleteJson(alarm, Setup.AR_URL, category).toString();
+                     Session session=request.getSession();
+                                          
+//				        	  Checks for the "test" query parameter.
 				 if (!uriInfo.getQueryParameters().containsKey("test")) {
+//				        	  Here goes the code to send the data.
 					 
-					 log.info("SessionID: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+" IP: "+ getRemoteAddress(request)+" Successful request from: "+CompleteJson.getResourceId(alarm) );
+					 log.info("SessionID: "+session.getIdInternal()+session.getTimestamp()+" IP: "+ getRemoteAddress(request)+" Successful request from: "+SimplifiedJson.getResourceId(alarm)+" on: "+category );
+         			return Response.status(200).entity("{\n\"requestId\": "+session.getIdInternal()+session.getTimestamp()+"\n}").build();
 
-					 //	        	  Here goes the code to send the data.
-	 		
 				 }
 				 
 					 //       	  text= "Test mode: ";	   
-					 return Response.status(200).build();
+					 return Response.status(200).entity(alarm).build();
 					
 				 	  
 
@@ -236,7 +232,7 @@ public class Server {
 			 else {
 				 if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
 
-					 log.error("Resource ID: "+CompleteJson.getResourceId(alarm)+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
+					 log.error("Resource ID: "+SimplifiedJson.getResourceId(alarm)+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
 					 throw new WebApplicationException(invalidJsonException);
 				 }
 				 Response detailedException= Response.status(415).entity("ERROR: Not AFarCloudCompliant").build();
@@ -245,7 +241,7 @@ public class Server {
 		 }
 		 catch(JsonParseException ex){
 			 if (!uriInfo.getQueryParameters().containsKey("test")) {
-				 log.error("Resource ID: "+CompleteJson.getResourceId(alarm)+" IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
+				 log.error("Resource ID: "+SimplifiedJson.getResourceId(alarm)+" IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
 				 throw new WebApplicationException(notaJsonException);
 			 }
 			Response detailedException= Response.status(400).entity(ex.getMessage()).build();
@@ -283,7 +279,7 @@ public class Server {
 				 String category=schema.getName();
 				 JsonObject completeJson=null;
 				 if(schema.getIsSimple()) {
-                     completeJson=CompleteJson.getCompleteJson(telemetry, Setup.AR_URL, category);
+                     completeJson=SimplifiedJson.getCompleteJson(telemetry, Setup.AR_URL, category);
 
 //					 switch (category) {
 //					 //	 Complete the JSON, first looking for a match in cache and, if not found, obtaining it from the Assets Registry.
@@ -301,7 +297,6 @@ public class Server {
 					 
 					 
 					 telemetry= completeJson.toString();
-					 System.out.println(telemetry);
 					 }
 				 
 
@@ -313,7 +308,7 @@ public class Server {
 				 if (!uriInfo.getQueryParameters().containsKey("test")) {
 					 
 					 String URN="measures"; // PROVISIONAL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-					 log.info("SessionID: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+" IP: "+ getRemoteAddress(request)+" Successful request from: "+CompleteJson.getResourceId(telemetry) );
+					 log.info("SessionID: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+" IP: "+ getRemoteAddress(request)+" Successful request from: "+SimplifiedJson.getResourceId(telemetry)+" on: "+category );
 
 					 //	        	  Here goes the code to send the data.
 					 //               PROVISIONAL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    
