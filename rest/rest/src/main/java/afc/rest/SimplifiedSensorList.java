@@ -27,23 +27,23 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
 public class SimplifiedSensorList extends SimplifiedJson  {
-	
-	
-    
 
 
-	//	 A method that parses the JSON recursively filling the missing values of the "missing values" object.
 
-@Override
+
+
+	//	 A method that parses the JSON filling the missing values from the "missing values" object.
+
+	@Override
 	public JsonObject completeFields(JsonObject missingObject, JsonObject inputJson) {
 
-		
-					    for(String key: missingObject.keySet()) {
-					   
-					    	inputJson.add(key, missingObject.get(key));					    	
-					    }
-					    					       
-					    return inputJson;
-			    
+
+		for(String key: missingObject.keySet()) {
+
+			inputJson.add(key, missingObject.get(key));					    	
+		}
+
+		return inputJson;
+
 	}
 }

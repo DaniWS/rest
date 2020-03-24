@@ -66,6 +66,7 @@ public class Setup {
     public static  long cacheTimer;
     public static  int maxItems;
 	
+//    Load configuration files.
     public static void loadProperties(String path) throws FileNotFoundException, IOException {
     	 try (InputStream input = new FileInputStream( path)) {
 
@@ -119,12 +120,12 @@ public class Setup {
 			FileUtils.copyURLToFile(          
 					new URL(schemaURI+filename),
 					new File(localSchemasPath+filename));
-			//	       Avoids loading Definition as a schema to prevent false validations.
+			
 
 			if (s.getType().equals("Alarm")) {
 				s.setSchema(factory.getJsonSchema(schemaURI+filename));
 				SchemaSet.alarmSchemas.add(s);
-
+//			       Avoids loading Definition as a schema to prevent false validations.
 			}
 			else if (!s.getType().equals("Definitions")) {
 				s.setSchema(factory.getJsonSchema(schemaURI+filename));

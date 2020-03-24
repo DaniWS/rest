@@ -27,28 +27,28 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 
 public class SimplifiedSensor extends SimplifiedJson{
-	
-	
-	private static final Logger log = Logger.getLogger(Server.class);
-    
 
-		@Override
+
+	private static final Logger log = Logger.getLogger(Server.class);
+
+
+	@Override
 	//	 A method that parses the simplified JSON filling the missing values from the "missing values" object.
 	public JsonObject completeFields(JsonObject missingObject, JsonObject inputJson) {
 
-		
-					    for(String key: missingObject.keySet()) {
-					
-					    if(!key.equals("uom")) {
-						inputJson.add(key, missingObject.get(key));
-						}
-					    else {
-					    	
-	                    inputJson.get("result").getAsJsonObject().add(key, missingObject.get(key));	
-					    }
-					    					    }   
-					    return inputJson;
-			    
+
+		for(String key: missingObject.keySet()) {
+
+			if(!key.equals("uom")) {
+				inputJson.add(key, missingObject.get(key));
+			}
+			else {
+
+				inputJson.get("result").getAsJsonObject().add(key, missingObject.get(key));	
+			}
+		}   
+		return inputJson;
+
 	}
 
 

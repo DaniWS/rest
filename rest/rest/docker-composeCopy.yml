@@ -1,9 +1,0 @@
-version: '3'
-services:
-  rest_as01:
-    image: "teddyws92/rest:afc_rest"
-    ports:
-      - "8080:8080"
-    volumes:
-      -  /home/dvilela/afc_rest/rest/AS02/conf/:/usr/local/service/src/properties/  
- 

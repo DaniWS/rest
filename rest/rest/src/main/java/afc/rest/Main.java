@@ -51,7 +51,7 @@ public class Main {
 	public static final String SERVER_URI = "https://138.100.51.114:443/";
 	protected static final URI DOCS_URI=URI.create(SERVER_URI+"docs/");
 	
-	
+//	Trust self-signed certificates.
 	private static void trustEveryone() { 
 	    try { 
 	            HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier(){ 
@@ -150,6 +150,7 @@ public class Main {
 //        cfg.addHttpHandler(docsHandler, "/docs/");
         cfg.addHttpHandler(schemasHandler, "/schemas/");
         
+//        Load property files.
         Setup.loadProperties(System.getProperty("user.dir")+File.separator+"src"+File.separator+"properties"+File.separator+Setup.configFileName);
 
         trustEveryone();

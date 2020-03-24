@@ -26,12 +26,45 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
+/**
+ * 
+ * @author dani
+ * This class completes the simplified JSONs for multiple-parameter sensors. 
+ */
 
 public class SimplifiedMultiSensor extends SimplifiedJson{
 
 	private static final Logger log = Logger.getLogger(SimplifiedMultiSensor.class);
+
+    @Override
+//    This method obtain the required information from The Assets Registry
+	public JsonObject parseRegistryJson(String registrationJson) throws IOException {
+
+		JsonObject missingFields= new JsonObject();
+		
+		   HashMap<String, JsonElement> registryJSON = new HashMap<String, JsonElement>();
+		try {
+			JsonElement jsonTree=JsonParser.parseString(registrationJson); 
+			
+			registryJSON= parseObject(jsonTree, registryJSON, 0);
+			System.out.println("REGISTRY_JSON: "+registryJSON);
+			missingFields=buildMissingJson(registryJSON);
+		
+			System.out.println("MISSING FIELDS CUMPLIMENTED: "+ missingFields.toString());
+
+		}
+
+		catch(JsonParseException e) {
+			e.printStackTrace();
+			log.error("Could not obtain resource from the Assets Registry: "+e.getMessage());
+			throw new WebApplicationException(Server.AR_ParserException);
+		}
+		return missingFields;
+
+	}
 	
 	@Override
+//	Parses a JSON object recursively and extract the required fields to a key-value Hash Map.
 	public  HashMap <String, JsonElement> parseObject(JsonElement token, HashMap<String, JsonElement> registryJSON, int counter)  {
 		if (token.isJsonObject()) {
 			JsonObject jsonObject= token.getAsJsonObject();
@@ -55,11 +88,13 @@ public class SimplifiedMultiSensor extends SimplifiedJson{
 				JsonElement observations = jsonObject.get("observations");
 				if (observations!=null&&observations.isJsonArray()) {
 					JsonArray obsArray = observations.getAsJsonArray();
+//					The sensor is not multi-parameter.
 				 if	(obsArray.size()<=1) {
 					 log.error("The specified resource is not a multi-parameter sensor");
 				 	throw new WebApplicationException("The specified resource is not a multi-parameter sensor", 500);
 				 }
                     counter++;
+//                    Parse all the elements of the observations array.
 					for (JsonElement localToken: obsArray) {
 
 						registryJSON=parseObject(localToken, registryJSON, counter);
@@ -87,34 +122,11 @@ public class SimplifiedMultiSensor extends SimplifiedJson{
 		return registryJSON;
 	}
     @Override
-	public JsonObject parseRegistryJson(String registrationJson) throws IOException {
+//	 A method that build a the missing JSON structure to fill from the 'registryJson' Hash Map.
+//  This is the object to be cached in memory.	
 
-		JsonObject missingFields= new JsonObject();
-		
-		   HashMap<String, JsonElement> registryJSON = new HashMap<String, JsonElement>();
-		try {
-			JsonElement jsonTree=JsonParser.parseString(registrationJson); 
-			
-			registryJSON= parseObject(jsonTree, registryJSON, 0);
-			System.out.println("REGISTRY_JSON: "+registryJSON);
-			missingFields=buildMissingJson(registryJSON);
-		
-			System.out.println("MISSING FIELDS CUMPLIMENTED: "+ missingFields.toString());
-
-		}
-
-		catch(JsonParseException e) {
-			e.printStackTrace();
-			log.error("Could not obtain resource from the Assets Registry: "+e.getMessage());
-			throw new WebApplicationException(Server.AR_ParserException);
-		}
-		return missingFields;
-
-	}@Override
-	//	 A method that parses the JSON recursively filling the missing values of the "missing values" object.
 	public JsonObject buildMissingJson(HashMap<String, JsonElement> registryJSON) {
 
-//		Check that the Map contains all required keys  
 		  JsonObject missingFields= new JsonObject();
 			JsonObject location = new JsonObject();	
 		  JsonArray observations= new JsonArray();
@@ -140,7 +152,7 @@ public class SimplifiedMultiSensor extends SimplifiedJson{
 			missingFields.add("location", location);
 			return missingFields;
 			}
-	
+    
 	public JsonObject completeFields(JsonObject missingObject, JsonObject inputJson) {
 		log.debug("Entered Multi Sensor Class");
 
