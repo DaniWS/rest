@@ -1,7 +1,6 @@
 package afc.rest;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class SchemaSet {
 

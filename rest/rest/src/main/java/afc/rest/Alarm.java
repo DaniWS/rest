@@ -1,8 +1,6 @@
 package afc.rest;
 
 import java.io.IOException;
-import java.util.HashMap;
-
 import javax.ws.rs.WebApplicationException;
 
 import org.apache.log4j.Logger;

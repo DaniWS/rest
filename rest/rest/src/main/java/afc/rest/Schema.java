@@ -4,10 +4,7 @@ package afc.rest;
 
 
 
-import javax.json.Json;
-
 import com.github.fge.jsonschema.main.JsonSchema;
-import com.google.gson.JsonObject;
 
 public class Schema implements Comparable <Schema> {
 

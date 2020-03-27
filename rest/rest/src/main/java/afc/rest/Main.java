@@ -5,7 +5,6 @@ import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 //import org.glassfish.jersey.servlet.ServletContainer;
 import org.glassfish.grizzly.http.server.CLStaticHttpHandler;
-import org.apache.commons.io.FileUtils;
 import org.apache.log4j.*;
 
 
@@ -20,16 +19,11 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 //import org.glassfish.grizzly.servlet.*;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
-import com.github.fge.jsonschema.main.JsonSchemaFactory;
-
 import io.swagger.jaxrs.config.BeanConfig;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.ObjectInputStream.GetField;
-import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.URL;
 import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
