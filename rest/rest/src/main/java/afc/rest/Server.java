@@ -172,7 +172,8 @@ public class Server {
          			return Response.status(200).entity("{\n\"requestId\": "+session.getIdInternal()+session.getTimestamp()+"\n}").build();
 
 				 }
-				 
+				 log.info("TEST: IP: "+ getRemoteAddress(request)+" Successful request from: "+SimplifiedJson.getResourceId(alarm)+" on: "+category );
+
 					 return Response.status(200).entity(alarm).build();
 					
 				 	  
@@ -186,6 +187,7 @@ public class Server {
 					 log.error("Resource ID: "+SimplifiedJson.getResourceId(alarm)+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
 					 throw new WebApplicationException(invalidJsonException);
 				 }
+				 log.error("TEST: Resource ID: "+SimplifiedJson.getResourceId(alarm)+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
 				 Response detailedException= Response.status(415).entity("ERROR: Not AFarCloudCompliant").build();
 				 throw new WebApplicationException(detailedException);
 			 }
@@ -197,6 +199,7 @@ public class Server {
 				 log.error("Resource ID: "+SimplifiedJson.getResourceId(alarm)+" IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
 				 throw new WebApplicationException(notaJsonException);
 			 }
+			 log.error("TEST: Resource ID: "+SimplifiedJson.getResourceId(alarm)+" IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
 			Response detailedException= Response.status(400).entity(ex.getMessage()).build();
 			 throw new WebApplicationException(detailedException);
 
@@ -249,11 +252,13 @@ public class Server {
 				 else {
 //					 Simplified JSON request scenario.
 					 if (completeJson!=null) {
+					 log.info("TEST: IP: "+ getRemoteAddress(request)+" Successful request from: "+SimplifiedJson.getResourceId(telemetry)+" on: "+category );
 					 return Response.status(200).entity(telemetry).build();
 					 }
 //					 Complete JSON request scenario.
 					 else {
-						 return Response.status(200).build();
+						 log.info("TEST: IP: "+ getRemoteAddress(request)+" Successful request from: "+SimplifiedJson.getResourceId(telemetry)+" on: "+category );
+ 						 return Response.status(200).build();
 					 }
 				 }	  
 
@@ -262,10 +267,10 @@ public class Server {
 			 else {
 //				 Check for 'test' query parameter.
 				 if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
-
-					 log.error("SessionID: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
+					 log.error("Resource ID: "+SimplifiedJson.getResourceId(telemetry)+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
 					 throw new WebApplicationException(invalidJsonException);
 				 }
+				 log.error("TEST: Resource ID: "+SimplifiedJson.getResourceId(telemetry)+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
 				 Response detailedException= Response.status(415).entity("ERROR: Not AFarCloudCompliant").build();
 				 throw new WebApplicationException(detailedException);
 			 }
@@ -273,9 +278,11 @@ public class Server {
 //	 	    Not a JSON document scenario.
 		 catch(JsonParseException ex){
 			 if (!uriInfo.getQueryParameters().containsKey("test")) {
-				 log.error("SessionID: "+request.getSession().getIdInternal()+" IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
+				 log.error("Resource ID: "+SimplifiedJson.getResourceId(telemetry)+"  IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
+
 				 throw new WebApplicationException(notaJsonException);
 			 }
+			 log.error("TEST: Resource ID: "+SimplifiedJson.getResourceId(telemetry)+"  IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
 			Response detailedException= Response.status(400).entity(ex.getMessage()).build();
 			 throw new WebApplicationException(detailedException);
 
