@@ -2531,3 +2531,15 @@ java.lang.RuntimeException: Failed : HTTP error code : 405
 2020-03-22 07:36:09,766 DEBUG [grizzly-http-server-6] - SimplifiedJson - Complete JSON for this resource obtained from cache
 2020-03-22 07:36:09,768  INFO [grizzly-http-server-6] - Server - SessionID: 72191645395311005851584858969768 IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 on: Alarm
 2020-03-22 07:36:36,369 DEBUG [grizzly-http-server-10] - SimplifiedJson - Complete JSON for this resource not in cache
+2020-05-08 03:09:34,189 DEBUG [grizzly-http-server-10] - Server - Succesful request on: SensorListSchema_Complete
+2020-05-08 03:09:34,201  INFO [grizzly-http-server-10] - Server - TEST: IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:scenario:service:provider:type:entityName on: SensorListSchema_Complete
+2020-05-08 03:10:17,305 DEBUG [grizzly-http-server-12] - Server - Succesful request on: CollarSchema
+2020-05-08 03:10:35,500 DEBUG [grizzly-http-server-10] - Server - Succesful request on: CollarSchema
+2020-05-08 03:10:42,438 DEBUG [grizzly-http-server-12] - Server - Succesful request on: CollarSchema
+2020-05-08 03:16:42,938 DEBUG [grizzly-http-server-10] - Server - Succesful request on: CollarSchema
+2020-05-08 03:19:47,116 DEBUG [grizzly-http-server-3] - Server - Succesful request on: CollarSchema
+2020-05-08 03:29:20,148 DEBUG [grizzly-http-server-10] - Server - Succesful request on: CollarSchema
+2020-05-08 03:56:44,807 DEBUG [grizzly-http-server-10] - Server - Succesful request on: CollarSchema
+2020-05-08 03:57:40,552  INFO [grizzly-http-server-10] - Server - TEST: IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:scenario:service:provider:type:entityName on: CollarSchema
+2020-05-08 03:58:03,538 DEBUG [grizzly-http-server-10] - Server - Succesful request on: CollarSchema
+2020-05-08 03:58:03,549  INFO [grizzly-http-server-10] - Server - TEST: IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:scenario:service:provider:type:entityName on: CollarSchema

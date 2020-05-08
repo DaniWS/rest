@@ -298,7 +298,7 @@ public class Server {
 
 
 	}
-//	Method to send the data to teh Environment Reporter.
+//	Method to send the data to the Environment Reporter.
 	public static Response sendTelemetry(String json, Request request, String category, String ER_URI) {
 		try {
 

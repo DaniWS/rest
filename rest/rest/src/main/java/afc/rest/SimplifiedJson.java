@@ -244,11 +244,31 @@ public class SimplifiedJson {
 	public static String getResourceId (String json) {
 		Gson gson = new Gson();
 		JsonObject inputJson = gson.fromJson(json, JsonObject.class);
+		if (inputJson.has("resourceId")){
 		String resourceId = inputJson.get("resourceId").getAsString();
-		if (resourceId.equals(null)) {
-			log.error("The JSON document si missing the \"resourceId\" key in its root");
-		}
 		return resourceId;
+		}
+		else {
+			Iterator<String> i = inputJson.keySet().iterator();
+			while (i.hasNext()) {
+				String key=i.next();
+				if (inputJson.get(key).isJsonObject()) {
+					JsonObject object = inputJson.getAsJsonObject(key);
+					
+				return	getResourceId(object.toString());
+					
+
+			}
+				
+			}
+			log.error("Cannot obtain the \"resourceId\" key");
+			throw new WebApplicationException("ERROR: Cannot obtain the \"resourceId\" key", 500);
+
+		
+		}
+		
+	
+		}
+		
 	}
 
-}
