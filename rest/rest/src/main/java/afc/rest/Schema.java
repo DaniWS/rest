@@ -1,7 +1,30 @@
+/* Copyright 2018-2021 Universidad Politécnica de Madrid (UPM).
+ *
+ * Authors:
+ *    Daniel Vilela García
+ *    José-Fernan Martínez Ortega
+ *    Vicente Hernández Díaz
+ * 
+ * This software is distributed under a dual-license scheme:
+ *
+ * - For academic uses: Licensed under GNU Affero General Public License as
+ *                      published by the Free Software Foundation, either
+ *                      version 3 of the License, or (at your option) any
+ *                      later version.
+ * 
+ * - For any other use: Licensed under the Apache License, Version 2.0.
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * 
+ * You can get a copy of the license terms in licences/LICENSE.
+ * 
+ */
+/**
+ * Class for the Schema Management
+ **/
 package afc.rest;
-
-
-
 
 
 import com.github.fge.jsonschema.main.JsonSchema;
@@ -9,13 +32,16 @@ import com.github.fge.jsonschema.main.JsonSchema;
 public class Schema implements Comparable <Schema> {
 
 private JsonSchema schema;
+//'uso' increases every time a request is made on a specific schema in order to dynamically re-organize
+//the order of schemas inside the validation method, thus potentially reducing time.
      private int uso;
      private String name;
      private Boolean isSimple;
      private String type;
 
      protected Schema(int uso,String name, Boolean isSimple, String type) {
-         this.uso = uso;
+
+         this.uso = uso; 
          this.name = name;
          this.isSimple = isSimple;
          this.type = type;

@@ -1,3 +1,30 @@
+/* Copyright 2018-2021 Universidad Politécnica de Madrid (UPM).
+ *
+ * Authors:
+ *    Daniel Vilela García
+ *    José-Fernan Martínez Ortega
+ *    Vicente Hernández Díaz
+ * 
+ * This software is distributed under a dual-license scheme:
+ *
+ * - For academic uses: Licensed under GNU Affero General Public License as
+ *                      published by the Free Software Foundation, either
+ *                      version 3 of the License, or (at your option) any
+ *                      later version.
+ * 
+ * - For any other use: Licensed under the Apache License, Version 2.0.
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * 
+ * You can get a copy of the license terms in licences/LICENSE.
+ * 
+ */
+
+/**
+ * Class containing the Main method
+ */
 package afc.rest;
 
 import org.glassfish.grizzly.http.server.HttpServer;
@@ -105,9 +132,10 @@ public class Main {
     	resourceConfig.register(new CorsFilter());
     	
     	  SSLContextConfigurator sslConfig = new SSLContextConfigurator();
-          sslConfig.setKeyStoreFile("src/SSL/afc_key");
-          sslConfig.setKeyStorePass("afc_rest_ssl");
+          sslConfig.setKeyStoreFile("src/SSL/torcos.jks");
+          sslConfig.setKeyPass("t0rc0s.etsist.upm.es");
           
+
     	 
     	return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), resourceConfig, true, new SSLEngineConfigurator(sslConfig).setClientMode(false).setNeedClientAuth(false));
 
