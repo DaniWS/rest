@@ -18,7 +18,7 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * 
- * You can get a copy of the license terms in licences/LICENSE.
+ * You can get a copy of the license terms in licenses/LICENSE.
  * 
  */
 
