@@ -263,7 +263,6 @@ public class Server {
 //					 Build the URI, pointing to the correct path: "/collar" or "/measures".
                      Session session=request.getSession();
 					 String URN="measures"; 
-					 log.info("requestID: "+request.getSession().getIdInternal()+request.getSession().getTimestamp()+" IP: "+ getRemoteAddress(request)+" Successful request from: "+SimplifiedJson.getResourceId(telemetry)+" on: "+category );
 					 log.info("Status:200 requestID: "+session.getIdInternal()+session.getTimestamp()+" ResourceID: "+SimplifiedJson.getResourceId(telemetry)+" IP: "+ getRemoteAddress(request)+" Successful request on: "+category );
 
 
