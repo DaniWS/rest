@@ -2543,3 +2543,8 @@ java.lang.RuntimeException: Failed : HTTP error code : 405
 2020-05-08 03:57:40,552  INFO [grizzly-http-server-10] - Server - TEST: IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:scenario:service:provider:type:entityName on: CollarSchema
 2020-05-08 03:58:03,538 DEBUG [grizzly-http-server-10] - Server - Succesful request on: CollarSchema
 2020-05-08 03:58:03,549  INFO [grizzly-http-server-10] - Server - TEST: IP: 0:0:0:0:0:0:0:1 Successful request from: urn:afc:scenario:service:provider:type:entityName on: CollarSchema
+2020-06-26 00:36:50,111 ERROR [grizzly-http-server-10] - SimplifiedJson - Cannot obtain the "resourceId" key
+2020-06-26 00:50:56,575 ERROR [grizzly-http-server-10] - SimplifiedJson - Cannot obtain the "resourceId" key
+2020-06-26 00:52:15,552 ERROR [grizzly-http-server-1] - SimplifiedJson - Cannot obtain the "resourceId" key
+2020-06-26 00:55:42,274 ERROR [grizzly-http-server-10] - SimplifiedJson - Cannot obtain the "resourceId" key
+2020-06-26 01:00:55,266 ERROR [grizzly-http-server-10] - SimplifiedJson - Cannot obtain the "resourceId" key

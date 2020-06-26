@@ -289,7 +289,8 @@ public class SimplifiedJson {
 				
 			}
 			log.error("Cannot obtain the \"resourceId\" key");
-			throw new WebApplicationException("ERROR: Cannot obtain the \"resourceId\" key", 500);
+	
+			throw new WebApplicationException(Response.status(500).entity("ERROR: Cannot obtain the \"resourceId\" key").build());
 
 		
 		}
