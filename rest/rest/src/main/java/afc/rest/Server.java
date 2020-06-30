@@ -39,8 +39,7 @@ import java.nio.file.Paths;
 import java.util.Collections;
 import io.swagger.annotations.Api;
 
-
-
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -177,8 +176,8 @@ public class Server {
 
 	@POST
 	@Path("/alarm")
-	//	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
+	@Consumes({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
+	//  @Produces({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
 	public Response getAlarm(String alarm, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
 	
 		try {
@@ -239,8 +238,8 @@ public class Server {
 	}
 	@POST
 	@Path("/telemetry")
-	//	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
+	@Consumes({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
+//	@Produces({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
 	public Response getMeasure(String telemetry, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
 	 	    try {
 			 Pair   <Boolean, Schema> response=validateJsonT(telemetry,uriInfo);
