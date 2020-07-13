@@ -55,10 +55,10 @@ public class SimplifiedMultiSensor extends SimplifiedJson{
 			JsonElement jsonTree=JsonParser.parseString(registrationJson); 
 			
 			registryJSON= parseObject(jsonTree, registryJSON, 0);
-			System.out.println("REGISTRY_JSON: "+registryJSON);
+//			log.debug("REGISTRY_JSON: "+registryJSON);
 			missingFields=buildMissingJson(registryJSON);
 		
-			System.out.println("MISSING FIELDS CUMPLIMENTED: "+ missingFields.toString());
+//			System.out.println("MISSING FIELDS CUMPLIMENTED: "+ missingFields.toString());
 
 		}
 
