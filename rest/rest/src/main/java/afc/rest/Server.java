@@ -36,6 +36,8 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Collections;
 import io.swagger.annotations.Api;
 
@@ -66,8 +68,6 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
  */
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
 import com.google.gson.JsonObject;
-
-import afc.rest.ValidationUtils;
 
 
 @Api( "REST API")
@@ -241,7 +241,8 @@ public class Server {
 	@Consumes({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
 //	@Produces({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
 	public Response getMeasure(String telemetry, @Context UriInfo uriInfo,@Context Request request) throws ProcessingException,URISyntaxException, IOException  {
-	 	    try {
+	 	   Instant start = Instant.now();  
+		   try {
 			 Pair   <Boolean, Schema> response=validateJsonT(telemetry,uriInfo);
 			 Boolean valid=response.getFirst();
 			 Schema schema=response.getSecond();
@@ -277,7 +278,12 @@ public class Server {
 //					 Simplified JSON request scenario.
 					 if (completeJson!=null) {
 					 log.info("TEST: ResourceID: "+SimplifiedJson.getResourceId(telemetry)+" IP: "+ getRemoteAddress(request)+" Successful request on: "+category );
-					 return Response.status(200).entity(telemetry).build();
+//				     Measure execution time
+					 Instant finish = Instant.now();
+				     long timeElapsed = Duration.between(start, finish).toMillis();  //in millis
+        		     log.debug("Elapsed time: "+ timeElapsed);
+//		
+        		     return Response.status(200).entity(telemetry).build();
 					 }
 //					 Complete JSON request scenario.
 					 else {
