@@ -1,0 +1,379 @@
+openapi: 3.0.0
+info:
+  description: REST API
+  version: 1.0.1
+  title: REST Service
+  contact:
+    name: Daniel Vilela García
+    email: d.vilela@alumnos.upm.es
+externalDocs:
+   description: Repository
+   url: https://github.com/DaniWS/rest/tree/torcos   
+tags:
+  - name: POST Telemetry
+  - name: Test Telemetry JSON
+  - name: POST Alarm
+paths:
+  "/telemetry":
+    servers:
+      - url: https://example.server/
+        description: TEST
+    post:
+      tags:
+        - POST Telemetry
+      summary: Post telemetry data  
+      operationId: getMeasure 
+      requestBody:
+        content:
+          application/json:
+            schema:
+             oneOf:
+                - $ref: '#/components/schemas/Sensor_List_of_Measurements_Simplified_Schema'
+                - $ref: '#/components/schemas/Sensor_Measurement_Simplified_Schema'
+                - $ref: '#/components/schemas/Aggregated_Measurements_from_Multi-Parameter_Sensors_Simplified_Schema'
+
+            examples:
+   
+   
+              Aggregated Measurements from Multi-Parameter Sensors (Simplified Version):
+                $ref:  '#/components/examples/Aggregated_Measurements_from_Multi-Parameter_Sensors_Simplified'
+              Sensor Measurement (Simplified Version):    
+                $ref:  '#/components/examples/Sensor_Measurement_Simplified'
+   
+              Sensor Listo of Measurements (Simplified Version):  
+                $ref:  '#/components/examples/Sensor_List_of_Measurements_Simplified'
+
+              
+        required: true
+      responses:
+        "200":
+          description: "Successful operation"
+        "415":
+          description: "Invalid input: wrong data format"
+        "400":
+          description: "Invalid input: not a JSON document"
+        "500":
+          description: "Internal Server Error"  
+
+ 
+  "/telemetry?test":
+    post:
+      tags:
+        - Test Telemetry JSON 
+      summary: Test Telemetry JSON  
+      operationId: testMeasure
+      requestBody:
+        content:
+          application/json:
+            schema:
+             oneOf:
+                - $ref:  '#/components/schemas/Sensor_List_of_Measurements_Simplified_Schema'
+                - $ref: '#/components/schemas/Sensor_Measurement_Simplified_Schema'
+                - $ref: '#/components/schemas/Aggregated_Measurements_from_Multi-Parameter_Sensors_Simplified_Schema'
+
+            examples:
+  
+   
+              Aggregated Measurements from Multi-Parameter Sensors (Simplified Version):
+                $ref:  '#/components/examples/Aggregated_Measurements_from_Multi-Parameter_Sensors_Simplified'
+ 
+              Sensor Measurement (Simplified Version):    
+                $ref:  '#/components/examples/Sensor_Measurement_Simplified'
+   
+              Sensor Listo of Measurements (Simplified Version):  
+                $ref:  '#/components/examples/Sensor_List_of_Measurements_Simplified'
+
+              
+        required: true
+      responses:
+        "200":
+          description: "Successful operation"
+        "415":
+          description: "Invalid input: wrong data format"
+        "400":
+          description: "Invalid input: not a JSON document"
+        "500":
+          description: "Internal Server Error"  
+ 
+    servers:
+     - url: https://example.server/
+       description: example server
+ 
+            
+  "/alarm":
+
+    post:
+      tags:
+        - POST Alarm
+      summary: Post alarm data
+      operationId: getAlarm
+      requestBody:
+        content:      
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Alarm_Schema'
+            examples:
+              Alarm:
+               value: {
+                
+              "alarmCode":"GREENHOUSE_IRRIGATION_FLOW",
+              "message": "irrigation valve is open but no water flow detected",
+              "resourceId":"UPM_Fake_0001"
+
+              }
+        required: true
+      responses:
+        "200":
+          description: "Successful operation"
+        "415":
+          description: "Invalid input: wrong data format"
+        "400":
+          description: "Invalid input: not a JSON document"
+        "500":
+          description: "Internal Server Error"  
+ 
+    servers:
+     - url: https://example.server/
+       description: example server
+ 
+    
+components:
+ examples:
+            
+              Aggregated_Measurements_from_Multi-Parameter_Sensors_Simplified:
+               value: {
+
+                  "resourceId": "UPM_Fake_0001",
+                  "observations": [
+                    {
+                      "observedProperty": "temperature_teros21",
+                      "resultTime": 1018081245,
+                      "result": {
+                        "value": 124.5
+                      }
+                    },
+                     {
+                      "observedProperty": "electrical_conductivity_bulk",
+                      "resultTime": 1018081245,
+                      "result": {
+                        "value": 123.5
+                      }
+                    },
+                     {
+                      "observedProperty": "temperature_teros21",
+                      "resultTime": 1018081245,
+                      "result": {
+                        "value": 125.5
+                      }
+                    }
+                  ],
+                  "sequenceNumber": 327
+                }           
+             
+             
+              Sensor_Measurement_Simplified: 
+                             value: {
+                                      
+                    "resultTime": 1558086914,
+                    "result": {
+                      "value": 23.5
+                    },
+                    "resourceId": "UPM_Fake_0002",
+                    "sequenceNumber": 123
+                  
+              }
+           
+              Sensor_List_of_Measurements_Simplified: 
+                             value: {
+                            
+                          "resourceId": "UPM_Fake_0002",
+                          "observations": [
+                            {
+                              "resultTime": 1558086914,
+                              "result": {
+                                "value": 23.5
+                              }
+                            }
+                          ],
+                          "sequenceNumber": 123
+                        
+                     }
+              Alarm:
+                          value:       
+                           {
+                        "alarmCode":"GREENHOUSE_IRRIGATION_FLOW",
+                        "message": "irrigation valve is open but no water flow detected",
+                        "resourceId":"este_irrigation_valve_0"
+                             }
+ schemas:
+              Sensor_List_of_Measurements_Simplified_Schema:
+                        
+                          title: The Simplified Schema for Aggregated Measurements from a Sensor
+                          type: object
+                          required:
+                          - resourceId
+                          - observations
+                          properties:
+                            resourceId:
+                              type: string
+                              title: The Simplified ResourceId
+                              default: ''
+                            
+                            sequenceNumber:
+                              type: integer
+                              title: The Sequence Number
+                              default: 0
+
+                            observations:
+                              type: array
+                              minItems: 1
+                              title: The Observations Schema
+                              items:
+                                type: object
+                                required:
+                                - resultTime
+                                - result
+                                properties:
+                                  resultTime:
+                                    type: integer
+                                    title: Result time
+                                    default: 0
+                                   
+                                  result:
+                                    type: object
+                                    title: The Result Schema
+                                    required:
+                                    - value
+                                    properties:
+                                      value:
+                                        type: number
+                                        title: The Result Value
+                                        default: 0
+                                     
+                                    additionalProperties: false
+                                additionalProperties: false
+                          additionalProperties: false
+
+                                  
+              Aggregated_Measurements_from_Multi-Parameter_Sensors_Simplified_Schema:
+                              
+                                  
+                                    type: object
+                                    title: The Simplified Schema for Aggregated Measurements from Multi-Parameter Sensors
+                                    required:
+                                    - resourceId
+                                    - observations
+                                    properties:
+                                      resourceId:
+                                        type: string
+                                        title: The Resourceid
+                                        default: ''
+
+                                      sequenceNumber:
+                                        type: integer
+                                        title: sequenceNumber
+                                        default: 0
+
+                                      observations:
+                                        type: array
+                                        minItems: 1
+                                        title: Observations array
+                                        items:
+                                          type: object
+                                          title: The Items Schema
+                                          required:
+                                          - observedProperty
+                                          - resultTime
+                                          - result
+                                          properties:
+                                            observedProperty:
+                                              type: string
+                                              title: The Observed property
+                                              default: ''
+
+                                            resultTime:
+                                              type: integer
+                                              title: Result time
+                                              default: 0
+
+                                            result:
+                                              type: object
+                                              title: The Result Schema
+                                              required:
+                                              - value
+                                              properties:
+                                                value:
+                                                  type: number
+                                                  title: The Result Value
+                                                  default: 0
+
+                                              additionalProperties: false
+                                          additionalProperties: false
+                                    additionalProperties: false
+
+                                          
+              Sensor_Measurement_Simplified_Schema:
+
+                                  type: object
+                                  title: The Simplified Schema for a Simple Measurement
+                                  required:
+                                  - resultTime
+                                  - result
+                                  - resourceId
+                                  properties:
+                                    resourceId:
+
+                                      type: string
+                                      title: The Simplified ResourceId
+                                      default: ''
+
+                                    sequenceNumber:
+
+                                      type: integer
+                                      title: The Sequence Number
+                                      default: 0
+
+                                    resultTime:
+                                      type: integer
+                                      title: The Result time
+                                      default: 0
+                                    result:                          
+                                      type: object
+                                      title: The Result Schema
+                                      required:
+                                      - value
+                                      properties:
+                                        value:
+                                          type: number
+                                          title: The Result Value
+                                          default: 0
+                                      additionalProperties: false
+                                  additionalProperties: false
+
+              Alarm_Schema:
+                
+                      type: object
+                      title: The Schema for alarms
+                      required:
+                      - alarmCode
+                      - message
+                      - resourceId
+                      properties:
+                        alarmCode:
+                     
+                          type: string
+                          title: A valid code classifying an alarm
+                          default: ''
+
+                        message:
+                      
+                          type: string
+                          title: A free text describing the alarm
+                          default: ''
+                     
+                        resourceId:
+                          type: string
+                          title: The id of the resource that detected the alarm
+                          default: ''
+
+                      additionalProperties: false
