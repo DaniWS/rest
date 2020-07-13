@@ -164,7 +164,7 @@ public class SimplifiedJson {
 
 			missingFields=this.buildMissingJson(registryJSON);
 
-			System.out.println("MISSING FIELDS CUMPLIMENTED: "+ missingFields.toString());
+//			log.debug("MISSING FIELDS CUMPLIMENTED: "+ missingFields.toString());
 
 		}
 

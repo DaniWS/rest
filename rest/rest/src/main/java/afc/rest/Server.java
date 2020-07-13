@@ -125,17 +125,16 @@ public class Server {
 			Collections.sort(SchemaSet.telemetrySchemas);
 
 			i=0;
-			System.out.println(i + " veces se ha validado!!!!!!!");
-			System.out.println("Array ordenado por uso");
+			log.debug(i + " veces se ha validado!!!!!!!");
+			log.debug("Schemas array reordered");
 			for (int i = 0; i < SchemaSet.telemetrySchemas.size()-1; i++) {
-				System.out.println((i+1) + ". " + SchemaSet.schemas.get(i).getName() + " - Uso: " + SchemaSet.schemas.get(i).getUso());
+				log.debug((i+1) + ". " + SchemaSet.schemas.get(i).getName() + " - Uso: " + SchemaSet.schemas.get(i).getUso());
 			}
 			SchemaSet.schemas.forEach((n) -> n.setUso(0));
 
 		}
 
 		for (Schema i:SchemaSet.telemetrySchemas) {
-			System.out.println(i.getName());
 
 			if (ValidationUtils.isJsonValid(i.getSchema(), s))
 			{
@@ -270,7 +269,7 @@ public class Server {
 					 if(type.equals("Collar")) {
 						 URN="collar";						 						 
 					 }
-					 System.out.println(Setup.ER_URI+URN);
+					 log.debug(Setup.ER_URI+URN);
 //					 Send data to Environment Reporter.
 					 return sendTelemetry(telemetry, request, category, Setup.ER_URI+URN);
 				 }
