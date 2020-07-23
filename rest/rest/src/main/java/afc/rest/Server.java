@@ -235,6 +235,26 @@ public class Server {
 		 }
 
 	}
+	
+	public static String extractEntityName(String input) {
+		Pattern p = Pattern.compile("([a-zA-Z]{3}):([a-z]{3}):((AS|as)(\\d{2}))(:([^:, ]*)){3}:([^(\\s,)]*)");
+        String entityName="";
+		try {
+			Matcher m = p.matcher(input);
+			if (m.find()){
+				entityName = m.group(8);
+		        log.debug("Entity Name: "+entityName);	       
+			}
+		}
+        
+		catch (IllegalStateException e) {
+			log.error("Entity name parser: no match found - "+e.getCause());
+			throw new WebApplicationException(Response.status(500).entity("Invalid entity name").build());
+		}
+		
+        return entityName;
+	}
+	
 	@POST
 	@Path("/telemetry")
 	@Consumes({MediaType.APPLICATION_JSON , MediaType.TEXT_PLAIN})
@@ -256,6 +276,47 @@ public class Server {
 					 
 					 telemetry= completeJson.toString();
 					 }
+				 
+				 else {
+					 /* Check if the entity name is in the Assets Registry */
+					 
+					 String resourceId = extractEntityName(telemetry);
+					 
+					 try {
+							URL uri = new URL(AR_URL+resourceId);
+							HttpURLConnection conn = (HttpURLConnection) uri.openConnection();
+							conn.setDoOutput(true);
+							conn.setRequestMethod("GET");
+
+
+							conn.setRequestProperty("Accept", "application/json");
+
+							int code=conn.getResponseCode();
+							if (code != HttpURLConnection.HTTP_OK) {
+
+								throw new RuntimeException(Integer.toString(code));
+
+							}
+						}
+						//	     This catch is implemented because otherwise WebApplicationExceptions are treated as RuntimeExceptions,
+						//			and processed as such.
+						catch (WebApplicationException e) {
+							throw new WebApplicationException(Response.status(500).entity(e.getMessage()).build());
+						}
+						catch (MalformedURLException e) {
+							log.error("Could not connect to Assets Registry: "+e.getMessage());
+							throw new MalformedURLException("MalformedURL");
+						}
+						catch (RuntimeException e) {
+							log.error("Could not obtain resource from the Assets Registry: "+e.getMessage());
+							throw new WebApplicationException(Response.status(500).entity("ERROR: The specified resourceId might not be registered in the Assets Registry").build());
+
+
+							//				throw new WebApplicationException(Server.AR_RuntimeException);
+						}
+					 					 
+				 }
+				 
 //				 Check for the 'test' query parameter.
 				 if (!uriInfo.getQueryParameters().containsKey("test")) {
 //**********************   This block of code is PROVISIONAL, while the component connects directly to InfluxDB. *******************************************************
