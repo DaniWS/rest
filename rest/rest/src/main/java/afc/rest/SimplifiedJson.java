@@ -81,7 +81,7 @@ public class SimplifiedJson {
 		Gson gson = new Gson();
 		//			Check the if the resource is already cached.
 		@SuppressWarnings("unchecked")
-		Cache<String, JsonObject> cache = Cache.getCache(Setup.timeToLive, Setup.cacheTimer, Setup.maxItems);
+		Cache<String, JsonObject> cache = Cache.getInfoCache(Setup.timeToLive, Setup.cacheTimer, Setup.maxItems);
 		String resourceId = getResourceId(input);
 		JsonObject inputJson = gson.fromJson(input, JsonObject.class);
 		JsonObject missingObject=cache.get(resourceId);
@@ -94,6 +94,17 @@ public class SimplifiedJson {
 
 		}
 		log.debug("Complete JSON for this resource not in cache");
+		
+		missingObject=simpleJson.parseRegistryJson(checkAssetRegistry(AR_URL, resourceId, true));
+		completeJson = simpleJson.completeFields(missingObject,inputJson);
+		
+		//	    Store object in cache
+		cache.put(resourceId,missingObject);    
+		return completeJson;
+	}
+		
+		
+	public static String checkAssetRegistry (String AR_URL, String resourceId, boolean isSimplified)  throws IOException {
 
 		try {
 			URL uri = new URL(AR_URL+resourceId);
@@ -101,32 +112,28 @@ public class SimplifiedJson {
 			conn.setDoOutput(true);
 			conn.setRequestMethod("GET");
 
-
 			conn.setRequestProperty("Accept", "application/json");
 
 			int code=conn.getResponseCode();
 			if (code != HttpURLConnection.HTTP_OK) {
-
 				throw new RuntimeException(Integer.toString(code));
-
 			}
-			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
-			String output = br.lines().collect(Collectors.joining());
-			missingObject=simpleJson.parseRegistryJson(output);
-			completeJson = simpleJson.completeFields(missingObject,inputJson);
+	        
 
+			String output = "";
+			if (isSimplified) {
+				BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+				output = br.lines().collect(Collectors.joining());
 
+				//Server answer
+				while (br.readLine() != null) {
 
-
-
-			//Server answer
-			while ((output = br.readLine()) != null) {
-
-			}	        
+				}
+			}
+			
 			conn.disconnect();
-			//	    Store object in cache
-			cache.put(resourceId,missingObject);    
-			return completeJson;
+			
+			return output;
 		}
 		//	     This catch is implemented because otherwise WebApplicationExceptions are treated as RuntimeExceptions,
 		//			and processed as such.

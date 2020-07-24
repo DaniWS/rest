@@ -39,6 +39,9 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Collections;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import io.swagger.annotations.Api;
 
 import javax.ws.rs.Consumes;
@@ -237,7 +240,7 @@ public class Server {
 	}
 	
 	public static String extractEntityName(String input) {
-		Pattern p = Pattern.compile("([a-zA-Z]{3}):([a-z]{3}):((AS|as)(\\d{2}))(:([^:, ]*)){3}:([^(\\s,)]*)");
+		Pattern p = Pattern.compile("([a-zA-Z]{3}):([a-z]{3}):((AS|as)(\\d{2}))(:([^:, ]*)){3}:([^(\\s\",)]*)");
         String entityName="";
 		try {
 			Matcher m = p.matcher(input);
@@ -278,42 +281,20 @@ public class Server {
 					 }
 				 
 				 else {
-					 /* Check if the entity name is in the Assets Registry */
+					 //Check if the entity name is in the Assets Registry
 					 
 					 String resourceId = extractEntityName(telemetry);
 					 
-					 try {
-							URL uri = new URL(AR_URL+resourceId);
-							HttpURLConnection conn = (HttpURLConnection) uri.openConnection();
-							conn.setDoOutput(true);
-							conn.setRequestMethod("GET");
+					 //	Check the if the resource is already cached.
+					 @SuppressWarnings("unchecked")
+					 Cache<String, Integer> cache = Cache.getResCache(Setup.timeToLive, Setup.cacheTimer, Setup.maxItems);
+					 Integer result = cache.get(resourceId);
 
-
-							conn.setRequestProperty("Accept", "application/json");
-
-							int code=conn.getResponseCode();
-							if (code != HttpURLConnection.HTTP_OK) {
-
-								throw new RuntimeException(Integer.toString(code));
-
-							}
-						}
-						//	     This catch is implemented because otherwise WebApplicationExceptions are treated as RuntimeExceptions,
-						//			and processed as such.
-						catch (WebApplicationException e) {
-							throw new WebApplicationException(Response.status(500).entity(e.getMessage()).build());
-						}
-						catch (MalformedURLException e) {
-							log.error("Could not connect to Assets Registry: "+e.getMessage());
-							throw new MalformedURLException("MalformedURL");
-						}
-						catch (RuntimeException e) {
-							log.error("Could not obtain resource from the Assets Registry: "+e.getMessage());
-							throw new WebApplicationException(Response.status(500).entity("ERROR: The specified resourceId might not be registered in the Assets Registry").build());
-
-
-							//				throw new WebApplicationException(Server.AR_RuntimeException);
-						}
+					 if (result == null) {
+						 log.debug("ResourceId not in cache");	
+						 SimplifiedJson.checkAssetRegistry(Setup.AR_URL, resourceId, false);
+						 cache.put(resourceId, HttpURLConnection.HTTP_OK);
+					 } else log.debug("ResourceId:" + resourceId + " stored in cache");
 					 					 
 				 }
 				 
