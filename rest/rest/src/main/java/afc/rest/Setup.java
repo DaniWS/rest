@@ -75,11 +75,18 @@ public class Setup {
 //    Load configuration files.
     public static void loadProperties(String path) throws FileNotFoundException, IOException {
     	 try (InputStream input = new FileInputStream( path)) {
-
+    		 
              Properties prop = new Properties();
              prop.load(input);
-             ER_URI = prop.getProperty(ER_URI_prop);
-             AR_URL = prop.get(AR_URL_prop).toString();
+             
+             String tmp;
+             tmp = System.getenv("ER_URI");
+             System.out.println("ER_URI: " + tmp);
+             ER_URI = (tmp==null) ? prop.getProperty(ER_URI_prop) : tmp;
+             tmp = System.getenv("AR_URL");
+             System.out.println("AR_URL: " + tmp);
+             AR_URL = (tmp==null) ? prop.get(AR_URL_prop).toString() : tmp;
+             
              timeToLive = Long.parseLong(prop.getProperty(timeToLiveProp, "72000"));
              cacheTimer = Long.parseLong(prop.getProperty(cacheTimerProp, "72000"));
              maxItems = Integer.parseInt(prop.getProperty(maxItemProp, "200"));

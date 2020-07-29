@@ -1,0 +1,101 @@
+version: '3'
+services:
+  rest_as01:
+    image: "teddyws92/rest:afc_restv5"
+    ports:
+      - "138.100.51.114:9201:8080"
+    volumes:
+      -  /home/marta/afc_rest/rest/AS01/conf/:/usr/local/service/src/properties/ 
+    environment:
+      -  ER_URI=https://torcos.etsist.upm.es:9213/store/ 
+      -  AR_URL=https://storage01-afarcloud.qa.pdmfc.com/storage/rest/    
+  rest_as02:
+    image: "teddyws92/rest:afc_restv5"
+    ports:
+      - "138.100.51.114:9202:8080"
+    volumes: 
+      -  /home/marta/afc_rest/rest/AS02/conf/:/usr/local/service/src/properties/  
+    environment:
+      -  ER_URI=https://torcos.etsist.upm.es:9214/store/ 
+      -  AR_URL=https://storage02-afarcloud.qa.pdmfc.com/storage/rest/    
+  rest_as03:
+    image: "teddyws92/rest:afc_restv5"
+    ports:
+      - "138.100.51.114:9203:8080"
+    volumes:
+      -  /home/marta/afc_rest/rest/AS03/conf/:/usr/local/service/src/properties/  
+    environment:
+      -  ER_URI=https://torcos.etsist.upm.es:9215/store/ 
+      -  AR_URL=https://storage03-afarcloud.qa.pdmfc.com/storage/rest/    
+  rest_as04:
+    image: "teddyws92/rest:afc_restv5"
+    ports:
+      - "138.100.51.114:9204:8080"
+    volumes: 
+      -  /home/marta/afc_rest/rest/AS04/conf/:/usr/local/service/src/properties/  
+    environment:
+      -  ER_URI=https://torcos.etsist.upm.es:9216/store/ 
+      -  AR_URL=https://storage04-afarcloud.qa.pdmfc.com/storage/rest/    
+  rest_as05:
+    image: "teddyws92/rest:afc_restv5"
+    ports:
+      - "138.100.51.114:9205:8080"
+    volumes:  
+      -  /home/marta/afc_rest/rest/AS05/conf/:/usr/local/service/src/properties/  
+    environment:
+      -  ER_URI=https://torcos.etsist.upm.es:9217/store/ 
+      -  AR_URL=https://storage05-afarcloud.qa.pdmfc.com/storage/rest/    
+  rest_as06:
+    image: "teddyws92/rest:afc_restv5"
+    ports:
+      - "138.100.51.114:9206:8080"
+    volumes:  
+      -  /home/marta/afc_rest/rest/AS06/conf/:/usr/local/service/src/properties/  
+    environment:
+      -  ER_URI=https://torcos.etsist.upm.es:9218/store/ 
+      -  AR_URL=https://storage06-afarcloud.qa.pdmfc.com/storage/rest/    
+  rest_as07:
+    image: "teddyws92/rest:afc_restv5"
+    ports:
+      - "138.100.51.114:9207:8080"
+    volumes:  
+      -  /home/marta/afc_rest/rest/AS07/conf/:/usr/local/service/src/properties/  
+    environment:
+      -  ER_URI=https://torcos.etsist.upm.es:9219/store/ 
+      -  AR_URL=https://storage07-afarcloud.qa.pdmfc.com/storage/rest/    
+  rest_as08:
+    image: "teddyws92/rest:afc_restv5"
+    ports:
+      - "138.100.51.114:9208:8080"
+    volumes:  
+      -  /home/marta/afc_rest/rest/AS08/conf/:/usr/local/service/src/properties/  
+    environment:
+      -  ER_URI=https://torcos.etsist.upm.es:9220/store/ 
+      -  AR_URL=https://storage08-afarcloud.qa.pdmfc.com/storage/rest/    
+  rest_as09:
+    image: "teddyws92/rest:afc_restv5"
+    ports:
+      - "138.100.51.114:9209:8080" 
+    volumes:   
+      -  /home/marta/afc_rest/rest/AS09/conf/:/usr/local/service/src/properties/  
+    environment:
+      -  ER_URI=https://torcos.etsist.upm.es:9221/store/ 
+      -  AR_URL=https://storage09-afarcloud.qa.pdmfc.com/storage/rest/    
+  rest_as10:
+    image: "teddyws92/rest:afc_restv5"
+    ports:
+      - "138.100.51.114:9210:8080" 
+    volumes:   
+      -  /home/marta/afc_rest/rest/AS10/conf/:/usr/local/service/src/properties/  
+    environment:
+      -  ER_URI=https://torcos.etsist.upm.es:9222/store/ 
+      -  AR_URL=https://storage10-afarcloud.qa.pdmfc.com/storage/rest/    
+  rest_as11:
+    image: "teddyws92/rest:afc_restv5"
+    ports:
+      - "138.100.51.114:9211:8080" 
+    volumes:
+      -  /home/marta/afc_rest/rest/AS11/conf/:/usr/local/service/src/properties/  
+    environment:
+      -  ER_URI=https://torcos.etsist.upm.es:9223/store/ 
+      -  AR_URL=https://storage11-afarcloud.qa.pdmfc.com/storage/rest/    
