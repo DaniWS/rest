@@ -291,7 +291,7 @@ public class Server {
 					 Integer result = cache.get(resourceId);
 
 					 if (result == null) {
-						 log.debug("ResourceId not in cache");	
+						 //log.debug("ResourceId:" + resourceId + " not in cache");	
 						 SimplifiedJson.checkAssetRegistry(Setup.AR_URL, resourceId, false);
 						 cache.put(resourceId, HttpURLConnection.HTTP_OK);
 					 } else log.debug("ResourceId:" + resourceId + " stored in cache");

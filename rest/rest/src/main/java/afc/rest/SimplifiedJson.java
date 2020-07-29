@@ -88,12 +88,12 @@ public class SimplifiedJson {
 		JsonObject completeJson = null;
 		if (missingObject!=null) {
 			completeJson = simpleJson.completeFields(missingObject, inputJson);
-			log.debug("Complete JSON for this resource obtained from cache");
+			log.debug("Complete JSON for " + resourceId + "  obtained from cache");
 			return completeJson;
 
 
 		}
-		log.debug("Complete JSON for this resource not in cache");
+		//log.debug("Complete JSON for " + resourceId + "  not in cache");
 		
 		missingObject=simpleJson.parseRegistryJson(checkAssetRegistry(AR_URL, resourceId, true));
 		completeJson = simpleJson.completeFields(missingObject,inputJson);
@@ -145,7 +145,7 @@ public class SimplifiedJson {
 			throw new MalformedURLException("MalformedURL");
 		}
 		catch (RuntimeException e) {
-			log.error("Could not obtain resource from the Assets Registry: "+e.getMessage());
+			log.error("Could not obtain resource:" + resourceId + " from the Assets Registry: "+e.getMessage());
 			throw new WebApplicationException(Response.status(500).entity("ERROR: The specified resourceId might not be registered in the Assets Registry").build());
 
 
