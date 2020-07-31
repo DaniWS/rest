@@ -1,0 +1,492 @@
+openapi: 3.0.0
+info:
+  description: REST service API.
+  version: 1.0.1
+  title: AFarCloud REST API
+  contact:
+    name: Vicente Hernandez Diaz
+    email: vicente.hernandez@upm.es 
+externalDocs:
+   description: Find out more about AFarCloud
+   url: http://www.afarcloud.eu/    
+tags:
+  - name: POST Telemetry
+  - name: Test your JSON data format
+paths:
+  "/telemetry":
+    post:
+      tags:
+        - POST Telemetry
+      summary: Post telemetry data  
+      operationId: getMeasure 
+      requestBody:
+        content:
+          application/json:
+            schema:
+             oneOf:
+                - $ref: '/schemas/CollarListSchema.json'
+                - $ref: '/schemas/CollarSchema.json'
+                - $ref: '/schemas/SensorSchema_Complete.json'
+                - $ref: '/schemas/GatewayListSchema.json'
+                - $ref: '/schemas/MultiSensorListSchema.json'
+                - $ref: '/schemas/SensorListSchema_Complete.json'
+                - $ref: '/schemas/SensorListSchema_Simplified.json'
+                - $ref: '/schemas/SensorSchema_Simplified.json'
+            examples:
+              Collar Measurement: 
+               value: {
+                
+              "collar": {
+                "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                "location": {
+                  "latitude": 45.45123,
+                  "longitude": 25.25456,
+                  "altitude": 2.10789
+                },
+                "resultTime": 1558086914,
+                "resourceAlarm": false,
+                "anomalies": {
+                  "locationAnomaly": false,
+                  "temperatureAnomaly": false,
+                  "distanceAnomaly": false,
+                  "activityAnomaly": true,
+                  "positionAnomaly": false
+                },
+                "acceleration": {
+                  "accX":0.2331,
+                  "accY": 0.898,
+                  "accZ": 0.998
+                },
+                "temperature": 36.5
+              },
+              "sequenceNumber": 123
+            }
+              
+              
+              List Of Collar Measurements: 
+               value: {
+                
+                "collars": [
+                  {
+                    "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                    "location": {
+                      "latitude": 45.45123,
+                      "longitude": 25.25456,
+                      "altitude": 2.10789
+                    },
+                    "resultTime": 1558086914,
+                    "resourceAlarm": true,
+                    "anomalies": {
+                      "locationAnomaly": false,
+                      "temperatureAnomaly": true,
+                      "distanceAnomaly": false,
+                      "activityAnomaly": false,
+                      "positionAnomaly": true
+                    },
+                    "acceleration": {
+                      "accX": 0.2331,
+                      "accY": 0.898,
+                      "accZ": 0.998
+                    },
+                    "temperature": 36.5
+                  }
+                ],
+                "sequenceNumber": 33
+              
+              }
+             
+            
+              Aggregated Measurements from Multi-Parameter Sensors: 
+               value: {
+                                   
+                    "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                    "location": {
+                      "latitude": 45.45123,
+                      "longitude": 25.25456,
+                      "altitude": 2.10789
+                    },
+                    "observations": [
+                      {
+                        "observedProperty": "soil_temperature",
+                        "resultTime": 1018081245,
+                        "result": {
+                          "value": 12.5,
+                          "uom": "http://qudt.org/vocab/unit/DEG_C"
+                        }
+                      }
+                    ],
+                    "sequenceNumber": 327
+                  
+              }
+              Aggregated Measurements Through Gateway: 
+               value: {
+                                
+                  "deviceId": "urn:afc:AS04:droneMissions:MDH:GW:drone001",
+                  "location": {
+                    "latitude": 45.45123,
+                    "longitude": 25.25456,
+                    "altitude": 2.10789
+                  },
+                  "observations": [
+                    {
+                      "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                      "observedProperty": "air_temperature",
+                      "resultTime": 1558086914,
+                      "result": {
+                        "value": 3.2,
+                        "uom": "http://qudt.org/vocab/unit/DEG_C"
+                      }
+                    }
+                  ],
+                  "sequenceNumber": 123
+                
+              }
+              Sensor Measurement (Complete Version): 
+                             value: {
+                                                 
+                    "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                    "location": {
+                      "latitude": 45.45123,
+                      "longitude": 25.25456,
+                      "altitude": 21.5
+                    },
+                    "observedProperty": "air_temperature",
+                    "resultTime": 1558086914,
+                    "result": {
+                      "value": 27.2,
+                      "uom": "http://qudt.org/vocab/unit/DEG_C"
+                    },
+                    "sequenceNumber": 123
+                  
+              }
+              Sensor Measurement (Simplified Version): 
+                             value: {
+                                      
+                    "resultTime": 1558086914,
+                    "result": {
+                      "value": 23.5
+                    },
+                    "resourceId": "airTemperatureSensor0012",
+                    "sequenceNumber": 123
+                  
+              }
+              Sensor List of Measurements (Complete Version): 
+                             value: {
+                               
+                          "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                          "location": {
+                            "latitude": 45.45123,
+                            "longitude": 25.25456,
+                            "altitude": 21.5
+                          },
+                          "observedProperty": "air_temperature",
+                          "uom": "http://qudt.org/vocab/unit/DEG_C",
+                          "observations": [
+                            {
+                              "resultTime": 1558086914,
+                              "result": {
+                                "value": 29.5
+                              }
+                            }
+                          ],
+                          "sequenceNumber": 123
+                        
+                     }
+              Sensor List of Measurements (Simplified Version): 
+                             value: {
+                            
+                          "resourceId": "airTemperatureSensor0012",
+                          "observations": [
+                            {
+                              "resultTime": 1558086914,
+                              "result": {
+                                "value": 23.5
+                              }
+                            }
+                          ],
+                          "sequenceNumber": 123
+                        
+                     }
+                     
+              
+        required: true
+      responses:
+        "200":
+          description: "Successful operation"
+        "415":
+          description: "Invalid input: not AFarCloud-compliant"
+        "400":
+          description: "Invalid input: not a JSON"
+        "500":
+          description: "Internal Server Error: Might be caused by an incorrect or unregistered \"resourceId\""     
+  "/telemetry?test":
+    post:
+      tags:
+        - Test your JSON data format
+      summary: Test JSON  
+      operationId: testMeasure
+      requestBody:
+        content:
+          application/json:
+            schema:
+             oneOf:
+                - $ref: '/schemas/CollarListSchema.json'
+                - $ref: '/schemas/CollarSchema.json'
+                - $ref: '/schemas/SensorSchema_Complete.json'
+                - $ref: '/schemas/GatewayListSchema.json'
+                - $ref: '/schemas/MultiSensorListSchema.json'
+                - $ref: '/schemas/RegionListSchema.json'
+                - $ref: '/schemas/RegionSchema.json'
+                - $ref: '/schemas/SensorListSchema_Complete.json'
+                - $ref: '/schemas/SensorListSchema_Simplified.json'
+                - $ref: '/schemas/SensorSchema_Simplified.json'
+            examples:
+              Collar Measurement: 
+               value: {
+                
+              "collar": {
+                "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                "location": {
+                  "latitude": 45.45123,
+                  "longitude": 25.25456,
+                  "altitude": 2.10789
+                },
+                "resultTime": 1558086914,
+                "resourceAlarm": false,
+                "anomalies": {
+                  "locationAnomaly": false,
+                  "temperatureAnomaly": false,
+                  "distanceAnomaly": false,
+                  "activityAnomaly": true,
+                  "positionAnomaly": false
+                },
+                "acceleration": {
+                  "accX":0.2331,
+                  "accY": 0.898,
+                  "accZ": 0.998
+                },
+                "temperature": 36.5
+              },
+              "sequenceNumber": 123
+            }
+              
+              
+              List Of Collar Measurements: 
+               value: {
+                
+                "collars": [
+                  {
+                    "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                    "location": {
+                      "latitude": 45.45123,
+                      "longitude": 25.25456,
+                      "altitude": 2.10789
+                    },
+                    "resultTime": 1558086914,
+                    "resourceAlarm": true,
+                    "anomalies": {
+                      "locationAnomaly": false,
+                      "temperatureAnomaly": true,
+                      "distanceAnomaly": false,
+                      "activityAnomaly": false,
+                      "positionAnomaly": true
+                    },
+                    "acceleration": {
+                      "accX": 0.2331,
+                      "accY": 0.898,
+                      "accZ": 0.998
+                    },
+                    "temperature": 36.5
+                  }
+                ],
+                "sequenceNumber": 33
+              
+              }
+             
+              Region Measurement: 
+                             value: {
+                               
+                  "region": {
+                    "resourceId": "Weed",
+                    "resultTime": 1558086914,
+                    "locationDimension": {
+                      "latitude":  37.392529,
+                      "longitude":  -5.994072,
+                      "width": 2.25,
+                      "length": 1.5
+                    }
+                  },
+                  "sequenceNumber": 123
+                
+              }
+              List of Region Measurements: 
+                             value: {
+                                
+                "regions": [
+                  {
+                    "resourceId": "DeadPlant",
+                    "resultTime": 1558086914,
+                    "locationDimension": {
+                      "latitude":  37.392529,
+                      "longitude":  -5.994072,
+                      "width":  2.38,
+                      "length":  1.25 
+                    }
+                  }
+                ],
+                "sequenceNumber": 235
+              
+              }
+              Aggregated Measurements from Multi-Parameter Sensors: 
+               value: {
+                                   
+                    "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                    "location": {
+                      "latitude": 45.45123,
+                      "longitude": 25.25456,
+                      "altitude": 2.10789
+                    },
+                    "observations": [
+                      {
+                        "observedProperty": "soil_temperature",
+                        "resultTime": 1018081245,
+                        "result": {
+                          "value": 12.5,
+                          "uom": "http://qudt.org/vocab/unit/DEG_C"
+                        }
+                      }
+                    ],
+                    "sequenceNumber": 327
+                  
+              }
+              Aggregated Measurements Through Gateway: 
+               value: {
+                                
+                  "deviceId": "urn:afc:AS04:droneMissions:MDH:GW:drone001",
+                  "location": {
+                    "latitude": 45.45123,
+                    "longitude": 25.25456,
+                    "altitude": 2.10789
+                  },
+                  "observations": [
+                    {
+                      "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                      "observedProperty": "air_temperature",
+                      "resultTime": 1558086914,
+                      "result": {
+                        "value": 3.2,
+                        "uom": "http://qudt.org/vocab/unit/DEG_C"
+                      }
+                    }
+                  ],
+                  "sequenceNumber": 123
+                
+              }
+              Sensor Measurement (Complete Version): 
+                             value: {
+                                                 
+                    "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                    "location": {
+                      "latitude": 45.45123,
+                      "longitude": 25.25456,
+                      "altitude": 21.5
+                    },
+                    "observedProperty": "air_temperature",
+                    "resultTime": 1558086914,
+                    "result": {
+                      "value": 27.2,
+                      "uom": "http://qudt.org/vocab/unit/DEG_C"
+                    },
+                    "sequenceNumber": 123
+                  
+              }
+              Sensor Measurement (Simplified Version): 
+                             value: {
+                                      
+                    "resultTime": 1558086914,
+                    "result": {
+                      "value": 23.5
+                    },
+                    "resourceId": "airTemperatureSensor0012",
+                    "sequenceNumber": 123
+                  
+              }
+              Sensor List of Measurements (Complete Version): 
+                             value: {
+                               
+                          "resourceId": "urn:afc:scenario:service:provider:type:entityName",
+                          "location": {
+                            "latitude": 45.45123,
+                            "longitude": 25.25456,
+                            "altitude": 21.5
+                          },
+                          "observedProperty": "air_temperature",
+                          "uom": "http://qudt.org/vocab/unit/DEG_C",
+                          "observations": [
+                            {
+                              "resultTime": 1558086914,
+                              "result": {
+                                "value": 29.5
+                              }
+                            }
+                          ],
+                          "sequenceNumber": 123
+                        
+                     }
+              Sensor List of Measurements (Simplified Version): 
+                             value: {
+                            
+                          "resourceId": "airTemperatureSensor0012",
+                          "observations": [
+                            {
+                              "resultTime": 1558086914,
+                              "result": {
+                                "value": 23.5
+                              }
+                            }
+                          ],
+                          "sequenceNumber": 123
+                        
+                     }
+                     
+              
+        required: true
+      responses:
+        "200":
+          description: "Successful operation"
+        "415":
+          description: "Invalid input: not AFarCloud-compliant"
+        "400":
+          description: "Invalid input: not a JSON"
+        "500":
+          description: "Internal Server Error: Might be caused by an incorrect or unregistered \"resourceId\"" 
+          
+
+servers:
+  - url: https://torcos.etsist.upm.es:9201/
+    description: AS01
+  - url: https://torcos.etsist.upm.es:9202/
+    description: AS02
+  - url: https://torcos.etsist.upm.es:9203/
+    description: AS03
+  - url: https://torcos.etsist.upm.es:9204/
+    description: AS04
+  - url: https://torcos.etsist.upm.es:9205/
+    description: AS05
+  - url: https://torcos.etsist.upm.es:9206/
+    description: AS06
+  - url: https://torcos.etsist.upm.es:9207/
+    description: AS07
+  - url: https://torcos.etsist.upm.es:9208/
+    description: AS08
+  - url: https://torcos.etsist.upm.es:9209/
+    description: AS09
+  - url: https://torcos.etsist.upm.es:9210/
+    description: AS10    
+  - url: https://torcos.etsist.upm.es:9211/
+    description: AS11
+  - url: https://localhost:8080/
+    description: TEST
+  - url: https://localhost:8081/
+    description: TEST2
+
