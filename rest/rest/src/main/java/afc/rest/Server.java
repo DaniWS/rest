@@ -294,7 +294,7 @@ public class Server {
 						 //log.debug("ResourceId:" + resourceId + " not in cache");	
 						 SimplifiedJson.checkAssetRegistry(Setup.AR_URL, resourceId, false);
 						 cache.put(resourceId, HttpURLConnection.HTTP_OK);
-					 } else log.debug("ResourceId:" + resourceId + " stored in cache");
+					 } else log.debug("ResourceId:" + resourceId + " obtained from cache");
 					 					 
 				 }
 				 
@@ -304,7 +304,6 @@ public class Server {
 //					 Build the URI, pointing to the correct path: "/collar" or "/measures".
                      Session session=request.getSession();
 					 String URN="measures"; 
-					 log.info("Status:200 requestID: "+session.getIdInternal()+session.getTimestamp()+" ResourceID: "+SimplifiedJson.getResourceId(telemetry)+" IP: "+ getRemoteAddress(request)+" Successful request on: "+category );
 
 
 	 				 String type = schema.getType().toString();
@@ -318,12 +317,12 @@ public class Server {
 				 else {
 //					 Simplified JSON request scenario.
 					 if (completeJson!=null) {
-					 log.info("TEST: ResourceID: "+SimplifiedJson.getResourceId(telemetry)+" IP: "+ getRemoteAddress(request)+" Successful request on: "+category );
 //				     Measure execution time
 					 Instant finish = Instant.now();
 				     long timeElapsed = Duration.between(start, finish).toMillis();  //in millis
         		     log.debug("Elapsed time: "+ timeElapsed);
 //		
+					 log.info("TEST: ResourceID: "+SimplifiedJson.getResourceId(telemetry)+" IP: "+ getRemoteAddress(request)+" Successful request on: "+category );
         		     return Response.status(200).entity(telemetry).build();
 					 }
 //					 Complete JSON request scenario.
