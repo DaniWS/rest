@@ -206,7 +206,7 @@ public class SimplifiedJson {
 					JsonArray obsArray = observations.getAsJsonArray();
 					if	(obsArray.size()>1) {
 						log.error("The specified resource is not a single-parameter sensor");
-						throw new WebApplicationException("The specified resource is not a single-parameter sensor", 500);
+						throw new WebApplicationException(Response.status(200).entity("The specified resource is not a single-parameter sensor").build());
 					}
 
 

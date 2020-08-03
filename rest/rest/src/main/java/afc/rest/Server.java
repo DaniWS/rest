@@ -281,6 +281,9 @@ public class Server {
 					 }
 				 
 				 else {
+//******************LA SIGUIENTE LÍNEA DE CÓDIGO (CONDICIONAL) ES TEMPORAL, HASTA QUE SE RESUELVA LA CONSULTA DE COLLARES EN EL ASSET REGISTRY******************************
+//******************Desactiva el chequeo de registro de collares en el AR**********************************************			
+					 if (!schema.getType().equals("Collar")){
 					 //Check if the entity name is in the Assets Registry
 					 
 					 String resourceId = extractEntityName(telemetry);
@@ -295,7 +298,8 @@ public class Server {
 						 SimplifiedJson.checkAssetRegistry(Setup.AR_URL, resourceId, false);
 						 cache.put(resourceId, HttpURLConnection.HTTP_OK);
 					 } else log.debug("ResourceId:" + resourceId + " obtained from cache");
-					 					 
+				}
+
 				 }
 				 
 //				 Check for the 'test' query parameter.

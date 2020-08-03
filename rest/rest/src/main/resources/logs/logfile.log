@@ -69,3 +69,9 @@
 2020-07-07 05:28:58,917 DEBUG [grizzly-http-server-0] - SimplifiedJson - Complete JSON for this resource obtained from cache
 2020-07-07 05:28:58,917  INFO [grizzly-http-server-0] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
 2020-07-07 05:28:58,917 DEBUG [grizzly-http-server-0] - Server - Elapsed time: 7
+2020-08-03 16:02:24,171 DEBUG [grizzly-http-server-10] - Server - Succesful request on: SensorListSchema_Simplified
+2020-08-03 16:02:25,433 ERROR [grizzly-http-server-10] - SimplifiedJson - The specified resource is not a single-parameter sensor
+2020-08-03 16:03:14,927 DEBUG [grizzly-http-server-11] - Server - Succesful request on: CollarSchema
+2020-08-03 16:03:15,265 ERROR [grizzly-http-server-11] - SimplifiedJson - Could not obtain resource: from the Assets Registry: 404
+2020-08-03 16:03:55,142 DEBUG [grizzly-http-server-10] - Server - Succesful request on: CollarSchema
+2020-08-03 16:03:55,162  INFO [grizzly-http-server-10] - Server - TEST: ResourceID: urn:afc:scenario:service:provider:type:entityName IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
