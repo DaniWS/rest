@@ -307,12 +307,12 @@ public class Server {
 //**********************   This block of code is PROVISIONAL, while the component connects directly to InfluxDB. *******************************************************
 //					 Build the URI, pointing to the correct path: "/collar" or "/measures".
                      Session session=request.getSession();
-					 String URN="SensorTelemetry"; 
+					 String URN="SensorTelemetry/"; 
 
 
 	 				 String type = schema.getType().toString();
 					 if(type.equals("Collar")) {
-						 URN="CollarTelemetry";						 						 
+						 URN="CollarTelemetry/";						 						 
 					 }
 					 log.debug(Setup.ER_URI+URN);
 //					 Send data to Environment Reporter.
