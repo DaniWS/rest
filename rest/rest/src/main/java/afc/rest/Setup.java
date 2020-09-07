@@ -63,7 +63,8 @@ public class Setup {
 	public static final String schemasInfo = "SchemasInfo";
 	public static final String localSchemasPath = "src/main/resources/localSchemas/";
 	//   Assets Registry URL
-	public static String AR_URL;
+	public static String AR_URL_S;
+	public static String AR_URL_C;
 	//   Environment Reporter URI
 	public static String ER_URI;
   
@@ -85,7 +86,7 @@ public class Setup {
              ER_URI = (tmp==null) ? prop.getProperty(ER_URI_prop) : tmp;
              tmp = System.getenv("AR_URL");
              System.out.println("AR_URL: " + tmp);
-             AR_URL = (tmp==null) ? prop.get(AR_URL_prop).toString() : tmp;
+             String AR_URL = (tmp==null) ? prop.get(AR_URL_prop).toString() : tmp;
              
              timeToLive = Long.parseLong(prop.getProperty(timeToLiveProp, "72000"));
              cacheTimer = Long.parseLong(prop.getProperty(cacheTimerProp, "72000"));
@@ -93,8 +94,11 @@ public class Setup {
              System.out.println(ER_URI);
              System.out.println(AR_URL);
              
-             
-             
+             AR_URL_S = AR_URL + "getSensor/";
+             AR_URL_C = AR_URL + "getCollarByResourceId/";
+
+             /*System.out.println(AR_URL_S);
+             System.out.println(AR_URL_C);*/     
     }
     }
 //    Method to load the JSON with the information about the schemas

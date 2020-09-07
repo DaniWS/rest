@@ -187,17 +187,17 @@ public class Server {
 //			 Valid JSON scenario.
 				 if (valid) {
 					 String category = "Alarm";
-                     alarm=SimplifiedJson.getCompleteJson(alarm, Setup.AR_URL, category).toString();
+                     alarm=SimplifiedJson.getCompleteJson(alarm, Setup.AR_URL_S, category).toString();
                      Session session=request.getSession();
                                           
 //				        	  Checks for the "test" query parameter.
 				 if (!uriInfo.getQueryParameters().containsKey("test")) {
 //				        	  Here goes the code to send the data.
-					 log.info("Status: 200 requestID: "+session.getIdInternal()+session.getTimestamp()+" ResourceID: "+SimplifiedJson.getResourceId(alarm)+" IP: "+ getRemoteAddress(request)+" Successful request on: "+category );
+					 log.info("Status:200 requestID: "+session.getIdInternal()+session.getTimestamp()+" ResourceID: "+SimplifiedJson.getResourceId(alarm)+" IP: "+ getRemoteAddress(request)+" Successful request on: "+category );
          			return Response.status(200).entity("{\n\"requestId\": "+session.getIdInternal()+session.getTimestamp()+"\n}").build();
 
 				 }
-				 log.info("TEST: ResourceID: "+SimplifiedJson.getResourceId(alarm)+" IP: "+ getRemoteAddress(request)+" Successful request on: "+category );
+				 log.info("TEST: Status:200 ResourceID: "+SimplifiedJson.getResourceId(alarm)+" IP: "+ getRemoteAddress(request)+" Successful request on: "+category );
 
 					 return Response.status(200).entity(alarm).build();
 					
@@ -212,7 +212,7 @@ public class Server {
 					 log.error("Status:415 ResourceID: "+SimplifiedJson.getResourceId(alarm)+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
 					 throw new WebApplicationException(invalidJsonException);
 				 }
-				 log.error("TEST: ResourceID: "+SimplifiedJson.getResourceId(alarm)+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
+				 log.error("TEST: Status:415 ResourceID: "+SimplifiedJson.getResourceId(alarm)+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
 				 Response detailedException= Response.status(415).entity("ERROR: Not AFarCloudCompliant").build();
 				 throw new WebApplicationException(detailedException);
 			 }
@@ -224,7 +224,7 @@ public class Server {
 				 log.error("Status:400 ResourceID: "+SimplifiedJson.getResourceId(alarm)+" IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
 				 throw new WebApplicationException(notaJsonException);
 			 }
-			 log.error("TEST: ResourceID: "+SimplifiedJson.getResourceId(alarm)+" IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
+			 log.error("TEST: Status:400 ResourceID: "+SimplifiedJson.getResourceId(alarm)+" IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
 			Response detailedException= Response.status(400).entity(ex.getMessage()).build();
 			 throw new WebApplicationException(detailedException);
 
@@ -272,10 +272,11 @@ public class Server {
 			 if (valid) {
 				 String category=schema.getName();
 				 JsonObject completeJson=null;
+				 				 
 //				 Check if the request is a simple JSON.
 				 if(schema.getIsSimple()) {
 //					 Completes the JSON
-                     completeJson=SimplifiedJson.getCompleteJson(telemetry, Setup.AR_URL, category);
+                     completeJson=SimplifiedJson.getCompleteJson(telemetry, Setup.AR_URL_S, category);
 					 
 					 telemetry= completeJson.toString();
 					 }
@@ -283,7 +284,7 @@ public class Server {
 				 else {
 //******************LA SIGUIENTE LÍNEA DE CÓDIGO (CONDICIONAL) ES TEMPORAL, HASTA QUE SE RESUELVA LA CONSULTA DE COLLARES EN EL ASSET REGISTRY******************************
 //******************Desactiva el chequeo de registro de collares en el AR**********************************************			
-					 if (!schema.getType().equals("Collar")){
+					// if (!schema.getType().equals("Collar")){
 					 //Check if the entity name is in the Assets Registry
 					 
 					 String resourceId = extractEntityName(telemetry);
@@ -292,13 +293,15 @@ public class Server {
 					 @SuppressWarnings("unchecked")
 					 Cache<String, Integer> cache = Cache.getResCache(Setup.timeToLive, Setup.cacheTimer, Setup.maxItems);
 					 Integer result = cache.get(resourceId);
-
+					 
+					 String url = (!schema.getType().equals("Collar")) ? Setup.AR_URL_S: Setup.AR_URL_C;
+					 
 					 if (result == null) {
 						 //log.debug("ResourceId:" + resourceId + " not in cache");	
-						 SimplifiedJson.checkAssetRegistry(Setup.AR_URL, resourceId, false);
+						 SimplifiedJson.checkAssetRegistry(url, resourceId, false);
 						 cache.put(resourceId, HttpURLConnection.HTTP_OK);
 					 } else log.debug("ResourceId:" + resourceId + " obtained from cache");
-				}
+				//}
 
 				 }
 				 
@@ -326,12 +329,12 @@ public class Server {
 				     long timeElapsed = Duration.between(start, finish).toMillis();  //in millis
         		     log.debug("Elapsed time: "+ timeElapsed);
 //		
-					 log.info("TEST: ResourceID: "+SimplifiedJson.getResourceId(telemetry)+" IP: "+ getRemoteAddress(request)+" Successful request on: "+category );
+					 log.info("TEST: Status:200 ResourceID: "+SimplifiedJson.getResourceId(telemetry)+" IP: "+ getRemoteAddress(request)+" Successful request on: "+category );
         		     return Response.status(200).entity(telemetry).build();
 					 }
 //					 Complete JSON request scenario.
 					 else {
-						 log.info("TEST: ResourceID: "+SimplifiedJson.getResourceId(telemetry)+" IP: "+ getRemoteAddress(request)+" Successful request on: "+category );
+						 log.info("TEST: Status:200 ResourceID: "+SimplifiedJson.getResourceId(telemetry)+" IP: "+ getRemoteAddress(request)+" Successful request on: "+category );
  						 return Response.status(200).build();
 					 }
 				 }	  
@@ -344,7 +347,7 @@ public class Server {
 					 log.error("Status:415 ResourceID: "+SimplifiedJson.getResourceId(telemetry)+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
 					 throw new WebApplicationException(invalidJsonException);
 				 }
-				 log.error("TEST: ResourceID: "+SimplifiedJson.getResourceId(telemetry)+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
+				 log.error("TEST: Status:415 ResourceID: "+SimplifiedJson.getResourceId(telemetry)+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
 				 Response detailedException= Response.status(415).entity("ERROR: Not AFarCloudCompliant").build();
 				 throw new WebApplicationException(detailedException);
 			 }
@@ -356,7 +359,7 @@ public class Server {
 
 				 throw new WebApplicationException(notaJsonException);
 			 }
-			 log.error("TEST: ResourceID: "+SimplifiedJson.getResourceId(telemetry)+"  IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
+			 log.error("TEST: Status:400 ResourceID: "+SimplifiedJson.getResourceId(telemetry)+"  IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
 			Response detailedException= Response.status(400).entity(ex.getMessage()).build();
 			 throw new WebApplicationException(detailedException);
 
