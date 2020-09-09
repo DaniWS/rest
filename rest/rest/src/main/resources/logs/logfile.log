@@ -1,77 +1,42 @@
-2020-07-07 05:28:45,392 DEBUG [grizzly-http-server-15] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:45,392  INFO [grizzly-http-server-15] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:45,392 DEBUG [grizzly-http-server-15] - Server - Elapsed time: 8
-2020-07-07 05:28:46,024 DEBUG [grizzly-http-server-0] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:46,025 DEBUG [grizzly-http-server-0] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:46,025  INFO [grizzly-http-server-0] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:46,025 DEBUG [grizzly-http-server-0] - Server - Elapsed time: 9
-2020-07-07 05:28:46,597 DEBUG [grizzly-http-server-1] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:46,598 DEBUG [grizzly-http-server-1] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:46,598  INFO [grizzly-http-server-1] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:46,598 DEBUG [grizzly-http-server-1] - Server - Elapsed time: 7
-2020-07-07 05:28:48,584 DEBUG [grizzly-http-server-2] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:48,585 DEBUG [grizzly-http-server-2] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:48,585  INFO [grizzly-http-server-2] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:48,585 DEBUG [grizzly-http-server-2] - Server - Elapsed time: 6
-2020-07-07 05:28:49,352 DEBUG [grizzly-http-server-3] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:49,352 DEBUG [grizzly-http-server-3] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:49,353  INFO [grizzly-http-server-3] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:49,353 DEBUG [grizzly-http-server-3] - Server - Elapsed time: 4
-2020-07-07 05:28:50,115 DEBUG [grizzly-http-server-4] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:50,116 DEBUG [grizzly-http-server-4] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:50,117  INFO [grizzly-http-server-4] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:50,118 DEBUG [grizzly-http-server-4] - Server - Elapsed time: 10
-2020-07-07 05:28:50,770 DEBUG [grizzly-http-server-5] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:50,770 DEBUG [grizzly-http-server-5] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:50,771  INFO [grizzly-http-server-5] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:50,771 DEBUG [grizzly-http-server-5] - Server - Elapsed time: 5
-2020-07-07 05:28:51,529 DEBUG [grizzly-http-server-6] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:51,529 DEBUG [grizzly-http-server-6] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:51,530  INFO [grizzly-http-server-6] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:51,530 DEBUG [grizzly-http-server-6] - Server - Elapsed time: 7
-2020-07-07 05:28:52,272 DEBUG [grizzly-http-server-7] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:52,272 DEBUG [grizzly-http-server-7] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:52,272  INFO [grizzly-http-server-7] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:52,273 DEBUG [grizzly-http-server-7] - Server - Elapsed time: 7
-2020-07-07 05:28:52,964 DEBUG [grizzly-http-server-8] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:52,964 DEBUG [grizzly-http-server-8] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:52,965  INFO [grizzly-http-server-8] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:52,965 DEBUG [grizzly-http-server-8] - Server - Elapsed time: 6
-2020-07-07 05:28:53,787 DEBUG [grizzly-http-server-9] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:53,788 DEBUG [grizzly-http-server-9] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:53,788  INFO [grizzly-http-server-9] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:53,788 DEBUG [grizzly-http-server-9] - Server - Elapsed time: 5
-2020-07-07 05:28:54,582 DEBUG [grizzly-http-server-10] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:54,583 DEBUG [grizzly-http-server-10] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:54,583  INFO [grizzly-http-server-10] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:54,583 DEBUG [grizzly-http-server-10] - Server - Elapsed time: 6
-2020-07-07 05:28:55,362 DEBUG [grizzly-http-server-11] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:55,363 DEBUG [grizzly-http-server-11] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:55,363  INFO [grizzly-http-server-11] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:55,363 DEBUG [grizzly-http-server-11] - Server - Elapsed time: 9
-2020-07-07 05:28:56,017 DEBUG [grizzly-http-server-12] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:56,018 DEBUG [grizzly-http-server-12] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:56,019  INFO [grizzly-http-server-12] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:56,019 DEBUG [grizzly-http-server-12] - Server - Elapsed time: 6
-2020-07-07 05:28:56,739 DEBUG [grizzly-http-server-13] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:56,740 DEBUG [grizzly-http-server-13] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:56,740  INFO [grizzly-http-server-13] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:56,740 DEBUG [grizzly-http-server-13] - Server - Elapsed time: 3
-2020-07-07 05:28:57,440 DEBUG [grizzly-http-server-14] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:57,440 DEBUG [grizzly-http-server-14] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:57,441  INFO [grizzly-http-server-14] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:57,441 DEBUG [grizzly-http-server-14] - Server - Elapsed time: 7
-2020-07-07 05:28:58,206 DEBUG [grizzly-http-server-15] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:58,207 DEBUG [grizzly-http-server-15] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:58,207  INFO [grizzly-http-server-15] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:58,207 DEBUG [grizzly-http-server-15] - Server - Elapsed time: 7
-2020-07-07 05:28:58,916 DEBUG [grizzly-http-server-0] - Server - Succesful request on: SensorListSchema_Simplified
-2020-07-07 05:28:58,917 DEBUG [grizzly-http-server-0] - SimplifiedJson - Complete JSON for this resource obtained from cache
-2020-07-07 05:28:58,917  INFO [grizzly-http-server-0] - Server - TEST: ResourceID: urn:afc:AS01:cropsManagement:UPM:soilSensor:UPM_Fake_0002 IP: 127.0.0.1 Successful request on: SensorListSchema_Simplified
-2020-07-07 05:28:58,917 DEBUG [grizzly-http-server-0] - Server - Elapsed time: 7
-2020-08-03 16:02:24,171 DEBUG [grizzly-http-server-10] - Server - Succesful request on: SensorListSchema_Simplified
-2020-08-03 16:02:25,433 ERROR [grizzly-http-server-10] - SimplifiedJson - The specified resource is not a single-parameter sensor
-2020-08-03 16:03:14,927 DEBUG [grizzly-http-server-11] - Server - Succesful request on: CollarSchema
-2020-08-03 16:03:15,265 ERROR [grizzly-http-server-11] - SimplifiedJson - Could not obtain resource: from the Assets Registry: 404
-2020-08-03 16:03:55,142 DEBUG [grizzly-http-server-10] - Server - Succesful request on: CollarSchema
-2020-08-03 16:03:55,162  INFO [grizzly-http-server-10] - Server - TEST: ResourceID: urn:afc:scenario:service:provider:type:entityName IP: 0:0:0:0:0:0:0:1 Successful request on: CollarSchema
+2020-09-09 14:38:35,077 DEBUG [grizzly-http-server-10] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 14:38:35,143 ERROR [grizzly-http-server-10] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 14:38:48,501 ERROR [grizzly-http-server-12] - SimplifiedJson - Cannot obtain the "resourceId" key
+2020-09-09 14:39:09,979 ERROR [grizzly-http-server-13] - SimplifiedJson - Cannot obtain the "resourceId" key
+2020-09-09 14:39:30,245 ERROR [grizzly-http-server-14] - SimplifiedJson - Cannot obtain the "resourceId" key
+2020-09-09 14:39:48,562 DEBUG [grizzly-http-server-15] - Server - Succesful request on: CollarSchema
+2020-09-09 14:39:48,568 DEBUG [grizzly-http-server-15] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 14:39:48,606 ERROR [grizzly-http-server-15] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 14:41:38,969 ERROR [grizzly-http-server-0] - SimplifiedJson - Cannot obtain the "resourceId" key
+2020-09-09 14:45:32,519 ERROR [grizzly-http-server-10] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 14:45:37,665 ERROR [grizzly-http-server-11] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 14:45:49,488 DEBUG [grizzly-http-server-12] - Server - Succesful request on: CollarSchema
+2020-09-09 14:45:49,510 DEBUG [grizzly-http-server-12] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 14:45:49,544 ERROR [grizzly-http-server-12] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 14:45:59,973 ERROR [grizzly-http-server-14] - SimplifiedJson - Cannot obtain the "resourceId" key
+2020-09-09 14:59:05,688 DEBUG [grizzly-http-server-11] - Server - Succesful request on: CollarSchema
+2020-09-09 14:59:05,710 DEBUG [grizzly-http-server-11] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 15:01:57,713 DEBUG [grizzly-http-server-10] - Server - Succesful request on: CollarSchema
+2020-09-09 15:01:57,735 DEBUG [grizzly-http-server-10] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 15:01:57,794 ERROR [grizzly-http-server-10] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 15:02:04,609 ERROR [grizzly-http-server-12] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 15:02:30,292 DEBUG [grizzly-http-server-13] - Server - Succesful request on: CollarSchema
+2020-09-09 15:02:30,294 DEBUG [grizzly-http-server-13] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 15:02:30,332 ERROR [grizzly-http-server-13] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 15:02:40,354 ERROR [grizzly-http-server-14] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 15:03:14,324 ERROR [grizzly-http-server-15] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 15:03:33,783 ERROR [grizzly-http-server-0] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 15:03:48,565 ERROR [grizzly-http-server-1] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 15:03:52,475 DEBUG [grizzly-http-server-2] - Server - Succesful request on: CollarSchema
+2020-09-09 15:03:52,477 DEBUG [grizzly-http-server-2] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 15:03:52,507 ERROR [grizzly-http-server-2] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 15:04:27,172 ERROR [grizzly-http-server-3] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 15:04:33,437 ERROR [grizzly-http-server-4] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 15:04:42,312 DEBUG [grizzly-http-server-5] - Server - Succesful request on: CollarSchema
+2020-09-09 15:04:42,313 DEBUG [grizzly-http-server-5] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 15:04:42,338 ERROR [grizzly-http-server-5] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 16:33:00,495 DEBUG [grizzly-http-server-10] - Server - Succesful request on: CollarSchema
+2020-09-09 16:33:00,511 DEBUG [grizzly-http-server-10] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 16:33:00,546 ERROR [grizzly-http-server-10] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 16:33:15,576 DEBUG [grizzly-http-server-12] - Server - Succesful request on: GatewayListSchema
+2020-09-09 16:33:15,578 DEBUG [grizzly-http-server-12] - Server - Entity Name: drone001
+2020-09-09 16:33:16,968 ERROR [grizzly-http-server-12] - SimplifiedJson - Could not obtain resource:drone001 from the Assets Registry: 500

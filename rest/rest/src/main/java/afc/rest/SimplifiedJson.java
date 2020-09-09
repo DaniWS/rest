@@ -282,6 +282,12 @@ public class SimplifiedJson {
 		String resourceId = inputJson.get("resourceId").getAsString();
 		return resourceId;
 		}
+		else if (inputJson.has("deviceId")) {
+			String resourceId = inputJson.get("deviceId").getAsString();
+			return resourceId;
+		}
+		
+//		Check inside collar object
 		else {
 			Iterator<String> i = inputJson.keySet().iterator();
 			while (i.hasNext()) {
@@ -289,19 +295,22 @@ public class SimplifiedJson {
 				if (inputJson.get(key).isJsonObject()) {
 					JsonObject object = inputJson.getAsJsonObject(key);
 					
-				return	getResourceId(object.toString());
+					if (object.has("resourceId")){
+						String resourceId = object.get("resourceId").getAsString();
+						return resourceId;		
+				}
+				
 					
-
 			}
 				
 			}
-			log.error("Cannot obtain the \"resourceId\" key");
-	
-			throw new WebApplicationException(Response.status(500).entity("ERROR: Cannot obtain the \"resourceId\" key").build());
+		
 
 		
 		}
+		log.error("Cannot obtain the \"resourceId\" key");
 		
+		throw new WebApplicationException(Response.status(500).entity("ERROR: Cannot obtain the \"resourceId\" key").build());
 	
 		}
 		
