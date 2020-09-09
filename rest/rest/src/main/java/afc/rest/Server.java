@@ -310,12 +310,12 @@ public class Server {
 //**********************   This block of code is PROVISIONAL, while the component connects directly to InfluxDB. *******************************************************
 //					 Build the URI, pointing to the correct path: "/collar" or "/measures".
                      Session session=request.getSession();
-					 String URN="SensorTelemetry/"; 
+					 String URN= "measures"; //"SensorTelemetry/"; 
 
 
 	 				 String type = schema.getType().toString();
 					 if(type.equals("Collar")) {
-						 URN="CollarTelemetry/";						 						 
+						 URN= "collar"; //CollarTelemetry/";						 						 
 					 }
 					 log.debug(Setup.ER_URI+URN);
 //					 Send data to Environment Reporter.
@@ -342,12 +342,18 @@ public class Server {
 			 }
 //           Not AFarCloud Compliant scenario.
 			 else {
+				 String resId = "";
+				 try {
+					 resId = SimplifiedJson.getResourceId(telemetry);
+					 resId = "ResourceID: " + resId;
+				 } catch (WebApplicationException e) {}
+				 
 //				 Check for 'test' query parameter.
 				 if ( (!uriInfo.getQueryParameters().containsKey("test"))) {
-					 log.error("Status:415 ResourceID: "+SimplifiedJson.getResourceId(telemetry)+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
+					 log.error("Status:415 "+resId+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
 					 throw new WebApplicationException(invalidJsonException);
 				 }
-				 log.error("TEST: Status:415 ResourceID: "+SimplifiedJson.getResourceId(telemetry)+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
+				 log.error("TEST: Status:415 "+resId+"  IP: "+ getRemoteAddress(request)+" Not AFarCloud Compliant");
 				 Response detailedException= Response.status(415).entity("ERROR: Not AFarCloudCompliant").build();
 				 throw new WebApplicationException(detailedException);
 			 }
@@ -355,11 +361,11 @@ public class Server {
 //	 	    Not a JSON document scenario.
 		 catch(JsonParseException ex){
 			 if (!uriInfo.getQueryParameters().containsKey("test")) {
-				 log.error("Status:400 ResourceID: "+SimplifiedJson.getResourceId(telemetry)+"  IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
+				 log.error("Status:400 ResourceID: "+"  IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
 
 				 throw new WebApplicationException(notaJsonException);
 			 }
-			 log.error("TEST: Status:400 ResourceID: "+SimplifiedJson.getResourceId(telemetry)+"  IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
+			 log.error("TEST: Status:400 ResourceID: "+"  IP: "+ getRemoteAddress(request)+" Not a Json Exception "+ex);
 			Response detailedException= Response.status(400).entity(ex.getMessage()).build();
 			 throw new WebApplicationException(detailedException);
 
