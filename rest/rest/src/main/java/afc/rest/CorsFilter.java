@@ -22,26 +22,27 @@
  * 
  */
 
-/** 
- * Filter for handling "not found" exceptions
+/**
+ * Filter for globally enabling CORS 
  */
 package afc.rest;
 
-import javax.ws.rs.NotFoundException;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.ext.ExceptionMapper;
+import java.io.IOException;
+
+import javax.ws.rs.container.ContainerRequestContext;
+import javax.ws.rs.container.ContainerResponseContext;
+import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.ext.Provider;
 
-
-// This class handles the WebApplicationExceptions, in order to append the required header for CORS.
-
 @Provider
-public class NotFoundExceptionMapper implements ExceptionMapper<NotFoundException> {
-	
-	
-	public Response toResponse(NotFoundException exception) {
-        return Response.status(Response.Status.NOT_FOUND)
-                .entity("The resource doesn't exist. Please refer to the API documentation: "+ Main.SERVER_URI+"docs/")
-                .build();
+public class CorsFilter implements ContainerResponseFilter {
+
+    private final String HEADERS = "Origin, content-type, Accept, Authorization, api-key";
+    @Override
+    public void filter(ContainerRequestContext request, ContainerResponseContext response) throws IOException {
+        response.getHeaders().add("Access-Control-Allow-Origin", "*");
+        response.getHeaders().add("Access-Control-Allow-Headers", HEADERS);
+        response.getHeaders().add("Access-Control-Allow-Credentials", "true");
+        response.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH");
     }
 }

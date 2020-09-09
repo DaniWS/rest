@@ -1,36 +1,66 @@
+/* Copyright 2018-2021 Universidad Politécnica de Madrid (UPM).
+ *
+ * Authors:
+ *    Daniel Vilela García
+ *    José-Fernan Martínez Ortega
+ *    Vicente Hernández Díaz
+ * 
+ * This software is distributed under a dual-license scheme:
+ *
+ * - For academic uses: Licensed under GNU Affero General Public License as
+ *                      published by the Free Software Foundation, either
+ *                      version 3 of the License, or (at your option) any
+ *                      later version.
+ * 
+ * - For any other use: Licensed under the Apache License, Version 2.0.
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * 
+ * You can get a copy of the license terms in licenses/LICENSE.
+ * 
+ */
+/**
+ * Class for the Schema Management
+ **/
 package afc.rest;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
 
-import org.apache.commons.io.FileUtils;
-
-import com.github.fge.jsonschema.core.exceptions.ProcessingException;
 import com.github.fge.jsonschema.main.JsonSchema;
-import com.github.fge.jsonschema.main.JsonSchemaFactory;
 
 public class Schema implements Comparable <Schema> {
-protected static JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
-protected static ArrayList<String> schemasName = new ArrayList<>(Arrays.asList("Definitions","CollarListSchema","CollarSchema","GatewayListSchema","RegionListSchema","RegionSchema","SensorListSchema_Complete","SensorListSchema_Simplified","SensorSchema_Complete","SensorSchema_Simplified","MultiSensorListSchema"));
-protected static ArrayList<Schema> schemas= new ArrayList<>();
 
 private JsonSchema schema;
+//'uso' increases every time a request is made on a specific schema in order to dynamically re-organize
+//the order of schemas inside the validation method, thus potentially reducing time.
      private int uso;
      private String name;
+     private Boolean isSimple;
+     private String type;
 
-     protected Schema(JsonSchema schema, int uso, String name) {
+     protected Schema(int uso,String name, Boolean isSimple, String type) {
+
+         this.uso = uso; 
+         this.name = name;
+         this.isSimple = isSimple;
+         this.type = type;
+         
+     }
+     protected Schema(JsonSchema schema, int uso, String name, Boolean isSimple, String type) {
          this.schema = schema;
          this.uso = uso;
          this.name = name;
+         this.isSimple = isSimple;
+         this.type = type;
          
      }
      public JsonSchema getSchema() {
 return schema;
 }
+     public void setSchema(JsonSchema schema) {
+    	 this.schema= schema;
+    	 }
      public int getUso() {
 return uso;
 }
@@ -53,28 +83,22 @@ if (uso > o.uso) {
          }
 return 0;
 }
+public Boolean getIsSimple() {
+	return isSimple;
+}
+public void setIsSimple(Boolean isSimple) {
+	this.isSimple = isSimple;
+}
+public String getType() {
+	return type;
+}
+public void setType(String type) {
+	this.type = type;
+}
+
  
 
 
-// Method to load the schemas: takes the schemas URI as an argument.
-public static void loadSchemas(String schemaURI) throws MalformedURLException, IOException, ProcessingException {
-  for (String s: schemasName) {
-        String filename=s+".json";
-        FileUtils.copyURLToFile(          
-        new URL(schemaURI+filename),
-        new File("src/main/resources/localSchemas/"+filename));
-//       Avoids loading Definition as a schema to prevent false validations.
-               if (!s.equals("Definitions")) {
-               schemas.add(new Schema(factory.getJsonSchema("resource:/localSchemas/"+filename),0,s));
-               }
-             
- 
-       
-        }
-
-
-
-       };
 
 }
 

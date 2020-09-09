@@ -21,27 +21,36 @@
  * You can get a copy of the license terms in licenses/LICENSE.
  * 
  */
-
-/** 
- * Filter for handling "not found" exceptions
+/**
+ * This class completes the simplified JSONs for sensors
  */
 package afc.rest;
 
-import javax.ws.rs.NotFoundException;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.ext.ExceptionMapper;
-import javax.ws.rs.ext.Provider;
+import com.google.gson.JsonObject;
+
+public class SimplifiedSensor extends SimplifiedJson{
 
 
-// This class handles the WebApplicationExceptions, in order to append the required header for CORS.
 
-@Provider
-public class NotFoundExceptionMapper implements ExceptionMapper<NotFoundException> {
-	
-	
-	public Response toResponse(NotFoundException exception) {
-        return Response.status(Response.Status.NOT_FOUND)
-                .entity("The resource doesn't exist. Please refer to the API documentation: "+ Main.SERVER_URI+"docs/")
-                .build();
-    }
+
+	@Override
+	//	 A method that parses the simplified JSON filling the missing values from the "missing values" object.
+	public JsonObject completeFields(JsonObject missingObject, JsonObject inputJson) {
+
+
+		for(String key: missingObject.keySet()) {
+
+			if(!key.equals("uom")) {
+				inputJson.add(key, missingObject.get(key));
+			}
+			else {
+
+				inputJson.get("result").getAsJsonObject().add(key, missingObject.get(key));	
+			}
+		}   
+		return inputJson;
+
+	}
+
+
 }

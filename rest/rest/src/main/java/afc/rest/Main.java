@@ -1,3 +1,30 @@
+/* Copyright 2018-2021 Universidad Politécnica de Madrid (UPM).
+ *
+ * Authors:
+ *    Daniel Vilela García
+ *    José-Fernan Martínez Ortega
+ *    Vicente Hernández Díaz
+ * 
+ * This software is distributed under a dual-license scheme:
+ *
+ * - For academic uses: Licensed under GNU Affero General Public License as
+ *                      published by the Free Software Foundation, either
+ *                      version 3 of the License, or (at your option) any
+ *                      later version.
+ * 
+ * - For any other use: Licensed under the Apache License, Version 2.0.
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * 
+ * You can get a copy of the license terms in licenses/LICENSE.
+ * 
+ */
+
+/**
+ * Class containing the Main method
+ */
 package afc.rest;
 
 import org.glassfish.grizzly.http.server.HttpServer;
@@ -5,7 +32,6 @@ import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 //import org.glassfish.jersey.servlet.ServletContainer;
 import org.glassfish.grizzly.http.server.CLStaticHttpHandler;
-
 import org.apache.log4j.*;
 
 
@@ -20,14 +46,11 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 //import org.glassfish.grizzly.servlet.*;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
-
-
 import io.swagger.jaxrs.config.BeanConfig;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
-
 import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
@@ -46,8 +69,10 @@ import javax.net.ssl.X509TrustManager;
 public class Main {
 	// Base URI the Grizzly HTTP server will listen on
 	public static final String BASE_URI = "https://0.0.0.0:8080/";
-	public static final String TORCOS_URI = "https://138.100.51.114:443/";
+	public static final String SERVER_URI = "https://138.100.51.114:443/";
+	protected static final URI DOCS_URI=URI.create(SERVER_URI+"docs/");
 	
+//	Trust self-signed certificates.
 	private static void trustEveryone() { 
 	    try { 
 	            HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier(){ 
@@ -69,7 +94,8 @@ public class Main {
 	            e.printStackTrace(); 
 	    } 
 	} 
-   
+
+
     
     /**
      * Starts Grizzly HTTP server exposing JAX-RS resources defined in this application.
@@ -103,10 +129,13 @@ public class Main {
 
     	resourceConfig.register(JacksonJsonProvider.class);
     	
+    	resourceConfig.register(new CorsFilter());
+    	
     	  SSLContextConfigurator sslConfig = new SSLContextConfigurator();
-          sslConfig.setKeyStoreFile("src/SSL/afc_key");
-          sslConfig.setKeyStorePass("afc_rest_ssl");
+          sslConfig.setKeyStoreFile("src/SSL/torcos.jks");
+          sslConfig.setKeyPass("t0rc0s.etsist.upm.es");
           
+
     	 
     	return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), resourceConfig, true, new SSLEngineConfigurator(sslConfig).setClientMode(false).setNeedClientAuth(false));
 
@@ -124,7 +153,9 @@ public class Main {
         server.start();
         ClassLoader loader = Main.class.getClassLoader();
 
-        CLStaticHttpHandler docsHandler = new CLStaticHttpHandler(loader, "swagger-ui/");
+//      **** Uncomment 'docsHanler' lines to enable Swagger API at BASE_URI+"/docs/" ****
+        
+//        CLStaticHttpHandler docsHandler = new CLStaticHttpHandler(loader, "swagger-ui/");
         CLStaticHttpHandler schemasHandler = new CLStaticHttpHandler(loader, "schemas/");
         
         String log4jConfPath = System.getProperty("user.dir")+File.separator+"src"+File.separator+"properties"+File.separator+"log4j.properties";
@@ -132,34 +163,39 @@ public class Main {
         
         PropertyConfigurator.configure(log4jConfPath);
 
-        docsHandler.setFileCacheEnabled(false);
+//        docsHandler.setFileCacheEnabled(false);
         schemasHandler.setFileCacheEnabled(false);
        
 
         ServerConfiguration cfg = server.getServerConfiguration();
 
-        cfg.addHttpHandler(docsHandler, "/docs/");
+//        cfg.addHttpHandler(docsHandler, "/docs/");
         cfg.addHttpHandler(schemasHandler, "/schemas/");
         
-
-
-
-
+//        Load property files.
+        Setup.loadProperties(System.getProperty("user.dir")+File.separator+"src"+File.separator+"properties"+File.separator+Setup.configFileName);
 
         trustEveryone();
-        Schema.loadSchemas(BASE_URI+"schemas/");
+
+        Setup.loadSchemasInfo(BASE_URI+"schemas/");
+        Setup.loadSchemas(BASE_URI+"schemas/");
+
+     
+     
+     
         
      
         
        
-        System.out.println(String.format("Jersey app started with WADL available at "
-                + "%sapplication.wadl\nHit enter to stop it...", TORCOS_URI));
+        System.out.println(String.format("REST server started. API documentation available at: "
+                + "%s\n", DOCS_URI));
         
 
-        
-        
+//      Uncomment to be able stop the server from the shell        
+   /*   System.out.println(String.format("Hit enter to stop the server..."));
         System.in.read();
         server.shutdownNow();
+        */
     }
 }
 

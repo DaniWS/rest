@@ -1,0 +1,15 @@
+[
+{'name': 'Definitions', 'type':'Definitions', 'isSimple':false},
+{'name': 'CollarListSchema', 'type':'Collar', 'isSimple':false},
+{'name': 'CollarSchema', 'type':'Collar', 'isSimple':false},
+{'name': 'GatewayListSchema', 'type':'Sensor', 'isSimple':false},
+{'name': 'RegionListSchema', 'type':'Region', 'isSimple':false},
+{'name': 'RegionSchema', 'type':'Region', 'isSimple':false},
+{'name': 'SensorListSchema_Complete', 'type':'Sensor', 'isSimple':false},
+{'name': 'SensorListSchema_Simplified', 'type':'Sensor', 'isSimple':true},
+{'name': 'SensorSchema_Complete', 'type':'Sensor', 'isSimple':false},
+{'name': 'MultiSensorListSchema_Simplified', 'type':'Sensor', 'isSimple':true},
+{'name': 'MultiSensorListSchema', 'type':'Sensor', 'isSimple':false},
+{'name': 'SensorSchema_Simplified', 'type':'Sensor', 'isSimple':true},
+{'name': 'AlarmSchema', 'type':'Alarm', 'isSimple':true}
+]

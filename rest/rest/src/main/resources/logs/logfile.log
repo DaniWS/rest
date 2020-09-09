@@ -1,44 +1,42 @@
-2020-02-06 19:46:42,482 ERROR [grizzly-http-server-15] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:46:43,087 ERROR [grizzly-http-server-0] - Server - SessionID: 6817787970500238587 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:32,500 ERROR [grizzly-http-server-11] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:35,507 ERROR [grizzly-http-server-14] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:36,399 ERROR [grizzly-http-server-15] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:36,999 ERROR [grizzly-http-server-0] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:37,620 ERROR [grizzly-http-server-1] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:38,319 ERROR [grizzly-http-server-2] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:38,996 ERROR [grizzly-http-server-3] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:39,623 ERROR [grizzly-http-server-4] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:40,185 ERROR [grizzly-http-server-5] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:40,737 ERROR [grizzly-http-server-6] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:41,293 ERROR [grizzly-http-server-7] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:41,870 ERROR [grizzly-http-server-8] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:42,455 ERROR [grizzly-http-server-9] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:43,015 ERROR [grizzly-http-server-10] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:43,515 ERROR [grizzly-http-server-11] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:43,991 ERROR [grizzly-http-server-12] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:44,531 ERROR [grizzly-http-server-13] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:45,042 ERROR [grizzly-http-server-14] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:45,554 ERROR [grizzly-http-server-15] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
-2020-02-06 19:47:46,180 ERROR [grizzly-http-server-0] - Server - SessionID: 8043437603170285308 IP: 0:0:0:0:0:0:0:1 Invalid Json Exception com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'aaa': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
- at [Source: (StringReader); line: 1, column: 4]
+2020-09-09 14:38:35,077 DEBUG [grizzly-http-server-10] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 14:38:35,143 ERROR [grizzly-http-server-10] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 14:38:48,501 ERROR [grizzly-http-server-12] - SimplifiedJson - Cannot obtain the "resourceId" key
+2020-09-09 14:39:09,979 ERROR [grizzly-http-server-13] - SimplifiedJson - Cannot obtain the "resourceId" key
+2020-09-09 14:39:30,245 ERROR [grizzly-http-server-14] - SimplifiedJson - Cannot obtain the "resourceId" key
+2020-09-09 14:39:48,562 DEBUG [grizzly-http-server-15] - Server - Succesful request on: CollarSchema
+2020-09-09 14:39:48,568 DEBUG [grizzly-http-server-15] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 14:39:48,606 ERROR [grizzly-http-server-15] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 14:41:38,969 ERROR [grizzly-http-server-0] - SimplifiedJson - Cannot obtain the "resourceId" key
+2020-09-09 14:45:32,519 ERROR [grizzly-http-server-10] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 14:45:37,665 ERROR [grizzly-http-server-11] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 14:45:49,488 DEBUG [grizzly-http-server-12] - Server - Succesful request on: CollarSchema
+2020-09-09 14:45:49,510 DEBUG [grizzly-http-server-12] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 14:45:49,544 ERROR [grizzly-http-server-12] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 14:45:59,973 ERROR [grizzly-http-server-14] - SimplifiedJson - Cannot obtain the "resourceId" key
+2020-09-09 14:59:05,688 DEBUG [grizzly-http-server-11] - Server - Succesful request on: CollarSchema
+2020-09-09 14:59:05,710 DEBUG [grizzly-http-server-11] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 15:01:57,713 DEBUG [grizzly-http-server-10] - Server - Succesful request on: CollarSchema
+2020-09-09 15:01:57,735 DEBUG [grizzly-http-server-10] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 15:01:57,794 ERROR [grizzly-http-server-10] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 15:02:04,609 ERROR [grizzly-http-server-12] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 15:02:30,292 DEBUG [grizzly-http-server-13] - Server - Succesful request on: CollarSchema
+2020-09-09 15:02:30,294 DEBUG [grizzly-http-server-13] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 15:02:30,332 ERROR [grizzly-http-server-13] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 15:02:40,354 ERROR [grizzly-http-server-14] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 15:03:14,324 ERROR [grizzly-http-server-15] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 15:03:33,783 ERROR [grizzly-http-server-0] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 15:03:48,565 ERROR [grizzly-http-server-1] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 15:03:52,475 DEBUG [grizzly-http-server-2] - Server - Succesful request on: CollarSchema
+2020-09-09 15:03:52,477 DEBUG [grizzly-http-server-2] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 15:03:52,507 ERROR [grizzly-http-server-2] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 15:04:27,172 ERROR [grizzly-http-server-3] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 15:04:33,437 ERROR [grizzly-http-server-4] - Server - Status:415 ResourceID: urn:afc:scenario:service:provider:type:entityName  IP: 0:0:0:0:0:0:0:1 Not AFarCloud Compliant
+2020-09-09 15:04:42,312 DEBUG [grizzly-http-server-5] - Server - Succesful request on: CollarSchema
+2020-09-09 15:04:42,313 DEBUG [grizzly-http-server-5] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 15:04:42,338 ERROR [grizzly-http-server-5] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 16:33:00,495 DEBUG [grizzly-http-server-10] - Server - Succesful request on: CollarSchema
+2020-09-09 16:33:00,511 DEBUG [grizzly-http-server-10] - Server - http://torcos.etsist.upm.es:9213/store/collar
+2020-09-09 16:33:00,546 ERROR [grizzly-http-server-10] - Server - Status:500 ResourceID: urn:afc:scenario:service:provider:type:entityName Could not connect to Environment Reporter: Failed : HTTP error code : 405
+2020-09-09 16:33:15,576 DEBUG [grizzly-http-server-12] - Server - Succesful request on: GatewayListSchema
+2020-09-09 16:33:15,578 DEBUG [grizzly-http-server-12] - Server - Entity Name: drone001
+2020-09-09 16:33:16,968 ERROR [grizzly-http-server-12] - SimplifiedJson - Could not obtain resource:drone001 from the Assets Registry: 500
